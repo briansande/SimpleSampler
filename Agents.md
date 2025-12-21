@@ -1,2 +1,3 @@
 - All code is meant for the Daisy (Daisy is an embedded platform for music)
-
+- To run the code on the Daisy, do 'make clean && make && make program'
+- Use Context7 to search for Daisy Doc (diasy is made by Electrosmith)

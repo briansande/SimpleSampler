@@ -1,78 +1,98 @@
+// # WavPlayer
+// ## Description
+// Fairly simply sample player.
+// Loads 16
+//
+// Play .wav file from the SD Card.
+//
+#include <stdio.h>
+#include <string.h>
 #include "daisy_pod.h"
-#include <math.h>
+//#include "daisy_patch.h"
 
 using namespace daisy;
 
-DaisyPod  hw;
-Parameter p_knob1, p_knob2;
+//DaisyPatch   hw;
+DaisyPod       hw;
+SdmmcHandler   sdcard;
+FatFSInterface fsi;
+WavPlayer      sampler;
 
-// Global variables for audio detection
-volatile float audio_level    = 0.0f;
-volatile bool  audio_detected = false;
-
-// Audio callback function
-void AudioCallback(AudioHandle::InputBuffer  in,
-                   AudioHandle::OutputBuffer out,
-                   size_t                    size)
+void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                   AudioHandle::InterleavingOutputBuffer out,
+                   size_t                                size)
 {
-    // Calculate RMS of input signal
-    float sum = 0.0f;
-    for(size_t i = 0; i < size; i++)
-    {
-        // Copy input to output for audio pass-through
-        out[0][i] = in[0][i]; // Left channel
-        out[1][i] = in[1][i]; // Right channel
+    int32_t inc;
 
-        // Use left channel (index 0) for audio detection
-        sum += in[0][i] * in[0][i];
+    // Debounce digital controls
+    hw.ProcessDigitalControls();
+
+    // Change file with encoder.
+    inc = hw.encoder.Increment();
+    if(inc > 0)
+    {
+        size_t curfile;
+        curfile = sampler.GetCurrentFile();
+        if(curfile < sampler.GetNumberFiles() - 1)
+        {
+            sampler.Open(curfile + 1);
+        }
     }
-    audio_level = sqrtf(sum / size);
+    else if(inc < 0)
+    {
+        size_t curfile;
+        curfile = sampler.GetCurrentFile();
+        if(curfile > 0)
+        {
+            sampler.Open(curfile - 1);
+        }
+    }
+
+    //    if(hw.button1.RisingEdge())
+    //    {
+    //        sampler.Restart();
+    //    }
+    //
+    //    if(hw.button2.RisingEdge())
+    //    {
+    //        sampler.SetLooping(!sampler.GetLooping());
+    //        //hw.SetLed(DaisyPatch::LED_2_B, sampler.GetLooping());
+    //        //dsy_gpio_write(&hw.leds[DaisyPatch::LED_2_B],
+    //        //               static_cast<uint8_t>(!sampler.GetLooping()));
+    //    }
+
+    for(size_t i = 0; i < size; i += 2)
+    {
+        out[i] = out[i + 1] = s162f(sampler.Stream()) * 0.5f;
+    }
 }
+
 
 int main(void)
 {
+    // Init hardware
+    size_t blocksize = 4;
     hw.Init();
-    float r = 0, g = 0, b = 0;
-    p_knob1.Init(hw.knob1, 0, 1, Parameter::LINEAR);
-    p_knob2.Init(hw.knob2, 0, 1, Parameter::LINEAR);
+    //    hw.ClearLeds();
+    SdmmcHandler::Config sd_cfg;
+    sd_cfg.Defaults();
+    sdcard.Init(sd_cfg);
+    fsi.Init(FatFSInterface::Config::MEDIA_SD);
+    f_mount(&fsi.GetSDFileSystem(), "/", 1);
 
-    hw.StartAdc();
+    sampler.Init(fsi.GetSDPath());
+    sampler.SetLooping(true);
+
+    // SET LED to indicate Looping status.
+    //hw.SetLed(DaisyPatch::LED_2_B, sampler.GetLooping());
+
+    // Init Audio
+    hw.SetAudioBlockSize(blocksize);
     hw.StartAudio(AudioCallback);
-
-    while(1)
+    // Loop forever...
+    for(;;)
     {
-        // Get knob values
-        float threshold = p_knob1.Process(); // Use knob1 as threshold control
-        float sensitivity
-            = p_knob2.Process(); // Use knob2 as sensitivity control
-
-        // Detect audio presence based on threshold
-        float adjusted_threshold
-            = threshold * 0.1f; // Scale threshold to reasonable range
-
-        if(audio_level > adjusted_threshold)
-        {
-            // Audio detected - light up LEDs
-            r              = sensitivity;
-            g              = sensitivity * 0.5f;
-            b              = sensitivity * 0.8f;
-            audio_detected = true;
-        }
-        else
-        {
-            // No audio - LEDs off
-            r              = 0;
-            g              = 0;
-            b              = 0;
-            audio_detected = false;
-        }
-
-        hw.led1.Set(r, g, b);
-        hw.led2.Set(r * 0.8f, g * 0.8f, b * 0.8f);
-
-        hw.UpdateLeds();
-
-        // Small delay to prevent overwhelming the system
-        System::Delay(1);
+        // Prepare buffers for sampler as needed
+        sampler.Prepare();
     }
 }
