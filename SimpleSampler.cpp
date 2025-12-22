@@ -1,98 +1,72 @@
-// # WavPlayer
-// ## Description
-// Fairly simply sample player.
-// Loads 16
-//
-// Play .wav file from the SD Card.
-//
 #include <stdio.h>
 #include <string.h>
 #include "daisy_pod.h"
-//#include "daisy_patch.h"
+#include "dev/oled_ssd130x.h"
+#include <string>
+
 
 using namespace daisy;
+using namespace std;
 
-//DaisyPatch   hw;
-DaisyPod       hw;
-SdmmcHandler   sdcard;
-FatFSInterface fsi;
-WavPlayer      sampler;
 
-void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
-                   AudioHandle::InterleavingOutputBuffer out,
-                   size_t                                size)
-{
-    int32_t inc;
+using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
 
-    // Debounce digital controls
-    hw.ProcessDigitalControls();
+DaisyPod      hw;
+MyOledDisplay display;
+Parameter p_knob1, p_knob2;
 
-    // Change file with encoder.
-    inc = hw.encoder.Increment();
-    if(inc > 0)
-    {
-        size_t curfile;
-        curfile = sampler.GetCurrentFile();
-        if(curfile < sampler.GetNumberFiles() - 1)
-        {
-            sampler.Open(curfile + 1);
-        }
-    }
-    else if(inc < 0)
-    {
-        size_t curfile;
-        curfile = sampler.GetCurrentFile();
-        if(curfile > 0)
-        {
-            sampler.Open(curfile - 1);
-        }
-    }
+const uint32_t DISPLAY_FPS = 10;                        //  FPS -- later converted to time in ms
 
-    //    if(hw.button1.RisingEdge())
-    //    {
-    //        sampler.Restart();
-    //    }
-    //
-    //    if(hw.button2.RisingEdge())
-    //    {
-    //        sampler.SetLooping(!sampler.GetLooping());
-    //        //hw.SetLed(DaisyPatch::LED_2_B, sampler.GetLooping());
-    //        //dsy_gpio_write(&hw.leds[DaisyPatch::LED_2_B],
-    //        //               static_cast<uint8_t>(!sampler.GetLooping()));
-    //    }
 
-    for(size_t i = 0; i < size; i += 2)
-    {
-        out[i] = out[i + 1] = s162f(sampler.Stream()) * 0.5f;
-    }
-}
 
 
 int main(void)
 {
-    // Init hardware
-    size_t blocksize = 4;
     hw.Init();
-    //    hw.ClearLeds();
-    SdmmcHandler::Config sd_cfg;
-    sd_cfg.Defaults();
-    sdcard.Init(sd_cfg);
-    fsi.Init(FatFSInterface::Config::MEDIA_SD);
-    f_mount(&fsi.GetSDFileSystem(), "/", 1);
+    
+    uint32_t lastUpdateTime = System::GetNow();             // Initialize lastUpdateTime to the current time
 
-    sampler.Init(fsi.GetSDPath());
-    sampler.SetLooping(true);
+    /** Configure then initialize the Display */
+    MyOledDisplay::Config disp_cfg;
+    disp_cfg.driver_config.transport_config.pin_config.dc = hw.seed.GetPin(9);
+    disp_cfg.driver_config.transport_config.pin_config.reset = hw.seed.GetPin(22);
+    display.Init(disp_cfg);
 
-    // SET LED to indicate Looping status.
-    //hw.SetLed(DaisyPatch::LED_2_B, sampler.GetLooping());
 
-    // Init Audio
-    hw.SetAudioBlockSize(blocksize);
-    hw.StartAudio(AudioCallback);
-    // Loop forever...
-    for(;;)
+    // Initialize the knobs
+    float r = 0, g = 0, b = 0;
+    p_knob1.Init(hw.knob1, 0, 1, Parameter::LINEAR);
+    p_knob2.Init(hw.knob2, 0, 1, Parameter::LINEAR);
+
+    hw.StartAdc();
+
+
+
+    char strbuff[128];
+    while(1)
     {
-        // Prepare buffers for sampler as needed
-        sampler.Prepare();
+        uint32_t now = System::GetNow();
+        r = p_knob1.Process();
+        g = p_knob2.Process();
+
+        hw.led1.Set(r, g, b);
+
+        hw.UpdateLeds();
+
+        if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
+        {
+            
+            sprintf(strbuff, "R:%d G:%d B:%d", (int)(r*255), (int)(g*255), (int)(b*255));
+            display.Fill(false);
+            display.SetCursor(0, 0);
+            display.WriteString(strbuff, Font_11x18, false);
+            
+            sprintf(strbuff, "B:%d", (int)lastUpdateTime);
+            display.SetCursor(0, 32);
+            display.WriteString(strbuff, Font_11x18, false);
+            
+            display.Update();
+            lastUpdateTime = now;
+        }
     }
 }
