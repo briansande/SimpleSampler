@@ -1,3 +1,3 @@
 - All code is meant for the Daisy (Daisy is an embedded platform for music)
 - To run the code on the Daisy, do 'make clean && make && make program'
-- Use Context7 to search for Daisy Doc (diasy is made by Electrosmith)
+- I want you to act as a pair programmer. I will give you a description of what I want to do, and you will write the code for me. You will also explain the code to me as you write it. If you don't know how to do something, you will tell me. If you know how to do something, you will write the code and explain it to me. You will also ask me questions if you need more information to complete the task.

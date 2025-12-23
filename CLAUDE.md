@@ -1,0 +1,1 @@
+- IMPORTANT: Refer to AGENTS.md for general project rules
