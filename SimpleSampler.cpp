@@ -35,7 +35,7 @@ FILINFO        fno;
 
 
 
-const uint32_t DISPLAY_FPS = 30;                        //  FPS -- later converted to time in ms
+const uint32_t DISPLAY_FPS = 10;                        //  FPS -- later converted to time in ms
 
 
 // Forward declarations
@@ -92,7 +92,15 @@ void EnterDirectory(const char* dirName) {
             sprintf(currentPath, "/%s", dirName);
         } else {
             // Not at root, add separator
-            sprintf(currentPath, "%s/%s", currentPath, dirName);
+            // Use temporary buffer to avoid overlapping source/destination
+            char newPath[256];
+            // Check if path would overflow before copying
+            size_t currentLen = strlen(currentPath);
+            size_t dirLen = strlen(dirName);
+            if(currentLen + dirLen + 2 < 256) {
+                snprintf(newPath, 256, "%s/%s", currentPath, dirName);
+                strcpy(currentPath, newPath);
+            }
         }
     }
 
@@ -142,7 +150,7 @@ void DisplayFilesOnScreen() {
     // Rectangle spans full width (0-127), height of font (0-9)
     display.DrawRect(0, 0, 127, 9, true, true);  // true, true = white, filled
     display.SetCursor(0, 0);
-    display.WriteString("SD Files:", Font_7x10, false);  // false = black text
+    display.WriteString(GetCurrentFolderName(), Font_7x10, false);  // false = black text
 
     // === WINDOW SCROLLING LOGIC ===
     // The "window" is which 4 files are currently visible on screen.
@@ -200,11 +208,11 @@ void DisplayFilesOnScreen() {
     // === FOOTER WITH POSITION INFO ===
     // Display current file position (e.g. "3/10") at bottom right
     display.SetCursor(105, 55);
-    char footer[8];
-    sprintf(footer, "%d/%d", selectedFile + 1, totalFiles);
+    char footer[12];  // Increased from 8 to accommodate "999/999" + null terminator
+    snprintf(footer, sizeof(footer), "%d/%d", selectedFile + 1, totalFiles);
     display.WriteString(footer, Font_6x8, true);
 
-    display.Update();
+
 }
 
 
@@ -256,7 +264,6 @@ int main(void)
 
 
 
-    char strbuff[128];
     while(1)
     {
         
