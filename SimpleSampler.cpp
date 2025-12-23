@@ -20,9 +20,11 @@ static int32_t  inc;
 const int MAX_FILES = 100;
 const int FILES_PER_SCREEN = 4;  // Show 4 files at once (fits in 64px height)
 char fileList[MAX_FILES][32];    // Cache filenames
+bool isDirectory[MAX_FILES];     // Track which entries are directories
 int totalFiles = 0;
 int selectedFile = 0;             // Currently selected file index
 int windowStart = 0;              // First file shown in current window
+char currentPath[256];            // Current directory path (e.g., "/" or "/folder")
 
 
 SdmmcHandler   sd;
@@ -33,26 +35,101 @@ FILINFO        fno;
 
 
 
-const uint32_t DISPLAY_FPS = 10;                        //  FPS -- later converted to time in ms
+const uint32_t DISPLAY_FPS = 30;                        //  FPS -- later converted to time in ms
 
 
-// Function to cache filenames from SD card
-void CacheFileList() {
-    totalFiles = 0;
+// Forward declarations
+void CacheFileList();
+
+// Helper function to get current folder name from path
+const char* GetCurrentFolderName() {
+    static char folderName[32];
     
-    if(f_opendir(&dir, "/") != FR_OK) return;
-    
-    while(totalFiles < MAX_FILES) {
-        FRESULT res = f_readdir(&dir, &fno);
-        if(res != FR_OK || fno.fname[0] == 0) break;
-        if(fno.fattrib & (AM_HID | AM_DIR)) continue;
-        
-        strncpy(fileList[totalFiles], fno.fname, 31);
-        fileList[totalFiles][31] = '\0';
-        totalFiles++;
+    // If at root, return "Root"
+    if(strcmp(currentPath, "/") == 0 || strlen(currentPath) == 0) {
+        strcpy(folderName, "Root");
+        return folderName;
     }
     
+    // Find the last '/' in the path to get the folder name
+    int len = strlen(currentPath);
+    int lastSlash = 0;
+    for(int i = len - 1; i >= 0; i--) {
+        if(currentPath[i] == '/') {
+            lastSlash = i;
+            break;
+        }
+    }
+    
+    // Copy the folder name (everything after the last '/')
+    strncpy(folderName, currentPath + lastSlash + 1, 31);
+    folderName[31] = '\0';
+    return folderName;
+}
+
+// Helper function to enter a directory
+void EnterDirectory(const char* dirName) {
+    if(strcmp(dirName, "..") == 0) {
+        // Go up to parent directory
+        // Find the last '/' and truncate there
+        int len = strlen(currentPath);
+        for(int i = len - 1; i >= 0; i--) {
+            if(currentPath[i] == '/') {
+                if(i == 0) {
+                    // At root, keep "/"
+                    currentPath[1] = '\0';
+                } else {
+                    currentPath[i] = '\0';
+                }
+                break;
+            }
+        }
+    } else {
+        // Enter subdirectory
+        // Append directory name to current path
+        if(strcmp(currentPath, "/") == 0) {
+            // At root, don't add extra slash
+            sprintf(currentPath, "/%s", dirName);
+        } else {
+            // Not at root, add separator
+            sprintf(currentPath, "%s/%s", currentPath, dirName);
+        }
+    }
+
+    // Reset selection and refresh file list
+    selectedFile = 0;
+    windowStart = 0;
+    CacheFileList();
+}
+
+// Function to cache filenames and directories from SD card
+void CacheFileList() {
+    totalFiles = 0;
+
+    if(f_opendir(&dir, currentPath) != FR_OK) return;
+
+    // First, read all files and directories
+    while(totalFiles < MAX_FILES - 1) {  // Reserve space for ".." entry
+        FRESULT res = f_readdir(&dir, &fno);
+        if(res != FR_OK || fno.fname[0] == 0) break;
+        if(fno.fattrib & AM_HID) continue;  // Skip hidden files, but NOT directories
+
+        strncpy(fileList[totalFiles], fno.fname, 31);
+        fileList[totalFiles][31] = '\0';
+        isDirectory[totalFiles] = (fno.fattrib & AM_DIR) ? true : false;
+        totalFiles++;
+    }
+
     f_closedir(&dir);
+
+    // Add ".." (parent directory) entry at the bottom
+    // Only add if we're not at root (root is "/" or empty)
+    if(strlen(currentPath) > 1) {
+        strncpy(fileList[totalFiles], "..", 31);
+        fileList[totalFiles][31] = '\0';
+        isDirectory[totalFiles] = true;  // ".." is a virtual directory
+        totalFiles++;
+    }
 }
 
 
@@ -95,11 +172,20 @@ void DisplayFilesOnScreen() {
 
         // === SELECTION INDICATOR ===
         // Prepend ">" for selected file, space for others
-        char strbuff[32];
+        // Add "/" suffix to directories (except ".." which is already clear)
+        char strbuff[35];
         if(fileIndex == selectedFile) {
-            sprintf(strbuff, ">%s", fileList[fileIndex]);
+            if(isDirectory[fileIndex] && strcmp(fileList[fileIndex], "..") != 0) {
+                sprintf(strbuff, ">%s/", fileList[fileIndex]);
+            } else {
+                sprintf(strbuff, ">%s", fileList[fileIndex]);
+            }
         } else {
-            sprintf(strbuff, " %s", fileList[fileIndex]);
+            if(isDirectory[fileIndex] && strcmp(fileList[fileIndex], "..") != 0) {
+                sprintf(strbuff, " %s/", fileList[fileIndex]);
+            } else {
+                sprintf(strbuff, " %s", fileList[fileIndex]);
+            }
         }
 
         // === TRUNCATE FOR DISPLAY ===
@@ -162,6 +248,7 @@ int main(void)
     // Read all filenames from SD card into memory once at startup.
     // This is much faster than reading the SD card every frame.
     // We do this AFTER mounting so the filesystem is ready.
+    strcpy(currentPath, "/");  // Start at root directory
     CacheFileList();
 
 
@@ -191,6 +278,16 @@ int main(void)
             if(selectedFile < 0) {
                 selectedFile = totalFiles - 1;  // Wrap to end
             }
+        }
+
+        // === ENCODER CLICK - ENTER DIRECTORY ===
+        // Check if encoder was clicked (pressed down)
+        if(hw.encoder.RisingEdge() && totalFiles > 0) {
+            // Only enter if the selected item is a directory
+            if(isDirectory[selectedFile]) {
+                EnterDirectory(fileList[selectedFile]);
+            }
+            // TODO: File handling will be added here later for WAV playback
         }
 
         uint32_t now = System::GetNow();
