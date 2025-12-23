@@ -14,6 +14,7 @@ using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
 DaisyPod      hw;
 MyOledDisplay display;
 Parameter p_knob1, p_knob2;
+
 static int32_t  inc;
 
 // File browsing state
@@ -33,9 +34,54 @@ FIL            SDFile;
 DIR            dir;
 FILINFO        fno;
 
+// Daisy WavPlayer -- not fully featured but will be OK for testing
+WavPlayer      sampler;
 
 
-const uint32_t DISPLAY_FPS = 10;                        //  FPS -- later converted to time in ms
+const uint32_t DISPLAY_FPS = 10;                        //  FPS for OLED screen
+
+void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                   AudioHandle::InterleavingOutputBuffer out,
+                   size_t                                size)
+{
+    int32_t inc;
+
+    // Debounce digital controls
+    hw.ProcessDigitalControls();
+
+    // Change file with encoder.
+    inc = hw.encoder.Increment();
+    if(inc > 0)
+    {
+        size_t curfile;
+        curfile = sampler.GetCurrentFile();
+        if(curfile < sampler.GetNumberFiles() - 1)
+        {
+            sampler.Open(curfile + 1);
+        }
+    }
+    else if(inc < 0)
+    {
+        size_t curfile;
+        curfile = sampler.GetCurrentFile();
+        if(curfile > 0)
+        {
+            sampler.Open(curfile - 1);
+        }
+    }
+
+    for(size_t i = 0; i < size; i += 2)
+    {
+        out[i] = out[i + 1] = s162f(sampler.Stream()) * 0.5f;
+    }
+}
+
+
+
+
+
+
+
 
 
 // Forward declarations
@@ -47,6 +93,7 @@ const char* GetCurrentFolderName() {
     
     // If at root, return "Root"
     if(strcmp(currentPath, "/") == 0 || strlen(currentPath) == 0) {
+
         strcpy(folderName, "Root");
         return folderName;
     }
