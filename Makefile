@@ -2,11 +2,19 @@
 TARGET = SimpleSampler
 
 # Sources
-CPP_SOURCES = SimpleSampler.cpp
+CPP_SOURCES = SimpleSampler.cpp \
+              SampleLibrary.cpp \
+              AudioEngine.cpp \
+              Voice.cpp \
+              b3ReadWavFile.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/
 DAISYSP_DIR = ../../DaisySP/
+
+# Suppress all warnings - only show errors
+CFLAGS += -w
+CXXFLAGS += -w
 
 
 # Includes FatFS source files within project.

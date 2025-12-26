@@ -4,12 +4,18 @@
 #include "dev/oled_ssd130x.h"
 #include <string>
 
+#include "SampleLibrary.h"
+#include "AudioEngine.h"
+#include "daisysp.h"
+
 
 using namespace daisy;
+using namespace daisysp;
 using namespace std;
 
 
 using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
+const uint32_t DISPLAY_FPS = 10;                        //  FPS for OLED screen
 
 DaisyPod      hw;
 MyOledDisplay display;
@@ -28,60 +34,45 @@ int windowStart = 0;              // First file shown in current window
 char currentPath[256];            // Current directory path (e.g., "/" or "/folder")
 
 
-SdmmcHandler   sd;
+SdmmcHandler   sdcard;
 FatFSInterface fsi;
 FIL            SDFile;
 DIR            dir;
 FILINFO        fno;
 
-// Daisy WavPlayer -- not fully featured but will be OK for testing
-WavPlayer      sampler;
+// Our custom sampler components
+static SampleLibrary* library = nullptr;
+static AudioEngine* engine = nullptr;
 
+// Memory pool for SDRAM
+#define CUSTOM_POOL_SIZE (48*1024*1024)
+DSY_SDRAM_BSS char custom_pool[CUSTOM_POOL_SIZE];
+size_t pool_index = 0;
 
-const uint32_t DISPLAY_FPS = 10;                        //  FPS for OLED screen
-
-void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
-                   AudioHandle::InterleavingOutputBuffer out,
-                   size_t                                size)
-{
-    int32_t inc;
-
-    // Debounce digital controls
-    hw.ProcessDigitalControls();
-
-    // Change file with encoder.
-    inc = hw.encoder.Increment();
-    if(inc > 0)
-    {
-        size_t curfile;
-        curfile = sampler.GetCurrentFile();
-        if(curfile < sampler.GetNumberFiles() - 1)
-        {
-            sampler.Open(curfile + 1);
-        }
+// Custom memory allocator
+void* custom_pool_allocate(size_t size) {
+    if (pool_index + size >= CUSTOM_POOL_SIZE) {
+        return nullptr;
     }
-    else if(inc < 0)
-    {
-        size_t curfile;
-        curfile = sampler.GetCurrentFile();
-        if(curfile > 0)
-        {
-            sampler.Open(curfile - 1);
-        }
-    }
-
-    for(size_t i = 0; i < size; i += 2)
-    {
-        out[i] = out[i + 1] = s162f(sampler.Stream()) * 0.5f;
-    }
+    void* ptr = &custom_pool[pool_index];
+    pool_index += size;
+    return ptr;
 }
 
-
-
-
-
-
-
+// Audio callback wrapper
+void AudioCallback(float** out, size_t size) {
+    if (engine) {
+        engine->audioCallback(out, size);
+    } else {
+        // Silence if engine not ready
+        for (size_t i = 0; i < size; i++) {
+            out[0][i] = 0.0f;
+            out[1][i] = 0.0f;
+            out[2][i] = 0.0f;
+            out[3][i] = 0.0f;
+        }
+    }
+}
 
 
 // Forward declarations
@@ -287,17 +278,7 @@ int main(void)
 
     hw.StartAdc();
 
-    /* SD Card Additions */
-    // Init SD Card
-    SdmmcHandler::Config sd_cfg;
-    sd_cfg.Defaults();
-    sd.Init(sd_cfg);
 
-    // Links libdaisy i/o to fatfs driver.
-    fsi.Init(FatFSInterface::Config::MEDIA_SD);
-
-    // Mount SD Card
-    f_mount(&fsi.GetSDFileSystem(), "/", 1);
 
     // === CACHE FILE LIST ===
     // Read all filenames from SD card into memory once at startup.
@@ -308,9 +289,60 @@ int main(void)
 
 
 
+    display.Fill(false);
+    display.SetCursor(0, 0);
+    display.WriteString((char*)"SAMPLER STARTED", Font_7x10, true);
+    display.Update();
+    hw.DelayMs(1000);
+
+    display.Fill(false);
+    display.SetCursor(0, 0);
+    display.WriteString((char*)"samples loaded", Font_7x10, true);
+    display.Update();
+    hw.DelayMs(1000);
 
 
 
+
+    /* SD Card Additions */
+    // Init SD Card
+    SdmmcHandler::Config sd_cfg;
+    sd_cfg.Defaults();
+    sdcard.Init(sd_cfg);
+
+    // Links libdaisy i/o to fatfs driver.
+    fsi.Init(FatFSInterface::Config::MEDIA_SD);
+
+    // Mount SD Card
+    f_mount(&fsi.GetSDFileSystem(), "/", 1);
+
+    // Initialize library
+    library = new SampleLibrary(sdcard, fsi);
+    if (!library->init()) {
+        display.SetCursor(0, 0);
+        display.WriteString((char*)"SD Card Error!", Font_7x10, true);
+        display.Update();
+        while(1);  // Halt
+    }
+        
+    // 5. Create audio engine
+    engine = new AudioEngine(library);
+    if (!engine->init(hw.AudioSampleRate())) {
+        display.SetCursor(0, 0);
+        display.WriteString((char*)"Audio Error!", Font_7x10, true);
+        display.Update();
+        while(1);  // Halt
+    }
+
+    // 6. Display loaded sample count
+    char buf[32];
+    sprintf(buf, "Loaded %d samples", library->getSampleCount());
+    display.SetCursor(0, 10);
+    display.WriteString(buf, Font_7x10, true);
+    display.Update();
+    hw.DelayMs(1000);
+
+    
     while(1)
     {
         
@@ -372,4 +404,3 @@ int main(void)
         }
     }
 }
-
