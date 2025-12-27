@@ -91,6 +91,7 @@ bool SampleLibrary::init() {
                     } else {
                         display_.showMessagef("Alloc failed!", 1000);
                     }
+                    f_close(&SDFile);
                     
                 } else {
                     display_.showMessagef("Open failed!", 1000);

@@ -8,7 +8,6 @@
 #include "Config.h"
 #include "DisplayManager.h"
 #include "SampleLibrary.h"
-#include "AudioEngine.h"
 #include "daisysp.h"
 
 using namespace daisy;
@@ -50,7 +49,6 @@ FILINFO        fno;
 // Our custom sampler components
 static DisplayManager* displayManager = nullptr;
 static SampleLibrary* library = nullptr;
-static AudioEngine* engine = nullptr;
 
 // Memory pool for SDRAM
 #define CUSTOM_POOL_SIZE (48*1024*1024)
@@ -338,26 +336,6 @@ int main(void)
         while(1);  // Halt
     }
     DisplayMessage("Library Initialized", 1000);
-
-        
-    // // 5. Create audio engine
-    // engine = new AudioEngine(library);
-    // if (!engine->init(hw.AudioSampleRate())) {
-    //     display.SetCursor(0, 0);
-    //     display.WriteString((char*)"Audio Error!", Font_7x10, true);
-    //     display.Update();
-    //     while(1);  // Halt
-    // }
-    // DisplayMessage("Audio Engine Initialized", 1000);
-
-
-    // // 6. Display loaded sample count
-    // char buf[32];
-    // sprintf(buf, "Loaded %d samples", library->getSampleCount());
-    // display.SetCursor(0, 10);
-    // display.WriteString(buf, Font_7x10, true);
-    // display.Update();
-    // hw.DelayMs(1000);
 
     
     while(1)
