@@ -1,6 +1,7 @@
 
 *.d
 *.lst
+*map
 
 # Compiled Object files
 *.slo
