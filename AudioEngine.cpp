@@ -45,6 +45,13 @@ void AudioEngine::triggerSample(int sampleIndex, float volume, float speed) {
         return;  // Invalid sample index
     }
     
+    // Lazy load: Ensure audio data is loaded before playback
+    if (!sample->audioDataLoaded) {
+        if (!library_->ensureSampleLoaded(sampleIndex)) {
+            return;  // Failed to load sample data
+        }
+    }
+    
     // Find a free voice
     Voice* voice = findFreeVoice();
     if (voice == nullptr) {

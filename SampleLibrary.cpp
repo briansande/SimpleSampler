@@ -16,6 +16,7 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
     // Initialize all samples as not loaded
     for (int i = 0; i < MAX_SAMPLES; i++) {
         samples_[i].loaded = false;
+        samples_[i].audioDataLoaded = false;
     }
 }
 
@@ -58,7 +59,7 @@ bool SampleLibrary::init() {
         
         // Try to load this sample
         if (sampleCount_ < MAX_SAMPLES) {
-            if (loadSample(filename, sampleCount_)) {
+            if (loadSampleInfo(filename, sampleCount_)) {
                 sampleCount_++;
             }
         } else {
@@ -73,10 +74,64 @@ bool SampleLibrary::init() {
     return true;
 }
 
-bool SampleLibrary::loadSample(const char* filename, int index) {
+bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
     // Open the file
     FIL file;
     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
+        return false;  // Failed to open
+    }
+    
+    // Read only the WAV header (first 44 bytes)
+    // WAV header structure: RIFF(4) + filesize(4) + WAVE(4) + fmt(4) +
+    //                       fmt_size(4) + audio_fmt(2) + channels(2) +
+    //                       sample_rate(4) + byte_rate(4) + block_align(2) +
+    //                       bits_per_sample(2) + data(4) + data_size(4) = 44 bytes
+    const int WAV_HEADER_SIZE = 44;
+    char headerBuffer[WAV_HEADER_SIZE];
+    
+    UINT bytesRead;
+    if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADER_SIZE) {
+        f_close(&file);
+        return false;  // Failed to read header
+    }
+    
+    // Close the file - we only needed the header
+    f_close(&file);
+    
+    // Store filename
+    strncpy(samples_[index].name, filename, 31);
+    samples_[index].name[31] = '\0';  // Ensure null-terminated
+    
+    // Create MemoryDataSource pointing to header buffer (temporary)
+    samples_[index].data = MemoryDataSource(headerBuffer, WAV_HEADER_SIZE);
+    
+    // Parse WAV header using b3ReadWavFile
+    if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
+        return false;  // Failed to parse WAV header
+    }
+    
+    // Extract metadata from the reader
+    samples_[index].numFrames = samples_[index].reader.getNumFrames();
+    samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+    samples_[index].loaded = true;           // Metadata is loaded
+    samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
+    
+    // Determine channels and bits per sample from reader
+    samples_[index].channels = 2;
+    samples_[index].bitsPerSample = 16;
+    
+    return true;
+}
+
+bool SampleLibrary::loadSampleData(int index) {
+    // Check if already loaded
+    if (samples_[index].audioDataLoaded) {
+        return true;  // Already loaded
+    }
+    
+    // Open the file
+    FIL file;
+    if (f_open(&file, samples_[index].name, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
         return false;  // Failed to open
     }
     
@@ -97,31 +152,19 @@ bool SampleLibrary::loadSample(const char* filename, int index) {
         return false;  // Failed to read
     }
     
-    // Close the file (we have it in memory now)
+    // Close the file
     f_close(&file);
     
-    // Store sample info
-    strncpy(samples_[index].name, filename, 31);
-    samples_[index].name[31] = '\0';  // Ensure null-terminated
-    
-    // Create MemoryDataSource pointing to our buffer
+    // Update MemoryDataSource to point to full file buffer
     samples_[index].data = MemoryDataSource(buffer, fileSize);
     
-    // Parse WAV header using b3ReadWavFile
+    // Re-parse WAV header with the full buffer
     if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
         return false;  // Failed to parse WAV
     }
     
-    // Extract metadata from the reader
-    samples_[index].numFrames = samples_[index].reader.getNumFrames();
-    samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
-    samples_[index].loaded = true;
-    
-    // Determine channels and bits per sample from reader
-    // (b3ReadWavFile stores these internally, we'd need to add getters)
-    // For now, assume stereo 16-bit (most common)
-    samples_[index].channels = 2;
-    samples_[index].bitsPerSample = 16;
+    // Mark audio data as loaded
+    samples_[index].audioDataLoaded = true;
     
     return true;
 }
@@ -131,6 +174,13 @@ SampleInfo* SampleLibrary::getSample(int index) {
         return &samples_[index];
     }
     return nullptr;
+}
+
+bool SampleLibrary::ensureSampleLoaded(int index) {
+    if (index < 0 || index >= sampleCount_) {
+        return false;  // Invalid index
+    }
+    return loadSampleData(index);
 }
 
 int SampleLibrary::findSample(const char* name) {

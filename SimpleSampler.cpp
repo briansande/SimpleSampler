@@ -255,6 +255,16 @@ void DisplayFilesOnScreen() {
 
 
 
+// Helper function to display a message with a delay
+void DisplayMessage(const char* message, uint32_t delayMs) {
+    display.Fill(false);                    // Clear the screen
+    display.SetCursor(0, 0);                 // Position cursor at top-left
+    display.WriteString((char*)message, Font_7x10, true);  // Write the message
+    display.Update();                       // Update the display
+    hw.DelayMs(delayMs);                    // Wait for specified time
+}
+
+
 int main(void)
 {
     
@@ -284,24 +294,12 @@ int main(void)
     // Read all filenames from SD card into memory once at startup.
     // This is much faster than reading the SD card every frame.
     // We do this AFTER mounting so the filesystem is ready.
-    strcpy(currentPath, "/");  // Start at root directory
-    CacheFileList();
+    // strcpy(currentPath, "/");  // Start at root directory
+    // CacheFileList();
 
 
-
-    display.Fill(false);
-    display.SetCursor(0, 0);
-    display.WriteString((char*)"SAMPLER STARTED", Font_7x10, true);
-    display.Update();
-    hw.DelayMs(1000);
-
-    display.Fill(false);
-    display.SetCursor(0, 0);
-    display.WriteString((char*)"samples loaded", Font_7x10, true);
-    display.Update();
-    hw.DelayMs(1000);
-
-
+    DisplayMessage("Sampler Started", 1000);
+    DisplayMessage("Loading Samples...", 1000);
 
 
     /* SD Card Additions */
@@ -315,7 +313,8 @@ int main(void)
 
     // Mount SD Card
     f_mount(&fsi.GetSDFileSystem(), "/", 1);
-
+    
+    DisplayMessage("Starting Library Initialization", 1000);
     // Initialize library
     library = new SampleLibrary(sdcard, fsi);
     if (!library->init()) {
@@ -324,6 +323,8 @@ int main(void)
         display.Update();
         while(1);  // Halt
     }
+    DisplayMessage("Library Initialized", 1000);
+
         
     // 5. Create audio engine
     engine = new AudioEngine(library);
@@ -333,6 +334,8 @@ int main(void)
         display.Update();
         while(1);  // Halt
     }
+    DisplayMessage("Audio Engine Initialized", 1000);
+
 
     // 6. Display loaded sample count
     char buf[32];

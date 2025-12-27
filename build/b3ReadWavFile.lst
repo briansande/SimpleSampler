@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   34              		@ link register save eliminated.
   23:b3ReadWavFile.cpp **** {
   24:b3ReadWavFile.cpp **** }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 2
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 2
 
 
   35              		.loc 1 24 1 is_stmt 0 view .LVU1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   87              		.thumb
   88              		.thumb_func
   89              		.fpu fpv5-d16
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 3
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 3
 
 
   91              	_ZN13b3ReadWavFileC2Ev:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  137              		@ link register save eliminated.
   28:b3ReadWavFile.cpp **** #if 0
   29:b3ReadWavFile.cpp **** 	int i;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 4
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 4
 
 
   30:b3ReadWavFile.cpp **** 	double max = 0.0;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  172              		.loc 1 50 6 view .LVU23
  173 0008 FDEEC76B 		vcvt.s32.f64	s13, d7
  174              	.LVL7:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 5
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 5
 
 
   51:b3ReadWavFile.cpp **** 	double output, alpha = ticker->time_ - (double)iIndex;  // fractional part of index
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  213              		.loc 1 53 2 is_stmt 1 view .LVU37
  214              		.loc 1 55 5 view .LVU38
  215              	.LBB240:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 6
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 6
 
 
  216 0030 63D0     		beq	.L70
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   95:b3ReadWavFile.cpp **** 		// 24-bit values are harder to import efficiently since there is
   96:b3ReadWavFile.cpp **** 		// no native 24-bit type.  The following routine works but is much
   97:b3ReadWavFile.cpp **** 		// less efficient than that used for the other data types.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 7
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 7
 
 
   98:b3ReadWavFile.cpp **** 		double buf[4];
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  146:b3ReadWavFile.cpp **** 		double tmp0 = buf[0]*gain;
  147:b3ReadWavFile.cpp **** 		double tmp1 = buf[1]*gain;
  148:b3ReadWavFile.cpp **** 		
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 8
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 8
 
 
  149:b3ReadWavFile.cpp **** 		if (alpha > 0.0)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  189:b3ReadWavFile.cpp **** 		if (alpha > 0.0)
  190:b3ReadWavFile.cpp **** 		{
  191:b3ReadWavFile.cpp **** 	  	tmp0 += (alpha * (buf[channels_] - tmp0));
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 9
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 9
 
 
  192:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * (buf[channels_+1] - tmp1));
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  288              	.LVL15:
  102:b3ReadWavFile.cpp **** 			return;
  289              		.loc 1 102 3 view .LVU58
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 10
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 10
 
 
  290 006a 0130     		adds	r0, r0, #1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   17:b3SwapUtils.h **** 
   18:b3SwapUtils.h **** 	// Swap 1st and 4th bytes
   19:b3SwapUtils.h **** 	val = *(ptr);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 11
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 11
 
 
   20:b3SwapUtils.h **** 	*(ptr) = *(ptr + 3);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  356              	.LVL22:
   26:b3SwapUtils.h **** 	*(ptr + 1) = val;
  357              		.loc 2 26 9 view .LVU84
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 12
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 12
 
 
  358 00a4 8DF80520 		strb	r2, [sp, #5]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  110:b3ReadWavFile.cpp **** 						return;
  398              		.loc 1 110 26 view .LVU102
  399 00d0 0123     		movs	r3, #1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 13
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 13
 
 
  400 00d2 0322     		movs	r2, #3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  442              	.LVL32:
   58:b3ReadWavFile.cpp **** 			return;
  443              		.loc 1 58 23 view .LVU115
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 14
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 14
 
 
  444 00fc 0A22     		movs	r2, #10
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   66:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * (buf[channels_+1] - tmp1));
  484              		.loc 1 66 27 is_stmt 0 view .LVU130
  485 0132 E369     		ldr	r3, [r4, #28]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 15
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 15
 
 
   64:b3ReadWavFile.cpp **** 		{
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  523 016c 012B     		cmp	r3, #1
   69:b3ReadWavFile.cpp **** 	  out1[oIndex]+= (channels_ >1) ? tmp1*volume : tmp0 * volume;
  524              		.loc 1 69 16 view .LVU148
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 16
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 16
 
 
  525 016e 169A     		ldr	r2, [sp, #88]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  569 01a8 B7EEC77B 		vcvt.f32.f64	s14, d7
  570 01ac 82ED007A 		vstr.32	s14, [r2]
  571              	.LBE238:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 17
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 17
 
 
  572              	.LBE271:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   82:b3ReadWavFile.cpp **** 		double tmp1  = (buf[1] - 128)*gain;
  613              		.loc 1 82 3 view .LVU172
   82:b3ReadWavFile.cpp **** 		double tmp1  = (buf[1] - 128)*gain;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 18
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 18
 
 
  614              		.loc 1 82 24 is_stmt 0 view .LVU173
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   86:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * ((buf[channels_+1]-128)*gain - tmp1));
  651              		.loc 1 86 49 view .LVU191
  652 0218 B0EE472B 		vmov.f64	d2, d7
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 19
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 19
 
 
   86:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * ((buf[channels_+1]-128)*gain - tmp1));
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  691 0252 E768     		ldr	r7, [r4, #12]
  692              	.LBE273:
  693              	.LBB274:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 20
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 20
 
 
  694              	.LBB243:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  734              		.loc 1 140 64 view .LVU221
  735 0296 3368     		ldr	r3, [r6]
  140:b3ReadWavFile.cpp **** 			return;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 21
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 21
 
 
  736              		.loc 1 140 23 view .LVU222
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  776 02d4 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  146:b3ReadWavFile.cpp **** 		double tmp1 = buf[1]*gain;
  777              		.loc 1 146 10 view .LVU237
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 22
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 22
 
 
  778 02d8 9FED7B5B 		vldr.64	d5, .L77+8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  816              	.L34:
  154:b3ReadWavFile.cpp **** 	  out1[oIndex]+= (channels_ >1) ? tmp1*volume : tmp0 * volume;
  817              		.loc 1 154 4 is_stmt 1 view .LVU254
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 23
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 23
 
 
  154:b3ReadWavFile.cpp **** 	  out1[oIndex]+= (channels_ >1) ? tmp1*volume : tmp0 * volume;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  860              	.L74:
  155:b3ReadWavFile.cpp **** 	}
  861              		.loc 1 155 16 view .LVU267
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 24
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 24
 
 
  862              	.LBE277:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  169:b3ReadWavFile.cpp **** 		{
  902              		.loc 1 169 3 view .LVU282
  903 0390 B5EEC08B 		vcmpe.f64	d8, #0
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 25
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 25
 
 
  167:b3ReadWavFile.cpp **** 		double tmp1 = buf[1]*gain;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  172:b3ReadWavFile.cpp **** 	  }
  941              		.loc 1 172 38 view .LVU300
  942 03d4 02EB4302 		add	r2, r2, r3, lsl #1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 26
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 26
 
 
  172:b3ReadWavFile.cpp **** 	  }
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  982 040c B7EEC66A 		vcvt.f64.f32	d6, s12
  983 0410 36EE056B 		vadd.f64	d6, d6, d5
  175:b3ReadWavFile.cpp **** 	}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 27
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 27
 
 
  984              		.loc 1 175 34 view .LVU316
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1024              		.loc 1 129 36 is_stmt 0 view .LVU330
  1025 0450 0AAB     		add	r3, sp, #40
  1026 0452 03EBC203 		add	r3, r3, r2, lsl #3
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 28
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 28
 
 
  129:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * (buf[channels_+1] - tmp1));
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  132:b3ReadWavFile.cpp **** 	  out1[oIndex]+= (channels_ >1) ? tmp1*volume : tmp0 * volume;
  1066              		.loc 1 132 16 view .LVU346
  1067 0484 93ED006A 		vldr.32	s12, [r3]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 29
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 29
 
 
  1068 0488 B7EEC66A 		vcvt.f64.f32	d6, s12
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1114              	.LVL74:
  1115              	.L75:
  137:b3ReadWavFile.cpp **** 	{
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 30
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 30
 
 
  1116              		.loc 1 137 2 view .LVU355
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1156 0504 B5EEC08B 		vcmpe.f64	d8, #0
  191:b3ReadWavFile.cpp **** 	  	tmp1 += (alpha * (buf[channels_+1] - tmp1));
  1157              		.loc 1 191 27 view .LVU370
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 31
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 31
 
 
  1158 0508 E269     		ldr	r2, [r4, #28]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  194:b3ReadWavFile.cpp **** 	  out1[oIndex]+= (channels_ >1) ? tmp1*volume : tmp0 * volume;
  1195              		.loc 1 194 16 view .LVU388
  1196 053a 169B     		ldr	r3, [sp, #88]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 32
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 32
 
 
  1197 053c 03EB8103 		add	r3, r3, r1, lsl #2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  200:b3ReadWavFile.cpp **** 
  201:b3ReadWavFile.cpp **** void b3ReadWavFile::tick(b3WavTicker *ticker, b3DataSource& dataSource, double speed, double volume
  202:b3ReadWavFile.cpp **** {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 33
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 33
 
 
  1242              		.loc 1 202 1 is_stmt 1 view -0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  207:b3ReadWavFile.cpp **** 		ticker->finished_ = true;
  208:b3ReadWavFile.cpp **** 		return;
  209:b3ReadWavFile.cpp **** 	}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 34
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 34
 
 
  210:b3ReadWavFile.cpp **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  211:b3ReadWavFile.cpp **** 	{
  1330              		.loc 1 211 18 view .LVU420
  214:b3ReadWavFile.cpp **** 		if (ticker->time_ < ticker->starttime_ || ticker->time_ > ticker->endtime_)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 35
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 35
 
 
  1331              		.loc 1 214 17 is_stmt 0 view .LVU421
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1375              		.syntax unified
  1376              		.thumb
  1377              		.thumb_func
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 36
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 36
 
 
  1378              		.fpu fpv5-d16
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1412              		.loc 1 242 1 is_stmt 1 view -0
  1413              		.cfi_startproc
  1414              		@ args = 0, pretend = 0, frame = 32
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 37
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 37
 
 
  1415              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1452              		.loc 1 257 2 view .LVU449
  1453              		.loc 1 257 32 is_stmt 0 view .LVU450
  1454 001a 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 38
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 38
 
 
  1455              		.loc 1 257 22 view .LVU451
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  293:b3ReadWavFile.cpp **** 		{
  294:b3ReadWavFile.cpp **** 			b3Swap16((unsigned char *)&extSize);
  295:b3ReadWavFile.cpp **** 		}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 39
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 39
 
 
  296:b3ReadWavFile.cpp **** 		if (extSize == 0)
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  350:b3ReadWavFile.cpp **** 			dataType_ = B3_SINT16;
  351:b3ReadWavFile.cpp **** 		else if (temp == 24)
  352:b3ReadWavFile.cpp **** 			dataType_ = B3_SINT24;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 40
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 40
 
 
  353:b3ReadWavFile.cpp **** 		else if (temp == 32)
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  407:b3ReadWavFile.cpp **** 		byteswap_ = true;
  408:b3ReadWavFile.cpp **** 	}
  409:b3ReadWavFile.cpp **** 	wavFile_ = true;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 41
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 41
 
 
  410:b3ReadWavFile.cpp **** 	return true;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1513              	.LBB300:
  1514              	.LBB299:
   19:b3SwapUtils.h **** 	*(ptr) = *(ptr + 3);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 42
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 42
 
 
  1515              		.loc 2 19 6 view .LVU468
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1554 0072 0646     		mov	r6, r0
  269:b3ReadWavFile.cpp **** 			return false;
  1555              		.loc 1 269 23 view .LVU487
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 43
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 43
 
 
  1556 0074 0422     		movs	r2, #4
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1596              		.loc 1 275 2 view .LVU501
  275:b3ReadWavFile.cpp **** 		return false;  // Read fmt chunk size.
  1597              		.loc 1 275 39 is_stmt 0 view .LVU502
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 44
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 44
 
 
  1598 00a6 2368     		ldr	r3, [r4]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1638              	.LBE302:
  1639              	.LBE301:
  1640              	.LBB304:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 45
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 45
 
 
  1641              	.LBB305:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1678 00ec 9DF80A30 		ldrb	r3, [sp, #10]	@ zero_extendqisi2
  1679              		.loc 2 27 13 view .LVU534
  1680 00f0 8DF80A20 		strb	r2, [sp, #10]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 46
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 46
 
 
   26:b3SwapUtils.h **** 	*(ptr + 1) = val;
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1722 0126 23B9     		cbnz	r3, .L105
  321:b3ReadWavFile.cpp **** 	}
  1723              		.loc 1 321 3 view .LVU550
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 47
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 47
 
 
  1724              	.LVL118:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1762 0148 7FF471AF 		bne	.L102
  329:b3ReadWavFile.cpp **** 	{
  1763              		.loc 1 329 2 is_stmt 1 view .LVU567
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 48
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 48
 
 
  1764 014c 95F82030 		ldrb	r3, [r5, #32]	@ zero_extendqisi2
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1802              	.LBE313:
  1803              	.LBE312:
  333:b3ReadWavFile.cpp **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 49
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 49
 
 
  1804              		.loc 1 333 2 is_stmt 1 view .LVU587
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1842              	.LVL127:
  339:b3ReadWavFile.cpp **** 		return false;
  1843              		.loc 1 339 2 view .LVU604
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 50
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 50
 
 
  1844 01a4 0128     		cmp	r0, #1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1883              		.loc 1 363 2 view .LVU619
  370:b3ReadWavFile.cpp **** 		return false;
  1884              		.loc 1 370 2 view .LVU620
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 51
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 51
 
 
  370:b3ReadWavFile.cpp **** 		return false;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  1924 0204 02A9     		add	r1, sp, #8
  1925 0206 2046     		mov	r0, r4
  1926 0208 5668     		ldr	r6, [r2, #4]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 52
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 52
 
 
  1927 020a 0422     		movs	r2, #4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   25:b3SwapUtils.h **** 	*(ptr) = *(ptr + 1);
  1964              		.loc 2 25 6 is_stmt 0 view .LVU653
  1965 022a 9DF80920 		ldrb	r2, [sp, #9]	@ zero_extendqisi2
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 53
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 53
 
 
  1966              	.LVL135:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  386:b3ReadWavFile.cpp **** 			return false;
  2006              		.loc 1 386 3 view .LVU671
  2007 025a 3FF4E8AE 		beq	.L102
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 54
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 54
 
 
  388:b3ReadWavFile.cpp **** 			return false;
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2049              		.loc 1 289 3 is_stmt 1 view .LVU684
  290:b3ReadWavFile.cpp **** 			return false;
  2050              		.loc 1 290 3 view .LVU685
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 55
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 55
 
 
  290:b3ReadWavFile.cpp **** 			return false;
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  298:b3ReadWavFile.cpp **** 			return false;
  2091              		.loc 1 298 39 is_stmt 0 view .LVU700
  2092 02bc 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 56
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 56
 
 
  298:b3ReadWavFile.cpp **** 			return false;
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2133 02ee ADF80030 		strh	r3, [sp]	@ movhi
  2134              	.LVL147:
  2135              	.L104:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 57
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 57
 
 
   10:b3SwapUtils.h **** 	*(ptr + 1) = val;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2176              		.loc 1 354 4 view .LVU728
  354:b3ReadWavFile.cpp **** 	}
  2177              		.loc 1 354 14 is_stmt 0 view .LVU729
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 58
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 58
 
 
  2178 0320 0823     		movs	r3, #8
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  398:b3ReadWavFile.cpp **** 	}
  2220              		.loc 1 398 3 view .LVU742
  2221              	.LVL150:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 59
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 59
 
 
  2222              	.LBB322:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2259              		.loc 1 401 2 view .LVU762
  400:b3ReadWavFile.cpp **** 	m_numFrames *= 8;                        // sample frames
  2260              		.loc 1 400 24 is_stmt 0 view .LVU763
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 60
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 60
 
 
  2261 037e BDF90210 		ldrsh	r1, [sp, #2]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2296              		.loc 1 407 13 is_stmt 0 view .LVU782
  2297 03a6 0123     		movs	r3, #1
  2298 03a8 2B71     		strb	r3, [r5, #4]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 61
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 61
 
 
  2299              	.L119:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2339      6F723A3A 
  2339      5F4D5F64 
  2339      65666175 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 62
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 62
 
 
  2339      6C745F61 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   42:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****  * Permission to use, copy, modify, distribute and sell this software
   43:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****  * and its documentation for any purpose is hereby granted without fee,
   44:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****  * provided that the above copyright notice appear in all copies and
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 63
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 63
 
 
   45:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****  * that both that copyright notice and this permission notice appear
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   99:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****     }
  100:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 
  101:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** #if __cplusplus >= 201103L
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 64
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 64
 
 
  102:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****   template<typename _Tp, typename _Alloc>
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  156:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    _M_insert_aux(__position, __x);
  157:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** #endif
  158:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 65
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 65
 
 
  159:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****       else
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  213:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 				this->_M_impl._M_end_of_storage
  214:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 				- this->_M_impl._M_start);
  215:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 		  this->_M_impl._M_start = nullptr;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 66
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 66
 
 
  216:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 		  this->_M_impl._M_finish = nullptr;
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  270:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  this->_M_impl._M_finish =
  271:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    std::__uninitialized_fill_n_a(this->_M_impl._M_finish,
  272:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 					  __add, __val, _M_get_Tp_allocator());
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 67
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 67
 
 
  273:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  _GLIBCXX_ASAN_ANNOTATE_GREW(__add);
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  327:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    const size_type __attribute__((__unused__)) __n = __len - size();
  328:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    _GLIBCXX_ASAN_ANNOTATE_GROW(__n);
  329:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    this->_M_impl._M_finish =
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 68
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 68
 
 
  330:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	      std::__uninitialized_copy_a(__mid, __last,
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  384:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	      _M_insert_aux(begin() + __n, std::move(__tmp._M_val()));
  385:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    }
  386:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	else
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 69
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 69
 
 
  387:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  _M_realloc_insert(begin() + __n, std::forward<_Args>(__args)...);
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  441:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****       pointer __new_finish(__new_start);
  442:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****       __try
  443:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	{
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 70
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 70
 
 
  444:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  // The order of the three operations is dictated by the C++11
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  498:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	std::_Destroy(__old_start, __old_finish, _M_get_Tp_allocator());
  499:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****       _GLIBCXX_ASAN_ANNOTATE_REINIT;
  500:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc ****       _M_deallocate(__old_start,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 71
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 71
 
 
  501:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 		    this->_M_impl._M_end_of_storage - __old_start);
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  555:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    }
  556:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  else
  557:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 72
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 72
 
 
  558:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	      const size_type __len =
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2353              		.loc 3 611 5 is_stmt 1 view -0
  2354              		.cfi_startproc
  2355              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 73
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 73
 
 
  2356              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   42:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * Permission to use, copy, modify, distribute and sell this software
   43:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * and its documentation for any purpose is hereby granted without fee,
   44:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * provided that the above copyright notice appear in all copies and
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 74
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 74
 
 
   45:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * that both that copyright notice and this permission notice appear
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   99:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	{ }
  100:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  101:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #if __cplusplus >= 201103L
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 75
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 75
 
 
  102:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_Vector_impl_data(_Vector_impl_data&& __x) noexcept
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  156:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #if _GLIBCXX_SANITIZE_STD_ALLOCATOR && _GLIBCXX_SANITIZE_VECTOR
  157:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	template<typename = _Tp_alloc_type>
  158:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  struct _Asan
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 76
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 76
 
 
  159:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  {
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  213:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	      }
  214:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  215:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	      ~_Reinit()
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 77
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 77
 
 
  216:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	      {
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  270:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       };
  271:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  272:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****     public:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 78
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 78
 
 
  273:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       typedef _Alloc allocator_type;
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  327:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  328:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       _Vector_base(const allocator_type& __a, _Vector_base&& __x)
  329:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       : _M_impl(_Tp_alloc_type(__a), std::move(__x._M_impl))
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 79
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 79
 
 
  330:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       { }
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  384:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  elements in any order and saves the user from worrying about
  385:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  memory and size allocation.  Subscripting ( @c [] ) access is
  386:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  also provided as with C-style arrays.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 80
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 80
 
 
  387:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****   */
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  441:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       { return false; }
  442:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  443:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       static constexpr bool
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 81
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 81
 
 
  444:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       _S_use_relocate()
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  498:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       : _Base(__a) { }
  499:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  500:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #if __cplusplus >= 201103L
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 82
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 82
 
 
  501:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  555:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
  556:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       {
  557:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	this->_M_impl._M_finish =
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 83
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 83
 
 
  558:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  612:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       { }
  613:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  614:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 84
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 84
 
 
  615:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @brief  Builds a %vector from an initializer list.
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  669:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	}
  670:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #endif
  671:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 85
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 85
 
 
  672:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  726:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  that the resulting %vector's size is the same as the number
  727:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  of elements assigned.
  728:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 86
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 86
 
 
  729:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       vector&
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  783:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @brief  Assigns an initializer list to a %vector.
  784:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @param  __l  An initializer_list.
  785:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 87
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 87
 
 
  786:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  This function fills a %vector with copies of the elements in the
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  840:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  841:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
  842:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  Returns a read/write reverse iterator that points to the
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 88
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 88
 
 
  843:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  last element in the %vector.  Iteration is done in reverse
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  897:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  Returns a read-only (constant) reverse iterator that points
  898:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  to the last element in the %vector.  Iteration is done in
  899:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  reverse element order.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 89
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 89
 
 
  900:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  620:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	  if (__size > max_size() || __navail > max_size() - __size)
  2394              		.loc 3 620 53 view .LVU803
  2395 0010 6FF07041 		mvn	r1, #-268435456
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 90
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 90
 
 
  2396              	.LVL158:
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  937:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       resize(size_type __new_size)
  938:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       {
  939:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	if (__new_size > size())
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 91
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 91
 
 
  940:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  _M_default_append(__new_size - size());
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  994:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  Returns the total number of elements that the %vector can
  995:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  hold before needing to allocate more memory.
  996:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 92
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 92
 
 
  997:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       size_type
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1051:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @param __n The index of the element for which data should be
 1052:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  accessed.
 1053:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @return  Read-only (constant) reference to data.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 93
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 93
 
 
 1054:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1108:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
 1109:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       const_reference
 1110:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       at(size_type __n) const
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 94
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 94
 
 
 1111:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1165:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *   range.  For a non-empty %vector, data() == &front().
 1166:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
 1167:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       _Tp*
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 95
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 95
 
 
 1168:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       data() _GLIBCXX_NOEXCEPT
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1222:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  called.
 1223:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        */
 1224:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       void
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 96
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 96
 
 
 1225:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       pop_back() _GLIBCXX_NOEXCEPT
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1279:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
 1280:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #if __cplusplus >= 201103L
 1281:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 97
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 97
 
 
 1282:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @brief  Inserts given rvalue into %vector before specified iterator.
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1336:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       {
 1337:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	difference_type __offset = __position - cbegin();
 1338:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_M_fill_insert(begin() + __offset, __n, __x);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 98
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 98
 
 
 1339:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	return begin() + __offset;
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1393:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *
 1394:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  This function will insert copies of the data in the range
 1395:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  [__first,__last) into the %vector before the location specified
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 99
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 99
 
 
 1396:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  by @a pos.
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1450:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  The user is also cautioned that this function only erases
 1451:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  the elements, and that if the elements themselves are
 1452:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  pointers, the pointed-to memory is not touched in any way.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 100
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 100
 
 
 1453:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  Managing the pointer is the user's responsibility.
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1507:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	pointer
 1508:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_M_allocate_and_copy(size_type __n,
 1509:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 			     _ForwardIterator __first, _ForwardIterator __last)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 101
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 101
 
 
 1510:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	{
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1564:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	      emplace_back(*__first);
 1565:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #else
 1566:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	      push_back(*__first);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 102
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 102
 
 
 1567:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #endif
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1621:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	{ _M_fill_assign(__n, __val); }
 1622:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
 1623:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       // Called by the range assign to implement [23.1.1]/9
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 103
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 103
 
 
 1624:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       template<typename _InputIterator>
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1678:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_M_range_insert(iterator __pos, _ForwardIterator __first,
 1679:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 			_ForwardIterator __last, std::forward_iterator_tag);
 1680:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 104
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 104
 
 
 1681:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       // Called by insert(p,n,x), and the range insert when it turns out to be
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1735:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       template<typename... _Args>
 1736:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	void
 1737:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_M_realloc_insert(iterator __position, _Args&&... __args);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 105
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 105
 
 
 1738:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2458              	.LBB403:
  2459              	.LBB404:
  2460              	.LBI404:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 106
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 106
 
 
  2461              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_uniniti
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   54:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****  */
   55:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
   56:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** #ifndef _STL_UNINITIALIZED_H
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 107
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 107
 
 
   57:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** #define _STL_UNINITIALIZED_H 1
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  111:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  112:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   /// @endcond
  113:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 108
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 108
 
 
  114:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   /**
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  168:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	    }
  169:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	  __catch(...)
  170:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	    {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 109
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 109
 
 
  171:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	      std::_Destroy(__first, __cur);
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  225:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     struct __uninitialized_fill_n
  226:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     {
  227:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       template<typename _ForwardIterator, typename _Size, typename _Tp>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 110
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 110
 
 
  228:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****         static _ForwardIterator
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  282:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	  "result type must be constructible from input type");
  283:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  284:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       // Trivial types can have deleted assignment, so using std::fill
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 111
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 111
 
 
  285:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       // would be ill-formed. Require assignability before using std::fill:
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  339:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	   typename _Allocator>
  340:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     inline _ForwardIterator
  341:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     __uninitialized_move_if_noexcept_a(_InputIterator __first,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 112
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 112
 
 
  342:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 				       _InputIterator __last,
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  396:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  397:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   template<typename _ForwardIterator, typename _Size, typename _Tp,
  398:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	   typename _Tp2>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 113
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 113
 
 
  399:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     inline _ForwardIterator
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  453:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 							   __result,
  454:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 							   __alloc);
  455:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       __try
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 114
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 114
 
 
  456:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	{
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  510:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	}
  511:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     }
  512:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 115
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 115
 
 
  513:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   /// @endcond
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  567:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 		std::_Construct(std::__addressof(*__cur));
  568:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	      return __cur;
  569:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	    }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 116
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 116
 
 
  570:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	  __catch(...)
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  624:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     }
  625:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  626:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 117
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 117
 
 
  627:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // __uninitialized_default_a
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  681:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   template<typename _ForwardIterator, typename _Size, typename _Tp>
  682:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     inline _ForwardIterator
  683:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     __uninitialized_default_n_a(_ForwardIterator __first, _Size __n, 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 118
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 118
 
 
  2462              		.loc 5 683 5 is_stmt 1 view .LVU818
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   41:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****  *
   42:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****  * Permission to use, copy, modify, distribute and sell this software
   43:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****  * and its documentation for any purpose is hereby granted without fee,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 119
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 119
 
 
   44:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****  * provided that the above copyright notice appear in all copies and
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   98:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	  for(; __num > 0; ++__first1, ++__first2, --__num)
   99:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	    if (*__first1 != *__first2)
  100:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	      return *__first1 < *__first2 ? -1 : 1;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 120
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 120
 
 
  101:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	  return 0;
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  155:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
  156:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 				  _ForwardIterator1>)
  157:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 121
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 121
 
 
  158:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 				  _ForwardIterator2>)
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  212:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	std::iter_swap(__first1, __first2);
  213:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       return __first2;
  214:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 122
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 122
 
 
  215:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  269:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  @param  __comp  A @link comparison_functors comparison functor@endlink.
  270:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  @return   The lesser of the parameters.
  271:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 123
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 123
 
 
  272:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  This will work on temporary expressions, since they are only evaluated
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  326:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   // No need to wrap, iterator already has the right type.
  327:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   template<typename _Iterator>
  328:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     _GLIBCXX20_CONSTEXPR
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 124
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 124
 
 
  329:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     inline _Iterator
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  383:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	    }
  384:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	  return __result;
  385:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 125
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 125
 
 
  386:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     };
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  440:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     class ostreambuf_iterator;
  441:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 
  442:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   template<bool _IsMove, typename _CharT>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 126
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 126
 
 
  443:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     typename __gnu_cxx::__enable_if<__is_char<_CharT>::__value,
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  497:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     typename __gnu_cxx::__enable_if<
  498:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       __is_random_access_iter<_II>::__value,
  499:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       _GLIBCXX_STD_C::_Deque_iterator<_Tp, _Tp&, _Tp*> >::__type
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 127
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 127
 
 
  500:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     __copy_move_a1(_II, _II, _GLIBCXX_STD_C::_Deque_iterator<_Tp, _Tp&, _Tp*>);
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  554:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  Note that the end of the output range is permitted to be contained
  555:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  within [first,last).
  556:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 128
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 128
 
 
  557:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   template<typename _II, typename _OI>
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  611:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     struct __copy_move_backward
  612:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     {
  613:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       template<typename _BI1, typename _BI2>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 129
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 129
 
 
  614:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	_GLIBCXX20_CONSTEXPR
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  668:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	    *--__result = std::move(*--__last);
  669:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	  return __result;
  670:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 130
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 130
 
 
  671:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     };
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  725:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 			    _OI);
  726:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 
  727:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   template<bool _IsMove,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 131
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 131
 
 
  728:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	   typename _ITp, typename _IRef, typename _IPtr, typename _OTp>
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  782:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  @return   result - (last - first)
  783:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *
  784:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  The function has the same effect as copy, but starts at the end of the
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 132
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 132
 
 
  785:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  range and works its way to the start, returning the start of the result.
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  839:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	    typename iterator_traits<_BI1>::value_type,
  840:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 	    typename iterator_traits<_BI2>::value_type>)
  841:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****       __glibcxx_requires_can_decrement_range(__first, __last, __result);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 133
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 133
 
 
  842:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  896:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   template<typename _Ite, typename _Cont, typename _Tp>
  897:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     _GLIBCXX20_CONSTEXPR
  898:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     inline void
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 134
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 134
 
 
  899:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  953:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   __size_to_integer(long __n) { return __n; }
  954:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   inline _GLIBCXX_CONSTEXPR unsigned long
  955:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   __size_to_integer(unsigned long __n) { return __n; }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 135
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 135
 
 
  956:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   inline _GLIBCXX_CONSTEXPR long long
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1010:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     inline typename
 1011:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, _OutputIterator>::__type
 1012:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     __fill_n_a1(_OutputIterator __first, _Size __n, const _Tp& __value)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 136
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 136
 
 
 1013:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     {
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
 1067:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     }
 1068:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h **** 
 1069:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****   /**
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 137
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 137
 
 
 1070:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****    *  @brief Fills the range [first,first+n) with copies of value.
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2505              	.LBB412:
  2506              	.LBB413:
  2507              	.LBI413:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 138
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 138
 
 
  913:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h ****     { std::__fill_a1(__first, __last, __value); }
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  694:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	{
  695:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	  _ForwardIterator __cur = __first;
  696:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	  __try
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 139
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 139
 
 
  697:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	    {
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  751:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // __uninitialized_default_novalue
  752:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // Fills [first, last) with std::distance(first, last) default-initialized
  753:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // value_types(s).
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 140
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 140
 
 
  754:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   template<typename _ForwardIterator>
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  808:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  809:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   template<typename _InputIterator, typename _Size,
  810:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	   typename _ForwardIterator>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 141
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 141
 
 
  811:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     pair<_InputIterator, _ForwardIterator>
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  865:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       return
  866:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 	std::__uninitialized_copy_n_pair(__first, __n, __result,
  867:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 					 std::__iterator_category(__first));
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 142
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 142
 
 
  868:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     }
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  922:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     uninitialized_value_construct_n(_ForwardIterator __first, _Size __count)
  923:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     {
  924:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****       return __uninitialized_default_n(__first, __count);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 143
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 143
 
 
  925:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****     }
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  979:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h **** 
  980:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // This class may be specialized for specific types.
  981:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   // Also known as is_trivially_relocatable.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 144
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 144
 
 
  982:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_uninitialized.h ****   template<typename _Tp, typename = void>
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2554              	.LBE427:
  2555              	.LBE426:
  2556              	.LBE425:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 145
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 145
 
 
  2557              	.LBE424:
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  659:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 		      std::__uninitialized_move_if_noexcept_a(
  660:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 			      this->_M_impl._M_start, this->_M_impl._M_finish,
  661:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 			      __new_start, _M_get_Tp_allocator());
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 146
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 146
 
 
  662:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 		    }
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2600              		.loc 5 614 5 view .LVU848
  2601              	.LBB457:
  2602              	.LBB458:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 147
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 147
 
 
  2603              	.LBI458:
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2648 006c 1846     		mov	r0, r3
  2649 006e 0021     		movs	r1, #0
  2650 0070 2246     		mov	r2, r4
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 148
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 148
 
 
  2651 0072 FFF7FEFF 		bl	memset
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2701              		.cfi_offset 8, -20
  2702              		.cfi_offset 9, -16
  2703              		.cfi_offset 10, -12
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 149
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 149
 
 
  2704              		.cfi_offset 11, -8
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   13:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   14:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** // GNU General Public License for more details.
   15:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 150
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 150
 
 
   16:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** // Under Section 7 of GPL version 3, you are granted additional
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   70:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using __pocma = typename _Tp::propagate_on_container_move_assignment;
   71:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     template<typename _Tp>
   72:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using __pocs = typename _Tp::propagate_on_container_swap;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 151
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 151
 
 
   73:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     template<typename _Tp>
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  127:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       template<typename _A2, typename _DiffT>
  128:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	struct _Size<_A2, _DiffT, __void_t<typename _A2::size_type>>
  129:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	{ using type = typename _A2::size_type; };
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 152
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 152
 
 
  130:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  184:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * @c Alloc::propagate_on_container_move_assignment if that type exists,
  185:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * otherwise @c false_type
  186:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 153
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 153
 
 
  187:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using propagate_on_container_move_assignment
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  241:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	  = typename __construct_helper<_Tp, _Args...>::type;
  242:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
  243:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       template<typename _Tp, typename... _Args>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 154
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 154
 
 
  244:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	static _GLIBCXX14_CONSTEXPR _Require<__has_construct<_Tp, _Args...>>
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  298:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       template<typename _Alloc2>
  299:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	static constexpr _Alloc2
  300:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	_S_select(_Alloc2& __a, ...)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 155
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 155
 
 
  301:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	{ return __a; }
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  355:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	static _GLIBCXX20_CONSTEXPR auto
  356:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	construct(_Alloc& __a, _Tp* __p, _Args&&... __args)
  357:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	noexcept(noexcept(_S_construct(__a, __p,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 156
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 156
 
 
  358:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 				       std::forward<_Args>(__args)...)))
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  412:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       /// The allocated type
  413:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using value_type = _Tp;
  414:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 157
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 157
 
 
  415:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       /// The allocator's pointer type.
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  469:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *
  470:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *  Returns <tt> a.allocate(n, hint) </tt>
  471:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 158
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 158
 
 
  472:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       _GLIBCXX_NODISCARD static _GLIBCXX20_CONSTEXPR pointer
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   30:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** #define _NEW_ALLOCATOR_H 1
   31:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 
   32:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** #include <bits/c++config.h>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 159
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 159
 
 
   33:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** #include <new>
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   87:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 
   88:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** #if __cplusplus <= 201703L
   89:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****       ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 160
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 160
 
 
   90:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2756              		.loc 7 492 35 view .LVU874
  2757 0098 DEE7     		b	.L172
  2758              	.LVL179:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 161
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 161
 
 
  2759              	.L190:
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2804              	.LBE396:
  2805              	.LBE401:
  2806              	.LBE450:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 162
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 162
 
 
  680:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\vector.tcc **** 	    }
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2858              		.section	.text._ZN13b3ReadWavFile15createWavTickerEd,"ax",%progbits
  2859              		.align	1
  2860              		.p2align 2,,3
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 163
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 163
 
 
  2861              		.global	_ZN13b3ReadWavFile15createWavTickerEd
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
    3:b3ReadWavFile.h **** 
    4:b3ReadWavFile.h **** #include <vector>
    5:b3ReadWavFile.h **** #include <stdio.h>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 164
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 164
 
 
    6:b3ReadWavFile.h **** #include <string.h>
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   60:b3ReadWavFile.h **** 		{
   61:b3ReadWavFile.h **** 		}
   62:b3ReadWavFile.h **** 		}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 165
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 165
 
 
   63:b3ReadWavFile.h **** 		return ::fseek(m_fd, _Offset, _Origin);
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  117:b3ReadWavFile.h **** 	virtual int fseek(long  _Offset, int   _Origin)
  118:b3ReadWavFile.h **** 	{
  119:b3ReadWavFile.h **** 		switch (_Origin)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 166
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 166
 
 
  120:b3ReadWavFile.h **** 		{
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   12:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
   13:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   14:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** // GNU General Public License for more details.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 167
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 167
 
 
   15:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** 
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
   69:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****       typedef size_t      size_type;
   70:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****       typedef ptrdiff_t   difference_type;
   71:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** #if __cplusplus <= 201703L
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 168
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 168
 
 
   72:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****       typedef void*       pointer;
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  126:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****       typedef const _Tp& const_reference;
  127:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** 
  128:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****       template<typename _Tp1>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 169
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 169
 
 
  129:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** 	struct rebind
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2951              		.loc 4 98 47 view .LVU908
  2952              	.LBE510:
  2953              	.LBE515:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 170
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 170
 
 
  2954              	.LBE518:
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  2997              		.loc 1 239 1 view .LVU919
  2998 002c 2046     		mov	r0, r4
  236:b3ReadWavFile.cpp **** 	ticker.speed_ = 1.;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 171
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 171
 
 
  2999              		.loc 1 236 31 view .LVU920
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  940:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	else if (__new_size < size())
  3037              		.loc 4 940 21 view .LVU937
  3038 0056 FFF7FEFF 		bl	_ZNSt6vectorIdSaIdEE17_M_default_appendEj
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 172
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 172
 
 
  3039              	.LVL194:
@@ -10302,43 +10302,43 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 1
  3079              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\new"
  3080              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
  3081              		.file 32 "<built-in>"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s 			page 173
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s 			page 173
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 b3ReadWavFile.cpp
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:17     .text._ZN13b3ReadWavFileD2Ev:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:26     .text._ZN13b3ReadWavFileD2Ev:00000000 _ZN13b3ReadWavFileD2Ev
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:26     .text._ZN13b3ReadWavFileD2Ev:00000000 _ZN13b3ReadWavFileD1Ev
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:43     .text._ZN13b3ReadWavFileD0Ev:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:51     .text._ZN13b3ReadWavFileD0Ev:00000000 _ZN13b3ReadWavFileD0Ev
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:83     .text._ZN13b3ReadWavFileC2Ev:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:91     .text._ZN13b3ReadWavFileC2Ev:00000000 _ZN13b3ReadWavFileC2Ev
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:115    .text._ZN13b3ReadWavFileC2Ev:0000000c $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:91     .text._ZN13b3ReadWavFileC2Ev:00000000 _ZN13b3ReadWavFileC1Ev
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:122    .text._ZN13b3ReadWavFile9normalizeEd:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:130    .text._ZN13b3ReadWavFile9normalizeEd:00000000 _ZN13b3ReadWavFile9normalizeEd
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:144    .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:152    .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:00000000 _ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1108   .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:000004c0 $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1123   .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:000004d8 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1231   .text._ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1239   .text._ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_:00000000 _ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1372   .text._ZN13b3ReadWavFile6resizeEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1380   .text._ZN13b3ReadWavFile6resizeEv:00000000 _ZN13b3ReadWavFile6resizeEv
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1394   .rodata._ZN13b3ReadWavFile10getWavInfoER12b3DataSource.str1.4:00000000 $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1401   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:1409   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000000 _ZN13b3ReadWavFile10getWavInfoER12b3DataSource
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2199   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:0000033c $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2205   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000344 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2337   .rodata._ZNSt6vectorIdSaIdEE17_M_default_appendEj.str1.4:00000000 $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2341   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2349   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:00000000 _ZNSt6vectorIdSaIdEE17_M_default_appendEj
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2847   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:000000c8 $d
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2859   .text._ZN13b3ReadWavFile15createWavTickerEd:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:2867   .text._ZN13b3ReadWavFile15createWavTickerEd:00000000 _ZN13b3ReadWavFile15createWavTickerEd
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:3053   .rodata._ZTV13b3ReadWavFile:00000000 _ZTV13b3ReadWavFile
-C:\Users\halcyon\AppData\Local\Temp\cc7SUC9l.s:3049   .rodata._ZTV13b3ReadWavFile:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:17     .text._ZN13b3ReadWavFileD2Ev:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:26     .text._ZN13b3ReadWavFileD2Ev:00000000 _ZN13b3ReadWavFileD2Ev
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:26     .text._ZN13b3ReadWavFileD2Ev:00000000 _ZN13b3ReadWavFileD1Ev
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:43     .text._ZN13b3ReadWavFileD0Ev:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:51     .text._ZN13b3ReadWavFileD0Ev:00000000 _ZN13b3ReadWavFileD0Ev
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:83     .text._ZN13b3ReadWavFileC2Ev:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:91     .text._ZN13b3ReadWavFileC2Ev:00000000 _ZN13b3ReadWavFileC2Ev
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:115    .text._ZN13b3ReadWavFileC2Ev:0000000c $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:91     .text._ZN13b3ReadWavFileC2Ev:00000000 _ZN13b3ReadWavFileC1Ev
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:122    .text._ZN13b3ReadWavFile9normalizeEd:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:130    .text._ZN13b3ReadWavFile9normalizeEd:00000000 _ZN13b3ReadWavFile9normalizeEd
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:144    .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:152    .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:00000000 _ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1108   .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:000004c0 $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1123   .text._ZNK13b3ReadWavFile11interpolateEP11b3WavTickerR12b3DataSourceddiPfS4_i:000004d8 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1231   .text._ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1239   .text._ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_:00000000 _ZN13b3ReadWavFile4tickEP11b3WavTickerR12b3DataSourceddiPfS4_
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1372   .text._ZN13b3ReadWavFile6resizeEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1380   .text._ZN13b3ReadWavFile6resizeEv:00000000 _ZN13b3ReadWavFile6resizeEv
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1394   .rodata._ZN13b3ReadWavFile10getWavInfoER12b3DataSource.str1.4:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1401   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:1409   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000000 _ZN13b3ReadWavFile10getWavInfoER12b3DataSource
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2199   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:0000033c $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2205   .text._ZN13b3ReadWavFile10getWavInfoER12b3DataSource:00000344 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2337   .rodata._ZNSt6vectorIdSaIdEE17_M_default_appendEj.str1.4:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2341   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2349   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:00000000 _ZNSt6vectorIdSaIdEE17_M_default_appendEj
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2847   .text._ZNSt6vectorIdSaIdEE17_M_default_appendEj:000000c8 $d
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2859   .text._ZN13b3ReadWavFile15createWavTickerEd:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:2867   .text._ZN13b3ReadWavFile15createWavTickerEd:00000000 _ZN13b3ReadWavFile15createWavTickerEd
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:3053   .rodata._ZTV13b3ReadWavFile:00000000 _ZTV13b3ReadWavFile
+C:\Users\halcyon\AppData\Local\Temp\ccFzfIvD.s:3049   .rodata._ZTV13b3ReadWavFile:00000000 $d
 
 UNDEFINED SYMBOLS
 _ZdlPvj
