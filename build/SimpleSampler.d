@@ -149,8 +149,8 @@ build/SimpleSampler.o: SimpleSampler.cpp \
  ../../libDaisy//src/util/VoctCalibration.h \
  ../../libDaisy//src/util/WaveTableLoader.h \
  ../../libDaisy//src/sys/fatfs.h ../../libDaisy//src/util/WavWriter.h \
- ../../libDaisy//src/dev/oled_ssd130x.h SampleLibrary.h b3ReadWavFile.h \
- AudioEngine.h Voice.h ../../DaisySP//Source/daisysp.h \
+ ../../libDaisy//src/dev/oled_ssd130x.h DisplayManager.h SampleLibrary.h \
+ b3ReadWavFile.h AudioEngine.h Voice.h ../../DaisySP//Source/daisysp.h \
  ../../DaisySP//Source/Control/adenv.h \
  ../../DaisySP//Source/Control/adsr.h \
  ../../DaisySP//Source/Control/phasor.h \
@@ -385,6 +385,7 @@ build/SimpleSampler.o: SimpleSampler.cpp \
 ../../libDaisy//src/sys/fatfs.h:
 ../../libDaisy//src/util/WavWriter.h:
 ../../libDaisy//src/dev/oled_ssd130x.h:
+DisplayManager.h:
 SampleLibrary.h:
 b3ReadWavFile.h:
 AudioEngine.h:

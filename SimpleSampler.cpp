@@ -4,6 +4,7 @@
 #include "dev/oled_ssd130x.h"
 #include <string>
 
+#include "DisplayManager.h"
 #include "SampleLibrary.h"
 #include "AudioEngine.h"
 #include "daisysp.h"
@@ -41,6 +42,7 @@ DIR            dir;
 FILINFO        fno;
 
 // Our custom sampler components
+static DisplayManager* displayManager = nullptr;
 static SampleLibrary* library = nullptr;
 static AudioEngine* engine = nullptr;
 
@@ -280,6 +282,8 @@ int main(void)
     disp_cfg.driver_config.transport_config.pin_config.reset = hw.seed.GetPin(22);
     display.Init(disp_cfg);
 
+    // Initialize DisplayManager - wraps the display for easy access
+    displayManager = new DisplayManager(display, hw);
 
     // Initialize the knobs
     float r = 0, g = 0, b = 0;
@@ -316,7 +320,7 @@ int main(void)
     
     DisplayMessage("Starting Library Initialization", 1000);
     // Initialize library
-    library = new SampleLibrary(sdcard, fsi);
+    library = new SampleLibrary(sdcard, fsi, *displayManager);
     if (!library->init()) {
         display.SetCursor(0, 0);
         display.WriteString((char*)"SD Card Error!", Font_7x10, true);
@@ -326,24 +330,24 @@ int main(void)
     DisplayMessage("Library Initialized", 1000);
 
         
-    // 5. Create audio engine
-    engine = new AudioEngine(library);
-    if (!engine->init(hw.AudioSampleRate())) {
-        display.SetCursor(0, 0);
-        display.WriteString((char*)"Audio Error!", Font_7x10, true);
-        display.Update();
-        while(1);  // Halt
-    }
-    DisplayMessage("Audio Engine Initialized", 1000);
+    // // 5. Create audio engine
+    // engine = new AudioEngine(library);
+    // if (!engine->init(hw.AudioSampleRate())) {
+    //     display.SetCursor(0, 0);
+    //     display.WriteString((char*)"Audio Error!", Font_7x10, true);
+    //     display.Update();
+    //     while(1);  // Halt
+    // }
+    // DisplayMessage("Audio Engine Initialized", 1000);
 
 
-    // 6. Display loaded sample count
-    char buf[32];
-    sprintf(buf, "Loaded %d samples", library->getSampleCount());
-    display.SetCursor(0, 10);
-    display.WriteString(buf, Font_7x10, true);
-    display.Update();
-    hw.DelayMs(1000);
+    // // 6. Display loaded sample count
+    // char buf[32];
+    // sprintf(buf, "Loaded %d samples", library->getSampleCount());
+    // display.SetCursor(0, 10);
+    // display.WriteString(buf, Font_7x10, true);
+    // display.Update();
+    // hw.DelayMs(1000);
 
     
     while(1)

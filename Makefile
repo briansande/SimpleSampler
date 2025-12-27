@@ -6,7 +6,8 @@ CPP_SOURCES = SimpleSampler.cpp \
               SampleLibrary.cpp \
               AudioEngine.cpp \
               Voice.cpp \
-              b3ReadWavFile.cpp
+              b3ReadWavFile.cpp \
+              DisplayManager.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/

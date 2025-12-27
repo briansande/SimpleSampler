@@ -4,6 +4,7 @@
 #include "b3ReadWavFile.h"
 #include "daisy_core.h"
 #include "daisy_seed.h"
+#include "DisplayManager.h"
 #include <string>
 
 using namespace daisy;
@@ -33,6 +34,7 @@ private:
     // External references (from main.cpp)
     SdmmcHandler& sdHandler_;
     FatFSInterface& fileSystem_;
+    DisplayManager& display_;         // Display manager for showing messages
     
     // Helper function to load only metadata (WAV header) from a file
     bool loadSampleInfo(const char* filename, int index);
@@ -42,7 +44,7 @@ private:
 
 public:
     // Constructor
-    SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem);
+    SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem, DisplayManager& display);
     
     // Initialize: Scan SD card and load all WAV files
     bool init();

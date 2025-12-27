@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
   27:b3ReadWavFile.h **** 	}
   28:b3ReadWavFile.h **** 	virtual ~FileDataSource()
   29:b3ReadWavFile.h **** 	{
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 2
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 2
 
 
   30:b3ReadWavFile.h **** 		if (m_fd)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
   84:b3ReadWavFile.h **** 	const char* m_data;
   85:b3ReadWavFile.h **** 	int m_numBytes;
   86:b3ReadWavFile.h **** 	int m_currentAddress;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 3
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 3
 
 
   87:b3ReadWavFile.h **** 
@@ -165,10 +165,10 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
   62              		.loc 1 97 3 view .LVU7
   98:b3ReadWavFile.h **** 		for (i = 0; i < _ElementCount; i++)
   63              		.loc 1 98 3 view .LVU8
-  64              	.LBB51:
+  64              	.LBB48:
   65              		.loc 1 98 17 view .LVU9
   66 0000 FBB1     		cbz	r3, .L17
-  67              	.LBE51:
+  67              	.LBE48:
   93:b3ReadWavFile.h **** 	{
   68              		.loc 1 93 17 is_stmt 0 view .LVU10
   69 0002 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
@@ -178,22 +178,22 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
   73              		.cfi_offset 6, -16
   74              		.cfi_offset 7, -12
   75              		.cfi_offset 8, -8
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 4
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 4
 
 
   76              		.cfi_offset 14, -4
-  77              	.LBB53:
+  77              	.LBB50:
   78              		.loc 1 98 10 view .LVU11
   79 0006 0027     		movs	r7, #0
   80 0008 8846     		mov	r8, r1
-  81              	.LBE53:
+  81              	.LBE50:
   96:b3ReadWavFile.h **** 		int i = 0;
   82              		.loc 1 96 7 view .LVU12
   83 000a BC46     		mov	ip, r7
   84              	.LVL3:
   85              	.L7:
-  86              	.LBB54:
-  87              	.LBB52:
+  86              	.LBB51:
+  87              	.LBB49:
   99:b3ReadWavFile.h **** 		{
  100:b3ReadWavFile.h **** 			for (int j = 0; j < _ElementSize; j++)
   88              		.loc 1 100 22 is_stmt 1 view .LVU13
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  117 002e 8168     		ldr	r1, [r0, #8]
  118              		.loc 1 104 53 view .LVU26
  119 0030 651C     		adds	r5, r4, #1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 5
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 5
 
 
  102:b3ReadWavFile.h **** 				{
@@ -248,7 +248,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  123              	.L5:
  102:b3ReadWavFile.h **** 				{
  124              		.loc 1 102 5 view .LVU28
- 125              	.LBE52:
+ 125              	.LBE49:
   98:b3ReadWavFile.h **** 		{
  126              		.loc 1 98 3 is_stmt 1 discriminator 2 view .LVU29
  127 0036 0137     		adds	r7, r7, #1
@@ -259,7 +259,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  131 003a E7D1     		bne	.L7
   98:b3ReadWavFile.h **** 		{
  132              		.loc 1 98 17 is_stmt 0 discriminator 2 view .LVU31
- 133              	.LBE54:
+ 133              	.LBE51:
  105:b3ReadWavFile.h **** 				}
  106:b3ReadWavFile.h **** 				else
  107:b3ReadWavFile.h **** 				{
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  159              		.align	1
  160              		.p2align 2,,3
  161              		.weak	_ZN16MemoryDataSource5fseekEli
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 6
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 6
 
 
  162              		.syntax unified
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  192              	.LVL11:
  193              		.loc 1 136 29 discriminator 1 view .LVU46
  194 0010 8842     		cmp	r0, r1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 7
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 7
 
 
  195 0012 4FF0FF30 		mov	r0, #-1
@@ -411,20 +411,26 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  227 002c 7047     		bx	lr
  228              		.cfi_endproc
  229              	.LFE1437:
- 231 002e 00BF     		.section	.text._ZN13SampleLibrary14loadSampleDataEi.part.0,"ax",%progbits
- 232              		.align	1
- 233              		.p2align 2,,3
- 234              		.syntax unified
- 235              		.thumb
- 236              		.thumb_func
- 237              		.fpu fpv5-d16
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 8
+ 231 002e 00BF     		.section	.rodata._ZN13SampleLibrary14loadSampleDataEi.part.0.str1.4,"aMS",%progbits,1
+ 232              		.align	2
+ 233              	.LC0:
+ 234 0000 4C6F6164 		.ascii	"Loading: %s\000"
+ 234      696E673A 
+ 234      20257300 
+ 235              		.section	.text._ZN13SampleLibrary14loadSampleDataEi.part.0,"ax",%progbits
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 8
 
 
- 239              	_ZN13SampleLibrary14loadSampleDataEi.part.0:
- 240              	.LVL16:
- 241              	.LFB4040:
- 242              		.file 2 "SampleLibrary.cpp"
+ 236              		.align	1
+ 237              		.p2align 2,,3
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.fpu fpv5-d16
+ 243              	_ZN13SampleLibrary14loadSampleDataEi.part.0:
+ 244              	.LVL16:
+ 245              	.LFB4097:
+ 246              		.file 2 "SampleLibrary.cpp"
    1:SampleLibrary.cpp **** #include "SampleLibrary.h"
    2:SampleLibrary.cpp **** 
    3:SampleLibrary.cpp **** // External memory allocator from main.cpp
@@ -435,772 +441,963 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
    8:SampleLibrary.cpp **** // Helper function to allocate from SDRAM pool
    9:SampleLibrary.cpp **** extern void* custom_pool_allocate(size_t size);
   10:SampleLibrary.cpp **** 
-  11:SampleLibrary.cpp **** SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem)
-  12:SampleLibrary.cpp ****     : sdHandler_(sdHandler),
-  13:SampleLibrary.cpp ****       fileSystem_(fileSystem),
-  14:SampleLibrary.cpp ****       sampleCount_(0)
-  15:SampleLibrary.cpp **** {
-  16:SampleLibrary.cpp ****     // Initialize all samples as not loaded
-  17:SampleLibrary.cpp ****     for (int i = 0; i < MAX_SAMPLES; i++) {
-  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
-  19:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
-  20:SampleLibrary.cpp ****     }
-  21:SampleLibrary.cpp **** }
-  22:SampleLibrary.cpp **** 
-  23:SampleLibrary.cpp **** bool SampleLibrary::init() {
-  24:SampleLibrary.cpp ****     // Mount the SD card file system
-  25:SampleLibrary.cpp ****     FATFS& fs = fileSystem_.GetSDFileSystem();
-  26:SampleLibrary.cpp ****     if (f_mount(&fs, "/", 1) != FR_OK) {
-  27:SampleLibrary.cpp ****         return false;  // Failed to mount
-  28:SampleLibrary.cpp ****     }
-  29:SampleLibrary.cpp ****     
-  30:SampleLibrary.cpp ****     // Open the root directory
-  31:SampleLibrary.cpp ****     DIR dir;
-  32:SampleLibrary.cpp ****     if (f_opendir(&dir, "/") != FR_OK) {
-  33:SampleLibrary.cpp ****         return false;  // Failed to open directory
-  34:SampleLibrary.cpp ****     }
-  35:SampleLibrary.cpp ****     
-  36:SampleLibrary.cpp ****     // Scan for WAV files
-  37:SampleLibrary.cpp ****     FILINFO fno;
-  38:SampleLibrary.cpp ****     FRESULT result;
+  11:SampleLibrary.cpp **** SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem, DisplayMan
+  12:SampleLibrary.cpp ****     : sampleCount_(0),
+  13:SampleLibrary.cpp ****       sdHandler_(sdHandler),
+  14:SampleLibrary.cpp ****       fileSystem_(fileSystem),
+  15:SampleLibrary.cpp ****       display_(display)
+  16:SampleLibrary.cpp **** {
+  17:SampleLibrary.cpp ****     // Initialize all samples as not loaded
+  18:SampleLibrary.cpp ****     for (int i = 0; i < MAX_SAMPLES; i++) {
+  19:SampleLibrary.cpp ****         samples_[i].loaded = false;
+  20:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
+  21:SampleLibrary.cpp ****     }
+  22:SampleLibrary.cpp **** }
+  23:SampleLibrary.cpp **** 
+  24:SampleLibrary.cpp **** bool SampleLibrary::init() {
+  25:SampleLibrary.cpp ****     // Show initialization message
+  26:SampleLibrary.cpp ****     display_.showMessage("Initializing Library...", 500);
+  27:SampleLibrary.cpp ****     
+  28:SampleLibrary.cpp ****     // Filesystem is already mounted by SimpleSampler
+  29:SampleLibrary.cpp ****     // (passed in via constructor reference)
+  30:SampleLibrary.cpp ****     
+  31:SampleLibrary.cpp ****     display_.showMessage("Opening dir...", 300);
+  32:SampleLibrary.cpp ****     
+  33:SampleLibrary.cpp ****     // Open the root directory
+  34:SampleLibrary.cpp ****     DIR dir;
+  35:SampleLibrary.cpp ****     if (f_opendir(&dir, "/") != FR_OK) {
+  36:SampleLibrary.cpp ****         display_.showMessage("Dir open failed!", 1000);
+  37:SampleLibrary.cpp ****         return false;  // Failed to open directory
+  38:SampleLibrary.cpp ****     }
   39:SampleLibrary.cpp ****     
-  40:SampleLibrary.cpp ****     do {
-  41:SampleLibrary.cpp ****         result = f_readdir(&dir, &fno);
-  42:SampleLibrary.cpp ****         
-  43:SampleLibrary.cpp ****         // Exit on error or end of directory
-  44:SampleLibrary.cpp ****         if (result != FR_OK || fno.fname[0] == 0) {
-  45:SampleLibrary.cpp ****             break;
-  46:SampleLibrary.cpp ****         }
-  47:SampleLibrary.cpp ****         
-  48:SampleLibrary.cpp ****         // Skip directories and hidden files
-  49:SampleLibrary.cpp ****         if (fno.fattrib & (AM_HID | AM_DIR)) {
-  50:SampleLibrary.cpp ****             continue;
-  51:SampleLibrary.cpp ****         }
-  52:SampleLibrary.cpp ****         
-  53:SampleLibrary.cpp ****         // Check if it's a .wav file
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 9
+  40:SampleLibrary.cpp ****     display_.showMessage("Scanning files...", 300);
+  41:SampleLibrary.cpp ****     
+  42:SampleLibrary.cpp ****     // Scan for WAV files
+  43:SampleLibrary.cpp ****     FILINFO fno;
+  44:SampleLibrary.cpp ****     FRESULT result;
+  45:SampleLibrary.cpp ****     int fileCount = 0;
+  46:SampleLibrary.cpp ****     
+  47:SampleLibrary.cpp ****     do {
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 9
 
 
-  54:SampleLibrary.cpp ****         const char* filename = fno.fname;
-  55:SampleLibrary.cpp ****         if (strstr(filename, ".wav") == nullptr && 
-  56:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
-  57:SampleLibrary.cpp ****             continue;  // Not a WAV file
-  58:SampleLibrary.cpp ****         }
-  59:SampleLibrary.cpp ****         
-  60:SampleLibrary.cpp ****         // Try to load this sample
-  61:SampleLibrary.cpp ****         if (sampleCount_ < MAX_SAMPLES) {
-  62:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
-  63:SampleLibrary.cpp ****                 sampleCount_++;
-  64:SampleLibrary.cpp ****             }
-  65:SampleLibrary.cpp ****         } else {
-  66:SampleLibrary.cpp ****             break;  // Reached maximum samples
+  48:SampleLibrary.cpp ****         result = f_readdir(&dir, &fno);
+  49:SampleLibrary.cpp ****         
+  50:SampleLibrary.cpp ****         // Exit on error or end of directory
+  51:SampleLibrary.cpp ****         if (result != FR_OK || fno.fname[0] == 0) {
+  52:SampleLibrary.cpp ****             break;
+  53:SampleLibrary.cpp ****         }
+  54:SampleLibrary.cpp ****         
+  55:SampleLibrary.cpp ****         fileCount++;
+  56:SampleLibrary.cpp ****         
+  57:SampleLibrary.cpp ****         // Skip directories and hidden files
+  58:SampleLibrary.cpp ****         if (fno.fattrib & (AM_HID | AM_DIR)) {
+  59:SampleLibrary.cpp ****             continue;
+  60:SampleLibrary.cpp ****         }
+  61:SampleLibrary.cpp ****         
+  62:SampleLibrary.cpp ****         // Check if it's a .wav file
+  63:SampleLibrary.cpp ****         const char* filename = fno.fname;
+  64:SampleLibrary.cpp ****         if (strstr(filename, ".wav") == nullptr &&
+  65:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+  66:SampleLibrary.cpp ****             continue;  // Not a WAV file
   67:SampleLibrary.cpp ****         }
   68:SampleLibrary.cpp ****         
-  69:SampleLibrary.cpp ****     } while (result == FR_OK);
-  70:SampleLibrary.cpp ****     
-  71:SampleLibrary.cpp ****     // Close directory
-  72:SampleLibrary.cpp ****     f_closedir(&dir);
-  73:SampleLibrary.cpp ****     
-  74:SampleLibrary.cpp ****     return true;
-  75:SampleLibrary.cpp **** }
-  76:SampleLibrary.cpp **** 
-  77:SampleLibrary.cpp **** bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
-  78:SampleLibrary.cpp ****     // Open the file
-  79:SampleLibrary.cpp ****     FIL file;
-  80:SampleLibrary.cpp ****     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
-  81:SampleLibrary.cpp ****         return false;  // Failed to open
-  82:SampleLibrary.cpp ****     }
-  83:SampleLibrary.cpp ****     
-  84:SampleLibrary.cpp ****     // Read only the WAV header (first 44 bytes)
-  85:SampleLibrary.cpp ****     // WAV header structure: RIFF(4) + filesize(4) + WAVE(4) + fmt(4) +
-  86:SampleLibrary.cpp ****     //                       fmt_size(4) + audio_fmt(2) + channels(2) +
-  87:SampleLibrary.cpp ****     //                       sample_rate(4) + byte_rate(4) + block_align(2) +
-  88:SampleLibrary.cpp ****     //                       bits_per_sample(2) + data(4) + data_size(4) = 44 bytes
-  89:SampleLibrary.cpp ****     const int WAV_HEADER_SIZE = 44;
-  90:SampleLibrary.cpp ****     char headerBuffer[WAV_HEADER_SIZE];
+  69:SampleLibrary.cpp ****         // Debug: Show which file we're about to load
+  70:SampleLibrary.cpp ****         char debugMsg[64];
+  71:SampleLibrary.cpp ****         snprintf(debugMsg, sizeof(debugMsg), "Loading: %s", filename);
+  72:SampleLibrary.cpp ****         display_.showMessage(debugMsg, 200);
+  73:SampleLibrary.cpp ****         
+  74:SampleLibrary.cpp ****         // Try to load this sample
+  75:SampleLibrary.cpp ****         if (sampleCount_ < MAX_SAMPLES) {
+  76:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
+  77:SampleLibrary.cpp ****                 sampleCount_++;
+  78:SampleLibrary.cpp ****                 display_.showMessage("Sample loaded", 150);
+  79:SampleLibrary.cpp ****             } else {
+  80:SampleLibrary.cpp ****                 display_.showMessage("Load failed!", 200);
+  81:SampleLibrary.cpp ****             }
+  82:SampleLibrary.cpp ****         } else {
+  83:SampleLibrary.cpp ****             break;  // Reached maximum samples
+  84:SampleLibrary.cpp ****         }
+  85:SampleLibrary.cpp ****         
+  86:SampleLibrary.cpp ****     } while (result == FR_OK);
+  87:SampleLibrary.cpp ****     
+  88:SampleLibrary.cpp ****     // Close directory
+  89:SampleLibrary.cpp ****     display_.showMessage("Closing dir...", 300);
+  90:SampleLibrary.cpp ****     f_closedir(&dir);
   91:SampleLibrary.cpp ****     
-  92:SampleLibrary.cpp ****     UINT bytesRead;
-  93:SampleLibrary.cpp ****     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADE
-  94:SampleLibrary.cpp ****         f_close(&file);
-  95:SampleLibrary.cpp ****         return false;  // Failed to read header
-  96:SampleLibrary.cpp ****     }
-  97:SampleLibrary.cpp ****     
-  98:SampleLibrary.cpp ****     // Close the file - we only needed the header
-  99:SampleLibrary.cpp ****     f_close(&file);
- 100:SampleLibrary.cpp ****     
- 101:SampleLibrary.cpp ****     // Store filename
- 102:SampleLibrary.cpp ****     strncpy(samples_[index].name, filename, 31);
- 103:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
- 104:SampleLibrary.cpp ****     
- 105:SampleLibrary.cpp ****     // Create MemoryDataSource pointing to header buffer (temporary)
- 106:SampleLibrary.cpp ****     samples_[index].data = MemoryDataSource(headerBuffer, WAV_HEADER_SIZE);
- 107:SampleLibrary.cpp ****     
- 108:SampleLibrary.cpp ****     // Parse WAV header using b3ReadWavFile
- 109:SampleLibrary.cpp ****     if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
- 110:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 10
+  92:SampleLibrary.cpp ****     // Show completion message with sample count
+  93:SampleLibrary.cpp ****     char msg[64];
+  94:SampleLibrary.cpp ****     snprintf(msg, sizeof(msg), "Loaded %d samples", sampleCount_);
+  95:SampleLibrary.cpp ****     display_.showMessage(msg, 1000);
+  96:SampleLibrary.cpp ****     
+  97:SampleLibrary.cpp ****     return true;
+  98:SampleLibrary.cpp **** }
+  99:SampleLibrary.cpp **** 
+ 100:SampleLibrary.cpp **** bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
+ 101:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 102:SampleLibrary.cpp ****     
+ 103:SampleLibrary.cpp ****     // Open the file
+ 104:SampleLibrary.cpp ****     FIL file;
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 10
 
 
- 111:SampleLibrary.cpp ****     }
- 112:SampleLibrary.cpp ****     
- 113:SampleLibrary.cpp ****     // Extract metadata from the reader
- 114:SampleLibrary.cpp ****     samples_[index].numFrames = samples_[index].reader.getNumFrames();
- 115:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
- 116:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
- 117:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
- 118:SampleLibrary.cpp ****     
- 119:SampleLibrary.cpp ****     // Determine channels and bits per sample from reader
- 120:SampleLibrary.cpp ****     samples_[index].channels = 2;
- 121:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
- 122:SampleLibrary.cpp ****     
- 123:SampleLibrary.cpp ****     return true;
- 124:SampleLibrary.cpp **** }
- 125:SampleLibrary.cpp **** 
- 126:SampleLibrary.cpp **** bool SampleLibrary::loadSampleData(int index) {
- 243              		.loc 2 126 6 is_stmt 1 view -0
- 244              		.cfi_startproc
- 245              		@ args = 0, pretend = 0, frame = 560
- 246              		@ frame_needed = 0, uses_anonymous_args = 0
- 247              		.loc 2 126 6 is_stmt 0 view .LVU62
- 248 0000 C1EBC101 		rsb	r1, r1, r1, lsl #3
- 249              	.LVL17:
- 127:SampleLibrary.cpp ****     // Check if already loaded
- 128:SampleLibrary.cpp ****     if (samples_[index].audioDataLoaded) {
- 129:SampleLibrary.cpp ****         return true;  // Already loaded
- 130:SampleLibrary.cpp ****     }
+ 105:SampleLibrary.cpp ****     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
+ 106:SampleLibrary.cpp ****         display_.showMessage("Open failed!", 200);
+ 107:SampleLibrary.cpp ****         return false;  // Failed to open
+ 108:SampleLibrary.cpp ****     }
+ 109:SampleLibrary.cpp ****     
+ 110:SampleLibrary.cpp ****     display_.showMessage("Reading header...", 150);
+ 111:SampleLibrary.cpp ****     
+ 112:SampleLibrary.cpp ****     // Read only the WAV header (first 44 bytes)
+ 113:SampleLibrary.cpp ****     // WAV header structure: RIFF(4) + filesize(4) + WAVE(4) + fmt(4) +
+ 114:SampleLibrary.cpp ****     //                       fmt_size(4) + audio_fmt(2) + channels(2) +
+ 115:SampleLibrary.cpp ****     //                       sample_rate(4) + byte_rate(4) + block_align(2) +
+ 116:SampleLibrary.cpp ****     //                       bits_per_sample(2) + data(4) + data_size(4) = 44 bytes
+ 117:SampleLibrary.cpp ****     const int WAV_HEADER_SIZE = 44;
+ 118:SampleLibrary.cpp ****     char headerBuffer[WAV_HEADER_SIZE];
+ 119:SampleLibrary.cpp ****     
+ 120:SampleLibrary.cpp ****     UINT bytesRead;
+ 121:SampleLibrary.cpp ****     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADE
+ 122:SampleLibrary.cpp ****         f_close(&file);
+ 123:SampleLibrary.cpp ****         display_.showMessage("Read failed!", 200);
+ 124:SampleLibrary.cpp ****         return false;  // Failed to read header
+ 125:SampleLibrary.cpp ****     }
+ 126:SampleLibrary.cpp ****     
+ 127:SampleLibrary.cpp ****     display_.showMessage("Closing file...", 150);
+ 128:SampleLibrary.cpp ****     
+ 129:SampleLibrary.cpp ****     // Close the file - we only needed the header
+ 130:SampleLibrary.cpp ****     f_close(&file);
  131:SampleLibrary.cpp ****     
- 132:SampleLibrary.cpp ****     // Open the file
- 133:SampleLibrary.cpp ****     FIL file;
- 134:SampleLibrary.cpp ****     if (f_open(&file, samples_[index].name, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
- 250              		.loc 2 134 15 view .LVU63
- 251 0004 0122     		movs	r2, #1
- 126:SampleLibrary.cpp ****     // Check if already loaded
- 252              		.loc 2 126 6 view .LVU64
- 253 0006 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 254              		.cfi_def_cfa_offset 28
- 255              		.cfi_offset 4, -28
- 256              		.cfi_offset 5, -24
- 257              		.cfi_offset 6, -20
- 258              		.cfi_offset 7, -16
- 259              		.cfi_offset 8, -12
- 260              		.cfi_offset 9, -8
- 261              		.cfi_offset 14, -4
- 262              		.loc 2 134 39 view .LVU65
- 263 000a 00EB0116 		add	r6, r0, r1, lsl #4
- 126:SampleLibrary.cpp ****     // Check if already loaded
- 264              		.loc 2 126 6 view .LVU66
- 265 000e ADF50D7D 		sub	sp, sp, #564
- 266              		.cfi_def_cfa_offset 592
- 126:SampleLibrary.cpp ****     // Check if already loaded
- 267              		.loc 2 126 6 view .LVU67
- 268 0012 0746     		mov	r7, r0
- 133:SampleLibrary.cpp ****     if (f_open(&file, samples_[index].name, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
- 269              		.loc 2 133 5 is_stmt 1 view .LVU68
- 270              		.loc 2 134 5 view .LVU69
- 271 0014 0C01     		lsls	r4, r1, #4
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 11
-
-
- 272              		.loc 2 134 15 is_stmt 0 view .LVU70
- 273 0016 01A8     		add	r0, sp, #4
- 274              	.LVL18:
- 275              		.loc 2 134 15 view .LVU71
- 276 0018 3146     		mov	r1, r6
- 277 001a FFF7FEFF 		bl	f_open
- 278              	.LVL19:
- 279              		.loc 2 134 5 view .LVU72
- 280 001e 20B1     		cbz	r0, .L28
- 281              	.L37:
- 135:SampleLibrary.cpp ****         return false;  // Failed to open
- 136:SampleLibrary.cpp ****     }
+ 132:SampleLibrary.cpp ****     display_.showMessage("Parsing WAV...", 150);
+ 133:SampleLibrary.cpp ****     
+ 134:SampleLibrary.cpp ****     // Store filename
+ 135:SampleLibrary.cpp ****     strncpy(samples_[index].name, filename, 31);
+ 136:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
  137:SampleLibrary.cpp ****     
- 138:SampleLibrary.cpp ****     // Get file size
- 139:SampleLibrary.cpp ****     UINT fileSize = f_size(&file);
+ 138:SampleLibrary.cpp ****     // Create MemoryDataSource pointing to header buffer (temporary)
+ 139:SampleLibrary.cpp ****     samples_[index].data = MemoryDataSource(headerBuffer, WAV_HEADER_SIZE);
  140:SampleLibrary.cpp ****     
- 141:SampleLibrary.cpp ****     // Allocate memory from SDRAM pool
- 142:SampleLibrary.cpp ****     char* buffer = (char*)custom_pool_allocate(fileSize);
- 143:SampleLibrary.cpp ****     if (buffer == nullptr) {
- 144:SampleLibrary.cpp ****         f_close(&file);
- 145:SampleLibrary.cpp ****         return false;  // Out of memory
- 282              		.loc 2 145 9 is_stmt 1 view .LVU73
- 283              		.loc 2 145 16 is_stmt 0 view .LVU74
- 284 0020 0020     		movs	r0, #0
- 146:SampleLibrary.cpp ****     }
- 147:SampleLibrary.cpp ****     
- 148:SampleLibrary.cpp ****     // Read the entire file into memory
- 149:SampleLibrary.cpp ****     UINT bytesRead;
- 150:SampleLibrary.cpp ****     if (f_read(&file, buffer, fileSize, &bytesRead) != FR_OK) {
- 151:SampleLibrary.cpp ****         f_close(&file);
- 152:SampleLibrary.cpp ****         return false;  // Failed to read
- 153:SampleLibrary.cpp ****     }
- 154:SampleLibrary.cpp ****     
- 155:SampleLibrary.cpp ****     // Close the file
- 156:SampleLibrary.cpp ****     f_close(&file);
- 157:SampleLibrary.cpp ****     
- 158:SampleLibrary.cpp ****     // Update MemoryDataSource to point to full file buffer
- 159:SampleLibrary.cpp ****     samples_[index].data = MemoryDataSource(buffer, fileSize);
- 160:SampleLibrary.cpp ****     
- 161:SampleLibrary.cpp ****     // Re-parse WAV header with the full buffer
- 162:SampleLibrary.cpp ****     if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
- 163:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 164:SampleLibrary.cpp ****     }
- 165:SampleLibrary.cpp ****     
- 166:SampleLibrary.cpp ****     // Mark audio data as loaded
- 167:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = true;
- 168:SampleLibrary.cpp ****     
- 169:SampleLibrary.cpp ****     return true;
- 170:SampleLibrary.cpp **** }
- 285              		.loc 2 170 1 view .LVU75
- 286 0022 0DF50D7D 		add	sp, sp, #564
- 287              		.cfi_remember_state
- 288              		.cfi_def_cfa_offset 28
- 289              		@ sp needed
- 290 0026 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 141:SampleLibrary.cpp ****     // Parse WAV header using b3ReadWavFile
+ 142:SampleLibrary.cpp ****     if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
+ 143:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 144:SampleLibrary.cpp ****     }
+ 145:SampleLibrary.cpp ****     
+ 146:SampleLibrary.cpp ****     // Extract metadata from the reader
+ 147:SampleLibrary.cpp ****     samples_[index].numFrames = samples_[index].reader.getNumFrames();
+ 148:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+ 149:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
+ 150:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
+ 151:SampleLibrary.cpp ****     
+ 152:SampleLibrary.cpp ****     // Determine channels and bits per sample from reader
+ 153:SampleLibrary.cpp ****     samples_[index].channels = 2;
+ 154:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
+ 155:SampleLibrary.cpp ****     
+ 156:SampleLibrary.cpp ****     return true;
+ 157:SampleLibrary.cpp **** }
+ 158:SampleLibrary.cpp **** 
+ 159:SampleLibrary.cpp **** bool SampleLibrary::loadSampleData(int index) {
+ 247              		.loc 2 159 6 is_stmt 1 view -0
+ 248              		.cfi_startproc
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 11
+
+
+ 249              		@ args = 0, pretend = 0, frame = 624
+ 250              		@ frame_needed = 0, uses_anonymous_args = 0
+ 251              		.loc 2 159 6 is_stmt 0 view .LVU62
+ 252 0000 C1EBC103 		rsb	r3, r1, r1, lsl #3
+ 160:SampleLibrary.cpp ****     // Check if already loaded
+ 161:SampleLibrary.cpp ****     if (samples_[index].audioDataLoaded) {
+ 162:SampleLibrary.cpp ****         return true;  // Already loaded
+ 163:SampleLibrary.cpp ****     }
+ 164:SampleLibrary.cpp ****     
+ 165:SampleLibrary.cpp ****     // Show loading message
+ 166:SampleLibrary.cpp ****     char msg[64];
+ 167:SampleLibrary.cpp ****     snprintf(msg, sizeof(msg), "Loading: %s", samples_[index].name);
+ 253              		.loc 2 167 13 view .LVU63
+ 254 0004 254A     		ldr	r2, .L38
+ 255 0006 4021     		movs	r1, #64
+ 256              	.LVL17:
+ 159:SampleLibrary.cpp ****     // Check if already loaded
+ 257              		.loc 2 159 6 view .LVU64
+ 258 0008 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 259              		.cfi_def_cfa_offset 28
+ 260              		.cfi_offset 4, -28
+ 261              		.cfi_offset 5, -24
+ 262              		.cfi_offset 6, -20
+ 263              		.cfi_offset 7, -16
+ 264              		.cfi_offset 8, -12
+ 265              		.cfi_offset 9, -8
+ 266              		.cfi_offset 14, -4
+ 267              		.loc 2 167 63 view .LVU65
+ 268 000c 00EB0316 		add	r6, r0, r3, lsl #4
+ 159:SampleLibrary.cpp ****     // Check if already loaded
+ 269              		.loc 2 159 6 view .LVU66
+ 270 0010 ADF51D7D 		sub	sp, sp, #628
+ 271              		.cfi_def_cfa_offset 656
+ 159:SampleLibrary.cpp ****     // Check if already loaded
+ 272              		.loc 2 159 6 view .LVU67
+ 273 0014 0746     		mov	r7, r0
+ 166:SampleLibrary.cpp ****     snprintf(msg, sizeof(msg), "Loading: %s", samples_[index].name);
+ 274              		.loc 2 166 5 is_stmt 1 view .LVU68
+ 275              		.loc 2 167 5 view .LVU69
+ 276 0016 1C01     		lsls	r4, r3, #4
+ 277              		.loc 2 167 13 is_stmt 0 view .LVU70
+ 278 0018 01A8     		add	r0, sp, #4
+ 279              	.LVL18:
+ 280              		.loc 2 167 13 view .LVU71
+ 281 001a 3346     		mov	r3, r6
+ 282 001c FFF7FEFF 		bl	snprintf
+ 283              	.LVL19:
+ 168:SampleLibrary.cpp ****     display_.showMessage(msg, 200);
+ 284              		.loc 2 168 5 is_stmt 1 view .LVU72
+ 285 0020 07F58053 		add	r3, r7, #4096
+ 286              		.loc 2 168 25 is_stmt 0 view .LVU73
+ 287 0024 01A9     		add	r1, sp, #4
+ 288 0026 C822     		movs	r2, #200
+ 289 0028 D3F80C0C 		ldr	r0, [r3, #3084]
+ 290 002c FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
  291              	.LVL20:
- 292              	.L28:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 12
+ 169:SampleLibrary.cpp ****     
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 12
 
 
- 293              		.cfi_restore_state
- 139:SampleLibrary.cpp ****     
- 294              		.loc 2 139 5 is_stmt 1 view .LVU76
- 139:SampleLibrary.cpp ****     
- 295              		.loc 2 139 10 is_stmt 0 view .LVU77
- 296 002a DDF81090 		ldr	r9, [sp, #16]
- 297              	.LVL21:
- 142:SampleLibrary.cpp ****     if (buffer == nullptr) {
- 298              		.loc 2 142 5 is_stmt 1 view .LVU78
- 142:SampleLibrary.cpp ****     if (buffer == nullptr) {
- 299              		.loc 2 142 47 is_stmt 0 view .LVU79
- 300 002e 4846     		mov	r0, r9
- 301 0030 FFF7FEFF 		bl	_Z20custom_pool_allocatej
- 302              	.LVL22:
- 143:SampleLibrary.cpp ****         f_close(&file);
- 303              		.loc 2 143 5 is_stmt 1 view .LVU80
- 304 0034 0546     		mov	r5, r0
- 305 0036 F0B1     		cbz	r0, .L31
- 149:SampleLibrary.cpp ****     if (f_read(&file, buffer, fileSize, &bytesRead) != FR_OK) {
- 306              		.loc 2 149 5 view .LVU81
- 150:SampleLibrary.cpp ****         f_close(&file);
- 307              		.loc 2 150 5 view .LVU82
- 150:SampleLibrary.cpp ****         f_close(&file);
- 308              		.loc 2 150 15 is_stmt 0 view .LVU83
- 309 0038 0146     		mov	r1, r0
- 310 003a 6B46     		mov	r3, sp
- 311 003c 4A46     		mov	r2, r9
- 312 003e 01A8     		add	r0, sp, #4
- 313              	.LVL23:
- 150:SampleLibrary.cpp ****         f_close(&file);
- 314              		.loc 2 150 15 view .LVU84
- 315 0040 FFF7FEFF 		bl	f_read
- 316              	.LVL24:
- 150:SampleLibrary.cpp ****         f_close(&file);
- 317              		.loc 2 150 5 view .LVU85
- 318 0044 8046     		mov	r8, r0
- 319 0046 B0B9     		cbnz	r0, .L31
- 156:SampleLibrary.cpp ****     
- 320              		.loc 2 156 5 is_stmt 1 view .LVU86
- 156:SampleLibrary.cpp ****     
- 321              		.loc 2 156 12 is_stmt 0 view .LVU87
- 322 0048 01A8     		add	r0, sp, #4
- 323 004a FFF7FEFF 		bl	f_close
- 324              	.LVL25:
- 159:SampleLibrary.cpp ****     
- 325              		.loc 2 159 5 is_stmt 1 view .LVU88
- 326              	.LBB55:
- 327              	.LBI55:
+ 170:SampleLibrary.cpp ****     // Open the file
+ 171:SampleLibrary.cpp ****     FIL file;
+ 292              		.loc 2 171 5 is_stmt 1 view .LVU74
+ 172:SampleLibrary.cpp ****     if (f_open(&file, samples_[index].name, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
+ 293              		.loc 2 172 5 view .LVU75
+ 294              		.loc 2 172 15 is_stmt 0 view .LVU76
+ 295 0030 0122     		movs	r2, #1
+ 296 0032 3146     		mov	r1, r6
+ 297 0034 11A8     		add	r0, sp, #68
+ 298 0036 FFF7FEFF 		bl	f_open
+ 299              	.LVL21:
+ 300              		.loc 2 172 5 view .LVU77
+ 301 003a 20B1     		cbz	r0, .L28
+ 302              	.L37:
+ 173:SampleLibrary.cpp ****         return false;  // Failed to open
+ 174:SampleLibrary.cpp ****     }
+ 175:SampleLibrary.cpp ****     
+ 176:SampleLibrary.cpp ****     // Get file size
+ 177:SampleLibrary.cpp ****     UINT fileSize = f_size(&file);
+ 178:SampleLibrary.cpp ****     
+ 179:SampleLibrary.cpp ****     // Allocate memory from SDRAM pool
+ 180:SampleLibrary.cpp ****     char* buffer = (char*)custom_pool_allocate(fileSize);
+ 181:SampleLibrary.cpp ****     if (buffer == nullptr) {
+ 182:SampleLibrary.cpp ****         f_close(&file);
+ 183:SampleLibrary.cpp ****         return false;  // Out of memory
+ 303              		.loc 2 183 9 is_stmt 1 view .LVU78
+ 304              		.loc 2 183 16 is_stmt 0 view .LVU79
+ 305 003c 0020     		movs	r0, #0
+ 184:SampleLibrary.cpp ****     }
+ 185:SampleLibrary.cpp ****     
+ 186:SampleLibrary.cpp ****     // Read the entire file into memory
+ 187:SampleLibrary.cpp ****     UINT bytesRead;
+ 188:SampleLibrary.cpp ****     if (f_read(&file, buffer, fileSize, &bytesRead) != FR_OK) {
+ 189:SampleLibrary.cpp ****         f_close(&file);
+ 190:SampleLibrary.cpp ****         return false;  // Failed to read
+ 191:SampleLibrary.cpp ****     }
+ 192:SampleLibrary.cpp ****     
+ 193:SampleLibrary.cpp ****     // Close the file
+ 194:SampleLibrary.cpp ****     f_close(&file);
+ 195:SampleLibrary.cpp ****     
+ 196:SampleLibrary.cpp ****     // Update MemoryDataSource to point to full file buffer
+ 197:SampleLibrary.cpp ****     samples_[index].data = MemoryDataSource(buffer, fileSize);
+ 198:SampleLibrary.cpp ****     
+ 199:SampleLibrary.cpp ****     // Re-parse WAV header with the full buffer
+ 200:SampleLibrary.cpp ****     if (!samples_[index].reader.getWavInfo(samples_[index].data)) {
+ 201:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 202:SampleLibrary.cpp ****     }
+ 203:SampleLibrary.cpp ****     
+ 204:SampleLibrary.cpp ****     // Mark audio data as loaded
+ 205:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = true;
+ 206:SampleLibrary.cpp ****     
+ 207:SampleLibrary.cpp ****     return true;
+ 208:SampleLibrary.cpp **** }
+ 306              		.loc 2 208 1 view .LVU80
+ 307 003e 0DF51D7D 		add	sp, sp, #628
+ 308              		.cfi_remember_state
+ 309              		.cfi_def_cfa_offset 28
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 13
+
+
+ 310              		@ sp needed
+ 311 0042 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 312              	.LVL22:
+ 313              	.L28:
+ 314              		.cfi_restore_state
+ 177:SampleLibrary.cpp ****     
+ 315              		.loc 2 177 5 is_stmt 1 view .LVU81
+ 177:SampleLibrary.cpp ****     
+ 316              		.loc 2 177 10 is_stmt 0 view .LVU82
+ 317 0046 DDF85090 		ldr	r9, [sp, #80]
+ 318              	.LVL23:
+ 180:SampleLibrary.cpp ****     if (buffer == nullptr) {
+ 319              		.loc 2 180 5 is_stmt 1 view .LVU83
+ 180:SampleLibrary.cpp ****     if (buffer == nullptr) {
+ 320              		.loc 2 180 47 is_stmt 0 view .LVU84
+ 321 004a 4846     		mov	r0, r9
+ 322 004c FFF7FEFF 		bl	_Z20custom_pool_allocatej
+ 323              	.LVL24:
+ 181:SampleLibrary.cpp ****         f_close(&file);
+ 324              		.loc 2 181 5 is_stmt 1 view .LVU85
+ 325 0050 0546     		mov	r5, r0
+ 326 0052 F8B1     		cbz	r0, .L31
+ 187:SampleLibrary.cpp ****     if (f_read(&file, buffer, fileSize, &bytesRead) != FR_OK) {
+ 327              		.loc 2 187 5 view .LVU86
+ 188:SampleLibrary.cpp ****         f_close(&file);
+ 328              		.loc 2 188 5 view .LVU87
+ 188:SampleLibrary.cpp ****         f_close(&file);
+ 329              		.loc 2 188 15 is_stmt 0 view .LVU88
+ 330 0054 0146     		mov	r1, r0
+ 331 0056 6B46     		mov	r3, sp
+ 332 0058 4A46     		mov	r2, r9
+ 333 005a 11A8     		add	r0, sp, #68
+ 334              	.LVL25:
+ 188:SampleLibrary.cpp ****         f_close(&file);
+ 335              		.loc 2 188 15 view .LVU89
+ 336 005c FFF7FEFF 		bl	f_read
+ 337              	.LVL26:
+ 188:SampleLibrary.cpp ****         f_close(&file);
+ 338              		.loc 2 188 5 view .LVU90
+ 339 0060 8046     		mov	r8, r0
+ 340 0062 B8B9     		cbnz	r0, .L31
+ 194:SampleLibrary.cpp ****     
+ 341              		.loc 2 194 5 is_stmt 1 view .LVU91
+ 194:SampleLibrary.cpp ****     
+ 342              		.loc 2 194 12 is_stmt 0 view .LVU92
+ 343 0064 11A8     		add	r0, sp, #68
+ 344 0066 FFF7FEFF 		bl	f_close
+ 345              	.LVL27:
+ 197:SampleLibrary.cpp ****     
+ 346              		.loc 2 197 5 is_stmt 1 view .LVU93
+ 347              	.LBB52:
+ 348              	.LBI52:
   77:b3ReadWavFile.h **** 		:m_data(data),
- 328              		.loc 1 77 2 view .LVU89
- 329              	.LBB56:
- 330              	.LBI56:
+ 349              		.loc 1 77 2 view .LVU94
+ 350              	.LBB53:
+ 351              	.LBI53:
   13:b3ReadWavFile.h **** {
- 331              		.loc 1 13 8 view .LVU90
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 14
+
+
+ 352              		.loc 1 13 8 view .LVU95
   13:b3ReadWavFile.h **** {
- 332              		.loc 1 13 8 is_stmt 0 view .LVU91
- 333              	.LBE56:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 13
-
-
- 334              	.LBE55:
- 335              	.LBB57:
- 336              	.LBI57:
+ 353              		.loc 1 13 8 is_stmt 0 view .LVU96
+ 354              	.LBE53:
+ 355              	.LBE52:
+ 356              	.LBB54:
+ 357              	.LBI54:
   67:b3ReadWavFile.h **** {
- 337              		.loc 1 67 8 is_stmt 1 view .LVU92
- 338              	.LBE57:
- 162:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 339              		.loc 2 162 43 is_stmt 0 view .LVU93
- 340 004e 04F13001 		add	r1, r4, #48
- 341 0052 4034     		adds	r4, r4, #64
- 342              	.LBB60:
- 343              	.LBB58:
+ 358              		.loc 1 67 8 is_stmt 1 view .LVU97
+ 359              	.LBE54:
+ 200:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 360              		.loc 2 200 43 is_stmt 0 view .LVU98
+ 361 006a 04F13001 		add	r1, r4, #48
+ 362 006e 04F14000 		add	r0, r4, #64
+ 363              	.LBB57:
+ 364              	.LBB55:
   67:b3ReadWavFile.h **** {
- 344              		.loc 1 67 8 view .LVU94
- 345 0054 C6F83C80 		str	r8, [r6, #60]
- 346              	.LVL26:
+ 365              		.loc 1 67 8 view .LVU99
+ 366 0072 C6F83C80 		str	r8, [r6, #60]
+ 367              	.LVL28:
   67:b3ReadWavFile.h **** {
- 347              		.loc 1 67 8 view .LVU95
- 348              	.LBE58:
- 349              	.LBE60:
- 162:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 350              		.loc 2 162 5 is_stmt 1 view .LVU96
- 162:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 351              		.loc 2 162 43 is_stmt 0 view .LVU97
- 352 0058 3944     		add	r1, r1, r7
- 353 005a 3819     		adds	r0, r7, r4
- 354              	.LBB61:
- 355              	.LBB59:
+ 368              		.loc 1 67 8 view .LVU100
+ 369              	.LBE55:
+ 370              	.LBE57:
+ 200:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 371              		.loc 2 200 5 is_stmt 1 view .LVU101
+ 200:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 372              		.loc 2 200 43 is_stmt 0 view .LVU102
+ 373 0076 3944     		add	r1, r1, r7
+ 374 0078 3844     		add	r0, r0, r7
+ 375              	.LBB58:
+ 376              	.LBB56:
   67:b3ReadWavFile.h **** {
- 356              		.loc 1 67 8 view .LVU98
- 357 005c C6E90D59 		strd	r5, r9, [r6, #52]
- 358              	.LBE59:
- 359              	.LBE61:
- 162:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 360              		.loc 2 162 43 view .LVU99
- 361 0060 FFF7FEFF 		bl	_ZN13b3ReadWavFile10getWavInfoER12b3DataSource
- 362              	.LVL27:
- 162:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
- 363              		.loc 2 162 5 view .LVU100
- 364 0064 0028     		cmp	r0, #0
- 365 0066 DBD0     		beq	.L37
- 167:SampleLibrary.cpp ****     
- 366              		.loc 2 167 5 is_stmt 1 view .LVU101
- 167:SampleLibrary.cpp ****     
- 367              		.loc 2 167 37 is_stmt 0 view .LVU102
- 368 0068 0123     		movs	r3, #1
- 369 006a 86F86930 		strb	r3, [r6, #105]
- 169:SampleLibrary.cpp **** }
- 370              		.loc 2 169 5 is_stmt 1 view .LVU103
- 371              		.loc 2 170 1 is_stmt 0 view .LVU104
- 372 006e 0DF50D7D 		add	sp, sp, #564
- 373              		.cfi_remember_state
- 374              		.cfi_def_cfa_offset 28
- 375              		@ sp needed
- 376 0072 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 377              	.LVL28:
- 378              	.L31:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 14
+ 377              		.loc 1 67 8 view .LVU103
+ 378 007a C6E90D59 		strd	r5, r9, [r6, #52]
+ 379              	.LBE56:
+ 380              	.LBE58:
+ 200:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 381              		.loc 2 200 43 view .LVU104
+ 382 007e FFF7FEFF 		bl	_ZN13b3ReadWavFile10getWavInfoER12b3DataSource
+ 383              	.LVL29:
+ 200:SampleLibrary.cpp ****         return false;  // Failed to parse WAV
+ 384              		.loc 2 200 5 view .LVU105
+ 385 0082 0028     		cmp	r0, #0
+ 386 0084 DAD0     		beq	.L37
+ 205:SampleLibrary.cpp ****     
+ 387              		.loc 2 205 5 is_stmt 1 view .LVU106
+ 205:SampleLibrary.cpp ****     
+ 388              		.loc 2 205 37 is_stmt 0 view .LVU107
+ 389 0086 0123     		movs	r3, #1
+ 390 0088 86F86930 		strb	r3, [r6, #105]
+ 207:SampleLibrary.cpp **** }
+ 391              		.loc 2 207 5 is_stmt 1 view .LVU108
+ 392              		.loc 2 208 1 is_stmt 0 view .LVU109
+ 393 008c 0DF51D7D 		add	sp, sp, #628
+ 394              		.cfi_remember_state
+ 395              		.cfi_def_cfa_offset 28
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 15
 
 
- 379              		.cfi_restore_state
- 144:SampleLibrary.cpp ****         return false;  // Out of memory
- 380              		.loc 2 144 9 is_stmt 1 view .LVU105
- 144:SampleLibrary.cpp ****         return false;  // Out of memory
- 381              		.loc 2 144 16 is_stmt 0 view .LVU106
- 382 0076 01A8     		add	r0, sp, #4
- 383 0078 FFF7FEFF 		bl	f_close
- 384              	.LVL29:
- 385 007c D0E7     		b	.L37
- 386              		.cfi_endproc
- 387              	.LFE4040:
- 389 007e 00BF     		.section	.text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE,"ax",%progbits
- 390              		.align	1
- 391              		.p2align 2,,3
- 392              		.global	_ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE
- 393              		.syntax unified
- 394              		.thumb
- 395              		.thumb_func
- 396              		.fpu fpv5-d16
- 398              	_ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE:
- 399              	.LVL30:
- 400              	.LFB3549:
-  11:SampleLibrary.cpp ****     : sdHandler_(sdHandler),
- 401              		.loc 2 11 1 is_stmt 1 view -0
- 402              		.cfi_startproc
- 403              		@ args = 0, pretend = 0, frame = 0
- 404              		@ frame_needed = 0, uses_anonymous_args = 0
- 405              	.LBB62:
-  14:SampleLibrary.cpp **** {
- 406              		.loc 2 14 21 view .LVU108
- 407              	.LBE62:
-  11:SampleLibrary.cpp ****     : sdHandler_(sdHandler),
- 408              		.loc 2 11 1 is_stmt 0 view .LVU109
- 409 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 410              		.cfi_def_cfa_offset 40
- 411              		.cfi_offset 3, -40
- 412              		.cfi_offset 4, -36
- 413              		.cfi_offset 5, -32
- 414              		.cfi_offset 6, -28
- 415              		.cfi_offset 7, -24
- 416              		.cfi_offset 8, -20
- 417              		.cfi_offset 9, -16
- 418              		.cfi_offset 10, -12
- 419              		.cfi_offset 11, -8
- 420              		.cfi_offset 14, -4
-  11:SampleLibrary.cpp ****     : sdHandler_(sdHandler),
- 421              		.loc 2 11 1 view .LVU110
- 422 0004 8146     		mov	r9, r0
- 423 0006 8B46     		mov	fp, r1
- 424 0008 9246     		mov	r10, r2
- 425 000a 0546     		mov	r5, r0
- 426 000c 00F5E057 		add	r7, r0, #7168
- 427 0010 0446     		mov	r4, r0
- 428 0012 DFF84480 		ldr	r8, .L44
- 429              	.LVL31:
- 430              	.L39:
- 431              	.LBB75:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 15
+ 396              		@ sp needed
+ 397 0090 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 398              	.LVL30:
+ 399              	.L31:
+ 400              		.cfi_restore_state
+ 182:SampleLibrary.cpp ****         return false;  // Out of memory
+ 401              		.loc 2 182 9 is_stmt 1 view .LVU110
+ 182:SampleLibrary.cpp ****         return false;  // Out of memory
+ 402              		.loc 2 182 16 is_stmt 0 view .LVU111
+ 403 0094 11A8     		add	r0, sp, #68
+ 404 0096 FFF7FEFF 		bl	f_close
+ 405              	.LVL31:
+ 406 009a CFE7     		b	.L37
+ 407              	.L39:
+ 408              		.align	2
+ 409              	.L38:
+ 410 009c 00000000 		.word	.LC0
+ 411              		.cfi_endproc
+ 412              	.LFE4097:
+ 414              		.section	.text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager
+ 415              		.align	1
+ 416              		.p2align 2,,3
+ 417              		.global	_ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager
+ 418              		.syntax unified
+ 419              		.thumb
+ 420              		.thumb_func
+ 421              		.fpu fpv5-d16
+ 423              	_ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager:
+ 424              	.LVL32:
+ 425              	.LFB3585:
+  11:SampleLibrary.cpp ****     : sampleCount_(0),
+ 426              		.loc 2 11 1 is_stmt 1 view -0
+ 427              		.cfi_startproc
+ 428              		@ args = 0, pretend = 0, frame = 8
+ 429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 430              	.LBB59:
+  15:SampleLibrary.cpp **** {
+ 431              		.loc 2 15 23 view .LVU113
+ 432              	.LBE59:
+  11:SampleLibrary.cpp ****     : sampleCount_(0),
+ 433              		.loc 2 11 1 is_stmt 0 view .LVU114
+ 434 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 435              		.cfi_def_cfa_offset 36
+ 436              		.cfi_offset 4, -36
+ 437              		.cfi_offset 5, -32
+ 438              		.cfi_offset 6, -28
+ 439              		.cfi_offset 7, -24
+ 440              		.cfi_offset 8, -20
+ 441              		.cfi_offset 9, -16
+ 442              		.cfi_offset 10, -12
+ 443              		.cfi_offset 11, -8
+ 444              		.cfi_offset 14, -4
+ 445 0004 8046     		mov	r8, r0
+ 446 0006 83B0     		sub	sp, sp, #12
+ 447              		.cfi_def_cfa_offset 48
+  11:SampleLibrary.cpp ****     : sampleCount_(0),
+ 448              		.loc 2 11 1 view .LVU115
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 16
 
 
- 432              	.LBB63:
- 433              	.LBI63:
- 434              		.file 3 "SampleLibrary.h"
+ 449 0008 8B46     		mov	fp, r1
+ 450 000a 9246     		mov	r10, r2
+ 451 000c 0546     		mov	r5, r0
+ 452 000e 00F5E059 		add	r9, r0, #7168
+ 453 0012 0446     		mov	r4, r0
+ 454 0014 124F     		ldr	r7, .L46
+ 455 0016 0193     		str	r3, [sp, #4]
+ 456              	.LVL33:
+ 457              	.L41:
+ 458              	.LBB72:
+ 459              	.LBB60:
+ 460              	.LBI60:
+ 461              		.file 3 "SampleLibrary.h"
    1:SampleLibrary.h **** #ifndef SAMPLE_LIBRARY_H
    2:SampleLibrary.h **** #define SAMPLE_LIBRARY_H
    3:SampleLibrary.h **** 
    4:SampleLibrary.h **** #include "b3ReadWavFile.h"
    5:SampleLibrary.h **** #include "daisy_core.h"
    6:SampleLibrary.h **** #include "daisy_seed.h"
-   7:SampleLibrary.h **** #include <string>
-   8:SampleLibrary.h **** 
-   9:SampleLibrary.h **** using namespace daisy;
-  10:SampleLibrary.h **** using namespace std;
-  11:SampleLibrary.h **** 
-  12:SampleLibrary.h **** // Maximum number of samples we can load at once
-  13:SampleLibrary.h **** #define MAX_SAMPLES 64
-  14:SampleLibrary.h **** 
-  15:SampleLibrary.h **** // Structure to hold information about a loaded sample
-  16:SampleLibrary.h **** struct SampleInfo {
- 435              		.loc 3 16 8 is_stmt 1 view .LVU111
- 436              	.LBB64:
- 437              	.LBB65:
- 438              	.LBI65:
+   7:SampleLibrary.h **** #include "DisplayManager.h"
+   8:SampleLibrary.h **** #include <string>
+   9:SampleLibrary.h **** 
+  10:SampleLibrary.h **** using namespace daisy;
+  11:SampleLibrary.h **** using namespace std;
+  12:SampleLibrary.h **** 
+  13:SampleLibrary.h **** // Maximum number of samples we can load at once
+  14:SampleLibrary.h **** #define MAX_SAMPLES 64
+  15:SampleLibrary.h **** 
+  16:SampleLibrary.h **** // Structure to hold information about a loaded sample
+  17:SampleLibrary.h **** struct SampleInfo {
+ 462              		.loc 3 17 8 is_stmt 1 view .LVU116
+ 463              	.LBB61:
+ 464              	.LBB62:
+ 465              	.LBI62:
   70:b3ReadWavFile.h ****   :m_data(),
- 439              		.loc 1 70 3 view .LVU112
- 440              	.LBB66:
- 441              	.LBB67:
- 442              	.LBI67:
+ 466              		.loc 1 70 3 view .LVU117
+ 467              	.LBB63:
+ 468              	.LBB64:
+ 469              	.LBI64:
   13:b3ReadWavFile.h **** {
- 443              		.loc 1 13 8 view .LVU113
+ 470              		.loc 1 13 8 view .LVU118
   13:b3ReadWavFile.h **** {
- 444              		.loc 1 13 8 is_stmt 0 view .LVU114
- 445              	.LBE67:
+ 471              		.loc 1 13 8 is_stmt 0 view .LVU119
+ 472              	.LBE64:
   73:b3ReadWavFile.h ****   {
- 446              		.loc 1 73 20 view .LVU115
- 447 0016 C4F83080 		str	r8, [r4, #48]
- 448              	.LBE66:
- 449              	.LBE65:
- 450              		.loc 3 16 8 view .LVU116
- 451 001a 04F14000 		add	r0, r4, #64
- 452              	.LBB70:
- 453              	.LBB68:
+ 473              		.loc 1 73 20 view .LVU120
+ 474 0018 2763     		str	r7, [r4, #48]
+ 475              	.LBE63:
+ 476              	.LBE62:
+ 477              		.loc 3 17 8 view .LVU121
+ 478 001a 04F14000 		add	r0, r4, #64
+ 479              	.LBB67:
+ 480              	.LBB65:
   73:b3ReadWavFile.h ****   {
- 454              		.loc 1 73 20 view .LVU117
- 455 001e 0026     		movs	r6, #0
- 456              	.LBE68:
- 457              	.LBE70:
- 458              	.LBE64:
- 459              	.LBE63:
-  14:SampleLibrary.cpp **** {
- 460              		.loc 2 14 21 view .LVU118
- 461 0020 7034     		adds	r4, r4, #112
- 462              	.LVL32:
- 463              	.LBB73:
- 464              	.LBB72:
- 465              	.LBB71:
- 466              	.LBB69:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 16
+ 481              		.loc 1 73 20 view .LVU122
+ 482 001e 0026     		movs	r6, #0
+ 483              	.LBE65:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 17
 
 
+ 484              	.LBE67:
+ 485              	.LBE61:
+ 486              	.LBE60:
+  15:SampleLibrary.cpp **** {
+ 487              		.loc 2 15 23 view .LVU123
+ 488 0020 7034     		adds	r4, r4, #112
+ 489              	.LVL34:
+ 490              	.LBB70:
+ 491              	.LBB69:
+ 492              	.LBB68:
+ 493              	.LBB66:
   73:b3ReadWavFile.h ****   {
- 467              		.loc 1 73 20 view .LVU119
- 468 0022 44E90F66 		strd	r6, r6, [r4, #-60]
- 469 0026 44F8346C 		str	r6, [r4, #-52]
- 470              	.LVL33:
+ 494              		.loc 1 73 20 view .LVU124
+ 495 0022 44E90F66 		strd	r6, r6, [r4, #-60]
+ 496 0026 44F8346C 		str	r6, [r4, #-52]
+ 497              	.LVL35:
   73:b3ReadWavFile.h ****   {
- 471              		.loc 1 73 20 view .LVU120
- 472              	.LBE69:
- 473              	.LBE71:
- 474              		.loc 3 16 8 view .LVU121
- 475 002a FFF7FEFF 		bl	_ZN13b3ReadWavFileC1Ev
- 476              	.LVL34:
- 477              		.loc 3 16 8 view .LVU122
- 478              	.LBE72:
- 479              	.LBE73:
-  14:SampleLibrary.cpp **** {
- 480              		.loc 2 14 21 is_stmt 1 view .LVU123
-  14:SampleLibrary.cpp **** {
- 481              		.loc 2 14 21 view .LVU124
- 482 002e BC42     		cmp	r4, r7
- 483 0030 F1D1     		bne	.L39
-  14:SampleLibrary.cpp **** {
- 484              		.loc 2 14 21 is_stmt 0 discriminator 2 view .LVU125
- 485 0032 09F58053 		add	r3, r9, #4096
- 486 0036 C3F8006C 		str	r6, [r3, #3072]
- 487 003a C3F804BC 		str	fp, [r3, #3076]
- 488 003e C3F808AC 		str	r10, [r3, #3080]
- 489              	.LBE75:
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 490              		.loc 2 17 5 is_stmt 1 discriminator 2 view .LVU126
- 491              	.LVL35:
- 492              	.LBB76:
- 493              	.LBB74:
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 494              		.loc 2 17 23 discriminator 2 view .LVU127
- 495              	.L40:
-  18:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
- 496              		.loc 2 18 9 discriminator 2 view .LVU128
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 497              		.loc 2 17 23 is_stmt 0 discriminator 2 view .LVU129
- 498 0042 7035     		adds	r5, r5, #112
-  18:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
- 499              		.loc 2 18 28 discriminator 2 view .LVU130
- 500 0044 0023     		movs	r3, #0
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 501              		.loc 2 17 23 discriminator 2 view .LVU131
- 502 0046 BD42     		cmp	r5, r7
-  18:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
- 503              		.loc 2 18 28 discriminator 2 view .LVU132
- 504 0048 05F8083C 		strb	r3, [r5, #-8]
-  19:SampleLibrary.cpp ****     }
- 505              		.loc 2 19 9 is_stmt 1 discriminator 2 view .LVU133
-  19:SampleLibrary.cpp ****     }
- 506              		.loc 2 19 37 is_stmt 0 discriminator 2 view .LVU134
- 507 004c 05F8073C 		strb	r3, [r5, #-7]
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 508              		.loc 2 17 5 is_stmt 1 discriminator 2 view .LVU135
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 17
+ 498              		.loc 1 73 20 view .LVU125
+ 499              	.LBE66:
+ 500              	.LBE68:
+ 501              		.loc 3 17 8 view .LVU126
+ 502 002a FFF7FEFF 		bl	_ZN13b3ReadWavFileC1Ev
+ 503              	.LVL36:
+ 504              		.loc 3 17 8 view .LVU127
+ 505              	.LBE69:
+ 506              	.LBE70:
+  15:SampleLibrary.cpp **** {
+ 507              		.loc 2 15 23 is_stmt 1 view .LVU128
+  15:SampleLibrary.cpp **** {
+ 508              		.loc 2 15 23 view .LVU129
+ 509 002e 4C45     		cmp	r4, r9
+ 510 0030 F2D1     		bne	.L41
+  15:SampleLibrary.cpp **** {
+ 511              		.loc 2 15 23 is_stmt 0 discriminator 2 view .LVU130
+ 512 0032 08F58053 		add	r3, r8, #4096
+ 513 0036 019A     		ldr	r2, [sp, #4]
+ 514 0038 C3F8006C 		str	r6, [r3, #3072]
+ 515 003c C3F804BC 		str	fp, [r3, #3076]
+ 516 0040 C3F808AC 		str	r10, [r3, #3080]
+ 517 0044 C3F80C2C 		str	r2, [r3, #3084]
+ 518              	.LBE72:
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 519              		.loc 2 18 5 is_stmt 1 discriminator 2 view .LVU131
+ 520              	.LVL37:
+ 521              	.LBB73:
+ 522              	.LBB71:
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 523              		.loc 2 18 23 discriminator 2 view .LVU132
+ 524              	.L42:
+  19:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
+ 525              		.loc 2 19 9 discriminator 2 view .LVU133
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 526              		.loc 2 18 23 is_stmt 0 discriminator 2 view .LVU134
+ 527 0048 7035     		adds	r5, r5, #112
+  19:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
+ 528              		.loc 2 19 28 discriminator 2 view .LVU135
+ 529 004a 0023     		movs	r3, #0
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 18
 
 
-  17:SampleLibrary.cpp ****         samples_[i].loaded = false;
- 509              		.loc 2 17 23 discriminator 2 view .LVU136
- 510 0050 F7D1     		bne	.L40
- 511              	.LBE74:
- 512              	.LBE76:
-  21:SampleLibrary.cpp **** 
- 513              		.loc 2 21 1 is_stmt 0 view .LVU137
- 514 0052 4846     		mov	r0, r9
- 515 0054 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 516              	.LVL36:
- 517              	.L45:
-  21:SampleLibrary.cpp **** 
- 518              		.loc 2 21 1 view .LVU138
- 519              		.align	2
- 520              	.L44:
- 521 0058 08000000 		.word	_ZTV16MemoryDataSource+8
- 522              		.cfi_endproc
- 523              	.LFE3549:
- 525              		.global	_ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE
- 526              		.thumb_set _ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE,_ZN13SampleLibraryC2
- 527              		.section	.text._ZN13SampleLibrary14loadSampleInfoEPKci,"ax",%progbits
- 528              		.align	1
- 529              		.p2align 2,,3
- 530              		.global	_ZN13SampleLibrary14loadSampleInfoEPKci
- 531              		.syntax unified
- 532              		.thumb
- 533              		.thumb_func
- 534              		.fpu fpv5-d16
- 536              	_ZN13SampleLibrary14loadSampleInfoEPKci:
- 537              	.LVL37:
- 538              	.LFB3552:
-  77:SampleLibrary.cpp ****     // Open the file
- 539              		.loc 2 77 69 is_stmt 1 view -0
- 540              		.cfi_startproc
- 541              		@ args = 0, pretend = 0, frame = 608
- 542              		@ frame_needed = 0, uses_anonymous_args = 0
-  77:SampleLibrary.cpp ****     // Open the file
- 543              		.loc 2 77 69 is_stmt 0 view .LVU140
- 544 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 545              		.cfi_def_cfa_offset 24
- 546              		.cfi_offset 4, -24
- 547              		.cfi_offset 5, -20
- 548              		.cfi_offset 6, -16
- 549              		.cfi_offset 7, -12
- 550              		.cfi_offset 8, -8
- 551              		.cfi_offset 14, -4
- 552 0004 ADF5187D 		sub	sp, sp, #608
- 553              		.cfi_def_cfa_offset 632
-  77:SampleLibrary.cpp ****     // Open the file
- 554              		.loc 2 77 69 view .LVU141
- 555 0008 0546     		mov	r5, r0
- 556 000a 1446     		mov	r4, r2
-  80:SampleLibrary.cpp ****         return false;  // Failed to open
- 557              		.loc 2 80 15 view .LVU142
- 558 000c 0122     		movs	r2, #1
- 559              	.LVL38:
-  80:SampleLibrary.cpp ****         return false;  // Failed to open
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 18
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 530              		.loc 2 18 23 discriminator 2 view .LVU136
+ 531 004c 4D45     		cmp	r5, r9
+  19:SampleLibrary.cpp ****         samples_[i].audioDataLoaded = false;
+ 532              		.loc 2 19 28 discriminator 2 view .LVU137
+ 533 004e 05F8083C 		strb	r3, [r5, #-8]
+  20:SampleLibrary.cpp ****     }
+ 534              		.loc 2 20 9 is_stmt 1 discriminator 2 view .LVU138
+  20:SampleLibrary.cpp ****     }
+ 535              		.loc 2 20 37 is_stmt 0 discriminator 2 view .LVU139
+ 536 0052 05F8073C 		strb	r3, [r5, #-7]
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 537              		.loc 2 18 5 is_stmt 1 discriminator 2 view .LVU140
+  18:SampleLibrary.cpp ****         samples_[i].loaded = false;
+ 538              		.loc 2 18 23 discriminator 2 view .LVU141
+ 539 0056 F7D1     		bne	.L42
+ 540              	.LBE71:
+ 541              	.LBE73:
+  22:SampleLibrary.cpp **** 
+ 542              		.loc 2 22 1 is_stmt 0 view .LVU142
+ 543 0058 4046     		mov	r0, r8
+ 544 005a 03B0     		add	sp, sp, #12
+ 545              		.cfi_def_cfa_offset 36
+ 546              		@ sp needed
+ 547 005c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 548              	.LVL38:
+ 549              	.L47:
+  22:SampleLibrary.cpp **** 
+ 550              		.loc 2 22 1 view .LVU143
+ 551              		.align	2
+ 552              	.L46:
+ 553 0060 08000000 		.word	_ZTV16MemoryDataSource+8
+ 554              		.cfi_endproc
+ 555              	.LFE3585:
+ 557              		.global	_ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager
+ 558              		.thumb_set _ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager,_ZN
+ 559              		.section	.rodata._ZN13SampleLibrary14loadSampleInfoEPKci.str1.4,"aMS",%progbits,1
+ 560              		.align	2
+ 561              	.LC1:
+ 562 0000 4F70656E 		.ascii	"Opening file...\000"
+ 562      696E6720 
+ 562      66696C65 
+ 562      2E2E2E00 
+ 563              		.align	2
+ 564              	.LC2:
+ 565 0010 4F70656E 		.ascii	"Open failed!\000"
+ 565      20666169 
+ 565      6C656421 
+ 565      00
+ 566 001d 000000   		.align	2
+ 567              	.LC3:
+ 568 0020 52656164 		.ascii	"Reading header...\000"
+ 568      696E6720 
+ 568      68656164 
+ 568      65722E2E 
+ 568      2E00
+ 569 0032 0000     		.align	2
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 19
 
 
- 560              		.loc 2 80 15 view .LVU143
- 561 000e 0DA8     		add	r0, sp, #52
- 562              	.LVL39:
-  77:SampleLibrary.cpp ****     // Open the file
- 563              		.loc 2 77 69 view .LVU144
- 564 0010 0F46     		mov	r7, r1
-  79:SampleLibrary.cpp ****     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
- 565              		.loc 2 79 5 is_stmt 1 view .LVU145
-  80:SampleLibrary.cpp ****         return false;  // Failed to open
- 566              		.loc 2 80 5 view .LVU146
-  80:SampleLibrary.cpp ****         return false;  // Failed to open
- 567              		.loc 2 80 15 is_stmt 0 view .LVU147
- 568 0012 FFF7FEFF 		bl	f_open
- 569              	.LVL40:
-  80:SampleLibrary.cpp ****         return false;  // Failed to open
- 570              		.loc 2 80 5 view .LVU148
- 571 0016 20B1     		cbz	r0, .L47
- 572              	.LVL41:
- 573              	.L53:
-  95:SampleLibrary.cpp ****     }
- 574              		.loc 2 95 9 is_stmt 1 view .LVU149
-  95:SampleLibrary.cpp ****     }
- 575              		.loc 2 95 16 is_stmt 0 view .LVU150
- 576 0018 0020     		movs	r0, #0
- 577              	.L48:
- 124:SampleLibrary.cpp **** 
- 578              		.loc 2 124 1 view .LVU151
- 579 001a 0DF5187D 		add	sp, sp, #608
- 580              		.cfi_remember_state
- 581              		.cfi_def_cfa_offset 24
- 582              		@ sp needed
- 583 001e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 584              	.LVL42:
- 585              	.L47:
- 586              		.cfi_restore_state
-  89:SampleLibrary.cpp ****     char headerBuffer[WAV_HEADER_SIZE];
- 587              		.loc 2 89 5 is_stmt 1 view .LVU152
-  90:SampleLibrary.cpp ****     
- 588              		.loc 2 90 5 view .LVU153
-  92:SampleLibrary.cpp ****     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADE
- 589              		.loc 2 92 5 view .LVU154
-  93:SampleLibrary.cpp ****         f_close(&file);
- 590              		.loc 2 93 5 view .LVU155
-  93:SampleLibrary.cpp ****         f_close(&file);
- 591              		.loc 2 93 15 is_stmt 0 view .LVU156
- 592 0022 2C22     		movs	r2, #44
- 593 0024 0DA8     		add	r0, sp, #52
- 594 0026 01AB     		add	r3, sp, #4
- 595 0028 02A9     		add	r1, sp, #8
- 596 002a FFF7FEFF 		bl	f_read
- 597              	.LVL43:
-  93:SampleLibrary.cpp ****         f_close(&file);
- 598              		.loc 2 93 75 view .LVU157
- 599 002e 0646     		mov	r6, r0
-  94:SampleLibrary.cpp ****         return false;  // Failed to read header
- 600              		.loc 2 94 16 view .LVU158
- 601 0030 0DA8     		add	r0, sp, #52
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 19
+ 570              	.LC4:
+ 571 0034 436C6F73 		.ascii	"Closing file...\000"
+ 571      696E6720 
+ 571      66696C65 
+ 571      2E2E2E00 
+ 572              		.align	2
+ 573              	.LC5:
+ 574 0044 50617273 		.ascii	"Parsing WAV...\000"
+ 574      696E6720 
+ 574      5741562E 
+ 574      2E2E00
+ 575 0053 00       		.align	2
+ 576              	.LC6:
+ 577 0054 52656164 		.ascii	"Read failed!\000"
+ 577      20666169 
+ 577      6C656421 
+ 577      00
+ 578              		.section	.text._ZN13SampleLibrary14loadSampleInfoEPKci,"ax",%progbits
+ 579              		.align	1
+ 580              		.p2align 2,,3
+ 581              		.global	_ZN13SampleLibrary14loadSampleInfoEPKci
+ 582              		.syntax unified
+ 583              		.thumb
+ 584              		.thumb_func
+ 585              		.fpu fpv5-d16
+ 587              	_ZN13SampleLibrary14loadSampleInfoEPKci:
+ 588              	.LVL39:
+ 589              	.LFB3588:
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 590              		.loc 2 100 69 is_stmt 1 view -0
+ 591              		.cfi_startproc
+ 592              		@ args = 0, pretend = 0, frame = 608
+ 593              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 594              		.loc 2 100 69 is_stmt 0 view .LVU145
+ 595 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 596              		.cfi_def_cfa_offset 28
+ 597              		.cfi_offset 4, -28
+ 598              		.cfi_offset 5, -24
+ 599              		.cfi_offset 6, -20
+ 600              		.cfi_offset 7, -16
+ 601              		.cfi_offset 8, -12
+ 602              		.cfi_offset 9, -8
+ 603              		.cfi_offset 14, -4
+ 101:SampleLibrary.cpp ****     
+ 604              		.loc 2 101 5 view .LVU146
+ 605 0004 00F58057 		add	r7, r0, #4096
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 606              		.loc 2 100 69 view .LVU147
+ 607 0008 ADF5197D 		sub	sp, sp, #612
+ 608              		.cfi_def_cfa_offset 640
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 609              		.loc 2 100 69 view .LVU148
+ 610 000c 0E46     		mov	r6, r1
+ 101:SampleLibrary.cpp ****     
+ 611              		.loc 2 101 5 is_stmt 1 view .LVU149
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 20
 
 
-  93:SampleLibrary.cpp ****         f_close(&file);
- 602              		.loc 2 93 75 view .LVU159
- 603 0032 26B9     		cbnz	r6, .L49
-  93:SampleLibrary.cpp ****         f_close(&file);
- 604              		.loc 2 93 75 discriminator 2 view .LVU160
- 605 0034 DDF80480 		ldr	r8, [sp, #4]
- 606 0038 B8F12C0F 		cmp	r8, #44
- 607 003c 02D0     		beq	.L54
- 608              	.L49:
-  94:SampleLibrary.cpp ****         return false;  // Failed to read header
- 609              		.loc 2 94 9 is_stmt 1 view .LVU161
-  94:SampleLibrary.cpp ****         return false;  // Failed to read header
- 610              		.loc 2 94 16 is_stmt 0 view .LVU162
- 611 003e FFF7FEFF 		bl	f_close
- 612              	.LVL44:
- 613 0042 E9E7     		b	.L53
- 614              	.L54:
-  99:SampleLibrary.cpp ****     
- 615              		.loc 2 99 5 is_stmt 1 view .LVU163
- 616 0044 C4EBC404 		rsb	r4, r4, r4, lsl #3
- 617              	.LVL45:
-  99:SampleLibrary.cpp ****     
- 618              		.loc 2 99 12 is_stmt 0 view .LVU164
- 619 0048 FFF7FEFF 		bl	f_close
- 620              	.LVL46:
- 102:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
- 621              		.loc 2 102 5 is_stmt 1 view .LVU165
- 102:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
- 622              		.loc 2 102 12 is_stmt 0 view .LVU166
- 623 004c 3946     		mov	r1, r7
- 102:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
- 624              		.loc 2 102 29 view .LVU167
- 625 004e 05EB0417 		add	r7, r5, r4, lsl #4
- 626              	.LVL47:
- 102:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
- 627              		.loc 2 102 12 view .LVU168
- 628 0052 1F22     		movs	r2, #31
- 629 0054 2401     		lsls	r4, r4, #4
- 630 0056 3846     		mov	r0, r7
- 631 0058 FFF7FEFF 		bl	strncpy
- 632              	.LVL48:
- 103:SampleLibrary.cpp ****     
- 633              		.loc 2 103 5 is_stmt 1 view .LVU169
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 634              		.loc 2 109 43 is_stmt 0 view .LVU170
- 635 005c 04F13001 		add	r1, r4, #48
- 636              	.LBB77:
- 637              	.LBB78:
+ 612              		.loc 2 100 69 is_stmt 0 view .LVU150
+ 613 000e 1446     		mov	r4, r2
+ 101:SampleLibrary.cpp ****     
+ 614              		.loc 2 101 25 view .LVU151
+ 615 0010 3A49     		ldr	r1, .L56
+ 616              	.LVL40:
+ 101:SampleLibrary.cpp ****     
+ 617              		.loc 2 101 25 view .LVU152
+ 618 0012 9622     		movs	r2, #150
+ 619              	.LVL41:
+ 100:SampleLibrary.cpp ****     display_.showMessage("Opening file...", 150);
+ 620              		.loc 2 100 69 view .LVU153
+ 621 0014 0546     		mov	r5, r0
+ 101:SampleLibrary.cpp ****     
+ 622              		.loc 2 101 25 view .LVU154
+ 623 0016 D7F80C0C 		ldr	r0, [r7, #3084]
+ 624              	.LVL42:
+ 101:SampleLibrary.cpp ****     
+ 625              		.loc 2 101 25 view .LVU155
+ 626 001a FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 627              	.LVL43:
+ 104:SampleLibrary.cpp ****     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
+ 628              		.loc 2 104 5 is_stmt 1 view .LVU156
+ 105:SampleLibrary.cpp ****         display_.showMessage("Open failed!", 200);
+ 629              		.loc 2 105 5 view .LVU157
+ 105:SampleLibrary.cpp ****         display_.showMessage("Open failed!", 200);
+ 630              		.loc 2 105 15 is_stmt 0 view .LVU158
+ 631 001e 0122     		movs	r2, #1
+ 632 0020 3146     		mov	r1, r6
+ 633 0022 0DA8     		add	r0, sp, #52
+ 634 0024 FFF7FEFF 		bl	f_open
+ 635              	.LVL44:
+ 105:SampleLibrary.cpp ****         display_.showMessage("Open failed!", 200);
+ 636              		.loc 2 105 5 view .LVU159
+ 637 0028 00BB     		cbnz	r0, .L54
+ 110:SampleLibrary.cpp ****     
+ 638              		.loc 2 110 5 is_stmt 1 view .LVU160
+ 110:SampleLibrary.cpp ****     
+ 639              		.loc 2 110 25 is_stmt 0 view .LVU161
+ 640 002a 9622     		movs	r2, #150
+ 641 002c 3449     		ldr	r1, .L56+4
+ 642 002e D7F80C0C 		ldr	r0, [r7, #3084]
+ 643 0032 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 644              	.LVL45:
+ 117:SampleLibrary.cpp ****     char headerBuffer[WAV_HEADER_SIZE];
+ 645              		.loc 2 117 5 is_stmt 1 view .LVU162
+ 118:SampleLibrary.cpp ****     
+ 646              		.loc 2 118 5 view .LVU163
+ 120:SampleLibrary.cpp ****     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADE
+ 647              		.loc 2 120 5 view .LVU164
+ 121:SampleLibrary.cpp ****         f_close(&file);
+ 648              		.loc 2 121 5 view .LVU165
+ 121:SampleLibrary.cpp ****         f_close(&file);
+ 649              		.loc 2 121 15 is_stmt 0 view .LVU166
+ 650 0036 01AB     		add	r3, sp, #4
+ 651 0038 2C22     		movs	r2, #44
+ 652 003a 02A9     		add	r1, sp, #8
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 21
+
+
+ 653 003c 0DA8     		add	r0, sp, #52
+ 654 003e FFF7FEFF 		bl	f_read
+ 655              	.LVL46:
+ 121:SampleLibrary.cpp ****         f_close(&file);
+ 656              		.loc 2 121 75 view .LVU167
+ 657 0042 8046     		mov	r8, r0
+ 658 0044 20B9     		cbnz	r0, .L51
+ 121:SampleLibrary.cpp ****         f_close(&file);
+ 659              		.loc 2 121 75 discriminator 2 view .LVU168
+ 660 0046 DDF80490 		ldr	r9, [sp, #4]
+ 661 004a B9F12C0F 		cmp	r9, #44
+ 662 004e 18D0     		beq	.L55
+ 663              	.L51:
+ 122:SampleLibrary.cpp ****         display_.showMessage("Read failed!", 200);
+ 664              		.loc 2 122 9 is_stmt 1 view .LVU169
+ 122:SampleLibrary.cpp ****         display_.showMessage("Read failed!", 200);
+ 665              		.loc 2 122 16 is_stmt 0 view .LVU170
+ 666 0050 0DA8     		add	r0, sp, #52
+ 667 0052 FFF7FEFF 		bl	f_close
+ 668              	.LVL47:
+ 123:SampleLibrary.cpp ****         return false;  // Failed to read header
+ 669              		.loc 2 123 9 is_stmt 1 view .LVU171
+ 123:SampleLibrary.cpp ****         return false;  // Failed to read header
+ 670              		.loc 2 123 29 is_stmt 0 view .LVU172
+ 671 0056 D7F80C0C 		ldr	r0, [r7, #3084]
+ 672 005a C822     		movs	r2, #200
+ 673 005c 2949     		ldr	r1, .L56+8
+ 674 005e FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 675              	.LVL48:
+ 124:SampleLibrary.cpp ****     }
+ 676              		.loc 2 124 9 is_stmt 1 view .LVU173
+ 124:SampleLibrary.cpp ****     }
+ 677              		.loc 2 124 16 is_stmt 0 view .LVU174
+ 678 0062 0020     		movs	r0, #0
+ 679              	.LVL49:
+ 680              	.L50:
+ 157:SampleLibrary.cpp **** 
+ 681              		.loc 2 157 1 view .LVU175
+ 682 0064 0DF5197D 		add	sp, sp, #612
+ 683              		.cfi_remember_state
+ 684              		.cfi_def_cfa_offset 28
+ 685              		@ sp needed
+ 686 0068 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 687              	.LVL50:
+ 688              	.L54:
+ 689              		.cfi_restore_state
+ 106:SampleLibrary.cpp ****         return false;  // Failed to open
+ 690              		.loc 2 106 9 is_stmt 1 view .LVU176
+ 106:SampleLibrary.cpp ****         return false;  // Failed to open
+ 691              		.loc 2 106 29 is_stmt 0 view .LVU177
+ 692 006c D7F80C0C 		ldr	r0, [r7, #3084]
+ 693 0070 C822     		movs	r2, #200
+ 694 0072 2549     		ldr	r1, .L56+12
+ 695 0074 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 696              	.LVL51:
+ 107:SampleLibrary.cpp ****     }
+ 697              		.loc 2 107 9 is_stmt 1 view .LVU178
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 22
+
+
+ 107:SampleLibrary.cpp ****     }
+ 698              		.loc 2 107 16 is_stmt 0 view .LVU179
+ 699 0078 0020     		movs	r0, #0
+ 157:SampleLibrary.cpp **** 
+ 700              		.loc 2 157 1 view .LVU180
+ 701 007a 0DF5197D 		add	sp, sp, #612
+ 702              		.cfi_remember_state
+ 703              		.cfi_def_cfa_offset 28
+ 704              		@ sp needed
+ 705 007e BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 706              	.LVL52:
+ 707              	.L55:
+ 708              		.cfi_restore_state
+ 127:SampleLibrary.cpp ****     
+ 709              		.loc 2 127 5 is_stmt 1 view .LVU181
+ 127:SampleLibrary.cpp ****     
+ 710              		.loc 2 127 25 is_stmt 0 view .LVU182
+ 711 0082 9622     		movs	r2, #150
+ 712 0084 2149     		ldr	r1, .L56+16
+ 713 0086 D7F80C0C 		ldr	r0, [r7, #3084]
+ 714 008a C4EBC404 		rsb	r4, r4, r4, lsl #3
+ 715              	.LVL53:
+ 127:SampleLibrary.cpp ****     
+ 716              		.loc 2 127 25 view .LVU183
+ 717 008e FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 718              	.LVL54:
+ 130:SampleLibrary.cpp ****     
+ 719              		.loc 2 130 5 is_stmt 1 view .LVU184
+ 130:SampleLibrary.cpp ****     
+ 720              		.loc 2 130 12 is_stmt 0 view .LVU185
+ 721 0092 0DA8     		add	r0, sp, #52
+ 722 0094 FFF7FEFF 		bl	f_close
+ 723              	.LVL55:
+ 132:SampleLibrary.cpp ****     
+ 724              		.loc 2 132 5 is_stmt 1 view .LVU186
+ 132:SampleLibrary.cpp ****     
+ 725              		.loc 2 132 25 is_stmt 0 view .LVU187
+ 726 0098 D7F80C0C 		ldr	r0, [r7, #3084]
+ 727 009c 9622     		movs	r2, #150
+ 728 009e 1C49     		ldr	r1, .L56+20
+ 729 00a0 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 730              	.LVL56:
+ 135:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
+ 731              		.loc 2 135 5 is_stmt 1 view .LVU188
+ 135:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
+ 732              		.loc 2 135 12 is_stmt 0 view .LVU189
+ 733 00a4 3146     		mov	r1, r6
+ 135:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
+ 734              		.loc 2 135 29 view .LVU190
+ 735 00a6 05EB0416 		add	r6, r5, r4, lsl #4
+ 736              	.LVL57:
+ 135:SampleLibrary.cpp ****     samples_[index].name[31] = '\0';  // Ensure null-terminated
+ 737              		.loc 2 135 12 view .LVU191
+ 738 00aa 1F22     		movs	r2, #31
+ 739 00ac 2401     		lsls	r4, r4, #4
+ 740 00ae 3046     		mov	r0, r6
+ 741 00b0 FFF7FEFF 		bl	strncpy
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 23
+
+
+ 742              	.LVL58:
+ 136:SampleLibrary.cpp ****     
+ 743              		.loc 2 136 5 is_stmt 1 view .LVU192
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 744              		.loc 2 142 43 is_stmt 0 view .LVU193
+ 745 00b4 04F13001 		add	r1, r4, #48
+ 746              	.LBB74:
+ 747              	.LBB75:
   67:b3ReadWavFile.h **** {
- 638              		.loc 1 67 8 view .LVU171
- 639 0060 02AB     		add	r3, sp, #8
- 640              	.LBE78:
- 641              	.LBE77:
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 642              		.loc 2 109 43 view .LVU172
- 643 0062 4034     		adds	r4, r4, #64
- 644 0064 2944     		add	r1, r1, r5
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 20
-
-
- 103:SampleLibrary.cpp ****     
- 645              		.loc 2 103 30 view .LVU173
- 646 0066 FE77     		strb	r6, [r7, #31]
- 106:SampleLibrary.cpp ****     
- 647              		.loc 2 106 5 is_stmt 1 view .LVU174
- 648              	.LVL49:
- 649              	.LBB80:
- 650              	.LBI80:
+ 748              		.loc 1 67 8 view .LVU194
+ 749 00b8 02AB     		add	r3, sp, #8
+ 750              	.LBE75:
+ 751              	.LBE74:
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 752              		.loc 2 142 43 view .LVU195
+ 753 00ba 4034     		adds	r4, r4, #64
+ 754 00bc 2944     		add	r1, r1, r5
+ 136:SampleLibrary.cpp ****     
+ 755              		.loc 2 136 30 view .LVU196
+ 756 00be 86F81F80 		strb	r8, [r6, #31]
+ 139:SampleLibrary.cpp ****     
+ 757              		.loc 2 139 5 is_stmt 1 view .LVU197
+ 758              	.LVL59:
+ 759              	.LBB77:
+ 760              	.LBI77:
   77:b3ReadWavFile.h **** 		:m_data(data),
- 651              		.loc 1 77 2 view .LVU175
- 652              	.LBB81:
- 653              	.LBI81:
+ 761              		.loc 1 77 2 view .LVU198
+ 762              	.LBB78:
+ 763              	.LBI78:
   13:b3ReadWavFile.h **** {
- 654              		.loc 1 13 8 view .LVU176
+ 764              		.loc 1 13 8 view .LVU199
   13:b3ReadWavFile.h **** {
- 655              		.loc 1 13 8 is_stmt 0 view .LVU177
- 656              	.LBE81:
- 657              	.LBE80:
- 658              	.LBB82:
- 659              	.LBI77:
+ 765              		.loc 1 13 8 is_stmt 0 view .LVU200
+ 766              	.LBE78:
+ 767              	.LBE77:
+ 768              	.LBB79:
+ 769              	.LBI74:
   67:b3ReadWavFile.h **** {
- 660              		.loc 1 67 8 is_stmt 1 view .LVU178
- 661              	.LBE82:
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 662              		.loc 2 109 43 is_stmt 0 view .LVU179
- 663 0068 2819     		adds	r0, r5, r4
- 664              	.LBB83:
- 665              	.LBB79:
+ 770              		.loc 1 67 8 is_stmt 1 view .LVU201
+ 771              	.LBE79:
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 772              		.loc 2 142 43 is_stmt 0 view .LVU202
+ 773 00c2 2819     		adds	r0, r5, r4
+ 774              	.LBB80:
+ 775              	.LBB76:
   67:b3ReadWavFile.h **** {
- 666              		.loc 1 67 8 view .LVU180
- 667 006a 7B63     		str	r3, [r7, #52]
- 668 006c C7F83880 		str	r8, [r7, #56]
- 669 0070 FE63     		str	r6, [r7, #60]
- 670              	.LVL50:
+ 776              		.loc 1 67 8 view .LVU203
+ 777 00c4 7363     		str	r3, [r6, #52]
+ 778 00c6 C6F83890 		str	r9, [r6, #56]
+ 779 00ca C6F83C80 		str	r8, [r6, #60]
+ 780              	.LVL60:
   67:b3ReadWavFile.h **** {
- 671              		.loc 1 67 8 view .LVU181
- 672              	.LBE79:
- 673              	.LBE83:
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 674              		.loc 2 109 5 is_stmt 1 view .LVU182
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 675              		.loc 2 109 43 is_stmt 0 view .LVU183
- 676 0072 FFF7FEFF 		bl	_ZN13b3ReadWavFile10getWavInfoER12b3DataSource
- 677              	.LVL51:
- 109:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
- 678              		.loc 2 109 5 view .LVU184
- 679 0076 0028     		cmp	r0, #0
- 680 0078 CED0     		beq	.L53
- 114:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
- 681              		.loc 2 114 5 is_stmt 1 view .LVU185
- 682              	.LVL52:
- 683              	.LBB84:
- 684              	.LBI84:
+ 781              		.loc 1 67 8 view .LVU204
+ 782              	.LBE76:
+ 783              	.LBE80:
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 784              		.loc 2 142 5 is_stmt 1 view .LVU205
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 24
+
+
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 785              		.loc 2 142 43 is_stmt 0 view .LVU206
+ 786 00ce FFF7FEFF 		bl	_ZN13b3ReadWavFile10getWavInfoER12b3DataSource
+ 787              	.LVL61:
+ 142:SampleLibrary.cpp ****         return false;  // Failed to parse WAV header
+ 788              		.loc 2 142 5 view .LVU207
+ 789 00d2 0028     		cmp	r0, #0
+ 790 00d4 C6D0     		beq	.L50
+ 147:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+ 791              		.loc 2 147 5 is_stmt 1 view .LVU208
+ 792              	.LVL62:
+ 793              	.LBB81:
+ 794              	.LBI81:
  140:b3ReadWavFile.h **** 
  141:b3ReadWavFile.h **** };
  142:b3ReadWavFile.h **** 
  143:b3ReadWavFile.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 21
-
-
  144:b3ReadWavFile.h **** 
  145:b3ReadWavFile.h **** 
  146:b3ReadWavFile.h **** struct b3WavTicker
@@ -1241,6 +1438,9 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  181:b3ReadWavFile.h **** 	bool m_machineIsLittleEndian;
  182:b3ReadWavFile.h **** 
  183:b3ReadWavFile.h **** public:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 25
+
+
  184:b3ReadWavFile.h **** 	b3ReadWavFile();
  185:b3ReadWavFile.h **** 	virtual ~b3ReadWavFile();
  186:b3ReadWavFile.h **** 
@@ -1258,812 +1458,933 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 1
  198:b3ReadWavFile.h **** 	b3WavTicker createWavTicker(double sampleRate);
  199:b3ReadWavFile.h **** 
  200:b3ReadWavFile.h **** 	int getNumFrames() const
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 22
-
-
- 685              		.loc 1 200 6 view .LVU186
- 686              	.LBB85:
+ 795              		.loc 1 200 6 view .LVU209
+ 796              	.LBB82:
  201:b3ReadWavFile.h **** 	{
  202:b3ReadWavFile.h **** 		return m_numFrames;
- 687              		.loc 1 202 3 view .LVU187
- 688              		.loc 1 202 3 is_stmt 0 view .LVU188
- 689              	.LBE85:
- 690              	.LBE84:
- 116:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
- 691              		.loc 2 116 28 view .LVU189
- 692 007a 0123     		movs	r3, #1
- 114:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
- 693              		.loc 2 114 31 view .LVU190
- 694 007c B96C     		ldr	r1, [r7, #72]
- 120:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
- 695              		.loc 2 120 30 view .LVU191
- 696 007e 0222     		movs	r2, #2
- 116:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
- 697              		.loc 2 116 28 view .LVU192
- 698 0080 A7F86830 		strh	r3, [r7, #104]	@ movhi
- 121:SampleLibrary.cpp ****     
- 699              		.loc 2 121 35 view .LVU193
- 700 0084 1023     		movs	r3, #16
- 114:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
- 701              		.loc 2 114 31 view .LVU194
- 702 0086 3962     		str	r1, [r7, #32]
- 115:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
- 703              		.loc 2 115 5 is_stmt 1 view .LVU195
- 704              	.LVL53:
- 705              	.LBB86:
- 706              	.LBI86:
+ 797              		.loc 1 202 3 view .LVU210
+ 798              		.loc 1 202 3 is_stmt 0 view .LVU211
+ 799              	.LBE82:
+ 800              	.LBE81:
+ 149:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
+ 801              		.loc 2 149 28 view .LVU212
+ 802 00d6 0123     		movs	r3, #1
+ 147:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+ 803              		.loc 2 147 31 view .LVU213
+ 804 00d8 B16C     		ldr	r1, [r6, #72]
+ 153:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
+ 805              		.loc 2 153 30 view .LVU214
+ 806 00da 0222     		movs	r2, #2
+ 149:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
+ 807              		.loc 2 149 28 view .LVU215
+ 808 00dc A6F86830 		strh	r3, [r6, #104]	@ movhi
+ 154:SampleLibrary.cpp ****     
+ 809              		.loc 2 154 35 view .LVU216
+ 810 00e0 1023     		movs	r3, #16
+ 147:SampleLibrary.cpp ****     samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+ 811              		.loc 2 147 31 view .LVU217
+ 812 00e2 3162     		str	r1, [r6, #32]
+ 148:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
+ 813              		.loc 2 148 5 is_stmt 1 view .LVU218
+ 814              	.LVL63:
+ 815              	.LBB83:
+ 816              	.LBI83:
  203:b3ReadWavFile.h **** 	}
  204:b3ReadWavFile.h **** 	
  205:b3ReadWavFile.h **** 	double getFileDataRate()
- 707              		.loc 1 205 9 view .LVU196
- 708              	.LBB87:
+ 817              		.loc 1 205 9 view .LVU219
+ 818              	.LBB84:
  206:b3ReadWavFile.h **** 	{
  207:b3ReadWavFile.h **** 	  return fileDataRate_;
- 709              		.loc 1 207 4 view .LVU197
- 710              		.loc 1 207 4 is_stmt 0 view .LVU198
- 711              	.LBE87:
- 712              	.LBE86:
- 120:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
- 713              		.loc 2 120 30 view .LVU199
- 714 0088 7A62     		str	r2, [r7, #36]
- 121:SampleLibrary.cpp ****     
- 715              		.loc 2 121 35 view .LVU200
- 716 008a FB62     		str	r3, [r7, #44]
- 115:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
- 717              		.loc 2 115 34 view .LVU201
- 718 008c 97ED147B 		vldr.64	d7, [r7, #80]
- 719 0090 BDEEC77B 		vcvt.s32.f64	s14, d7
- 720 0094 87ED0A7A 		vstr.32	s14, [r7, #40]	@ int
- 116:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
- 721              		.loc 2 116 5 is_stmt 1 view .LVU202
- 117:SampleLibrary.cpp ****     
- 722              		.loc 2 117 5 view .LVU203
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 23
+ 819              		.loc 1 207 4 view .LVU220
+ 820              		.loc 1 207 4 is_stmt 0 view .LVU221
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 26
 
 
- 120:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
- 723              		.loc 2 120 5 view .LVU204
- 121:SampleLibrary.cpp ****     
- 724              		.loc 2 121 5 view .LVU205
- 123:SampleLibrary.cpp **** }
- 725              		.loc 2 123 5 view .LVU206
- 123:SampleLibrary.cpp **** }
- 726              		.loc 2 123 12 is_stmt 0 view .LVU207
- 727 0098 BFE7     		b	.L48
- 728              		.cfi_endproc
- 729              	.LFE3552:
- 731 009a 00BF     		.section	.rodata._ZN13SampleLibrary4initEv.str1.4,"aMS",%progbits,1
- 732              		.align	2
- 733              	.LC0:
- 734 0000 2F00     		.ascii	"/\000"
- 735 0002 0000     		.align	2
- 736              	.LC1:
- 737 0004 2E776176 		.ascii	".wav\000"
- 737      00
- 738 0009 000000   		.align	2
- 739              	.LC2:
- 740 000c 2E574156 		.ascii	".WAV\000"
- 740      00
- 741              		.section	.text._ZN13SampleLibrary4initEv,"ax",%progbits
- 742              		.align	1
- 743              		.p2align 2,,3
- 744              		.global	_ZN13SampleLibrary4initEv
- 745              		.syntax unified
- 746              		.thumb
- 747              		.thumb_func
- 748              		.fpu fpv5-d16
- 750              	_ZN13SampleLibrary4initEv:
- 751              	.LVL54:
- 752              	.LFB3551:
-  23:SampleLibrary.cpp ****     // Mount the SD card file system
- 753              		.loc 2 23 28 is_stmt 1 view -0
- 754              		.cfi_startproc
- 755              		@ args = 0, pretend = 0, frame = 328
- 756              		@ frame_needed = 0, uses_anonymous_args = 0
-  25:SampleLibrary.cpp ****     if (f_mount(&fs, "/", 1) != FR_OK) {
- 757              		.loc 2 25 5 view .LVU209
-  23:SampleLibrary.cpp ****     // Mount the SD card file system
- 758              		.loc 2 23 28 is_stmt 0 view .LVU210
- 759 0000 30B5     		push	{r4, r5, lr}
- 760              		.cfi_def_cfa_offset 12
- 761              		.cfi_offset 4, -12
- 762              		.cfi_offset 5, -8
- 763              		.cfi_offset 14, -4
-  25:SampleLibrary.cpp ****     if (f_mount(&fs, "/", 1) != FR_OK) {
- 764              		.loc 2 25 17 view .LVU211
- 765 0002 00F58055 		add	r5, r0, #4096
-  23:SampleLibrary.cpp ****     // Mount the SD card file system
- 766              		.loc 2 23 28 view .LVU212
- 767 0006 0446     		mov	r4, r0
- 768              	.LVL55:
- 769              	.LBB88:
- 770              	.LBI88:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 24
+ 821              	.LBE84:
+ 822              	.LBE83:
+ 153:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
+ 823              		.loc 2 153 30 view .LVU222
+ 824 00e4 7262     		str	r2, [r6, #36]
+ 154:SampleLibrary.cpp ****     
+ 825              		.loc 2 154 35 view .LVU223
+ 826 00e6 F362     		str	r3, [r6, #44]
+ 148:SampleLibrary.cpp ****     samples_[index].loaded = true;           // Metadata is loaded
+ 827              		.loc 2 148 34 view .LVU224
+ 828 00e8 96ED147B 		vldr.64	d7, [r6, #80]
+ 829 00ec BDEEC77B 		vcvt.s32.f64	s14, d7
+ 830 00f0 86ED0A7A 		vstr.32	s14, [r6, #40]	@ int
+ 149:SampleLibrary.cpp ****     samples_[index].audioDataLoaded = false;  // Audio data NOT loaded yet
+ 831              		.loc 2 149 5 is_stmt 1 view .LVU225
+ 150:SampleLibrary.cpp ****     
+ 832              		.loc 2 150 5 view .LVU226
+ 153:SampleLibrary.cpp ****     samples_[index].bitsPerSample = 16;
+ 833              		.loc 2 153 5 view .LVU227
+ 154:SampleLibrary.cpp ****     
+ 834              		.loc 2 154 5 view .LVU228
+ 156:SampleLibrary.cpp **** }
+ 835              		.loc 2 156 5 view .LVU229
+ 157:SampleLibrary.cpp **** 
+ 836              		.loc 2 157 1 is_stmt 0 view .LVU230
+ 837 00f4 0DF5197D 		add	sp, sp, #612
+ 838              		.cfi_def_cfa_offset 28
+ 839              		@ sp needed
+ 840 00f8 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 841              	.LVL64:
+ 842              	.L57:
+ 157:SampleLibrary.cpp **** 
+ 843              		.loc 2 157 1 view .LVU231
+ 844              		.align	2
+ 845              	.L56:
+ 846 00fc 00000000 		.word	.LC1
+ 847 0100 20000000 		.word	.LC3
+ 848 0104 54000000 		.word	.LC6
+ 849 0108 10000000 		.word	.LC2
+ 850 010c 34000000 		.word	.LC4
+ 851 0110 44000000 		.word	.LC5
+ 852              		.cfi_endproc
+ 853              	.LFE3588:
+ 855              		.section	.rodata._ZN13SampleLibrary4initEv.str1.4,"aMS",%progbits,1
+ 856              		.align	2
+ 857              	.LC7:
+ 858 0000 496E6974 		.ascii	"Initializing Library...\000"
+ 858      69616C69 
+ 858      7A696E67 
+ 858      204C6962 
+ 858      72617279 
+ 859              		.align	2
+ 860              	.LC8:
+ 861 0018 4F70656E 		.ascii	"Opening dir...\000"
+ 861      696E6720 
+ 861      6469722E 
+ 861      2E2E00
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 27
 
 
- 771              		.file 4 "../../libDaisy//src/sys/fatfs.h"
-   1:../../libDaisy//src/sys/fatfs.h **** #ifndef __fatfs_H
-   2:../../libDaisy//src/sys/fatfs.h **** #define __fatfs_H /**< & */
-   3:../../libDaisy//src/sys/fatfs.h **** 
-   4:../../libDaisy//src/sys/fatfs.h **** #include "ff.h"
-   5:../../libDaisy//src/sys/fatfs.h **** 
-   6:../../libDaisy//src/sys/fatfs.h **** namespace daisy
-   7:../../libDaisy//src/sys/fatfs.h **** {
-   8:../../libDaisy//src/sys/fatfs.h **** /** @brief Daisy FatFS Driver Interface
-   9:../../libDaisy//src/sys/fatfs.h ****  *  @details Specifies the desired media (SD Card, USB, etc.) to be mountable with FatFS
-  10:../../libDaisy//src/sys/fatfs.h ****  *           within a given application. Once initialization is called, the standard
-  11:../../libDaisy//src/sys/fatfs.h ****  *           FatFS API will be usable with the media mounted in the order 
-  12:../../libDaisy//src/sys/fatfs.h ****  *           they are listed in the Media config struct. 
-  13:../../libDaisy//src/sys/fatfs.h ****  *           For example, when only using an SD Card, it will mount at "0:/",
-  14:../../libDaisy//src/sys/fatfs.h ****  *           when only using USB, it will mount at "0:/". However, when mounting 
-  15:../../libDaisy//src/sys/fatfs.h ****  *           with SD card and USB, the SD card will mount at "0:/", and the USB 
-  16:../../libDaisy//src/sys/fatfs.h ****  *           will mount at "1:/".
-  17:../../libDaisy//src/sys/fatfs.h ****  *           The relevant hardware peripheral (SDMMC, or MSD) needs to be initialized
-  18:../../libDaisy//src/sys/fatfs.h ****  *           separately by the application before using FatFS.
-  19:../../libDaisy//src/sys/fatfs.h ****  *          
-  20:../../libDaisy//src/sys/fatfs.h ****  *           This object has some memory limitations due to the media connected to it.
-  21:../../libDaisy//src/sys/fatfs.h ****  *           The SDMMC1 peripheral can only communicate with the AXI SRAM, and the DTCMRAM 
-  22:../../libDaisy//src/sys/fatfs.h ****  *           cannot communicate with the DMA. So the FatFSInterface object should always be
-  23:../../libDaisy//src/sys/fatfs.h ****  *           located in the AXI SRAM. This is the default location for all data/bss memory
-  24:../../libDaisy//src/sys/fatfs.h ****  *           using the standard build. However, applciations using the electrosmith bootloader
-  25:../../libDaisy//src/sys/fatfs.h ****  *           will need special consideration when using this object AND an SD Card. 
-  26:../../libDaisy//src/sys/fatfs.h ****  */
-  27:../../libDaisy//src/sys/fatfs.h **** class FatFSInterface
-  28:../../libDaisy//src/sys/fatfs.h **** {
-  29:../../libDaisy//src/sys/fatfs.h ****   public:
-  30:../../libDaisy//src/sys/fatfs.h ****     /** Return values specifying specific errors for linking Daisy to FatFS */
-  31:../../libDaisy//src/sys/fatfs.h ****     enum Result
-  32:../../libDaisy//src/sys/fatfs.h ****     {
-  33:../../libDaisy//src/sys/fatfs.h ****         OK,
-  34:../../libDaisy//src/sys/fatfs.h ****         ERR_TOO_MANY_VOLUMES,
-  35:../../libDaisy//src/sys/fatfs.h ****         ERR_NO_MEDIA_SELECTED,
-  36:../../libDaisy//src/sys/fatfs.h ****         ERR_GENERIC,
-  37:../../libDaisy//src/sys/fatfs.h ****     };
-  38:../../libDaisy//src/sys/fatfs.h **** 
-  39:../../libDaisy//src/sys/fatfs.h ****     /** Config structure for configuring Daisy to FatFS */
-  40:../../libDaisy//src/sys/fatfs.h ****     struct Config
-  41:../../libDaisy//src/sys/fatfs.h ****     {
-  42:../../libDaisy//src/sys/fatfs.h ****         /** Selected Media that will be linked to FatFS 
-  43:../../libDaisy//src/sys/fatfs.h ****          *  These values can be OR'd together when multiple
-  44:../../libDaisy//src/sys/fatfs.h ****          *  volumes are desired 
-  45:../../libDaisy//src/sys/fatfs.h ****          *  i.e. config.media = Media::SD | Media::USBH;
-  46:../../libDaisy//src/sys/fatfs.h ****          * 
-  47:../../libDaisy//src/sys/fatfs.h ****          *  When mounting multiple volumes, ffconf.h must have 
-  48:../../libDaisy//src/sys/fatfs.h ****          *  _VOLUMES set to an appropriate value.
-  49:../../libDaisy//src/sys/fatfs.h ****          * 
-  50:../../libDaisy//src/sys/fatfs.h ****          *  FatFS will register multiple volumes in the order of the enum,
-  51:../../libDaisy//src/sys/fatfs.h ****          *   the first registered class will mount at "0:/",
-  52:../../libDaisy//src/sys/fatfs.h ****          *   the second registered class will mount at "1:/", and so on
-  53:../../libDaisy//src/sys/fatfs.h ****          */
-  54:../../libDaisy//src/sys/fatfs.h ****         enum Media : uint8_t
-  55:../../libDaisy//src/sys/fatfs.h ****         {
-  56:../../libDaisy//src/sys/fatfs.h ****             MEDIA_SD  = 0x01,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 25
+ 862 0027 00       		.align	2
+ 863              	.LC9:
+ 864 0028 2F00     		.ascii	"/\000"
+ 865 002a 0000     		.align	2
+ 866              	.LC10:
+ 867 002c 44697220 		.ascii	"Dir open failed!\000"
+ 867      6F70656E 
+ 867      20666169 
+ 867      6C656421 
+ 867      00
+ 868 003d 000000   		.align	2
+ 869              	.LC11:
+ 870 0040 5363616E 		.ascii	"Scanning files...\000"
+ 870      6E696E67 
+ 870      2066696C 
+ 870      65732E2E 
+ 870      2E00
+ 871 0052 0000     		.align	2
+ 872              	.LC12:
+ 873 0054 2E776176 		.ascii	".wav\000"
+ 873      00
+ 874 0059 000000   		.align	2
+ 875              	.LC13:
+ 876 005c 2E574156 		.ascii	".WAV\000"
+ 876      00
+ 877 0061 000000   		.align	2
+ 878              	.LC14:
+ 879 0064 53616D70 		.ascii	"Sample loaded\000"
+ 879      6C65206C 
+ 879      6F616465 
+ 879      6400
+ 880 0072 0000     		.align	2
+ 881              	.LC15:
+ 882 0074 4C6F6164 		.ascii	"Load failed!\000"
+ 882      20666169 
+ 882      6C656421 
+ 882      00
+ 883 0081 000000   		.align	2
+ 884              	.LC16:
+ 885 0084 436C6F73 		.ascii	"Closing dir...\000"
+ 885      696E6720 
+ 885      6469722E 
+ 885      2E2E00
+ 886 0093 00       		.align	2
+ 887              	.LC17:
+ 888 0094 4C6F6164 		.ascii	"Loaded %d samples\000"
+ 888      65642025 
+ 888      64207361 
+ 888      6D706C65 
+ 888      7300
+ 889              		.section	.text._ZN13SampleLibrary4initEv,"ax",%progbits
+ 890              		.align	1
+ 891              		.p2align 2,,3
+ 892              		.global	_ZN13SampleLibrary4initEv
+ 893              		.syntax unified
+ 894              		.thumb
+ 895              		.thumb_func
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 28
 
 
-  57:../../libDaisy//src/sys/fatfs.h ****             MEDIA_USB = 0x02,
-  58:../../libDaisy//src/sys/fatfs.h ****             // MEDIA_QSPI = 0x04,
-  59:../../libDaisy//src/sys/fatfs.h ****         };
-  60:../../libDaisy//src/sys/fatfs.h **** 
-  61:../../libDaisy//src/sys/fatfs.h ****         uint8_t media;
-  62:../../libDaisy//src/sys/fatfs.h ****     };
-  63:../../libDaisy//src/sys/fatfs.h **** 
-  64:../../libDaisy//src/sys/fatfs.h ****     FatFSInterface() {}
-  65:../../libDaisy//src/sys/fatfs.h **** 
-  66:../../libDaisy//src/sys/fatfs.h ****     /** Link the desired hardware specified via Config::Media */
-  67:../../libDaisy//src/sys/fatfs.h ****     Result Init(const Config& cfg);
-  68:../../libDaisy//src/sys/fatfs.h **** 
-  69:../../libDaisy//src/sys/fatfs.h ****     /** Link the desired hardware specified via Config::Media 
-  70:../../libDaisy//src/sys/fatfs.h ****      * 
-  71:../../libDaisy//src/sys/fatfs.h ****      *  Alternate, explicit initialization provided for simplified syntax.
-  72:../../libDaisy//src/sys/fatfs.h ****      */
-  73:../../libDaisy//src/sys/fatfs.h ****     Result Init(const uint8_t media);
-  74:../../libDaisy//src/sys/fatfs.h **** 
-  75:../../libDaisy//src/sys/fatfs.h ****     /** Unlinks FatFS from the configured media */
-  76:../../libDaisy//src/sys/fatfs.h ****     Result DeInit();
-  77:../../libDaisy//src/sys/fatfs.h **** 
-  78:../../libDaisy//src/sys/fatfs.h ****     bool Initialized() const { return initialized_; }
-  79:../../libDaisy//src/sys/fatfs.h **** 
-  80:../../libDaisy//src/sys/fatfs.h ****     /** Return the current configuration */
-  81:../../libDaisy//src/sys/fatfs.h ****     const Config& GetConfig() const { return cfg_; }
-  82:../../libDaisy//src/sys/fatfs.h **** 
-  83:../../libDaisy//src/sys/fatfs.h ****     /** Return a mutable reference to the Configuration */
-  84:../../libDaisy//src/sys/fatfs.h ****     Config& GetMutableConfig() { return cfg_; }
-  85:../../libDaisy//src/sys/fatfs.h **** 
-  86:../../libDaisy//src/sys/fatfs.h ****     /** Returns the path to an SD Card volume to use with f_mount */
-  87:../../libDaisy//src/sys/fatfs.h ****     const char* GetSDPath() const { return path_[0]; }
-  88:../../libDaisy//src/sys/fatfs.h **** 
-  89:../../libDaisy//src/sys/fatfs.h ****     /** Returns the path to a USB Device volume to use with f_mount */
-  90:../../libDaisy//src/sys/fatfs.h ****     const char* GetUSBPath() const { return path_[1]; }
-  91:../../libDaisy//src/sys/fatfs.h **** 
-  92:../../libDaisy//src/sys/fatfs.h ****     /** Returns reference to filesystem object for the SD volume. */
-  93:../../libDaisy//src/sys/fatfs.h ****     FATFS& GetSDFileSystem() { return fs_[0]; }
- 772              		.loc 4 93 12 is_stmt 1 view .LVU213
- 773              	.LBB89:
- 774              		.loc 4 93 32 view .LVU214
- 775              		.loc 4 93 32 is_stmt 0 view .LVU215
- 776              	.LBE89:
- 777              	.LBE88:
-  26:SampleLibrary.cpp ****         return false;  // Failed to mount
- 778              		.loc 2 26 5 is_stmt 1 view .LVU216
-  23:SampleLibrary.cpp ****     // Mount the SD card file system
- 779              		.loc 2 23 28 is_stmt 0 view .LVU217
- 780 0008 D3B0     		sub	sp, sp, #332
- 781              		.cfi_def_cfa_offset 344
-  26:SampleLibrary.cpp ****         return false;  // Failed to mount
- 782              		.loc 2 26 16 view .LVU218
- 783 000a 0122     		movs	r2, #1
- 784              	.LBB91:
- 785              	.LBB90:
- 786              		.loc 4 93 44 view .LVU219
- 787 000c D5F8080C 		ldr	r0, [r5, #3080]
- 788              	.LVL56:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 26
+ 896              		.fpu fpv5-d16
+ 898              	_ZN13SampleLibrary4initEv:
+ 899              	.LVL65:
+ 900              	.LFB3587:
+  24:SampleLibrary.cpp ****     // Show initialization message
+ 901              		.loc 2 24 28 is_stmt 1 view -0
+ 902              		.cfi_startproc
+ 903              		@ args = 0, pretend = 0, frame = 392
+ 904              		@ frame_needed = 0, uses_anonymous_args = 0
+  26:SampleLibrary.cpp ****     
+ 905              		.loc 2 26 5 view .LVU233
+  24:SampleLibrary.cpp ****     // Show initialization message
+ 906              		.loc 2 24 28 is_stmt 0 view .LVU234
+ 907 0000 30B5     		push	{r4, r5, lr}
+ 908              		.cfi_def_cfa_offset 12
+ 909              		.cfi_offset 4, -12
+ 910              		.cfi_offset 5, -8
+ 911              		.cfi_offset 14, -4
+  26:SampleLibrary.cpp ****     
+ 912              		.loc 2 26 5 view .LVU235
+ 913 0002 00F58054 		add	r4, r0, #4096
+  24:SampleLibrary.cpp ****     // Show initialization message
+ 914              		.loc 2 24 28 view .LVU236
+ 915 0006 E3B0     		sub	sp, sp, #396
+ 916              		.cfi_def_cfa_offset 408
+  26:SampleLibrary.cpp ****     
+ 917              		.loc 2 26 25 view .LVU237
+ 918 0008 4FF4FA72 		mov	r2, #500
+ 919 000c 4349     		ldr	r1, .L75
+  24:SampleLibrary.cpp ****     // Show initialization message
+ 920              		.loc 2 24 28 view .LVU238
+ 921 000e 0546     		mov	r5, r0
+  26:SampleLibrary.cpp ****     
+ 922              		.loc 2 26 25 view .LVU239
+ 923 0010 D4F80C0C 		ldr	r0, [r4, #3084]
+ 924              	.LVL66:
+  26:SampleLibrary.cpp ****     
+ 925              		.loc 2 26 25 view .LVU240
+ 926 0014 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 927              	.LVL67:
+  31:SampleLibrary.cpp ****     
+ 928              		.loc 2 31 5 is_stmt 1 view .LVU241
+  31:SampleLibrary.cpp ****     
+ 929              		.loc 2 31 25 is_stmt 0 view .LVU242
+ 930 0018 4149     		ldr	r1, .L75+4
+ 931 001a D4F80C0C 		ldr	r0, [r4, #3084]
+ 932 001e 4FF49672 		mov	r2, #300
+ 933 0022 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 934              	.LVL68:
+  34:SampleLibrary.cpp ****     if (f_opendir(&dir, "/") != FR_OK) {
+ 935              		.loc 2 34 5 is_stmt 1 view .LVU243
+  35:SampleLibrary.cpp ****         display_.showMessage("Dir open failed!", 1000);
+ 936              		.loc 2 35 5 view .LVU244
+  35:SampleLibrary.cpp ****         display_.showMessage("Dir open failed!", 1000);
+ 937              		.loc 2 35 18 is_stmt 0 view .LVU245
+ 938 0026 3F49     		ldr	r1, .L75+8
+ 939 0028 6846     		mov	r0, sp
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 29
 
 
- 789              		.loc 4 93 44 view .LVU220
- 790              	.LBE90:
- 791              	.LBE91:
-  26:SampleLibrary.cpp ****         return false;  // Failed to mount
- 792              		.loc 2 26 16 view .LVU221
- 793 0010 2049     		ldr	r1, .L75
- 794 0012 0430     		adds	r0, r0, #4
- 795 0014 FFF7FEFF 		bl	f_mount
- 796              	.LVL57:
-  26:SampleLibrary.cpp ****         return false;  // Failed to mount
- 797              		.loc 2 26 5 view .LVU222
- 798 0018 10B1     		cbz	r0, .L56
- 799              	.L58:
-  27:SampleLibrary.cpp ****     }
- 800              		.loc 2 27 16 view .LVU223
- 801 001a 0020     		movs	r0, #0
-  75:SampleLibrary.cpp **** 
- 802              		.loc 2 75 1 view .LVU224
- 803 001c 53B0     		add	sp, sp, #332
- 804              		.cfi_remember_state
- 805              		.cfi_def_cfa_offset 12
- 806              		@ sp needed
- 807 001e 30BD     		pop	{r4, r5, pc}
- 808              	.LVL58:
- 809              	.L56:
- 810              		.cfi_restore_state
-  31:SampleLibrary.cpp ****     if (f_opendir(&dir, "/") != FR_OK) {
- 811              		.loc 2 31 5 is_stmt 1 view .LVU225
-  32:SampleLibrary.cpp ****         return false;  // Failed to open directory
- 812              		.loc 2 32 5 view .LVU226
-  32:SampleLibrary.cpp ****         return false;  // Failed to open directory
- 813              		.loc 2 32 18 is_stmt 0 view .LVU227
- 814 0020 1C49     		ldr	r1, .L75
- 815 0022 6846     		mov	r0, sp
- 816 0024 FFF7FEFF 		bl	f_opendir
- 817              	.LVL59:
-  32:SampleLibrary.cpp ****         return false;  // Failed to open directory
- 818              		.loc 2 32 5 view .LVU228
- 819 0028 0028     		cmp	r0, #0
- 820 002a F6D1     		bne	.L58
- 821              	.L59:
-  37:SampleLibrary.cpp ****     FRESULT result;
- 822              		.loc 2 37 5 is_stmt 1 view .LVU229
-  38:SampleLibrary.cpp ****     
- 823              		.loc 2 38 5 view .LVU230
-  40:SampleLibrary.cpp ****         result = f_readdir(&dir, &fno);
- 824              		.loc 2 40 5 view .LVU231
- 825              	.LBB92:
-  41:SampleLibrary.cpp ****         
- 826              		.loc 2 41 9 view .LVU232
-  41:SampleLibrary.cpp ****         
- 827              		.loc 2 41 27 is_stmt 0 view .LVU233
- 828 002c 0CA9     		add	r1, sp, #48
- 829 002e 6846     		mov	r0, sp
- 830 0030 FFF7FEFF 		bl	f_readdir
- 831              	.LVL60:
-  49:SampleLibrary.cpp ****             continue;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 27
+ 940 002a FFF7FEFF 		bl	f_opendir
+ 941              	.LVL69:
+  35:SampleLibrary.cpp ****         display_.showMessage("Dir open failed!", 1000);
+ 942              		.loc 2 35 5 view .LVU246
+ 943 002e 0028     		cmp	r0, #0
+ 944 0030 6AD1     		bne	.L73
+  40:SampleLibrary.cpp ****     
+ 945              		.loc 2 40 5 is_stmt 1 view .LVU247
+  40:SampleLibrary.cpp ****     
+ 946              		.loc 2 40 25 is_stmt 0 view .LVU248
+ 947 0032 4FF49672 		mov	r2, #300
+ 948 0036 3C49     		ldr	r1, .L75+12
+ 949 0038 D4F80C0C 		ldr	r0, [r4, #3084]
+ 950 003c FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 951              	.LVL70:
+  43:SampleLibrary.cpp ****     FRESULT result;
+ 952              		.loc 2 43 5 is_stmt 1 view .LVU249
+  44:SampleLibrary.cpp ****     int fileCount = 0;
+ 953              		.loc 2 44 5 view .LVU250
+  45:SampleLibrary.cpp ****     
+ 954              		.loc 2 45 5 view .LVU251
+ 955              	.L65:
+  47:SampleLibrary.cpp ****         result = f_readdir(&dir, &fno);
+ 956              		.loc 2 47 5 view .LVU252
+ 957              	.LBB85:
+  48:SampleLibrary.cpp ****         
+ 958              		.loc 2 48 9 view .LVU253
+  48:SampleLibrary.cpp ****         
+ 959              		.loc 2 48 27 is_stmt 0 view .LVU254
+ 960 0040 1CA9     		add	r1, sp, #112
+ 961 0042 6846     		mov	r0, sp
+ 962 0044 FFF7FEFF 		bl	f_readdir
+ 963              	.LVL71:
+  55:SampleLibrary.cpp ****         
+ 964              		.loc 2 55 9 is_stmt 1 view .LVU255
+  58:SampleLibrary.cpp ****             continue;
+ 965              		.loc 2 58 9 view .LVU256
+  63:SampleLibrary.cpp ****         if (strstr(filename, ".wav") == nullptr &&
+ 966              		.loc 2 63 9 view .LVU257
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 967              		.loc 2 64 9 view .LVU258
+  48:SampleLibrary.cpp ****         
+ 968              		.loc 2 48 27 is_stmt 0 view .LVU259
+ 969 0048 0346     		mov	r3, r0
+ 970              	.LVL72:
+  51:SampleLibrary.cpp ****             break;
+ 971              		.loc 2 51 9 is_stmt 1 view .LVU260
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 972              		.loc 2 64 19 is_stmt 0 view .LVU261
+ 973 004a 3849     		ldr	r1, .L75+16
+ 974 004c 0DF18600 		add	r0, sp, #134
+ 975              	.LVL73:
+  51:SampleLibrary.cpp ****             break;
+ 976              		.loc 2 51 9 view .LVU262
+ 977 0050 002B     		cmp	r3, #0
+ 978 0052 3ED1     		bne	.L61
+  51:SampleLibrary.cpp ****             break;
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 30
 
 
- 832              		.loc 2 49 9 is_stmt 1 view .LVU234
-  54:SampleLibrary.cpp ****         if (strstr(filename, ".wav") == nullptr && 
- 833              		.loc 2 54 9 view .LVU235
-  55:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
- 834              		.loc 2 55 9 view .LVU236
-  41:SampleLibrary.cpp ****         
- 835              		.loc 2 41 27 is_stmt 0 view .LVU237
- 836 0034 0346     		mov	r3, r0
- 837              	.LVL61:
-  44:SampleLibrary.cpp ****             break;
- 838              		.loc 2 44 9 is_stmt 1 view .LVU238
-  55:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
- 839              		.loc 2 55 19 is_stmt 0 view .LVU239
- 840 0036 1849     		ldr	r1, .L75+4
- 841 0038 0DF14600 		add	r0, sp, #70
- 842              	.LVL62:
-  44:SampleLibrary.cpp ****             break;
- 843              		.loc 2 44 9 view .LVU240
- 844 003c 1BBB     		cbnz	r3, .L60
-  44:SampleLibrary.cpp ****             break;
- 845              		.loc 2 44 29 discriminator 1 view .LVU241
- 846 003e 9DF84630 		ldrb	r3, [sp, #70]	@ zero_extendqisi2
- 847              	.LVL63:
-  44:SampleLibrary.cpp ****             break;
- 848              		.loc 2 44 29 discriminator 1 view .LVU242
- 849 0042 03B3     		cbz	r3, .L60
-  49:SampleLibrary.cpp ****             continue;
- 850              		.loc 2 49 9 view .LVU243
- 851 0044 9DF83830 		ldrb	r3, [sp, #56]	@ zero_extendqisi2
- 852 0048 13F0120F 		tst	r3, #18
- 853 004c EED1     		bne	.L59
-  55:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
- 854              		.loc 2 55 19 view .LVU244
- 855 004e FFF7FEFF 		bl	strstr
- 856              	.LVL64:
-  55:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
- 857              		.loc 2 55 9 view .LVU245
- 858 0052 80B1     		cbz	r0, .L74
- 859              	.L62:
-  61:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
- 860              		.loc 2 61 9 is_stmt 1 view .LVU246
-  62:SampleLibrary.cpp ****                 sampleCount_++;
- 861              		.loc 2 62 13 view .LVU247
-  61:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
- 862              		.loc 2 61 13 is_stmt 0 view .LVU248
- 863 0054 D5F8002C 		ldr	r2, [r5, #3072]
-  62:SampleLibrary.cpp ****                 sampleCount_++;
- 864              		.loc 2 62 31 view .LVU249
- 865 0058 0DF14601 		add	r1, sp, #70
- 866              	.LVL65:
-  62:SampleLibrary.cpp ****                 sampleCount_++;
- 867              		.loc 2 62 31 view .LVU250
- 868 005c 2046     		mov	r0, r4
-  61:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
- 869              		.loc 2 61 9 view .LVU251
- 870 005e 3F2A     		cmp	r2, #63
- 871 0060 11DC     		bgt	.L60
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 28
+ 979              		.loc 2 51 29 discriminator 1 view .LVU263
+ 980 0054 9DF88630 		ldrb	r3, [sp, #134]	@ zero_extendqisi2
+ 981              	.LVL74:
+  51:SampleLibrary.cpp ****             break;
+ 982              		.loc 2 51 29 discriminator 1 view .LVU264
+ 983 0058 002B     		cmp	r3, #0
+ 984 005a 3AD0     		beq	.L61
+  58:SampleLibrary.cpp ****             continue;
+ 985              		.loc 2 58 9 view .LVU265
+ 986 005c 9DF87830 		ldrb	r3, [sp, #120]	@ zero_extendqisi2
+ 987 0060 13F0120F 		tst	r3, #18
+ 988 0064 ECD1     		bne	.L65
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 989              		.loc 2 64 19 view .LVU266
+ 990 0066 FFF7FEFF 		bl	strstr
+ 991              	.LVL75:
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 992              		.loc 2 64 19 view .LVU267
+ 993 006a 0346     		mov	r3, r0
+  65:SampleLibrary.cpp ****             continue;  // Not a WAV file
+ 994              		.loc 2 65 19 view .LVU268
+ 995 006c 3049     		ldr	r1, .L75+20
+ 996 006e 0DF18600 		add	r0, sp, #134
+ 997              	.LVL76:
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 998              		.loc 2 64 9 view .LVU269
+ 999 0072 13B3     		cbz	r3, .L74
+ 1000              	.LVL77:
+ 1001              	.L63:
+  70:SampleLibrary.cpp ****         snprintf(debugMsg, sizeof(debugMsg), "Loading: %s", filename);
+ 1002              		.loc 2 70 9 is_stmt 1 view .LVU270
+  71:SampleLibrary.cpp ****         display_.showMessage(debugMsg, 200);
+ 1003              		.loc 2 71 9 view .LVU271
+  71:SampleLibrary.cpp ****         display_.showMessage(debugMsg, 200);
+ 1004              		.loc 2 71 17 is_stmt 0 view .LVU272
+ 1005 0074 0DF18603 		add	r3, sp, #134
+ 1006              	.LVL78:
+  71:SampleLibrary.cpp ****         display_.showMessage(debugMsg, 200);
+ 1007              		.loc 2 71 17 view .LVU273
+ 1008 0078 2E4A     		ldr	r2, .L75+24
+ 1009 007a 4021     		movs	r1, #64
+ 1010 007c 0CA8     		add	r0, sp, #48
+ 1011 007e FFF7FEFF 		bl	snprintf
+ 1012              	.LVL79:
+  72:SampleLibrary.cpp ****         
+ 1013              		.loc 2 72 9 is_stmt 1 view .LVU274
+  72:SampleLibrary.cpp ****         
+ 1014              		.loc 2 72 29 is_stmt 0 view .LVU275
+ 1015 0082 0CA9     		add	r1, sp, #48
+ 1016 0084 D4F80C0C 		ldr	r0, [r4, #3084]
+ 1017 0088 C822     		movs	r2, #200
+ 1018 008a FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1019              	.LVL80:
+  75:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
+ 1020              		.loc 2 75 9 is_stmt 1 view .LVU276
+  76:SampleLibrary.cpp ****                 sampleCount_++;
+ 1021              		.loc 2 76 13 view .LVU277
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 31
 
 
- 872              	.LVL66:
-  62:SampleLibrary.cpp ****                 sampleCount_++;
- 873              		.loc 2 62 31 view .LVU252
- 874 0062 FFF7FEFF 		bl	_ZN13SampleLibrary14loadSampleInfoEPKci
- 875              	.LVL67:
-  63:SampleLibrary.cpp ****             }
- 876              		.loc 2 63 17 is_stmt 1 view .LVU253
-  62:SampleLibrary.cpp ****                 sampleCount_++;
- 877              		.loc 2 62 13 is_stmt 0 view .LVU254
- 878 0066 0028     		cmp	r0, #0
- 879 0068 E0D0     		beq	.L59
-  63:SampleLibrary.cpp ****             }
- 880              		.loc 2 63 29 view .LVU255
- 881 006a D5F8003C 		ldr	r3, [r5, #3072]
- 882 006e 0133     		adds	r3, r3, #1
- 883 0070 C5F8003C 		str	r3, [r5, #3072]
- 884 0074 DAE7     		b	.L59
- 885              	.L74:
-  56:SampleLibrary.cpp ****             continue;  // Not a WAV file
- 886              		.loc 2 56 19 discriminator 1 view .LVU256
- 887 0076 0949     		ldr	r1, .L75+8
- 888 0078 0DF14600 		add	r0, sp, #70
- 889              	.LVL68:
-  56:SampleLibrary.cpp ****             continue;  // Not a WAV file
- 890              		.loc 2 56 19 discriminator 1 view .LVU257
- 891 007c FFF7FEFF 		bl	strstr
- 892              	.LVL69:
-  55:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
- 893              		.loc 2 55 49 discriminator 1 view .LVU258
- 894 0080 0028     		cmp	r0, #0
- 895 0082 E7D1     		bne	.L62
- 896 0084 D2E7     		b	.L59
- 897              	.L60:
- 898              	.LBE92:
-  72:SampleLibrary.cpp ****     
- 899              		.loc 2 72 5 is_stmt 1 view .LVU259
-  72:SampleLibrary.cpp ****     
- 900              		.loc 2 72 15 is_stmt 0 view .LVU260
- 901 0086 6846     		mov	r0, sp
- 902 0088 FFF7FEFF 		bl	f_closedir
- 903              	.LVL70:
-  74:SampleLibrary.cpp **** }
- 904              		.loc 2 74 5 is_stmt 1 view .LVU261
-  74:SampleLibrary.cpp **** }
- 905              		.loc 2 74 12 is_stmt 0 view .LVU262
- 906 008c 0120     		movs	r0, #1
-  75:SampleLibrary.cpp **** 
- 907              		.loc 2 75 1 view .LVU263
- 908 008e 53B0     		add	sp, sp, #332
- 909              		.cfi_def_cfa_offset 12
- 910              		@ sp needed
- 911 0090 30BD     		pop	{r4, r5, pc}
- 912              	.LVL71:
- 913              	.L76:
-  75:SampleLibrary.cpp **** 
- 914              		.loc 2 75 1 view .LVU264
- 915 0092 00BF     		.align	2
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 29
+  75:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
+ 1022              		.loc 2 75 13 is_stmt 0 view .LVU278
+ 1023 008e D4F8002C 		ldr	r2, [r4, #3072]
+  76:SampleLibrary.cpp ****                 sampleCount_++;
+ 1024              		.loc 2 76 31 view .LVU279
+ 1025 0092 0DF18601 		add	r1, sp, #134
+ 1026              	.LVL81:
+  76:SampleLibrary.cpp ****                 sampleCount_++;
+ 1027              		.loc 2 76 31 view .LVU280
+ 1028 0096 2846     		mov	r0, r5
+  75:SampleLibrary.cpp ****             if (loadSampleInfo(filename, sampleCount_)) {
+ 1029              		.loc 2 75 9 view .LVU281
+ 1030 0098 3F2A     		cmp	r2, #63
+ 1031 009a 1ADC     		bgt	.L61
+ 1032              	.LVL82:
+  76:SampleLibrary.cpp ****                 sampleCount_++;
+ 1033              		.loc 2 76 31 view .LVU282
+ 1034 009c FFF7FEFF 		bl	_ZN13SampleLibrary14loadSampleInfoEPKci
+ 1035              	.LVL83:
+  77:SampleLibrary.cpp ****                 display_.showMessage("Sample loaded", 150);
+ 1036              		.loc 2 77 17 is_stmt 1 view .LVU283
+  80:SampleLibrary.cpp ****             }
+ 1037              		.loc 2 80 17 view .LVU284
+  78:SampleLibrary.cpp ****             } else {
+ 1038              		.loc 2 78 37 is_stmt 0 view .LVU285
+ 1039 00a0 9622     		movs	r2, #150
+ 1040 00a2 2549     		ldr	r1, .L75+28
+  76:SampleLibrary.cpp ****                 sampleCount_++;
+ 1041              		.loc 2 76 13 view .LVU286
+ 1042 00a4 70B1     		cbz	r0, .L64
+  77:SampleLibrary.cpp ****                 display_.showMessage("Sample loaded", 150);
+ 1043              		.loc 2 77 29 view .LVU287
+ 1044 00a6 D4F8003C 		ldr	r3, [r4, #3072]
+  78:SampleLibrary.cpp ****             } else {
+ 1045              		.loc 2 78 37 view .LVU288
+ 1046 00aa D4F80C0C 		ldr	r0, [r4, #3084]
+  77:SampleLibrary.cpp ****                 display_.showMessage("Sample loaded", 150);
+ 1047              		.loc 2 77 29 view .LVU289
+ 1048 00ae 0133     		adds	r3, r3, #1
+ 1049 00b0 C4F8003C 		str	r3, [r4, #3072]
+  78:SampleLibrary.cpp ****             } else {
+ 1050              		.loc 2 78 17 is_stmt 1 view .LVU290
+  78:SampleLibrary.cpp ****             } else {
+ 1051              		.loc 2 78 37 is_stmt 0 view .LVU291
+ 1052 00b4 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1053              	.LVL84:
+ 1054 00b8 C2E7     		b	.L65
+ 1055              	.LVL85:
+ 1056              	.L74:
+  65:SampleLibrary.cpp ****             continue;  // Not a WAV file
+ 1057              		.loc 2 65 19 discriminator 1 view .LVU292
+ 1058 00ba FFF7FEFF 		bl	strstr
+ 1059              	.LVL86:
+  64:SampleLibrary.cpp ****             strstr(filename, ".WAV") == nullptr) {
+ 1060              		.loc 2 64 49 discriminator 1 view .LVU293
+ 1061 00be 0028     		cmp	r0, #0
+ 1062 00c0 D8D1     		bne	.L63
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 32
 
 
- 916              	.L75:
- 917 0094 00000000 		.word	.LC0
- 918 0098 04000000 		.word	.LC1
- 919 009c 0C000000 		.word	.LC2
- 920              		.cfi_endproc
- 921              	.LFE3551:
- 923              		.section	.text._ZN13SampleLibrary14loadSampleDataEi,"ax",%progbits
- 924              		.align	1
- 925              		.p2align 2,,3
- 926              		.global	_ZN13SampleLibrary14loadSampleDataEi
- 927              		.syntax unified
- 928              		.thumb
- 929              		.thumb_func
- 930              		.fpu fpv5-d16
- 932              	_ZN13SampleLibrary14loadSampleDataEi:
- 933              	.LVL72:
- 934              	.LFB3555:
- 126:SampleLibrary.cpp ****     // Check if already loaded
- 935              		.loc 2 126 47 is_stmt 1 view -0
- 936              		.cfi_startproc
- 937              		@ args = 0, pretend = 0, frame = 0
- 938              		@ frame_needed = 0, uses_anonymous_args = 0
- 939              		@ link register save eliminated.
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 940              		.loc 2 128 5 view .LVU266
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 941              		.loc 2 128 25 is_stmt 0 view .LVU267
- 942 0000 C1EBC103 		rsb	r3, r1, r1, lsl #3
- 943 0004 00EB0313 		add	r3, r0, r3, lsl #4
- 944 0008 93F86930 		ldrb	r3, [r3, #105]	@ zero_extendqisi2
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 945              		.loc 2 128 5 view .LVU268
- 946 000c 0BB1     		cbz	r3, .L79
- 947              		.loc 2 170 1 view .LVU269
- 948 000e 1846     		mov	r0, r3
- 949              	.LVL73:
- 950              		.loc 2 170 1 view .LVU270
- 951 0010 7047     		bx	lr
- 952              	.LVL74:
- 953              	.L79:
- 954              		.loc 2 170 1 view .LVU271
- 955 0012 FFF7FEBF 		b	_ZN13SampleLibrary14loadSampleDataEi.part.0
- 956              	.LVL75:
- 957              		.loc 2 170 1 view .LVU272
- 958              		.cfi_endproc
- 959              	.LFE3555:
- 961 0016 00BF     		.section	.text._ZN13SampleLibrary9getSampleEi,"ax",%progbits
- 962              		.align	1
- 963              		.p2align 2,,3
- 964              		.global	_ZN13SampleLibrary9getSampleEi
- 965              		.syntax unified
- 966              		.thumb
- 967              		.thumb_func
- 968              		.fpu fpv5-d16
- 970              	_ZN13SampleLibrary9getSampleEi:
- 971              	.LVL76:
- 972              	.LFB3556:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 30
+ 1063 00c2 BDE7     		b	.L65
+ 1064              	.L64:
+  80:SampleLibrary.cpp ****             }
+ 1065              		.loc 2 80 37 view .LVU294
+ 1066 00c4 C822     		movs	r2, #200
+ 1067 00c6 1D49     		ldr	r1, .L75+32
+ 1068 00c8 D4F80C0C 		ldr	r0, [r4, #3084]
+ 1069 00cc FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1070              	.LVL87:
+ 1071 00d0 B6E7     		b	.L65
+ 1072              	.L61:
+  80:SampleLibrary.cpp ****             }
+ 1073              		.loc 2 80 37 view .LVU295
+ 1074              	.LBE85:
+  89:SampleLibrary.cpp ****     f_closedir(&dir);
+ 1075              		.loc 2 89 5 is_stmt 1 view .LVU296
+  89:SampleLibrary.cpp ****     f_closedir(&dir);
+ 1076              		.loc 2 89 25 is_stmt 0 view .LVU297
+ 1077 00d2 4FF49672 		mov	r2, #300
+ 1078 00d6 1A49     		ldr	r1, .L75+36
+ 1079 00d8 D4F80C0C 		ldr	r0, [r4, #3084]
+ 1080 00dc FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1081              	.LVL88:
+  90:SampleLibrary.cpp ****     
+ 1082              		.loc 2 90 5 is_stmt 1 view .LVU298
+  90:SampleLibrary.cpp ****     
+ 1083              		.loc 2 90 15 is_stmt 0 view .LVU299
+ 1084 00e0 6846     		mov	r0, sp
+ 1085 00e2 FFF7FEFF 		bl	f_closedir
+ 1086              	.LVL89:
+  93:SampleLibrary.cpp ****     snprintf(msg, sizeof(msg), "Loaded %d samples", sampleCount_);
+ 1087              		.loc 2 93 5 is_stmt 1 view .LVU300
+  94:SampleLibrary.cpp ****     display_.showMessage(msg, 1000);
+ 1088              		.loc 2 94 5 view .LVU301
+  94:SampleLibrary.cpp ****     display_.showMessage(msg, 1000);
+ 1089              		.loc 2 94 13 is_stmt 0 view .LVU302
+ 1090 00e6 D4F8003C 		ldr	r3, [r4, #3072]
+ 1091 00ea 164A     		ldr	r2, .L75+40
+ 1092 00ec 4021     		movs	r1, #64
+ 1093 00ee 0CA8     		add	r0, sp, #48
+ 1094 00f0 FFF7FEFF 		bl	snprintf
+ 1095              	.LVL90:
+  95:SampleLibrary.cpp ****     
+ 1096              		.loc 2 95 5 is_stmt 1 view .LVU303
+  95:SampleLibrary.cpp ****     
+ 1097              		.loc 2 95 25 is_stmt 0 view .LVU304
+ 1098 00f4 D4F80C0C 		ldr	r0, [r4, #3084]
+ 1099 00f8 4FF47A72 		mov	r2, #1000
+ 1100 00fc 0CA9     		add	r1, sp, #48
+ 1101 00fe FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1102              	.LVL91:
+  97:SampleLibrary.cpp **** }
+ 1103              		.loc 2 97 5 is_stmt 1 view .LVU305
+  97:SampleLibrary.cpp **** }
+ 1104              		.loc 2 97 12 is_stmt 0 view .LVU306
+ 1105 0102 0120     		movs	r0, #1
+  98:SampleLibrary.cpp **** 
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 33
 
 
- 171:SampleLibrary.cpp **** 
- 172:SampleLibrary.cpp **** SampleInfo* SampleLibrary::getSample(int index) {
- 973              		.loc 2 172 49 is_stmt 1 view -0
- 974              		.cfi_startproc
- 975              		@ args = 0, pretend = 0, frame = 0
- 976              		@ frame_needed = 0, uses_anonymous_args = 0
- 977              		@ link register save eliminated.
- 173:SampleLibrary.cpp ****     if (index >= 0 && index < sampleCount_) {
- 978              		.loc 2 173 5 view .LVU274
- 979 0000 0029     		cmp	r1, #0
- 980              		.loc 2 173 5 is_stmt 0 view .LVU275
- 981 0002 0ADB     		blt	.L83
- 982              		.loc 2 173 31 discriminator 1 view .LVU276
- 983 0004 00F58053 		add	r3, r0, #4096
- 984              		.loc 2 173 20 discriminator 1 view .LVU277
- 985 0008 D3F8003C 		ldr	r3, [r3, #3072]
- 986 000c 8B42     		cmp	r3, r1
- 987 000e 04DD     		ble	.L83
- 174:SampleLibrary.cpp ****         return &samples_[index];
- 988              		.loc 2 174 9 is_stmt 1 view .LVU278
- 989              		.loc 2 174 31 is_stmt 0 view .LVU279
- 990 0010 C1EBC101 		rsb	r1, r1, r1, lsl #3
- 991              	.LVL77:
- 992              		.loc 2 174 31 view .LVU280
- 993 0014 00EB0110 		add	r0, r0, r1, lsl #4
- 994              	.LVL78:
- 995              		.loc 2 174 31 view .LVU281
- 996 0018 7047     		bx	lr
- 997              	.LVL79:
- 998              	.L83:
- 175:SampleLibrary.cpp ****     }
- 176:SampleLibrary.cpp ****     return nullptr;
- 999              		.loc 2 176 12 view .LVU282
- 1000 001a 0020     		movs	r0, #0
- 1001              	.LVL80:
- 177:SampleLibrary.cpp **** }
- 1002              		.loc 2 177 1 view .LVU283
- 1003 001c 7047     		bx	lr
- 1004              		.cfi_endproc
- 1005              	.LFE3556:
- 1007 001e 00BF     		.section	.text._ZN13SampleLibrary18ensureSampleLoadedEi,"ax",%progbits
- 1008              		.align	1
- 1009              		.p2align 2,,3
- 1010              		.global	_ZN13SampleLibrary18ensureSampleLoadedEi
- 1011              		.syntax unified
- 1012              		.thumb
- 1013              		.thumb_func
- 1014              		.fpu fpv5-d16
- 1016              	_ZN13SampleLibrary18ensureSampleLoadedEi:
- 1017              	.LVL81:
- 1018              	.LFB3557:
- 178:SampleLibrary.cpp **** 
- 179:SampleLibrary.cpp **** bool SampleLibrary::ensureSampleLoaded(int index) {
- 1019              		.loc 2 179 51 is_stmt 1 view -0
- 1020              		.cfi_startproc
- 1021              		@ args = 0, pretend = 0, frame = 0
- 1022              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 31
+ 1106              		.loc 2 98 1 view .LVU307
+ 1107 0104 63B0     		add	sp, sp, #396
+ 1108              		.cfi_remember_state
+ 1109              		.cfi_def_cfa_offset 12
+ 1110              		@ sp needed
+ 1111 0106 30BD     		pop	{r4, r5, pc}
+ 1112              	.LVL92:
+ 1113              	.L73:
+ 1114              		.cfi_restore_state
+  36:SampleLibrary.cpp ****         return false;  // Failed to open directory
+ 1115              		.loc 2 36 9 is_stmt 1 view .LVU308
+  36:SampleLibrary.cpp ****         return false;  // Failed to open directory
+ 1116              		.loc 2 36 29 is_stmt 0 view .LVU309
+ 1117 0108 D4F80C0C 		ldr	r0, [r4, #3084]
+ 1118 010c 4FF47A72 		mov	r2, #1000
+ 1119 0110 0D49     		ldr	r1, .L75+44
+ 1120 0112 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1121              	.LVL93:
+  37:SampleLibrary.cpp ****     }
+ 1122              		.loc 2 37 9 is_stmt 1 view .LVU310
+  37:SampleLibrary.cpp ****     }
+ 1123              		.loc 2 37 16 is_stmt 0 view .LVU311
+ 1124 0116 0020     		movs	r0, #0
+  98:SampleLibrary.cpp **** 
+ 1125              		.loc 2 98 1 view .LVU312
+ 1126 0118 63B0     		add	sp, sp, #396
+ 1127              		.cfi_def_cfa_offset 12
+ 1128              		@ sp needed
+ 1129 011a 30BD     		pop	{r4, r5, pc}
+ 1130              	.LVL94:
+ 1131              	.L76:
+  98:SampleLibrary.cpp **** 
+ 1132              		.loc 2 98 1 view .LVU313
+ 1133              		.align	2
+ 1134              	.L75:
+ 1135 011c 00000000 		.word	.LC7
+ 1136 0120 18000000 		.word	.LC8
+ 1137 0124 28000000 		.word	.LC9
+ 1138 0128 40000000 		.word	.LC11
+ 1139 012c 54000000 		.word	.LC12
+ 1140 0130 5C000000 		.word	.LC13
+ 1141 0134 00000000 		.word	.LC0
+ 1142 0138 64000000 		.word	.LC14
+ 1143 013c 74000000 		.word	.LC15
+ 1144 0140 84000000 		.word	.LC16
+ 1145 0144 94000000 		.word	.LC17
+ 1146 0148 2C000000 		.word	.LC10
+ 1147              		.cfi_endproc
+ 1148              	.LFE3587:
+ 1150              		.section	.text._ZN13SampleLibrary14loadSampleDataEi,"ax",%progbits
+ 1151              		.align	1
+ 1152              		.p2align 2,,3
+ 1153              		.global	_ZN13SampleLibrary14loadSampleDataEi
+ 1154              		.syntax unified
+ 1155              		.thumb
+ 1156              		.thumb_func
+ 1157              		.fpu fpv5-d16
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 34
 
 
- 1023              		@ link register save eliminated.
- 180:SampleLibrary.cpp ****     if (index < 0 || index >= sampleCount_) {
- 1024              		.loc 2 180 5 view .LVU285
- 1025 0000 0B1E     		subs	r3, r1, #0
- 1026 0002 17DB     		blt	.L86
- 179:SampleLibrary.cpp ****     if (index < 0 || index >= sampleCount_) {
- 1027              		.loc 2 179 51 is_stmt 0 discriminator 1 view .LVU286
- 1028 0004 10B4     		push	{r4}
- 1029              		.cfi_def_cfa_offset 4
- 1030              		.cfi_offset 4, -4
- 1031              		.loc 2 180 31 discriminator 1 view .LVU287
- 1032 0006 00F58054 		add	r4, r0, #4096
- 1033              		.loc 2 180 19 discriminator 1 view .LVU288
- 1034 000a D4F8004C 		ldr	r4, [r4, #3072]
- 1035 000e 9C42     		cmp	r4, r3
- 1036 0010 04DC     		bgt	.L92
- 181:SampleLibrary.cpp ****         return false;  // Invalid index
- 1037              		.loc 2 181 16 view .LVU289
- 1038 0012 0023     		movs	r3, #0
- 1039              	.L85:
- 182:SampleLibrary.cpp ****     }
- 183:SampleLibrary.cpp ****     return loadSampleData(index);
- 184:SampleLibrary.cpp **** }
- 1040              		.loc 2 184 1 view .LVU290
- 1041 0014 1846     		mov	r0, r3
- 1042              	.LVL82:
- 1043              		.loc 2 184 1 view .LVU291
- 1044 0016 5DF8044B 		ldr	r4, [sp], #4
- 1045              		.cfi_remember_state
- 1046              		.cfi_restore 4
- 1047              		.cfi_def_cfa_offset 0
- 1048 001a 7047     		bx	lr
- 1049              	.LVL83:
- 1050              	.L92:
- 1051              		.cfi_restore_state
- 183:SampleLibrary.cpp **** }
- 1052              		.loc 2 183 5 is_stmt 1 view .LVU292
- 1053              	.LBB99:
- 1054              	.LBI99:
- 126:SampleLibrary.cpp ****     // Check if already loaded
- 1055              		.loc 2 126 6 view .LVU293
- 1056              	.LBB100:
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 1057              		.loc 2 128 5 view .LVU294
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 1058              		.loc 2 128 25 is_stmt 0 view .LVU295
- 1059 001c C3EBC303 		rsb	r3, r3, r3, lsl #3
- 1060 0020 00EB0313 		add	r3, r0, r3, lsl #4
- 1061 0024 93F86930 		ldrb	r3, [r3, #105]	@ zero_extendqisi2
- 128:SampleLibrary.cpp ****         return true;  // Already loaded
- 1062              		.loc 2 128 5 view .LVU296
- 1063 0028 002B     		cmp	r3, #0
- 1064 002a F3D1     		bne	.L85
- 1065              	.LBE100:
- 1066              	.LBE99:
- 1067              		.loc 2 184 1 view .LVU297
- 1068 002c 5DF8044B 		ldr	r4, [sp], #4
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 32
+ 1159              	_ZN13SampleLibrary14loadSampleDataEi:
+ 1160              	.LVL95:
+ 1161              	.LFB3591:
+ 159:SampleLibrary.cpp ****     // Check if already loaded
+ 1162              		.loc 2 159 47 is_stmt 1 view -0
+ 1163              		.cfi_startproc
+ 1164              		@ args = 0, pretend = 0, frame = 0
+ 1165              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1166              		@ link register save eliminated.
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1167              		.loc 2 161 5 view .LVU315
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1168              		.loc 2 161 25 is_stmt 0 view .LVU316
+ 1169 0000 C1EBC103 		rsb	r3, r1, r1, lsl #3
+ 1170 0004 00EB0313 		add	r3, r0, r3, lsl #4
+ 1171 0008 93F86930 		ldrb	r3, [r3, #105]	@ zero_extendqisi2
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1172              		.loc 2 161 5 view .LVU317
+ 1173 000c 0BB1     		cbz	r3, .L79
+ 1174              		.loc 2 208 1 view .LVU318
+ 1175 000e 1846     		mov	r0, r3
+ 1176              	.LVL96:
+ 1177              		.loc 2 208 1 view .LVU319
+ 1178 0010 7047     		bx	lr
+ 1179              	.LVL97:
+ 1180              	.L79:
+ 1181              		.loc 2 208 1 view .LVU320
+ 1182 0012 FFF7FEBF 		b	_ZN13SampleLibrary14loadSampleDataEi.part.0
+ 1183              	.LVL98:
+ 1184              		.loc 2 208 1 view .LVU321
+ 1185              		.cfi_endproc
+ 1186              	.LFE3591:
+ 1188 0016 00BF     		.section	.text._ZN13SampleLibrary9getSampleEi,"ax",%progbits
+ 1189              		.align	1
+ 1190              		.p2align 2,,3
+ 1191              		.global	_ZN13SampleLibrary9getSampleEi
+ 1192              		.syntax unified
+ 1193              		.thumb
+ 1194              		.thumb_func
+ 1195              		.fpu fpv5-d16
+ 1197              	_ZN13SampleLibrary9getSampleEi:
+ 1198              	.LVL99:
+ 1199              	.LFB3592:
+ 209:SampleLibrary.cpp **** 
+ 210:SampleLibrary.cpp **** SampleInfo* SampleLibrary::getSample(int index) {
+ 1200              		.loc 2 210 49 is_stmt 1 view -0
+ 1201              		.cfi_startproc
+ 1202              		@ args = 0, pretend = 0, frame = 0
+ 1203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1204              		@ link register save eliminated.
+ 211:SampleLibrary.cpp ****     if (index >= 0 && index < sampleCount_) {
+ 1205              		.loc 2 211 5 view .LVU323
+ 1206 0000 0029     		cmp	r1, #0
+ 1207              		.loc 2 211 5 is_stmt 0 view .LVU324
+ 1208 0002 0ADB     		blt	.L83
+ 1209              		.loc 2 211 31 discriminator 1 view .LVU325
+ 1210 0004 00F58053 		add	r3, r0, #4096
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 35
 
 
- 1069              		.cfi_restore 4
- 1070              		.cfi_def_cfa_offset 0
- 1071              	.LBB102:
- 1072              	.LBB101:
- 1073 0030 FFF7FEBF 		b	_ZN13SampleLibrary14loadSampleDataEi.part.0
- 1074              	.LVL84:
- 1075              	.L86:
- 1076              		.loc 2 184 1 view .LVU298
- 1077              	.LBE101:
- 1078              	.LBE102:
- 181:SampleLibrary.cpp ****     }
- 1079              		.loc 2 181 16 view .LVU299
- 1080 0034 0023     		movs	r3, #0
- 1081              		.loc 2 184 1 view .LVU300
- 1082 0036 1846     		mov	r0, r3
- 1083              	.LVL85:
- 1084              		.loc 2 184 1 view .LVU301
- 1085 0038 7047     		bx	lr
- 1086              		.cfi_endproc
- 1087              	.LFE3557:
- 1089 003a 00BF     		.section	.text._ZN13SampleLibrary10findSampleEPKc,"ax",%progbits
- 1090              		.align	1
- 1091              		.p2align 2,,3
- 1092              		.global	_ZN13SampleLibrary10findSampleEPKc
- 1093              		.syntax unified
- 1094              		.thumb
- 1095              		.thumb_func
- 1096              		.fpu fpv5-d16
- 1098              	_ZN13SampleLibrary10findSampleEPKc:
- 1099              	.LVL86:
- 1100              	.LFB3558:
- 185:SampleLibrary.cpp **** 
- 186:SampleLibrary.cpp **** int SampleLibrary::findSample(const char* name) {
- 1101              		.loc 2 186 49 is_stmt 1 view -0
- 1102              		.cfi_startproc
- 1103              		@ args = 0, pretend = 0, frame = 0
- 1104              		@ frame_needed = 0, uses_anonymous_args = 0
- 187:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
- 1105              		.loc 2 187 5 view .LVU303
- 1106              	.LBB103:
- 1107              		.loc 2 187 23 view .LVU304
- 1108              	.LBE103:
- 186:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
- 1109              		.loc 2 186 49 is_stmt 0 view .LVU305
- 1110 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 1111              		.cfi_def_cfa_offset 24
- 1112              		.cfi_offset 3, -24
- 1113              		.cfi_offset 4, -20
- 1114              		.cfi_offset 5, -16
- 1115              		.cfi_offset 6, -12
- 1116              		.cfi_offset 7, -8
- 1117              		.cfi_offset 14, -4
- 1118              	.LBB104:
- 1119              		.loc 2 187 25 view .LVU306
- 1120 0002 00F58053 		add	r3, r0, #4096
- 1121 0006 D3F8007C 		ldr	r7, [r3, #3072]
- 1122              		.loc 2 187 23 view .LVU307
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 33
+ 1211              		.loc 2 211 20 discriminator 1 view .LVU326
+ 1212 0008 D3F8003C 		ldr	r3, [r3, #3072]
+ 1213 000c 8B42     		cmp	r3, r1
+ 1214 000e 04DD     		ble	.L83
+ 212:SampleLibrary.cpp ****         return &samples_[index];
+ 1215              		.loc 2 212 9 is_stmt 1 view .LVU327
+ 1216              		.loc 2 212 31 is_stmt 0 view .LVU328
+ 1217 0010 C1EBC101 		rsb	r1, r1, r1, lsl #3
+ 1218              	.LVL100:
+ 1219              		.loc 2 212 31 view .LVU329
+ 1220 0014 00EB0110 		add	r0, r0, r1, lsl #4
+ 1221              	.LVL101:
+ 1222              		.loc 2 212 31 view .LVU330
+ 1223 0018 7047     		bx	lr
+ 1224              	.LVL102:
+ 1225              	.L83:
+ 213:SampleLibrary.cpp ****     }
+ 214:SampleLibrary.cpp ****     return nullptr;
+ 1226              		.loc 2 214 12 view .LVU331
+ 1227 001a 0020     		movs	r0, #0
+ 1228              	.LVL103:
+ 215:SampleLibrary.cpp **** }
+ 1229              		.loc 2 215 1 view .LVU332
+ 1230 001c 7047     		bx	lr
+ 1231              		.cfi_endproc
+ 1232              	.LFE3592:
+ 1234 001e 00BF     		.section	.text._ZN13SampleLibrary18ensureSampleLoadedEi,"ax",%progbits
+ 1235              		.align	1
+ 1236              		.p2align 2,,3
+ 1237              		.global	_ZN13SampleLibrary18ensureSampleLoadedEi
+ 1238              		.syntax unified
+ 1239              		.thumb
+ 1240              		.thumb_func
+ 1241              		.fpu fpv5-d16
+ 1243              	_ZN13SampleLibrary18ensureSampleLoadedEi:
+ 1244              	.LVL104:
+ 1245              	.LFB3593:
+ 216:SampleLibrary.cpp **** 
+ 217:SampleLibrary.cpp **** bool SampleLibrary::ensureSampleLoaded(int index) {
+ 1246              		.loc 2 217 51 is_stmt 1 view -0
+ 1247              		.cfi_startproc
+ 1248              		@ args = 0, pretend = 0, frame = 0
+ 1249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1250              		@ link register save eliminated.
+ 218:SampleLibrary.cpp ****     if (index < 0 || index >= sampleCount_) {
+ 1251              		.loc 2 218 5 view .LVU334
+ 1252 0000 0B1E     		subs	r3, r1, #0
+ 1253 0002 17DB     		blt	.L86
+ 217:SampleLibrary.cpp ****     if (index < 0 || index >= sampleCount_) {
+ 1254              		.loc 2 217 51 is_stmt 0 discriminator 1 view .LVU335
+ 1255 0004 10B4     		push	{r4}
+ 1256              		.cfi_def_cfa_offset 4
+ 1257              		.cfi_offset 4, -4
+ 1258              		.loc 2 218 31 discriminator 1 view .LVU336
+ 1259 0006 00F58054 		add	r4, r0, #4096
+ 1260              		.loc 2 218 19 discriminator 1 view .LVU337
+ 1261 000a D4F8004C 		ldr	r4, [r4, #3072]
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 36
 
 
- 1123 000a 002F     		cmp	r7, #0
- 1124 000c 0FDD     		ble	.L96
- 1125 000e 0E46     		mov	r6, r1
- 1126 0010 0446     		mov	r4, r0
- 1127              		.loc 2 187 14 view .LVU308
- 1128 0012 0025     		movs	r5, #0
- 1129 0014 02E0     		b	.L95
- 1130              	.LVL87:
- 1131              	.L102:
- 1132              		.loc 2 187 5 discriminator 2 view .LVU309
- 1133 0016 0135     		adds	r5, r5, #1
- 1134              	.LVL88:
- 1135              		.loc 2 187 23 is_stmt 1 discriminator 2 view .LVU310
- 1136 0018 BD42     		cmp	r5, r7
- 1137 001a 08D0     		beq	.L96
- 1138              	.LVL89:
- 1139              	.L95:
- 188:SampleLibrary.cpp ****         if (strcmp(samples_[i].name, name) == 0) {
- 1140              		.loc 2 188 9 view .LVU311
- 1141              		.loc 2 188 19 is_stmt 0 view .LVU312
- 1142 001c 2046     		mov	r0, r4
- 1143 001e 3146     		mov	r1, r6
- 187:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
- 1144              		.loc 2 187 23 view .LVU313
- 1145 0020 7034     		adds	r4, r4, #112
- 1146              		.loc 2 188 19 view .LVU314
- 1147 0022 FFF7FEFF 		bl	strcmp
- 1148              	.LVL90:
- 187:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
- 1149              		.loc 2 187 5 is_stmt 1 view .LVU315
- 1150              		.loc 2 188 9 is_stmt 0 view .LVU316
- 1151 0026 0028     		cmp	r0, #0
- 1152 0028 F5D1     		bne	.L102
- 1153              	.LBE104:
- 189:SampleLibrary.cpp ****             return i;  // Found it!
- 190:SampleLibrary.cpp ****         }
- 191:SampleLibrary.cpp ****     }
- 192:SampleLibrary.cpp ****     return -1;  // Not found
- 193:SampleLibrary.cpp **** }
- 1154              		.loc 2 193 1 view .LVU317
- 1155 002a 2846     		mov	r0, r5
- 1156 002c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 1157              	.LVL91:
- 1158              	.L96:
- 192:SampleLibrary.cpp **** }
- 1159              		.loc 2 192 13 view .LVU318
- 1160 002e 4FF0FF35 		mov	r5, #-1
- 1161              		.loc 2 193 1 view .LVU319
- 1162 0032 2846     		mov	r0, r5
- 1163 0034 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 1164              		.cfi_endproc
- 1165              	.LFE3558:
- 1167              		.weak	_ZTV16MemoryDataSource
- 1168 0036 00BF     		.section	.rodata._ZTV16MemoryDataSource,"aG",%progbits,_ZTV16MemoryDataSource,comdat
- 1169              		.align	2
- 1172              	_ZTV16MemoryDataSource:
- 1173 0000 00000000 		.word	0
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 34
+ 1262 000e 9C42     		cmp	r4, r3
+ 1263 0010 04DC     		bgt	.L92
+ 219:SampleLibrary.cpp ****         return false;  // Invalid index
+ 1264              		.loc 2 219 16 view .LVU338
+ 1265 0012 0023     		movs	r3, #0
+ 1266              	.L85:
+ 220:SampleLibrary.cpp ****     }
+ 221:SampleLibrary.cpp ****     return loadSampleData(index);
+ 222:SampleLibrary.cpp **** }
+ 1267              		.loc 2 222 1 view .LVU339
+ 1268 0014 1846     		mov	r0, r3
+ 1269              	.LVL105:
+ 1270              		.loc 2 222 1 view .LVU340
+ 1271 0016 5DF8044B 		ldr	r4, [sp], #4
+ 1272              		.cfi_remember_state
+ 1273              		.cfi_restore 4
+ 1274              		.cfi_def_cfa_offset 0
+ 1275 001a 7047     		bx	lr
+ 1276              	.LVL106:
+ 1277              	.L92:
+ 1278              		.cfi_restore_state
+ 221:SampleLibrary.cpp **** }
+ 1279              		.loc 2 221 5 is_stmt 1 view .LVU341
+ 1280              	.LBB92:
+ 1281              	.LBI92:
+ 159:SampleLibrary.cpp ****     // Check if already loaded
+ 1282              		.loc 2 159 6 view .LVU342
+ 1283              	.LBB93:
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1284              		.loc 2 161 5 view .LVU343
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1285              		.loc 2 161 25 is_stmt 0 view .LVU344
+ 1286 001c C3EBC303 		rsb	r3, r3, r3, lsl #3
+ 1287 0020 00EB0313 		add	r3, r0, r3, lsl #4
+ 1288 0024 93F86930 		ldrb	r3, [r3, #105]	@ zero_extendqisi2
+ 161:SampleLibrary.cpp ****         return true;  // Already loaded
+ 1289              		.loc 2 161 5 view .LVU345
+ 1290 0028 002B     		cmp	r3, #0
+ 1291 002a F3D1     		bne	.L85
+ 1292              	.LBE93:
+ 1293              	.LBE92:
+ 1294              		.loc 2 222 1 view .LVU346
+ 1295 002c 5DF8044B 		ldr	r4, [sp], #4
+ 1296              		.cfi_restore 4
+ 1297              		.cfi_def_cfa_offset 0
+ 1298              	.LBB95:
+ 1299              	.LBB94:
+ 1300 0030 FFF7FEBF 		b	_ZN13SampleLibrary14loadSampleDataEi.part.0
+ 1301              	.LVL107:
+ 1302              	.L86:
+ 1303              		.loc 2 222 1 view .LVU347
+ 1304              	.LBE94:
+ 1305              	.LBE95:
+ 219:SampleLibrary.cpp ****     }
+ 1306              		.loc 2 219 16 view .LVU348
+ 1307 0034 0023     		movs	r3, #0
+ 1308              		.loc 2 222 1 view .LVU349
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 37
 
 
- 1174 0004 00000000 		.word	0
- 1175 0008 00000000 		.word	_ZN16MemoryDataSource5ftellEv
- 1176 000c 00000000 		.word	_ZN16MemoryDataSource5freadEPvjj
- 1177 0010 00000000 		.word	_ZN16MemoryDataSource5fseekEli
- 1178              		.text
- 1179              	.Letext0:
- 1180              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1181              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1182              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
- 1183              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
- 1184              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
- 1185              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
- 1186              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
- 1187              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
- 1188              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
- 1189              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
- 1190              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
- 1191              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
- 1192              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
- 1193              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
- 1194              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
- 1195              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
- 1196              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
- 1197              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
- 1198              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
- 1199              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
- 1200              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
- 1201              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
- 1202              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
- 1203              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
- 1204              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
- 1205              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
- 1206              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
- 1207              		.file 32 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
- 1208              		.file 33 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
- 1209              		.file 34 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
- 1210              		.file 35 "../../libDaisy//src/daisy_core.h"
- 1211              		.file 36 "../../libDaisy//src/per/sdmmc.h"
- 1212              		.file 37 "../../libDaisy//src/util/wav_format.h"
- 1213              		.file 38 "../../libDaisy//src/dev/max11300.h"
- 1214              		.file 39 "../../libDaisy//src/daisy_seed.h"
- 1215              		.file 40 "../../libDaisy//Middlewares/Third_Party/FatFs/src/integer.h"
- 1216              		.file 41 "../../libDaisy//Middlewares/Third_Party/FatFs/src/ff.h"
- 1217              		.file 42 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
- 1218              		.file 43 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
- 1219              		.file 44 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
- 1220              		.file 45 "../../libDaisy//src/dev/sr_595.h"
- 1221              		.file 46 "<built-in>"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s 			page 35
+ 1309 0036 1846     		mov	r0, r3
+ 1310              	.LVL108:
+ 1311              		.loc 2 222 1 view .LVU350
+ 1312 0038 7047     		bx	lr
+ 1313              		.cfi_endproc
+ 1314              	.LFE3593:
+ 1316 003a 00BF     		.section	.text._ZN13SampleLibrary10findSampleEPKc,"ax",%progbits
+ 1317              		.align	1
+ 1318              		.p2align 2,,3
+ 1319              		.global	_ZN13SampleLibrary10findSampleEPKc
+ 1320              		.syntax unified
+ 1321              		.thumb
+ 1322              		.thumb_func
+ 1323              		.fpu fpv5-d16
+ 1325              	_ZN13SampleLibrary10findSampleEPKc:
+ 1326              	.LVL109:
+ 1327              	.LFB3594:
+ 223:SampleLibrary.cpp **** 
+ 224:SampleLibrary.cpp **** int SampleLibrary::findSample(const char* name) {
+ 1328              		.loc 2 224 49 is_stmt 1 view -0
+ 1329              		.cfi_startproc
+ 1330              		@ args = 0, pretend = 0, frame = 0
+ 1331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
+ 1332              		.loc 2 225 5 view .LVU352
+ 1333              	.LBB96:
+ 1334              		.loc 2 225 23 view .LVU353
+ 1335              	.LBE96:
+ 224:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
+ 1336              		.loc 2 224 49 is_stmt 0 view .LVU354
+ 1337 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1338              		.cfi_def_cfa_offset 24
+ 1339              		.cfi_offset 3, -24
+ 1340              		.cfi_offset 4, -20
+ 1341              		.cfi_offset 5, -16
+ 1342              		.cfi_offset 6, -12
+ 1343              		.cfi_offset 7, -8
+ 1344              		.cfi_offset 14, -4
+ 1345              	.LBB97:
+ 1346              		.loc 2 225 25 view .LVU355
+ 1347 0002 00F58053 		add	r3, r0, #4096
+ 1348 0006 D3F8007C 		ldr	r7, [r3, #3072]
+ 1349              		.loc 2 225 23 view .LVU356
+ 1350 000a 002F     		cmp	r7, #0
+ 1351 000c 0FDD     		ble	.L96
+ 1352 000e 0E46     		mov	r6, r1
+ 1353 0010 0446     		mov	r4, r0
+ 1354              		.loc 2 225 14 view .LVU357
+ 1355 0012 0025     		movs	r5, #0
+ 1356 0014 02E0     		b	.L95
+ 1357              	.LVL110:
+ 1358              	.L102:
+ 1359              		.loc 2 225 5 discriminator 2 view .LVU358
+ 1360 0016 0135     		adds	r5, r5, #1
+ 1361              	.LVL111:
+ 1362              		.loc 2 225 23 is_stmt 1 discriminator 2 view .LVU359
+ 1363 0018 BD42     		cmp	r5, r7
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 38
+
+
+ 1364 001a 08D0     		beq	.L96
+ 1365              	.LVL112:
+ 1366              	.L95:
+ 226:SampleLibrary.cpp ****         if (strcmp(samples_[i].name, name) == 0) {
+ 1367              		.loc 2 226 9 view .LVU360
+ 1368              		.loc 2 226 19 is_stmt 0 view .LVU361
+ 1369 001c 2046     		mov	r0, r4
+ 1370 001e 3146     		mov	r1, r6
+ 225:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
+ 1371              		.loc 2 225 23 view .LVU362
+ 1372 0020 7034     		adds	r4, r4, #112
+ 1373              		.loc 2 226 19 view .LVU363
+ 1374 0022 FFF7FEFF 		bl	strcmp
+ 1375              	.LVL113:
+ 225:SampleLibrary.cpp ****     for (int i = 0; i < sampleCount_; i++) {
+ 1376              		.loc 2 225 5 is_stmt 1 view .LVU364
+ 1377              		.loc 2 226 9 is_stmt 0 view .LVU365
+ 1378 0026 0028     		cmp	r0, #0
+ 1379 0028 F5D1     		bne	.L102
+ 1380              	.LBE97:
+ 227:SampleLibrary.cpp ****             return i;  // Found it!
+ 228:SampleLibrary.cpp ****         }
+ 229:SampleLibrary.cpp ****     }
+ 230:SampleLibrary.cpp ****     return -1;  // Not found
+ 231:SampleLibrary.cpp **** }
+ 1381              		.loc 2 231 1 view .LVU366
+ 1382 002a 2846     		mov	r0, r5
+ 1383 002c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1384              	.LVL114:
+ 1385              	.L96:
+ 230:SampleLibrary.cpp **** }
+ 1386              		.loc 2 230 13 view .LVU367
+ 1387 002e 4FF0FF35 		mov	r5, #-1
+ 1388              		.loc 2 231 1 view .LVU368
+ 1389 0032 2846     		mov	r0, r5
+ 1390 0034 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1391              		.cfi_endproc
+ 1392              	.LFE3594:
+ 1394              		.weak	_ZTV16MemoryDataSource
+ 1395 0036 00BF     		.section	.rodata._ZTV16MemoryDataSource,"aG",%progbits,_ZTV16MemoryDataSource,comdat
+ 1396              		.align	2
+ 1399              	_ZTV16MemoryDataSource:
+ 1400 0000 00000000 		.word	0
+ 1401 0004 00000000 		.word	0
+ 1402 0008 00000000 		.word	_ZN16MemoryDataSource5ftellEv
+ 1403 000c 00000000 		.word	_ZN16MemoryDataSource5freadEPvjj
+ 1404 0010 00000000 		.word	_ZN16MemoryDataSource5fseekEli
+ 1405              		.text
+ 1406              	.Letext0:
+ 1407              		.file 4 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1408              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1409              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 1410              		.file 7 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 1411              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 1412              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1413              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 1414              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 39
+
+
+ 1415              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 1416              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 1417              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 1418              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 1419              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 1420              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 1421              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\initializer_list
+ 1422              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
+ 1423              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 1424              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 1425              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 1426              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 1427              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 1428              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 1429              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 1430              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 1431              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 1432              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 1433              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 1434              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 1435              		.file 32 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 1436              		.file 33 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 1437              		.file 34 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 1438              		.file 35 "../../libDaisy//src/daisy_core.h"
+ 1439              		.file 36 "../../libDaisy//src/per/tim.h"
+ 1440              		.file 37 "../../libDaisy//src/sys/system.h"
+ 1441              		.file 38 "../../libDaisy//src/per/qspi.h"
+ 1442              		.file 39 "../../libDaisy//src/per/dac.h"
+ 1443              		.file 40 "../../libDaisy//src/per/sai.h"
+ 1444              		.file 41 "../../libDaisy//src/hid/audio.h"
+ 1445              		.file 42 "../../libDaisy//src/per/adc.h"
+ 1446              		.file 43 "../../libDaisy//src/per/uart.h"
+ 1447              		.file 44 "../../libDaisy//src/hid/MidiEvent.h"
+ 1448              		.file 45 "../../libDaisy//src/hid/midi_parser.h"
+ 1449              		.file 46 "../../libDaisy//src/hid/usb.h"
+ 1450              		.file 47 "../../libDaisy//src/hid/midi.h"
+ 1451              		.file 48 "../../libDaisy//src/util/FIFO.h"
+ 1452              		.file 49 "../../libDaisy//src/hid/switch.h"
+ 1453              		.file 50 "../../libDaisy//src/hid/encoder.h"
+ 1454              		.file 51 "../../libDaisy//src/hid/ctrl.h"
+ 1455              		.file 52 "../../libDaisy//src/per/sdmmc.h"
+ 1456              		.file 53 "../../libDaisy//src/util/wav_format.h"
+ 1457              		.file 54 "../../libDaisy//src/hid/led.h"
+ 1458              		.file 55 "../../libDaisy//src/util/color.h"
+ 1459              		.file 56 "../../libDaisy//src/hid/rgb_led.h"
+ 1460              		.file 57 "../../libDaisy//src/dev/max11300.h"
+ 1461              		.file 58 "../../libDaisy//src/sys/fatfs.h"
+ 1462              		.file 59 "../../libDaisy//src/daisy_seed.h"
+ 1463              		.file 60 "../../libDaisy//src/daisy_pod.h"
+ 1464              		.file 61 "../../libDaisy//src/per/gpio.h"
+ 1465              		.file 62 "../../libDaisy//src/dev/sdram.h"
+ 1466              		.file 63 "../../libDaisy//src/util/oled_fonts.h"
+ 1467              		.file 64 "../../libDaisy//Middlewares/Third_Party/FatFs/src/integer.h"
+ 1468              		.file 65 "../../libDaisy//Middlewares/Third_Party/FatFs/src/ff.h"
+ 1469              		.file 66 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 1470              		.file 67 "DisplayManager.h"
+ 1471              		.file 68 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 40
+
+
+ 1472              		.file 69 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 1473              		.file 70 "../../libDaisy//src/dev/sr_595.h"
+ 1474              		.file 71 "<built-in>"
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 SampleLibrary.cpp
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:17     .text._ZN16MemoryDataSource5ftellEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:26     .text._ZN16MemoryDataSource5ftellEv:00000000 _ZN16MemoryDataSource5ftellEv
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:45     .text._ZN16MemoryDataSource5freadEPvjj:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:53     .text._ZN16MemoryDataSource5freadEPvjj:00000000 _ZN16MemoryDataSource5freadEPvjj
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:159    .text._ZN16MemoryDataSource5fseekEli:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:167    .text._ZN16MemoryDataSource5fseekEli:00000000 _ZN16MemoryDataSource5fseekEli
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:232    .text._ZN13SampleLibrary14loadSampleDataEi.part.0:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:239    .text._ZN13SampleLibrary14loadSampleDataEi.part.0:00000000 _ZN13SampleLibrary14loadSampleDataEi.part.0
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:390    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:398    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE:00000000 _ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:521    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE:00000058 $d
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1172   .rodata._ZTV16MemoryDataSource:00000000 _ZTV16MemoryDataSource
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:398    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE:00000000 _ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceE
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:528    .text._ZN13SampleLibrary14loadSampleInfoEPKci:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:536    .text._ZN13SampleLibrary14loadSampleInfoEPKci:00000000 _ZN13SampleLibrary14loadSampleInfoEPKci
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:732    .rodata._ZN13SampleLibrary4initEv.str1.4:00000000 $d
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:742    .text._ZN13SampleLibrary4initEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:750    .text._ZN13SampleLibrary4initEv:00000000 _ZN13SampleLibrary4initEv
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:917    .text._ZN13SampleLibrary4initEv:00000094 $d
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:924    .text._ZN13SampleLibrary14loadSampleDataEi:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:932    .text._ZN13SampleLibrary14loadSampleDataEi:00000000 _ZN13SampleLibrary14loadSampleDataEi
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:962    .text._ZN13SampleLibrary9getSampleEi:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:970    .text._ZN13SampleLibrary9getSampleEi:00000000 _ZN13SampleLibrary9getSampleEi
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1008   .text._ZN13SampleLibrary18ensureSampleLoadedEi:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1016   .text._ZN13SampleLibrary18ensureSampleLoadedEi:00000000 _ZN13SampleLibrary18ensureSampleLoadedEi
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1090   .text._ZN13SampleLibrary10findSampleEPKc:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1098   .text._ZN13SampleLibrary10findSampleEPKc:00000000 _ZN13SampleLibrary10findSampleEPKc
-C:\Users\halcyon\AppData\Local\Temp\ccjdAwZq.s:1169   .rodata._ZTV16MemoryDataSource:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:17     .text._ZN16MemoryDataSource5ftellEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:26     .text._ZN16MemoryDataSource5ftellEv:00000000 _ZN16MemoryDataSource5ftellEv
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:45     .text._ZN16MemoryDataSource5freadEPvjj:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:53     .text._ZN16MemoryDataSource5freadEPvjj:00000000 _ZN16MemoryDataSource5freadEPvjj
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:159    .text._ZN16MemoryDataSource5fseekEli:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:167    .text._ZN16MemoryDataSource5fseekEli:00000000 _ZN16MemoryDataSource5fseekEli
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:232    .rodata._ZN13SampleLibrary14loadSampleDataEi.part.0.str1.4:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:236    .text._ZN13SampleLibrary14loadSampleDataEi.part.0:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:243    .text._ZN13SampleLibrary14loadSampleDataEi.part.0:00000000 _ZN13SampleLibrary14loadSampleDataEi.part.0
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:410    .text._ZN13SampleLibrary14loadSampleDataEi.part.0:0000009c $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:415    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:423    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager:00000000 _ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:553    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager:00000060 $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1399   .rodata._ZTV16MemoryDataSource:00000000 _ZTV16MemoryDataSource
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:423    .text._ZN13SampleLibraryC2ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager:00000000 _ZN13SampleLibraryC1ERN5daisy12SdmmcHandlerERNS0_14FatFSInterfaceER14DisplayManager
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:560    .rodata._ZN13SampleLibrary14loadSampleInfoEPKci.str1.4:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:579    .text._ZN13SampleLibrary14loadSampleInfoEPKci:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:587    .text._ZN13SampleLibrary14loadSampleInfoEPKci:00000000 _ZN13SampleLibrary14loadSampleInfoEPKci
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:846    .text._ZN13SampleLibrary14loadSampleInfoEPKci:000000fc $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:856    .rodata._ZN13SampleLibrary4initEv.str1.4:00000000 $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:890    .text._ZN13SampleLibrary4initEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:898    .text._ZN13SampleLibrary4initEv:00000000 _ZN13SampleLibrary4initEv
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1135   .text._ZN13SampleLibrary4initEv:0000011c $d
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1151   .text._ZN13SampleLibrary14loadSampleDataEi:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1159   .text._ZN13SampleLibrary14loadSampleDataEi:00000000 _ZN13SampleLibrary14loadSampleDataEi
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1189   .text._ZN13SampleLibrary9getSampleEi:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1197   .text._ZN13SampleLibrary9getSampleEi:00000000 _ZN13SampleLibrary9getSampleEi
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1235   .text._ZN13SampleLibrary18ensureSampleLoadedEi:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1243   .text._ZN13SampleLibrary18ensureSampleLoadedEi:00000000 _ZN13SampleLibrary18ensureSampleLoadedEi
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1317   .text._ZN13SampleLibrary10findSampleEPKc:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1325   .text._ZN13SampleLibrary10findSampleEPKc:00000000 _ZN13SampleLibrary10findSampleEPKc
+C:\Users\halcyon\AppData\Local\Temp\ccxFx9Ww.s:1396   .rodata._ZTV16MemoryDataSource:00000000 $d
 
 UNDEFINED SYMBOLS
+snprintf
+_ZN14DisplayManager11showMessageEPKcm
 f_open
 _Z20custom_pool_allocatej
 f_read
@@ -2071,7 +2392,6 @@ f_close
 _ZN13b3ReadWavFile10getWavInfoER12b3DataSource
 _ZN13b3ReadWavFileC1Ev
 strncpy
-f_mount
 f_opendir
 f_readdir
 strstr

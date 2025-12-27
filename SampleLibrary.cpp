@@ -8,10 +8,11 @@ extern const size_t CUSTOM_POOL_SIZE;
 // Helper function to allocate from SDRAM pool
 extern void* custom_pool_allocate(size_t size);
 
-SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem)
-    : sdHandler_(sdHandler),
+SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem, DisplayManager& display)
+    : sampleCount_(0),
+      sdHandler_(sdHandler),
       fileSystem_(fileSystem),
-      sampleCount_(0)
+      display_(display)
 {
     // Initialize all samples as not loaded
     for (int i = 0; i < MAX_SAMPLES; i++) {
@@ -21,21 +22,27 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
 }
 
 bool SampleLibrary::init() {
-    // Mount the SD card file system
-    FATFS& fs = fileSystem_.GetSDFileSystem();
-    if (f_mount(&fs, "/", 1) != FR_OK) {
-        return false;  // Failed to mount
-    }
+    // Show initialization message
+    display_.showMessage("Initializing Library...", 500);
+    
+    // Filesystem is already mounted by SimpleSampler
+    // (passed in via constructor reference)
+    
+    display_.showMessage("Opening dir...", 300);
     
     // Open the root directory
     DIR dir;
     if (f_opendir(&dir, "/") != FR_OK) {
+        display_.showMessage("Dir open failed!", 1000);
         return false;  // Failed to open directory
     }
+    
+    display_.showMessage("Scanning files...", 300);
     
     // Scan for WAV files
     FILINFO fno;
     FRESULT result;
+    int fileCount = 0;
     
     do {
         result = f_readdir(&dir, &fno);
@@ -45,6 +52,8 @@ bool SampleLibrary::init() {
             break;
         }
         
+        fileCount++;
+        
         // Skip directories and hidden files
         if (fno.fattrib & (AM_HID | AM_DIR)) {
             continue;
@@ -52,15 +61,23 @@ bool SampleLibrary::init() {
         
         // Check if it's a .wav file
         const char* filename = fno.fname;
-        if (strstr(filename, ".wav") == nullptr && 
+        if (strstr(filename, ".wav") == nullptr &&
             strstr(filename, ".WAV") == nullptr) {
             continue;  // Not a WAV file
         }
+        
+        // Debug: Show which file we're about to load
+        char debugMsg[64];
+        snprintf(debugMsg, sizeof(debugMsg), "Loading: %s", filename);
+        display_.showMessage(debugMsg, 200);
         
         // Try to load this sample
         if (sampleCount_ < MAX_SAMPLES) {
             if (loadSampleInfo(filename, sampleCount_)) {
                 sampleCount_++;
+                display_.showMessage("Sample loaded", 150);
+            } else {
+                display_.showMessage("Load failed!", 200);
             }
         } else {
             break;  // Reached maximum samples
@@ -69,17 +86,28 @@ bool SampleLibrary::init() {
     } while (result == FR_OK);
     
     // Close directory
+    display_.showMessage("Closing dir...", 300);
     f_closedir(&dir);
+    
+    // Show completion message with sample count
+    char msg[64];
+    snprintf(msg, sizeof(msg), "Loaded %d samples", sampleCount_);
+    display_.showMessage(msg, 1000);
     
     return true;
 }
 
 bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
+    display_.showMessage("Opening file...", 150);
+    
     // Open the file
     FIL file;
     if (f_open(&file, filename, FA_OPEN_EXISTING | FA_READ) != FR_OK) {
+        display_.showMessage("Open failed!", 200);
         return false;  // Failed to open
     }
+    
+    display_.showMessage("Reading header...", 150);
     
     // Read only the WAV header (first 44 bytes)
     // WAV header structure: RIFF(4) + filesize(4) + WAVE(4) + fmt(4) +
@@ -92,11 +120,16 @@ bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
     UINT bytesRead;
     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADER_SIZE) {
         f_close(&file);
+        display_.showMessage("Read failed!", 200);
         return false;  // Failed to read header
     }
     
+    display_.showMessage("Closing file...", 150);
+    
     // Close the file - we only needed the header
     f_close(&file);
+    
+    display_.showMessage("Parsing WAV...", 150);
     
     // Store filename
     strncpy(samples_[index].name, filename, 31);
@@ -128,6 +161,11 @@ bool SampleLibrary::loadSampleData(int index) {
     if (samples_[index].audioDataLoaded) {
         return true;  // Already loaded
     }
+    
+    // Show loading message
+    char msg[64];
+    snprintf(msg, sizeof(msg), "Loading: %s", samples_[index].name);
+    display_.showMessage(msg, 200);
     
     // Open the file
     FIL file;
