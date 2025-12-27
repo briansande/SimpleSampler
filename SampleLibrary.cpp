@@ -120,7 +120,7 @@ bool SampleLibrary::loadSampleInfo(const char* filename, int index) {
     UINT bytesRead;
     if (f_read(&file, headerBuffer, WAV_HEADER_SIZE, &bytesRead) != FR_OK || bytesRead != WAV_HEADER_SIZE) {
         f_close(&file);
-        display_.showMessage("Read failed!", 200);
+        display_.showMessage("Read failed!", 20000);
         return false;  // Failed to read header
     }
     
