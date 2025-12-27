@@ -47,7 +47,10 @@ DIR            dir;
 FILINFO        fno;
 
 // Our custom sampler components
-static DisplayManager* displayManager = nullptr;
+// Line 50: Use raw storage (not yet constructed)
+static char display_storage[sizeof(DisplayManager)];
+static DisplayManager& display_ = *reinterpret_cast<DisplayManager*>(display_storage);
+
 static SampleLibrary* library = nullptr;
 
 // Memory pool for SDRAM
@@ -65,22 +68,6 @@ void* custom_pool_allocate(size_t size) {
     return ptr;
 }
 
-
-
-// Audio callback wrapper
-void AudioCallback(float** out, size_t size) {
-    if (engine) {
-        engine->audioCallback(out, size);
-    } else {
-        // Silence if engine not ready
-        for (size_t i = 0; i < size; i++) {
-            out[0][i] = 0.0f;
-            out[1][i] = 0.0f;
-            out[2][i] = 0.0f;
-            out[3][i] = 0.0f;
-        }
-    }
-}
 
 
 // Forward declarations
@@ -273,6 +260,18 @@ void DisplayMessage(const char* message, uint32_t delayMs) {
 }
 
 
+
+// Audio Callback
+void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                   AudioHandle::InterleavingOutputBuffer out,
+                   size_t                                size)
+{
+    
+
+
+}
+
+
 int main(void)
 {
 
@@ -290,7 +289,10 @@ int main(void)
     display.Init(disp_cfg);
 
     // Initialize DisplayManager - wraps the display for easy access
-    displayManager = new DisplayManager(display, hw);
+    // Line 289: Construct in-place using placement new
+    new (&display_) DisplayManager(display, hw);
+
+    display_.showMessage("Initializing...", 500);
 
     // Initialize the knobs
     float r = 0, g = 0, b = 0;
@@ -327,7 +329,7 @@ int main(void)
     
     DisplayMessage("Starting Library Initialization", 1000);
     // Initialize library
-    library = new SampleLibrary(sdcard, fsi, *displayManager);
+    library = new SampleLibrary(sdcard, fsi, display_);
     DisplayMessage("Library created, calling init...", 1000);
     if (!library->init()) {
         display.SetCursor(0, 0);
@@ -337,65 +339,16 @@ int main(void)
     }
     DisplayMessage("Library Initialized", 1000);
 
+
+
+    // Start the audio callback
+    hw.StartAudio(AudioCallback);
+
     
     while(1)
     {
+        // SampleLibrary.samples_;
+        display_.showMessage("Main Loop", 10000);
         
-        // === ENCODER FILE NAVIGATION ===
-        hw.encoder.Debounce();
-        int32_t increment = hw.encoder.Increment();
-
-        // Only process if encoder moved and we have files
-        if(increment != 0 && totalFiles > 0) {
-            selectedFile += increment;
-
-            // === WRAP-AROUND LOGIC ===
-            // This makes browsing feel seamless - going past the last file
-            // wraps to the first, and going before the first wraps to the last.
-            // It's more intuitive than hitting a "wall" at the ends.
-            if(selectedFile >= totalFiles) {
-                selectedFile = 0;  // Wrap to beginning
-            }
-            if(selectedFile < 0) {
-                selectedFile = totalFiles - 1;  // Wrap to end
-            }
-        }
-
-        // === ENCODER CLICK - ENTER DIRECTORY ===
-        // Check if encoder was clicked (pressed down)
-        if(hw.encoder.RisingEdge() && totalFiles > 0) {
-            // Only enter if the selected item is a directory
-            if(isDirectory[selectedFile]) {
-                EnterDirectory(fileList[selectedFile]);
-            }
-            // TODO: File handling will be added here later for WAV playback
-        }
-
-        uint32_t now = System::GetNow();
-        r = p_knob1.Process();
-        g = p_knob2.Process();
-
-        hw.led1.Set(r, g, b);
-
-        hw.UpdateLeds();
-
-        if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
-        {
-            // Display Testing Code
-            // sprintf(strbuff, "R:%d G:%d B:%d", (int)(r*255), (int)(g*255), (int)(b*255));
-            // display.Fill(false);
-            // display.SetCursor(0, 0);
-            // display.WriteString(strbuff, Font_11x18, false);
-            
-            // sprintf(strbuff, "B:%d", (int)inc);
-            // display.SetCursor(0, 32);
-            // display.WriteString(strbuff, Font_11x18, false);
-            
-            
-            DisplayFilesOnScreen();
-
-            display.Update();
-            lastUpdateTime = now;
-        }
     }
 }
