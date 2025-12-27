@@ -1,18 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 #include "daisy_pod.h"
+#include "daisy_seed.h"
 #include "dev/oled_ssd130x.h"
 #include <string>
 
+#include "Config.h"
 #include "DisplayManager.h"
 #include "SampleLibrary.h"
 #include "AudioEngine.h"
 #include "daisysp.h"
 
-
 using namespace daisy;
 using namespace daisysp;
 using namespace std;
+
+// Define the static Config::samplerate variable
+namespace Config {
+    int samplerate;
+}
 
 
 using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
@@ -21,6 +27,7 @@ const uint32_t DISPLAY_FPS = 10;                        //  FPS for OLED screen
 DaisyPod      hw;
 MyOledDisplay display;
 Parameter p_knob1, p_knob2;
+
 
 static int32_t  inc;
 
@@ -33,7 +40,6 @@ int totalFiles = 0;
 int selectedFile = 0;             // Currently selected file index
 int windowStart = 0;              // First file shown in current window
 char currentPath[256];            // Current directory path (e.g., "/" or "/folder")
-
 
 SdmmcHandler   sdcard;
 FatFSInterface fsi;
@@ -60,6 +66,8 @@ void* custom_pool_allocate(size_t size) {
     pool_index += size;
     return ptr;
 }
+
+
 
 // Audio callback wrapper
 void AudioCallback(float** out, size_t size) {
@@ -269,9 +277,10 @@ void DisplayMessage(const char* message, uint32_t delayMs) {
 
 int main(void)
 {
-    
 
     hw.Init();
+    // Set the sample rate now that hw is initialized
+    Config::samplerate = hw.AudioSampleRate();
     inc     = 0;
 
     uint32_t lastUpdateTime = System::GetNow();             // Initialize lastUpdateTime to the current time
@@ -321,6 +330,7 @@ int main(void)
     DisplayMessage("Starting Library Initialization", 1000);
     // Initialize library
     library = new SampleLibrary(sdcard, fsi, *displayManager);
+    DisplayMessage("Library created, calling init...", 1000);
     if (!library->init()) {
         display.SetCursor(0, 0);
         display.WriteString((char*)"SD Card Error!", Font_7x10, true);

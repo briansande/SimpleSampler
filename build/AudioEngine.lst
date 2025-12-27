@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   45              		.cfi_offset 4, -8
   46              		.cfi_offset 14, -4
    3:AudioEngine.cpp ****     : library_(library),
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 2
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 2
 
 
   47              		.loc 1 3 1 view .LVU4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   94              		.loc 1 16 23 view .LVU15
   95              	.LBE98:
   14:AudioEngine.cpp ****     // Clean up all allocated voices
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 3
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 3
 
 
   96              		.loc 1 14 1 is_stmt 0 view .LVU16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   13:b3ReadWavFile.h **** struct b3DataSource
   14:b3ReadWavFile.h **** {
   15:b3ReadWavFile.h **** 	virtual long  ftell() = 0;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 4
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 4
 
 
   16:b3ReadWavFile.h **** 	
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   70:b3ReadWavFile.h ****   MemoryDataSource()
   71:b3ReadWavFile.h ****   :m_data(),
   72:b3ReadWavFile.h ****   m_numBytes(0),
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 5
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 5
 
 
   73:b3ReadWavFile.h **** 	m_currentAddress(0)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  127:b3ReadWavFile.h **** 			{
  128:b3ReadWavFile.h **** 				m_currentAddress = _Offset;
  129:b3ReadWavFile.h **** 				break;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 6
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 6
 
 
  130:b3ReadWavFile.h **** 			}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   34:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * in supporting documentation.  Hewlett-Packard Company makes no
   35:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * representations about the suitability of this software for any
   36:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  * purpose.  It is provided "as is" without express or implied warranty.
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 7
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 7
 
 
   37:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****  *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   91:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       struct _Vector_impl_data
   92:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       {
   93:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	pointer _M_start;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 8
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 8
 
 
   94:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	pointer _M_finish;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  148:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	: _Tp_alloc_type(std::move(__a))
  149:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	{ }
  150:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 9
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 9
 
 
  151:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	_Vector_impl(_Tp_alloc_type&& __a, _Vector_impl&& __rv) noexcept
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  205:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  206:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	    // Used on reallocation to tell ASan unused capacity is invalid.
  207:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	    struct _Reinit
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 10
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 10
 
 
  208:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	    {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  262:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****   _Base::_Vector_impl::template _Asan<>::_S_on_dealloc(this->_M_impl)
  263:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #else // ! (_GLIBCXX_SANITIZE_STD_ALLOCATOR && _GLIBCXX_SANITIZE_VECTOR)
  264:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #define _GLIBCXX_ASAN_ANNOTATE_REINIT
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 11
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 11
 
 
  265:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #define _GLIBCXX_ASAN_ANNOTATE_GROW(n)
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  319:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  this->_M_impl._M_swap_data(__x._M_impl);
  320:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	else
  321:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	  {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 12
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 12
 
 
  322:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	    size_t __n = __x._M_impl._M_finish - __x._M_impl._M_start;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  376:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  Meets the requirements of a <a href="tables.html#65">container</a>, a
  377:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  <a href="tables.html#66">reversible container</a>, and a
  378:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  <a href="tables.html#67">sequence</a>, including the
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 13
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 13
 
 
  379:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****    *  <a href="tables.html#68">optional sequence requirements</a> with the
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  433:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	return noexcept(std::__relocate_a(std::declval<pointer>(),
  434:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 					  std::declval<pointer>(),
  435:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 					  std::declval<pointer>(),
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 14
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 14
 
 
  436:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 					  std::declval<_Tp_alloc_type&>()));
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  490:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** #endif
  491:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  492:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /**
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 15
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 15
 
 
  493:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @brief  Creates a %vector with no elements.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  547:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  @a __x  will not be copied
  548:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  (i.e. capacity() == size() in the new %vector).
  549:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 16
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 16
 
 
  550:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****        *  The newly-created %vector uses a copy of the allocator object used
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  604:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 
  605:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****     public:
  606:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       /// Move constructor with alternative allocator
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 17
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 17
 
 
  607:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       vector(vector&& __rv, const allocator_type& __m)
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  661:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h ****       template<typename _InputIterator>
  662:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	vector(_InputIterator __first, _InputIterator __last,
  663:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	       const allocator_type& __a = allocator_type())
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 18
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 18
 
 
  664:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	: _Base(__a)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   29:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
   30:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** #ifndef _ALLOC_TRAITS_H
   31:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** #define _ALLOC_TRAITS_H 1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 19
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 19
 
 
   32:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   86:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     struct allocator_traits : __allocator_traits_base
   87:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     {
   88:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       /// The allocator type
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 20
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 20
 
 
   89:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       typedef _Alloc allocator_type;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  143:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * @c Alloc::void_pointer if that type exists, otherwise
  144:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * <tt> pointer_traits<pointer>::rebind<void> </tt>
  145:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       */
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 21
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 21
 
 
  146:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using void_pointer = typename _Ptr<__v_pointer, void>::type;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  200:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * @brief   Whether all instances of the allocator type compare equal.
  201:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *
  202:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * @c Alloc::is_always_equal if that type exists,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 22
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 22
 
 
  203:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        * otherwise @c is_empty<Alloc>::type
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  257:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	  ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
  258:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** #else
  259:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	  std::construct_at(__p, std::forward<_Args>(__args)...);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 23
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 23
 
 
  260:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** #endif
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  314:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       { return __a.allocate(__n); }
  315:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
  316:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       /**
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 24
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 24
 
 
  317:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *  @brief  Allocate memory.
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  371:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	static _GLIBCXX20_CONSTEXPR void
  372:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	destroy(_Alloc& __a, _Tp* __p)
  373:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	noexcept(noexcept(_S_destroy(__a, __p, 0)))
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 25
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 25
 
 
  374:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 	{ _S_destroy(__a, __p, 0); }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  428:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using difference_type = std::ptrdiff_t;
  429:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
  430:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       /// The allocator's size type
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 26
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 26
 
 
  431:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       using size_type = std::size_t;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  485:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *  @param  __p  Pointer to the memory to deallocate.
  486:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *  @param  __n  The number of objects space was allocated for.
  487:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 27
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 27
 
 
  488:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****        *  Calls <tt> a.deallocate(p, n) </tt>
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  542:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       static _GLIBCXX20_CONSTEXPR size_type
  543:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       max_size(const allocator_type& __a __attribute__((__unused__))) noexcept
  544:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 28
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 28
 
 
  545:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** #if __cplusplus <= 201703L
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  599:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     { __one = std::move(__two); }
  600:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
  601:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****   template<typename _Alloc>
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 29
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 29
 
 
  602:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     inline void __do_alloc_on_move(_Alloc&, _Alloc&, false_type)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  656:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h **** 
  657:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****   template<typename _Alloc, typename _Tp, typename _ValueT>
  658:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****     struct __is_alloc_insertable_impl<_Alloc, _Tp, _ValueT,
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 30
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 30
 
 
  659:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****       __void_t<decltype(allocator_traits<_Alloc>::construct(
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  713:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****   /**
  714:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****    * Destroy a range of objects using the supplied allocator.  For
  715:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****    * non-default allocators we do not optimize away invocation of
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 31
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 31
 
 
  716:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\alloc_traits.h ****    * destroy() even if _Tp has a trivial destructor.
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  166              	.LBI110:
  167              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\ext\\new_allocato
    1:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** // Allocator that wraps operator new -*- C++ -*-
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 32
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 32
 
 
    2:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   56:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****     {
   57:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****     public:
   58:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****       typedef _Tp        value_type;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 33
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 33
 
 
   59:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****       typedef std::size_t     size_type;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  113:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 	  }
  114:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** #endif
  115:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 34
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 34
 
 
  116:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h ****       }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  128:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\stl_vector.h **** 	: public _Tp_alloc_type, public _Vector_impl_data
  202              		.loc 4 128 14 is_stmt 1 view .LVU38
  203              	.LBB119:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 35
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 35
 
 
  204              	.LBI119:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   53:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** 
   54:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** namespace std _GLIBCXX_VISIBILITY(default)
   55:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 36
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 36
 
 
   56:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  110:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****    *  See https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html#std.util.memory.allocator
  111:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****    *  for further details.
  112:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****    *
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 37
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 37
 
 
  113:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\bits\allocator.h ****    *  @tparam  _Tp  Type of allocated object.
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  209              		.loc 6 89 7 view .LVU40
   89:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\ext\new_allocator.h **** 
  210              		.loc 6 89 7 is_stmt 0 view .LVU41
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 38
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 38
 
 
  211              	.LBE120:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  259              		@ args = 0, pretend = 0, frame = 0
  260              		@ frame_needed = 0, uses_anonymous_args = 0
   23:AudioEngine.cpp ****     // Allocate and initialize all voices in the pool
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 39
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 39
 
 
   24:AudioEngine.cpp ****     for (int i = 0; i < MAX_VOICES; i++) {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  305              	.LVL15:
  306              		.loc 1 29 1 view .LVU63
  307 002c 0120     		movs	r0, #1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 40
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 40
 
 
  308 002e 70BD     		pop	{r4, r5, r6, pc}
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   26:Voice.h       ****     // Start playing a sample
   27:Voice.h       ****     void start(SampleInfo* sample, float volume = 1.0f, float speed = 1.0f);
   28:Voice.h       ****     
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 41
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 41
 
 
   29:Voice.h       ****     // Stop playback immediately
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  382              		.loc 1 43 5 view .LVU80
   41:AudioEngine.cpp ****     // Get the sample
  383              		.loc 1 41 77 is_stmt 0 view .LVU81
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 42
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 42
 
 
  384 0000 70B5     		push	{r4, r5, r6, lr}
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  426              	.LBB133:
  427              	.LBI133:
  428              		.loc 2 37 10 is_stmt 1 view .LVU93
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 43
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 43
 
 
  429              	.LBB134:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  463              		.loc 1 63 1 view .LVU104
  464 0046 BDEC028B 		vldm	sp!, {d8}
  465              		.cfi_remember_state
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 44
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 44
 
 
  466              		.cfi_restore 80
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
   66:AudioEngine.cpp ****     triggerSample(index, volume, speed);
  515              		.loc 1 66 5 view .LVU112
  516              		.loc 1 66 18 is_stmt 0 view .LVU113
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 45
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 45
 
 
  517 0000 FFF7FEBF 		b	_ZN11AudioEngine13triggerSampleEiff
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  564 0012 AC42     		cmp	r4, r5
  565 0014 F9D1     		bne	.L40
  566              	.LBE136:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 46
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 46
 
 
   72:AudioEngine.cpp ****     }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  614              		.loc 1 78 26 view .LVU133
  615 0008 9046     		mov	r8, r2
  616              	.LBE138:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 47
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 47
 
 
   76:AudioEngine.cpp ****     // Clear output buffers (start with silence)
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  662 0060 5445     		cmp	r4, r10
  663 0062 38BF     		it	cc
  664 0064 8945     		cmpcc	r9, r1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 48
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 48
 
 
  665 0066 03EA0B03 		and	r3, r3, fp
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  711 00b8 3C1F     		subs	r4, r7, #4
  712 00ba 07F13C06 		add	r6, r7, #60
  713 00be 7B64     		str	r3, [r7, #68]
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 49
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 49
 
 
   87:AudioEngine.cpp ****     for (int i = 0; i < MAX_VOICES; i++) {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  759              		.loc 1 87 5 is_stmt 1 view .LVU168
   87:AudioEngine.cpp ****         if (voices_[i]->isActive()) {
  760              		.loc 1 87 23 view .LVU169
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 50
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 50
 
 
  761 00e8 A642     		cmp	r6, r4
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  801 010a 00BF     		.text
  802              	.Letext0:
  803              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 51
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 51
 
 
  804              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  858              		.file 63 "../../libDaisy//src/hid/rgb_led.h"
  859              		.file 64 "../../libDaisy//src/dev/max11300.h"
  860              		.file 65 "../../libDaisy//src/sys/fatfs.h"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 52
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 52
 
 
  861              		.file 66 "../../libDaisy//src/daisy_seed.h"
@@ -3077,29 +3077,29 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 1
  874              		.file 79 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\new"
  875              		.file 80 "<built-in>"
  876              		.file 81 "../../libDaisy//src/dev/sr_595.h"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s 			page 53
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s 			page 53
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 AudioEngine.cpp
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:17     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:26     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 _ZN11AudioEngineC2EP13SampleLibrary
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:26     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 _ZN11AudioEngineC1EP13SampleLibrary
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:77     .text._ZN11AudioEngineD2Ev:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:85     .text._ZN11AudioEngineD2Ev:00000000 _ZN11AudioEngineD2Ev
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:85     .text._ZN11AudioEngineD2Ev:00000000 _ZN11AudioEngineD1Ev
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:246    .text._ZN11AudioEngine4initEd:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:254    .text._ZN11AudioEngine4initEd:00000000 _ZN11AudioEngine4initEd
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:314    .text._ZN11AudioEngine13findFreeVoiceEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:322    .text._ZN11AudioEngine13findFreeVoiceEv:00000000 _ZN11AudioEngine13findFreeVoiceEv
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:367    .text._ZN11AudioEngine13triggerSampleEiff:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:375    .text._ZN11AudioEngine13triggerSampleEiff:00000000 _ZN11AudioEngine13triggerSampleEiff
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:499    .text._ZN11AudioEngine10playSampleEiff:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:507    .text._ZN11AudioEngine10playSampleEiff:00000000 _ZN11AudioEngine10playSampleEiff
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:524    .text._ZN11AudioEngine7stopAllEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:532    .text._ZN11AudioEngine7stopAllEv:00000000 _ZN11AudioEngine7stopAllEv
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:578    .text._ZN11AudioEngine13audioCallbackEPPfj:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\ccXEArd9.s:586    .text._ZN11AudioEngine13audioCallbackEPPfj:00000000 _ZN11AudioEngine13audioCallbackEPPfj
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:17     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:26     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 _ZN11AudioEngineC2EP13SampleLibrary
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:26     .text._ZN11AudioEngineC2EP13SampleLibrary:00000000 _ZN11AudioEngineC1EP13SampleLibrary
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:77     .text._ZN11AudioEngineD2Ev:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:85     .text._ZN11AudioEngineD2Ev:00000000 _ZN11AudioEngineD2Ev
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:85     .text._ZN11AudioEngineD2Ev:00000000 _ZN11AudioEngineD1Ev
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:246    .text._ZN11AudioEngine4initEd:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:254    .text._ZN11AudioEngine4initEd:00000000 _ZN11AudioEngine4initEd
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:314    .text._ZN11AudioEngine13findFreeVoiceEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:322    .text._ZN11AudioEngine13findFreeVoiceEv:00000000 _ZN11AudioEngine13findFreeVoiceEv
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:367    .text._ZN11AudioEngine13triggerSampleEiff:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:375    .text._ZN11AudioEngine13triggerSampleEiff:00000000 _ZN11AudioEngine13triggerSampleEiff
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:499    .text._ZN11AudioEngine10playSampleEiff:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:507    .text._ZN11AudioEngine10playSampleEiff:00000000 _ZN11AudioEngine10playSampleEiff
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:524    .text._ZN11AudioEngine7stopAllEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:532    .text._ZN11AudioEngine7stopAllEv:00000000 _ZN11AudioEngine7stopAllEv
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:578    .text._ZN11AudioEngine13audioCallbackEPPfj:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\ccdc9nS6.s:586    .text._ZN11AudioEngine13audioCallbackEPPfj:00000000 _ZN11AudioEngine13audioCallbackEPPfj
 
 UNDEFINED SYMBOLS
 memset

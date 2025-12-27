@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   24              		.fpu fpv5-d16
   26              	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb:
   27              	.LVL0:
-  28              	.LFB2626:
+  28              	.LFB2627:
   29              		.file 1 "../../libDaisy//src/hid/disp/oled_display.h"
    1:../../libDaisy//src/hid/disp/oled_display.h **** #pragma once
    2:../../libDaisy//src/hid/disp/oled_display.h **** #ifndef DSY_OLED_DISPLAY_H
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   27:../../libDaisy//src/hid/disp/oled_display.h ****     uint16_t Height() const override { return driver_.Height(); }
   28:../../libDaisy//src/hid/disp/oled_display.h ****     uint16_t Width() const override { return driver_.Width(); }
   29:../../libDaisy//src/hid/disp/oled_display.h **** 
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 2
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 2
 
 
   30:../../libDaisy//src/hid/disp/oled_display.h ****     /** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   42:../../libDaisy//src/dev/oled_ssd130x.h ****     void SendCommand(uint8_t cmd)
   43:../../libDaisy//src/dev/oled_ssd130x.h ****     {
   44:../../libDaisy//src/dev/oled_ssd130x.h ****         uint8_t buf[2] = {0X00, cmd};
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 3
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 3
 
 
   45:../../libDaisy//src/dev/oled_ssd130x.h ****         i2c_.TransmitBlocking(i2c_address_, buf, 2, 1000);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   99:../../libDaisy//src/dev/oled_ssd130x.h ****             pin_config.dc    = {DSY_GPIOB, 4};
  100:../../libDaisy//src/dev/oled_ssd130x.h ****             pin_config.reset = {DSY_GPIOB, 15};
  101:../../libDaisy//src/dev/oled_ssd130x.h ****         }
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 4
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 4
 
 
  102:../../libDaisy//src/dev/oled_ssd130x.h ****     };
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  156:../../libDaisy//src/dev/oled_ssd130x.h ****             dsy_gpio_pin sclk;
  157:../../libDaisy//src/dev/oled_ssd130x.h ****             dsy_gpio_pin mosi;
  158:../../libDaisy//src/dev/oled_ssd130x.h ****             dsy_gpio_pin dc;
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 5
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 5
 
 
  159:../../libDaisy//src/dev/oled_ssd130x.h ****             dsy_gpio_pin reset;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  213:../../libDaisy//src/dev/oled_ssd130x.h ****     {
  214:../../libDaisy//src/dev/oled_ssd130x.h ****         // bit flip
  215:../../libDaisy//src/dev/oled_ssd130x.h ****         val = ((val & 0x01) << 7) | ((val & 0x02) << 5) | ((val & 0x04) << 3)
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 6
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 6
 
 
  216:../../libDaisy//src/dev/oled_ssd130x.h ****               | ((val & 0x08) << 1) | ((val & 0x10) >> 1) | ((val & 0x20) >> 3)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  270:../../libDaisy//src/dev/oled_ssd130x.h ****                 transport_.SendCommand(0x0F);
  271:../../libDaisy//src/dev/oled_ssd130x.h ****                 // COM Pins
  272:../../libDaisy//src/dev/oled_ssd130x.h ****                 transport_.SendCommand(0xDA);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 7
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 7
 
 
  273:../../libDaisy//src/dev/oled_ssd130x.h ****                 transport_.SendCommand(0x02);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  327:../../libDaisy//src/dev/oled_ssd130x.h ****         // Charge Pump
  328:../../libDaisy//src/dev/oled_ssd130x.h ****         transport_.SendCommand(0x8D);
  329:../../libDaisy//src/dev/oled_ssd130x.h ****         transport_.SendCommand(0x14);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 8
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 8
 
 
  330:../../libDaisy//src/dev/oled_ssd130x.h ****         // Set Segment Remap
@@ -476,9 +476,9 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   53              	.LBE12:
   54              	.LBE11:
   55              		.cfi_endproc
-  56              	.LFE2626:
+  56              	.LFE2627:
   58 000e 00BF     		.section	.text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportE
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 9
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 9
 
 
   59              		.align	1
@@ -490,7 +490,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   65              		.fpu fpv5-d16
   67              	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv:
   68              	.LVL4:
-  69              	.LFB2628:
+  69              	.LFB2629:
   35:../../libDaisy//src/hid/disp/oled_display.h **** 
   36:../../libDaisy//src/hid/disp/oled_display.h ****     /**
   37:../../libDaisy//src/hid/disp/oled_display.h ****     Sets the pixel at the specified coordinate to be on/off.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   80              	.LBE23:
   81              		.loc 1 51 10 is_stmt 0 view .LVU10
   82 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 10
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 10
 
 
   83              		.cfi_def_cfa_offset 24
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  130              	.LBB32:
  131              	.LBB29:
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 11
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 11
 
 
  132              		.loc 2 124 23 view .LVU20
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  175 0048 3046     		mov	r0, r6
  176 004a FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
  177              	.LVL12:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 12
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 12
 
 
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  219              		.loc 2 131 9 is_stmt 1 view .LVU45
  131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
  220              		.loc 2 131 30 is_stmt 0 view .LVU46
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 13
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 13
 
 
  221 0072 8022     		movs	r2, #128
@@ -753,7 +753,7 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  248 0086 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  249              		.loc 1 51 48 view .LVU53
  250              		.cfi_endproc
- 251              	.LFE2628:
+ 251              	.LFE2629:
  253 008a 00BF     		.section	.text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SS
  254              		.align	1
  255              		.p2align 2,,3
@@ -767,32 +767,33 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  264              	.LFB2597:
  265              		.file 3 "DisplayManager.cpp"
    1:DisplayManager.cpp **** #include "DisplayManager.h"
-   2:DisplayManager.cpp **** 
-   3:DisplayManager.cpp **** /**
-   4:DisplayManager.cpp ****  * Constructor - Initialize references to display and hardware
-   5:DisplayManager.cpp ****  * 
-   6:DisplayManager.cpp ****  * Note: We use member initializer lists (display_(display), hw_(hw))
-   7:DisplayManager.cpp ****  * which is the preferred way to initialize reference members in C++.
-   8:DisplayManager.cpp ****  * References cannot be assigned after construction, so they MUST be
-   9:DisplayManager.cpp ****  * initialized in the initializer list.
-  10:DisplayManager.cpp ****  */
-  11:DisplayManager.cpp **** DisplayManager::DisplayManager(MyOledDisplay& display, DaisyPod& hw)
- 266              		.loc 3 11 1 is_stmt 1 view -0
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 14
+   2:DisplayManager.cpp **** #include <cstdarg>  // For va_list, va_start, va_end
+   3:DisplayManager.cpp **** 
+   4:DisplayManager.cpp **** /**
+   5:DisplayManager.cpp ****  * Constructor - Initialize references to display and hardware
+   6:DisplayManager.cpp ****  * 
+   7:DisplayManager.cpp ****  * Note: We use member initializer lists (display_(display), hw_(hw))
+   8:DisplayManager.cpp ****  * which is the preferred way to initialize reference members in C++.
+   9:DisplayManager.cpp ****  * References cannot be assigned after construction, so they MUST be
+  10:DisplayManager.cpp ****  * initialized in the initializer list.
+  11:DisplayManager.cpp ****  */
+  12:DisplayManager.cpp **** DisplayManager::DisplayManager(MyOledDisplay& display, DaisyPod& hw)
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 14
 
 
+ 266              		.loc 3 12 1 is_stmt 1 view -0
  267              		.cfi_startproc
  268              		@ args = 0, pretend = 0, frame = 0
  269              		@ frame_needed = 0, uses_anonymous_args = 0
  270              		@ link register save eliminated.
  271              	.LBB48:
-  12:DisplayManager.cpp ****     : display_(display), hw_(hw) {
- 272              		.loc 3 12 32 is_stmt 0 view .LVU55
+  13:DisplayManager.cpp ****     : display_(display), hw_(hw) {
+ 272              		.loc 3 13 32 is_stmt 0 view .LVU55
  273 0000 C0E90012 		strd	r1, r2, [r0]
  274              	.LBE48:
-  13:DisplayManager.cpp ****     // Nothing else to initialize - references are set above
-  14:DisplayManager.cpp **** }
- 275              		.loc 3 14 1 view .LVU56
+  14:DisplayManager.cpp ****     // Nothing else to initialize - references are set above
+  15:DisplayManager.cpp **** }
+ 275              		.loc 3 15 1 view .LVU56
  276 0004 7047     		bx	lr
  277              		.cfi_endproc
  278              	.LFE2597:
@@ -809,84 +810,108 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  291              	_ZN14DisplayManager11showMessageEPKcm:
  292              	.LVL20:
  293              	.LFB2599:
-  15:DisplayManager.cpp **** 
-  16:DisplayManager.cpp **** /**
-  17:DisplayManager.cpp ****  * Display a message with a delay
-  18:DisplayManager.cpp ****  * 
-  19:DisplayManager.cpp ****  * This is the function you originally had in SimpleSampler.cpp.
-  20:DisplayManager.cpp ****  * Now it's encapsulated in the DisplayManager class.
-  21:DisplayManager.cpp ****  * 
-  22:DisplayManager.cpp ****  * @param message The text to display
-  23:DisplayManager.cpp ****  * @param delayMs How long to show the message (in milliseconds)
-  24:DisplayManager.cpp ****  */
-  25:DisplayManager.cpp **** void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
- 294              		.loc 3 25 73 is_stmt 1 view -0
+  16:DisplayManager.cpp **** 
+  17:DisplayManager.cpp **** /**
+  18:DisplayManager.cpp ****  * Display a message with a delay
+  19:DisplayManager.cpp ****  *
+  20:DisplayManager.cpp ****  * This is the function you originally had in SimpleSampler.cpp.
+  21:DisplayManager.cpp ****  * Now it's encapsulated in the DisplayManager class.
+  22:DisplayManager.cpp ****  *
+  23:DisplayManager.cpp ****  * Supports automatic line wrapping and manual line breaks using "*":
+  24:DisplayManager.cpp ****  * - Automatic: wraps to next line when text exceeds screen width (128px)
+  25:DisplayManager.cpp ****  * - Manual: use "*" character to force a new line
+  26:DisplayManager.cpp ****  *
+  27:DisplayManager.cpp ****  * @param message The text to display
+  28:DisplayManager.cpp ****  * @param delayMs How long to show the message (in milliseconds)
+  29:DisplayManager.cpp ****  */
+  30:DisplayManager.cpp **** void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
+ 294              		.loc 3 30 73 is_stmt 1 view -0
  295              		.cfi_startproc
  296              		@ args = 0, pretend = 0, frame = 8
  297              		@ frame_needed = 0, uses_anonymous_args = 0
-  26:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
- 298              		.loc 3 26 5 view .LVU58
-  25:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
- 299              		.loc 3 25 73 is_stmt 0 view .LVU59
- 300 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
- 301              		.cfi_def_cfa_offset 32
- 302              		.cfi_offset 4, -32
- 303              		.cfi_offset 5, -28
- 304              		.cfi_offset 6, -24
- 305              		.cfi_offset 7, -20
- 306              		.cfi_offset 8, -16
- 307              		.cfi_offset 9, -12
- 308              		.cfi_offset 10, -8
- 309              		.cfi_offset 14, -4
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 15
+ 298              		.loc 3 30 73 is_stmt 0 view .LVU58
+ 299 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 300              		.cfi_def_cfa_offset 32
+ 301              		.cfi_offset 4, -32
+ 302              		.cfi_offset 5, -28
+ 303              		.cfi_offset 6, -24
+ 304              		.cfi_offset 7, -20
+ 305              		.cfi_offset 8, -16
+ 306              		.cfi_offset 9, -12
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 15
 
 
- 310 0004 8146     		mov	r9, r0
- 311              		.loc 3 26 5 view .LVU60
- 312 0006 0068     		ldr	r0, [r0]
- 313              	.LVL21:
-  25:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
- 314              		.loc 3 25 73 view .LVU61
- 315 0008 9246     		mov	r10, r2
- 316 000a 454A     		ldr	r2, .L22
- 317              	.LVL22:
- 318              		.loc 3 26 24 view .LVU62
- 319 000c 0368     		ldr	r3, [r0]
-  25:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
- 320              		.loc 3 25 73 view .LVU63
- 321 000e 84B0     		sub	sp, sp, #16
- 322              		.cfi_def_cfa_offset 48
-  25:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
- 323              		.loc 3 25 73 view .LVU64
- 324 0010 0D46     		mov	r5, r1
- 325              		.loc 3 26 24 view .LVU65
- 326 0012 1B69     		ldr	r3, [r3, #16]
- 327 0014 9342     		cmp	r3, r2
- 328 0016 7DD1     		bne	.L9
- 329              	.LBB67:
- 330              	.LBB68:
- 331              	.LBB69:
+ 307              		.cfi_offset 10, -8
+ 308              		.cfi_offset 14, -4
+ 309 0004 8146     		mov	r9, r0
+  31:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
+ 310              		.loc 3 31 5 is_stmt 1 view .LVU59
+ 311 0006 0068     		ldr	r0, [r0]
+ 312              	.LVL21:
+  30:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
+ 313              		.loc 3 30 73 is_stmt 0 view .LVU60
+ 314 0008 9246     		mov	r10, r2
+ 315 000a 754A     		ldr	r2, .L43
+ 316              	.LVL22:
+ 317              		.loc 3 31 24 view .LVU61
+ 318 000c 0368     		ldr	r3, [r0]
+  30:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
+ 319              		.loc 3 30 73 view .LVU62
+ 320 000e 84B0     		sub	sp, sp, #16
+ 321              		.cfi_def_cfa_offset 48
+  30:DisplayManager.cpp ****     display_.Fill(false);                      // Clear the screen (black)
+ 322              		.loc 3 30 73 view .LVU63
+ 323 0010 0E46     		mov	r6, r1
+ 324              		.loc 3 31 24 view .LVU64
+ 325 0012 1B69     		ldr	r3, [r3, #16]
+ 326 0014 9342     		cmp	r3, r2
+ 327 0016 40F0D880 		bne	.L9
+ 328              	.LBB73:
+ 329              	.LBB74:
+ 330              	.LBB75:
  366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 332              		.loc 2 366 24 view .LVU66
- 333 0018 4FF48062 		mov	r2, #1024
- 334 001c 1430     		adds	r0, r0, #20
- 335 001e 0021     		movs	r1, #0
- 336              	.LVL23:
+ 331              		.loc 2 366 24 view .LVU65
+ 332 001a 4FF48062 		mov	r2, #1024
+ 333 001e 1430     		adds	r0, r0, #20
+ 334 0020 0021     		movs	r1, #0
+ 335              	.LVL23:
  366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 337              		.loc 2 366 24 view .LVU67
- 338 0020 FFF7FEFF 		bl	memset
- 339              	.LVL24:
- 340              	.L10:
- 341              	.LBE69:
- 342              	.LBE68:
- 343              	.LBE67:
-  27:DisplayManager.cpp ****     display_.SetCursor(0, 0);                   // Position at top-left
- 344              		.loc 3 27 5 is_stmt 1 view .LVU68
- 345 0024 D9F80040 		ldr	r4, [r9]
- 346              	.LVL25:
- 347              	.LBB70:
- 348              	.LBI70:
- 349              		.file 4 "../../libDaisy//src/hid/disp/display.h"
+ 336              		.loc 2 366 24 view .LVU66
+ 337 0022 FFF7FEFF 		bl	memset
+ 338              	.LVL24:
+ 339              	.L10:
+ 340              	.LBE75:
+ 341              	.LBE74:
+ 342              	.LBE73:
+  32:DisplayManager.cpp ****     
+  33:DisplayManager.cpp ****     const uint8_t CHAR_WIDTH = 7;              // Width of each character in Font_7x10
+ 343              		.loc 3 33 5 is_stmt 1 view .LVU67
+  34:DisplayManager.cpp ****     const uint8_t LINE_HEIGHT = 10;            // Height of each line (font height)
+ 344              		.loc 3 34 5 view .LVU68
+  35:DisplayManager.cpp ****     const uint8_t SCREEN_WIDTH = 128;          // OLED display width in pixels
+ 345              		.loc 3 35 5 view .LVU69
+  36:DisplayManager.cpp ****     const uint8_t SCREEN_HEIGHT = 64;          // OLED display height in pixels
+ 346              		.loc 3 36 5 view .LVU70
+  37:DisplayManager.cpp ****     const uint8_t MAX_CHARS_PER_LINE = SCREEN_WIDTH / CHAR_WIDTH;  // ~18 chars per line
+ 347              		.loc 3 37 5 view .LVU71
+  38:DisplayManager.cpp ****     
+  39:DisplayManager.cpp ****     uint8_t cursorX = 0;                       // Current X position
+ 348              		.loc 3 39 5 view .LVU72
+  40:DisplayManager.cpp ****     uint8_t cursorY = 0;                       // Current Y position
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 16
+
+
+ 349              		.loc 3 40 5 view .LVU73
+  41:DisplayManager.cpp ****     uint8_t charsOnLine = 0;                   // Characters written on current line
+ 350              		.loc 3 41 5 view .LVU74
+  42:DisplayManager.cpp ****     
+  43:DisplayManager.cpp ****     display_.SetCursor(cursorX, cursorY);      // Position at top-left
+ 351              		.loc 3 43 5 view .LVU75
+ 352 0026 D9F80040 		ldr	r4, [r9]
+ 353              	.LVL25:
+ 354              	.LBB76:
+ 355              	.LBI76:
+ 356              		.file 4 "../../libDaisy//src/hid/disp/display.h"
    1:../../libDaisy//src/hid/disp/display.h **** #pragma once
    2:../../libDaisy//src/hid/disp/display.h **** #ifndef DSY_DISPLAY_H
    3:../../libDaisy//src/hid/disp/display.h **** #define DSY_DISPLAY_H /**< Macro */
@@ -898,9 +923,6 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
    9:../../libDaisy//src/hid/disp/display.h **** #ifndef deg2rad
   10:../../libDaisy//src/hid/disp/display.h **** #define deg2rad(deg) ((deg)*3.141592 / 180.0)
   11:../../libDaisy//src/hid/disp/display.h **** #endif
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 16
-
-
   12:../../libDaisy//src/hid/disp/display.h **** 
   13:../../libDaisy//src/hid/disp/display.h **** namespace daisy
   14:../../libDaisy//src/hid/disp/display.h **** {
@@ -936,6 +958,9 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   44:../../libDaisy//src/hid/disp/display.h ****     Sets the pixel at the specified coordinate to be on/off.
   45:../../libDaisy//src/hid/disp/display.h ****     \param x   x Coordinate
   46:../../libDaisy//src/hid/disp/display.h ****     \param y   y coordinate
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 17
+
+
   47:../../libDaisy//src/hid/disp/display.h ****     \param on  on or off
   48:../../libDaisy//src/hid/disp/display.h ****     */
   49:../../libDaisy//src/hid/disp/display.h ****     virtual void DrawPixel(uint_fast8_t x, uint_fast8_t y, bool on) = 0;
@@ -958,9 +983,6 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
   66:../../libDaisy//src/hid/disp/display.h ****     /**
   67:../../libDaisy//src/hid/disp/display.h ****     Draws a rectangle based on two coordinates.
   68:../../libDaisy//src/hid/disp/display.h ****     \param x1 x Coordinate of the first point
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 17
-
-
   69:../../libDaisy//src/hid/disp/display.h ****     \param y1 y Coordinate of the first point
   70:../../libDaisy//src/hid/disp/display.h ****     \param x2 x Coordinate of the second point
   71:../../libDaisy//src/hid/disp/display.h ****     \param y2 y Coordinate of the second point
@@ -996,6 +1018,9 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  101:../../libDaisy//src/hid/disp/display.h ****     \param x           x Coordinate of the center of the arc
  102:../../libDaisy//src/hid/disp/display.h ****     \param y           y Coordinate of the center of the arc
  103:../../libDaisy//src/hid/disp/display.h ****     \param radius      radius of the arc
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 18
+
+
  104:../../libDaisy//src/hid/disp/display.h ****     \param start_angle angle where to start the arc
  105:../../libDaisy//src/hid/disp/display.h ****     \param sweep       total angle of the arc
  106:../../libDaisy//src/hid/disp/display.h ****     \param on  on or off
@@ -1018,9 +1043,6 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  123:../../libDaisy//src/hid/disp/display.h ****     void
  124:../../libDaisy//src/hid/disp/display.h ****     DrawCircle(uint_fast8_t x, uint_fast8_t y, uint_fast8_t radius, bool on)
  125:../../libDaisy//src/hid/disp/display.h ****     {
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 18
-
-
  126:../../libDaisy//src/hid/disp/display.h ****         DrawArc(x, y, radius, 0, 360, on);
  127:../../libDaisy//src/hid/disp/display.h ****     };
  128:../../libDaisy//src/hid/disp/display.h **** 
@@ -1056,6 +1078,9 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  158:../../libDaisy//src/hid/disp/display.h ****     */
  159:../../libDaisy//src/hid/disp/display.h ****     virtual Rectangle WriteStringAligned(const char*    str,
  160:../../libDaisy//src/hid/disp/display.h ****                                          const FontDef& font,
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 19
+
+
  161:../../libDaisy//src/hid/disp/display.h ****                                          Rectangle      boundingBox,
  162:../../libDaisy//src/hid/disp/display.h ****                                          Alignment      alignment,
  163:../../libDaisy//src/hid/disp/display.h ****                                          bool           on)
@@ -1067,1016 +1092,1498 @@ ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 1
  169:../../libDaisy//src/hid/disp/display.h ****     \param y y pos
  170:../../libDaisy//src/hid/disp/display.h ****     */
  171:../../libDaisy//src/hid/disp/display.h ****     void SetCursor(uint16_t x, uint16_t y)
- 350              		.loc 4 171 10 view .LVU69
- 351              	.LBB71:
+ 357              		.loc 4 171 10 view .LVU76
+ 358              	.LBB77:
  172:../../libDaisy//src/hid/disp/display.h ****     {
  173:../../libDaisy//src/hid/disp/display.h ****         currentX_ = (x >= Width()) ? Width() - 1 : x;
- 352              		.loc 4 173 9 view .LVU70
- 353              		.loc 4 173 33 is_stmt 0 view .LVU71
- 354 0028 2368     		ldr	r3, [r4]
- 355              		.loc 4 173 32 view .LVU72
- 356 002a 2046     		mov	r0, r4
- 357 002c DB68     		ldr	r3, [r3, #12]
- 358 002e 9847     		blx	r3
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 19
-
-
- 359              	.LVL26:
- 360              		.loc 4 173 19 view .LVU73
- 361 0030 0028     		cmp	r0, #0
- 362 0032 6DD1     		bne	.L16
- 363              		.loc 4 173 44 view .LVU74
- 364 0034 2368     		ldr	r3, [r4]
- 365              		.loc 4 173 43 view .LVU75
- 366 0036 2046     		mov	r0, r4
- 367 0038 DB68     		ldr	r3, [r3, #12]
- 368 003a 9847     		blx	r3
- 369              	.LVL27:
- 370              		.loc 4 173 19 view .LVU76
- 371 003c 0138     		subs	r0, r0, #1
- 372 003e 83B2     		uxth	r3, r0
- 373              	.L11:
- 374 0040 A380     		strh	r3, [r4, #4]	@ movhi
+ 359              		.loc 4 173 9 view .LVU77
+ 360              		.loc 4 173 33 is_stmt 0 view .LVU78
+ 361 002a 2368     		ldr	r3, [r4]
+ 362              		.loc 4 173 32 view .LVU79
+ 363 002c 2046     		mov	r0, r4
+ 364 002e DB68     		ldr	r3, [r3, #12]
+ 365 0030 9847     		blx	r3
+ 366              	.LVL26:
+ 367              		.loc 4 173 19 view .LVU80
+ 368 0032 0028     		cmp	r0, #0
+ 369 0034 40F0BE80 		bne	.L29
+ 370              		.loc 4 173 44 view .LVU81
+ 371 0038 2368     		ldr	r3, [r4]
+ 372              		.loc 4 173 43 view .LVU82
+ 373 003a 2046     		mov	r0, r4
+ 374 003c DB68     		ldr	r3, [r3, #12]
+ 375 003e 9847     		blx	r3
+ 376              	.LVL27:
+ 377              		.loc 4 173 19 view .LVU83
+ 378 0040 0138     		subs	r0, r0, #1
+ 379 0042 83B2     		uxth	r3, r0
+ 380              	.L11:
+ 381 0044 A380     		strh	r3, [r4, #4]	@ movhi
  174:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 375              		.loc 4 174 9 is_stmt 1 view .LVU77
- 376              		.loc 4 174 33 is_stmt 0 view .LVU78
- 377 0042 2046     		mov	r0, r4
- 378              		.loc 4 174 34 view .LVU79
- 379 0044 2368     		ldr	r3, [r4]
- 380              		.loc 4 174 33 view .LVU80
- 381 0046 9B68     		ldr	r3, [r3, #8]
- 382 0048 9847     		blx	r3
- 383              	.LVL28:
- 384              		.loc 4 174 19 view .LVU81
- 385 004a 0028     		cmp	r0, #0
- 386 004c 5ED1     		bne	.L17
- 387              		.loc 4 174 46 view .LVU82
- 388 004e 2368     		ldr	r3, [r4]
- 389              		.loc 4 174 45 view .LVU83
- 390 0050 2046     		mov	r0, r4
- 391 0052 9B68     		ldr	r3, [r3, #8]
- 392 0054 9847     		blx	r3
- 393              	.LVL29:
- 394              		.loc 4 174 19 view .LVU84
- 395 0056 0138     		subs	r0, r0, #1
- 396 0058 83B2     		uxth	r3, r0
- 397              	.L12:
- 398              	.LBE71:
- 399              	.LBE70:
-  28:DisplayManager.cpp ****     display_.WriteString((char*)message, Font_7x10, true);  // Write white text
- 400              		.loc 3 28 5 view .LVU85
- 401 005a D9F80000 		ldr	r0, [r9]
- 402              		.loc 3 28 25 view .LVU86
- 403 005e 2946     		mov	r1, r5
- 404              	.LBB74:
- 405              	.LBB72:
- 406              		.loc 4 174 19 view .LVU87
- 407 0060 E380     		strh	r3, [r4, #6]	@ movhi
- 408              	.LVL30:
- 409              		.loc 4 174 19 view .LVU88
- 410              	.LBE72:
- 411              	.LBE74:
- 412              		.loc 3 28 5 is_stmt 1 view .LVU89
- 413              		.loc 3 28 25 is_stmt 0 view .LVU90
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 20
+ 382              		.loc 4 174 9 is_stmt 1 view .LVU84
+ 383              		.loc 4 174 33 is_stmt 0 view .LVU85
+ 384 0046 2046     		mov	r0, r4
+ 385              		.loc 4 174 34 view .LVU86
+ 386 0048 2368     		ldr	r3, [r4]
+ 387              		.loc 4 174 33 view .LVU87
+ 388 004a 9B68     		ldr	r3, [r3, #8]
+ 389 004c 9847     		blx	r3
+ 390              	.LVL28:
+ 391              		.loc 4 174 19 view .LVU88
+ 392 004e 0028     		cmp	r0, #0
+ 393 0050 40F0AE80 		bne	.L30
+ 394              		.loc 4 174 46 view .LVU89
+ 395 0054 2368     		ldr	r3, [r4]
+ 396              		.loc 4 174 45 view .LVU90
+ 397 0056 2046     		mov	r0, r4
+ 398 0058 9B68     		ldr	r3, [r3, #8]
+ 399 005a 9847     		blx	r3
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 20
 
 
- 414 0062 0124     		movs	r4, #1
- 415              		.loc 3 28 57 view .LVU91
- 416 0064 0268     		ldr	r2, [r0]
- 417              		.loc 3 28 25 view .LVU92
- 418 0066 2F4B     		ldr	r3, .L22+4
- 419 0068 0094     		str	r4, [sp]
- 420 006a 946A     		ldr	r4, [r2, #40]
- 421 006c 0CCB     		ldm	r3, {r2, r3}
- 422 006e A047     		blx	r4
- 423              	.LVL31:
-  29:DisplayManager.cpp ****     display_.Update();                          // Send to OLED
- 424              		.loc 3 29 5 is_stmt 1 view .LVU93
- 425 0070 D9F80000 		ldr	r0, [r9]
- 426 0074 2C4A     		ldr	r2, .L22+8
- 427              		.loc 3 29 21 is_stmt 0 view .LVU94
- 428 0076 0368     		ldr	r3, [r0]
- 429 0078 1B6B     		ldr	r3, [r3, #48]
- 430 007a 9342     		cmp	r3, r2
- 431 007c 4DD1     		bne	.L13
- 432              	.LBB75:
- 433              	.LBB76:
- 434              	.LBB77:
- 435              	.LBB78:
- 436              	.LBB79:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 437              		.loc 2 124 24 view .LVU95
- 438 007e 00F10806 		add	r6, r0, #8
- 439 0082 00F11005 		add	r5, r0, #16
- 440              	.LVL32:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 441              		.loc 2 124 24 view .LVU96
- 442 0086 00F11408 		add	r8, r0, #20
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 443              		.loc 2 125 30 view .LVU97
- 444 008a B024     		movs	r4, #176
- 445              	.L15:
- 446              	.LVL33:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 447              		.loc 2 125 30 view .LVU98
- 448 008c 0027     		movs	r7, #0
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 449              		.loc 2 124 23 view .LVU99
- 450 008e 2846     		mov	r0, r5
- 451 0090 8DF80F40 		strb	r4, [sp, #15]
- 452              	.LVL34:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 453              		.loc 2 124 23 view .LVU100
- 454              	.LBE79:
- 455              	.LBI78:
- 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 456              		.loc 2 122 10 is_stmt 1 view .LVU101
- 457              	.LBB80:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 458              		.loc 2 124 9 view .LVU102
- 459              	.LBE80:
- 460              	.LBE78:
- 461              		.loc 2 383 22 is_stmt 0 view .LVU103
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 21
+ 400              	.LVL29:
+ 401              		.loc 4 174 19 view .LVU91
+ 402 005c 0138     		subs	r0, r0, #1
+ 403 005e 83B2     		uxth	r3, r0
+ 404              	.L12:
+ 405 0060 E380     		strh	r3, [r4, #6]	@ movhi
+ 406              	.LVL30:
+ 407              		.loc 4 174 19 view .LVU92
+ 408              	.LBE77:
+ 409              	.LBE76:
+ 410              	.LBB79:
+  44:DisplayManager.cpp ****     
+  45:DisplayManager.cpp ****     // Iterate through each character in the message
+  46:DisplayManager.cpp ****     for (int i = 0; message[i] != '\0'; i++) {
+ 411              		.loc 3 46 32 is_stmt 1 view .LVU93
+ 412              		.loc 3 46 30 is_stmt 0 view .LVU94
+ 413 0062 3578     		ldrb	r5, [r6]	@ zero_extendqisi2
+ 414              		.loc 3 46 32 view .LVU95
+ 415 0064 D5B1     		cbz	r5, .L14
+ 416              	.LBE79:
+  41:DisplayManager.cpp ****     
+ 417              		.loc 3 41 13 view .LVU96
+ 418 0066 0027     		movs	r7, #0
+  40:DisplayManager.cpp ****     uint8_t charsOnLine = 0;                   // Characters written on current line
+ 419              		.loc 3 40 13 view .LVU97
+ 420 0068 3C46     		mov	r4, r7
+ 421              	.LVL31:
+ 422              	.L25:
+ 423              	.LBB92:
+ 424              	.LBB80:
+  47:DisplayManager.cpp ****         char c = message[i];
+ 425              		.loc 3 47 9 is_stmt 1 view .LVU98
+  48:DisplayManager.cpp ****         
+  49:DisplayManager.cpp ****         // Check for manual line break character "*"
+  50:DisplayManager.cpp ****         if (c == '*') {
+ 426              		.loc 3 50 9 view .LVU99
+ 427 006a 2A2D     		cmp	r5, #42
+ 428 006c 62D0     		beq	.L40
+  51:DisplayManager.cpp ****             // Move to next line
+  52:DisplayManager.cpp ****             cursorY += LINE_HEIGHT;
+  53:DisplayManager.cpp ****             cursorX = 0;
+  54:DisplayManager.cpp ****             charsOnLine = 0;
+  55:DisplayManager.cpp ****             
+  56:DisplayManager.cpp ****             // Check if we've exceeded screen height
+  57:DisplayManager.cpp ****             if (cursorY >= SCREEN_HEIGHT) {
+  58:DisplayManager.cpp ****                 break;  // Can't display more text
+  59:DisplayManager.cpp ****             }
+  60:DisplayManager.cpp ****             
+  61:DisplayManager.cpp ****             display_.SetCursor(cursorX, cursorY);
+  62:DisplayManager.cpp ****             continue;  // Skip writing the "*" character
+  63:DisplayManager.cpp ****         }
+  64:DisplayManager.cpp ****         
+  65:DisplayManager.cpp ****         // Check if we need automatic line wrapping
+  66:DisplayManager.cpp ****         if (charsOnLine >= MAX_CHARS_PER_LINE) {
+ 429              		.loc 3 66 9 view .LVU100
+ 430 006e 112F     		cmp	r7, #17
+ 431 0070 7ED8     		bhi	.L20
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 21
 
 
- 462 0094 0134     		adds	r4, r4, #1
+  67:DisplayManager.cpp ****             // Move to next line
+  68:DisplayManager.cpp ****             cursorY += LINE_HEIGHT;
+  69:DisplayManager.cpp ****             cursorX = 0;
+  70:DisplayManager.cpp ****             charsOnLine = 0;
+  71:DisplayManager.cpp ****             
+  72:DisplayManager.cpp ****             // Check if we've exceeded screen height
+  73:DisplayManager.cpp ****             if (cursorY >= SCREEN_HEIGHT) {
+  74:DisplayManager.cpp ****                 break;  // Can't display more text
+  75:DisplayManager.cpp ****             }
+  76:DisplayManager.cpp ****             
+  77:DisplayManager.cpp ****             display_.SetCursor(cursorX, cursorY);
+  78:DisplayManager.cpp ****         }
+  79:DisplayManager.cpp ****         
+  80:DisplayManager.cpp ****         // Write the character
+  81:DisplayManager.cpp ****         char charBuffer[2] = {c, '\0'};
+  82:DisplayManager.cpp ****         display_.WriteString(charBuffer, Font_7x10, true);
+  83:DisplayManager.cpp ****         
+  84:DisplayManager.cpp ****         // Update cursor position
+  85:DisplayManager.cpp ****         cursorX += CHAR_WIDTH;
+  86:DisplayManager.cpp ****         charsOnLine++;
+ 432              		.loc 3 86 20 is_stmt 0 view .LVU101
+ 433 0072 0137     		adds	r7, r7, #1
+ 434              	.LVL32:
+ 435              		.loc 3 86 20 view .LVU102
+ 436 0074 FFB2     		uxtb	r7, r7
+ 437              	.L21:
+  81:DisplayManager.cpp ****         display_.WriteString(charBuffer, Font_7x10, true);
+ 438              		.loc 3 81 9 is_stmt 1 view .LVU103
+  82:DisplayManager.cpp ****         
+ 439              		.loc 3 82 9 is_stmt 0 view .LVU104
+ 440 0076 D9F80000 		ldr	r0, [r9]
+  81:DisplayManager.cpp ****         display_.WriteString(charBuffer, Font_7x10, true);
+ 441              		.loc 3 81 14 view .LVU105
+ 442 007a 0022     		movs	r2, #0
+  81:DisplayManager.cpp ****         display_.WriteString(charBuffer, Font_7x10, true);
+ 443              		.loc 3 81 38 view .LVU106
+ 444 007c 8DF80C50 		strb	r5, [sp, #12]
+  82:DisplayManager.cpp ****         
+ 445              		.loc 3 82 9 is_stmt 1 view .LVU107
+  81:DisplayManager.cpp ****         display_.WriteString(charBuffer, Font_7x10, true);
+ 446              		.loc 3 81 14 is_stmt 0 view .LVU108
+ 447 0080 8DF80D20 		strb	r2, [sp, #13]
+  82:DisplayManager.cpp ****         
+ 448              		.loc 3 82 29 view .LVU109
+ 449 0084 0122     		movs	r2, #1
+  82:DisplayManager.cpp ****         
+ 450              		.loc 3 82 57 view .LVU110
+ 451 0086 0168     		ldr	r1, [r0]
+  82:DisplayManager.cpp ****         
+ 452              		.loc 3 82 29 view .LVU111
+ 453 0088 564B     		ldr	r3, .L43+4
+ 454 008a 0092     		str	r2, [sp]
+ 455 008c 8D6A     		ldr	r5, [r1, #40]
+ 456              	.LVL33:
+  82:DisplayManager.cpp ****         
+ 457              		.loc 3 82 29 view .LVU112
+ 458 008e 03A9     		add	r1, sp, #12
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 22
+
+
+ 459              	.LVL34:
+  82:DisplayManager.cpp ****         
+ 460              		.loc 3 82 29 view .LVU113
+ 461 0090 0CCB     		ldm	r3, {r2, r3}
+ 462 0092 A847     		blx	r5
  463              	.LVL35:
- 464              	.LBB83:
- 465              	.LBB81:
+  85:DisplayManager.cpp ****         charsOnLine++;
+ 464              		.loc 3 85 9 is_stmt 1 view .LVU114
+ 465              		.loc 3 86 9 view .LVU115
+ 466              	.L19:
+ 467              		.loc 3 86 9 is_stmt 0 view .LVU116
+ 468              	.LBE80:
+  46:DisplayManager.cpp ****         char c = message[i];
+ 469              		.loc 3 46 5 is_stmt 1 discriminator 2 view .LVU117
+  46:DisplayManager.cpp ****         char c = message[i];
+ 470              		.loc 3 46 32 discriminator 2 view .LVU118
+  46:DisplayManager.cpp ****         char c = message[i];
+ 471              		.loc 3 46 30 is_stmt 0 discriminator 2 view .LVU119
+ 472 0094 16F8015F 		ldrb	r5, [r6, #1]!	@ zero_extendqisi2
+ 473              	.LVL36:
+  46:DisplayManager.cpp ****         char c = message[i];
+ 474              		.loc 3 46 32 discriminator 2 view .LVU120
+ 475 0098 002D     		cmp	r5, #0
+ 476 009a E6D1     		bne	.L25
+ 477              	.LVL37:
+ 478              	.L14:
+  46:DisplayManager.cpp ****         char c = message[i];
+ 479              		.loc 3 46 32 discriminator 2 view .LVU121
+ 480              	.LBE92:
+  87:DisplayManager.cpp ****     }
+  88:DisplayManager.cpp ****     
+  89:DisplayManager.cpp ****     display_.Update();                          // Send to OLED
+ 481              		.loc 3 89 5 is_stmt 1 view .LVU122
+ 482 009c D9F80000 		ldr	r0, [r9]
+ 483 00a0 514A     		ldr	r2, .L43+8
+ 484              		.loc 3 89 21 is_stmt 0 view .LVU123
+ 485 00a2 0368     		ldr	r3, [r0]
+ 486 00a4 1B6B     		ldr	r3, [r3, #48]
+ 487 00a6 9342     		cmp	r3, r2
+ 488 00a8 40F08D80 		bne	.L26
+ 489              	.LBB93:
+ 490              	.LBB94:
+ 491              	.LBB95:
+ 492              	.LBB96:
+ 493              	.LBB97:
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 466              		.loc 2 124 23 view .LVU104
- 467 0096 3946     		mov	r1, r7
- 468 0098 FFF7FEFF 		bl	dsy_gpio_write
- 469              	.LVL36:
+ 494              		.loc 2 124 24 view .LVU124
+ 495 00ac 00F10806 		add	r6, r0, #8
+ 496 00b0 00F11005 		add	r5, r0, #16
+ 497 00b4 00F11408 		add	r8, r0, #20
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 470              		.loc 2 125 9 is_stmt 1 view .LVU105
+ 498              		.loc 2 125 30 view .LVU125
+ 499 00b8 B024     		movs	r4, #176
+ 500              	.L28:
+ 501              	.LVL38:
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 471              		.loc 2 125 30 is_stmt 0 view .LVU106
- 472 009c 6423     		movs	r3, #100
- 473 009e 0122     		movs	r2, #1
- 474 00a0 0DF10F01 		add	r1, sp, #15
- 475 00a4 3046     		mov	r0, r6
- 476              	.LBE81:
- 477              	.LBE83:
- 478              		.loc 2 383 22 view .LVU107
- 479 00a6 E4B2     		uxtb	r4, r4
- 480              	.LBB84:
- 481              	.LBB82:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 482              		.loc 2 125 30 view .LVU108
- 483 00a8 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 484              	.LVL37:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 485              		.loc 2 125 30 view .LVU109
- 486              	.LBE82:
- 487              	.LBE84:
- 488              	.LBB85:
- 489              	.LBB86:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 490              		.loc 2 124 23 view .LVU110
- 491 00ac 3946     		mov	r1, r7
- 492 00ae 2846     		mov	r0, r5
- 493 00b0 8DF80F70 		strb	r7, [sp, #15]
- 494              	.LVL38:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 495              		.loc 2 124 23 view .LVU111
- 496              	.LBE86:
- 497              	.LBI85:
- 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 498              		.loc 2 122 10 is_stmt 1 view .LVU112
- 499              	.LBB87:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 500              		.loc 2 124 9 view .LVU113
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 501              		.loc 2 124 23 is_stmt 0 view .LVU114
- 502 00b4 FFF7FEFF 		bl	dsy_gpio_write
- 503              	.LVL39:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 504              		.loc 2 125 9 is_stmt 1 view .LVU115
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 505              		.loc 2 125 30 is_stmt 0 view .LVU116
- 506 00b8 0122     		movs	r2, #1
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 22
+ 502              		.loc 2 125 30 view .LVU126
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 23
 
 
- 507 00ba 6423     		movs	r3, #100
- 508 00bc 0DF10F01 		add	r1, sp, #15
- 509 00c0 3046     		mov	r0, r6
- 510 00c2 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 511              	.LVL40:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 512              		.loc 2 125 30 view .LVU117
- 513 00c6 1023     		movs	r3, #16
- 514              	.LBE87:
- 515              	.LBE85:
- 516              	.LBB88:
- 517              	.LBB89:
+ 503 00ba 0027     		movs	r7, #0
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 518              		.loc 2 124 23 view .LVU118
- 519 00c8 3946     		mov	r1, r7
- 520 00ca 2846     		mov	r0, r5
- 521 00cc 8DF80F30 		strb	r3, [sp, #15]
- 522              	.LVL41:
+ 504              		.loc 2 124 23 view .LVU127
+ 505 00bc 2846     		mov	r0, r5
+ 506 00be 8DF80C40 		strb	r4, [sp, #12]
+ 507              	.LVL39:
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 523              		.loc 2 124 23 view .LVU119
- 524              	.LBE89:
- 525              	.LBI88:
+ 508              		.loc 2 124 23 view .LVU128
+ 509              	.LBE97:
+ 510              	.LBI96:
  122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 526              		.loc 2 122 10 is_stmt 1 view .LVU120
- 527              	.LBB90:
+ 511              		.loc 2 122 10 is_stmt 1 view .LVU129
+ 512              	.LBB98:
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 528              		.loc 2 124 9 view .LVU121
+ 513              		.loc 2 124 9 view .LVU130
+ 514              	.LBE98:
+ 515              	.LBE96:
+ 516              		.loc 2 383 22 is_stmt 0 view .LVU131
+ 517 00c2 0134     		adds	r4, r4, #1
+ 518              	.LVL40:
+ 519              	.LBB101:
+ 520              	.LBB99:
  124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 529              		.loc 2 124 23 is_stmt 0 view .LVU122
- 530 00d0 FFF7FEFF 		bl	dsy_gpio_write
- 531              	.LVL42:
+ 521              		.loc 2 124 23 view .LVU132
+ 522 00c4 3946     		mov	r1, r7
+ 523 00c6 FFF7FEFF 		bl	dsy_gpio_write
+ 524              	.LVL41:
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 532              		.loc 2 125 9 is_stmt 1 view .LVU123
+ 525              		.loc 2 125 9 is_stmt 1 view .LVU133
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 533              		.loc 2 125 30 is_stmt 0 view .LVU124
- 534 00d4 6423     		movs	r3, #100
- 535 00d6 0122     		movs	r2, #1
- 536 00d8 0DF10F01 		add	r1, sp, #15
- 537 00dc 3046     		mov	r0, r6
- 538 00de FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 539              	.LVL43:
+ 526              		.loc 2 125 30 is_stmt 0 view .LVU134
+ 527 00ca 6423     		movs	r3, #100
+ 528 00cc 0122     		movs	r2, #1
+ 529 00ce 03A9     		add	r1, sp, #12
+ 530 00d0 3046     		mov	r0, r6
+ 531              	.LBE99:
+ 532              	.LBE101:
+ 533              		.loc 2 383 22 view .LVU135
+ 534 00d2 E4B2     		uxtb	r4, r4
+ 535              	.LBB102:
+ 536              	.LBB100:
  125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 540              		.loc 2 125 30 view .LVU125
- 541              	.LBE90:
- 542              	.LBE88:
- 543              	.LBB91:
- 544              	.LBI91:
+ 537              		.loc 2 125 30 view .LVU136
+ 538 00d4 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 539              	.LVL42:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 540              		.loc 2 125 30 view .LVU137
+ 541              	.LBE100:
+ 542              	.LBE102:
+ 543              	.LBB103:
+ 544              	.LBB104:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 545              		.loc 2 124 23 view .LVU138
+ 546 00d8 3946     		mov	r1, r7
+ 547 00da 2846     		mov	r0, r5
+ 548 00dc 8DF80C70 		strb	r7, [sp, #12]
+ 549              	.LVL43:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 24
+
+
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 550              		.loc 2 124 23 view .LVU139
+ 551              	.LBE104:
+ 552              	.LBI103:
+ 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 553              		.loc 2 122 10 is_stmt 1 view .LVU140
+ 554              	.LBB105:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 555              		.loc 2 124 9 view .LVU141
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 556              		.loc 2 124 23 is_stmt 0 view .LVU142
+ 557 00e0 FFF7FEFF 		bl	dsy_gpio_write
+ 558              	.LVL44:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 559              		.loc 2 125 9 is_stmt 1 view .LVU143
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 560              		.loc 2 125 30 is_stmt 0 view .LVU144
+ 561 00e4 0122     		movs	r2, #1
+ 562 00e6 6423     		movs	r3, #100
+ 563 00e8 03A9     		add	r1, sp, #12
+ 564 00ea 3046     		mov	r0, r6
+ 565 00ec FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 566              	.LVL45:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 567              		.loc 2 125 30 view .LVU145
+ 568 00f0 1023     		movs	r3, #16
+ 569              	.LBE105:
+ 570              	.LBE103:
+ 571              	.LBB106:
+ 572              	.LBB107:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 573              		.loc 2 124 23 view .LVU146
+ 574 00f2 3946     		mov	r1, r7
+ 575 00f4 2846     		mov	r0, r5
+ 576 00f6 8DF80C30 		strb	r3, [sp, #12]
+ 577              	.LVL46:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 578              		.loc 2 124 23 view .LVU147
+ 579              	.LBE107:
+ 580              	.LBI106:
+ 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 581              		.loc 2 122 10 is_stmt 1 view .LVU148
+ 582              	.LBB108:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 583              		.loc 2 124 9 view .LVU149
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 584              		.loc 2 124 23 is_stmt 0 view .LVU150
+ 585 00fa FFF7FEFF 		bl	dsy_gpio_write
+ 586              	.LVL47:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 587              		.loc 2 125 9 is_stmt 1 view .LVU151
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 588              		.loc 2 125 30 is_stmt 0 view .LVU152
+ 589 00fe 6423     		movs	r3, #100
+ 590 0100 0122     		movs	r2, #1
+ 591 0102 03A9     		add	r1, sp, #12
+ 592 0104 3046     		mov	r0, r6
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 25
+
+
+ 593 0106 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 594              	.LVL48:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 595              		.loc 2 125 30 view .LVU153
+ 596              	.LBE108:
+ 597              	.LBE106:
+ 598              	.LBB109:
+ 599              	.LBI109:
  128:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 545              		.loc 2 128 10 is_stmt 1 view .LVU126
- 546              	.LBB92:
+ 600              		.loc 2 128 10 is_stmt 1 view .LVU154
+ 601              	.LBB110:
  130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
- 547              		.loc 2 130 9 view .LVU127
+ 602              		.loc 2 130 9 view .LVU155
  130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
- 548              		.loc 2 130 23 is_stmt 0 view .LVU128
- 549 00e2 0121     		movs	r1, #1
- 550 00e4 2846     		mov	r0, r5
- 551 00e6 FFF7FEFF 		bl	dsy_gpio_write
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 23
-
-
- 552              	.LVL44:
+ 603              		.loc 2 130 23 is_stmt 0 view .LVU156
+ 604 010a 0121     		movs	r1, #1
+ 605 010c 2846     		mov	r0, r5
+ 606 010e FFF7FEFF 		bl	dsy_gpio_write
+ 607              	.LVL49:
  131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 553              		.loc 2 131 9 is_stmt 1 view .LVU129
+ 608              		.loc 2 131 9 is_stmt 1 view .LVU157
  131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 554              		.loc 2 131 30 is_stmt 0 view .LVU130
- 555 00ea 8022     		movs	r2, #128
- 556 00ec 4146     		mov	r1, r8
- 557 00ee 6423     		movs	r3, #100
- 558 00f0 3046     		mov	r0, r6
- 559              	.LBE92:
- 560              	.LBE91:
- 561              		.loc 2 383 22 view .LVU131
- 562 00f2 9044     		add	r8, r8, r2
- 563              	.LVL45:
- 564              	.LBB94:
- 565              	.LBB93:
+ 609              		.loc 2 131 30 is_stmt 0 view .LVU158
+ 610 0112 8022     		movs	r2, #128
+ 611 0114 4146     		mov	r1, r8
+ 612 0116 6423     		movs	r3, #100
+ 613 0118 3046     		mov	r0, r6
+ 614              	.LBE110:
+ 615              	.LBE109:
+ 616              		.loc 2 383 22 view .LVU159
+ 617 011a 9044     		add	r8, r8, r2
+ 618              	.LVL50:
+ 619              	.LBB112:
+ 620              	.LBB111:
  131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 566              		.loc 2 131 30 view .LVU132
- 567 00f4 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 568              	.LVL46:
+ 621              		.loc 2 131 30 view .LVU160
+ 622 011c FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 623              	.LVL51:
  131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 569              		.loc 2 131 30 view .LVU133
- 570              	.LBE93:
- 571              	.LBE94:
- 572              		.loc 2 383 9 is_stmt 1 view .LVU134
- 573              		.loc 2 383 22 view .LVU135
- 574 00f8 B82C     		cmp	r4, #184
- 575 00fa C7D1     		bne	.L15
- 576              	.L14:
- 577              	.LBE77:
- 578              	.LBE76:
- 579              	.LBE75:
-  30:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
- 580              		.loc 3 30 5 view .LVU136
- 581              		.loc 3 30 16 is_stmt 0 view .LVU137
- 582 00fc 5146     		mov	r1, r10
- 583 00fe D9F80400 		ldr	r0, [r9, #4]
-  31:DisplayManager.cpp **** }
- 584              		.loc 3 31 1 view .LVU138
- 585 0102 04B0     		add	sp, sp, #16
- 586              		.cfi_remember_state
- 587              		.cfi_def_cfa_offset 32
- 588              		@ sp needed
- 589 0104 BDE8F047 		pop	{r4, r5, r6, r7, r8, r9, r10, lr}
- 590              		.cfi_restore 14
- 591              		.cfi_restore 10
- 592              		.cfi_restore 9
- 593              		.cfi_restore 8
- 594              		.cfi_restore 7
- 595              		.cfi_restore 6
- 596              		.cfi_restore 5
- 597              		.cfi_restore 4
- 598              		.cfi_def_cfa_offset 0
- 599              	.LVL47:
-  30:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
- 600              		.loc 3 30 16 view .LVU139
- 601 0108 FFF7FEBF 		b	_ZN5daisy8DaisyPod7DelayMsEj
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 24
+ 624              		.loc 2 131 30 view .LVU161
+ 625              	.LBE111:
+ 626              	.LBE112:
+ 627              		.loc 2 383 9 is_stmt 1 view .LVU162
+ 628              		.loc 2 383 22 view .LVU163
+ 629 0120 B82C     		cmp	r4, #184
+ 630 0122 CAD1     		bne	.L28
+ 631              	.L27:
+ 632              	.LBE95:
+ 633              	.LBE94:
+ 634              	.LBE93:
+  90:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
+ 635              		.loc 3 90 5 view .LVU164
+ 636              		.loc 3 90 16 is_stmt 0 view .LVU165
+ 637 0124 5146     		mov	r1, r10
+ 638 0126 D9F80400 		ldr	r0, [r9, #4]
+  91:DisplayManager.cpp **** }
+ 639              		.loc 3 91 1 view .LVU166
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 26
 
 
- 602              	.LVL48:
- 603              	.L17:
- 604              		.cfi_restore_state
- 605              	.LBB95:
- 606              	.LBB73:
- 607              		.loc 4 174 19 view .LVU140
- 608 010c 0023     		movs	r3, #0
- 609 010e A4E7     		b	.L12
- 610              	.L16:
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 611              		.loc 4 173 19 view .LVU141
- 612 0110 0023     		movs	r3, #0
- 613 0112 95E7     		b	.L11
- 614              	.LVL49:
- 615              	.L9:
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 616              		.loc 4 173 19 view .LVU142
- 617              	.LBE73:
- 618              	.LBE95:
-  26:DisplayManager.cpp ****     display_.SetCursor(0, 0);                   // Position at top-left
- 619              		.loc 3 26 18 view .LVU143
- 620 0114 0021     		movs	r1, #0
- 621              	.LVL50:
-  26:DisplayManager.cpp ****     display_.SetCursor(0, 0);                   // Position at top-left
- 622              		.loc 3 26 18 view .LVU144
- 623 0116 9847     		blx	r3
- 624              	.LVL51:
- 625 0118 84E7     		b	.L10
- 626              	.L13:
-  29:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
- 627              		.loc 3 29 20 view .LVU145
- 628 011a 9847     		blx	r3
- 629              	.LVL52:
- 630 011c EEE7     		b	.L14
- 631              	.L23:
- 632 011e 00BF     		.align	2
- 633              	.L22:
- 634 0120 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillE
- 635 0124 00000000 		.word	Font_7x10
- 636 0128 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6Updat
- 637              		.cfi_endproc
- 638              	.LFE2599:
- 640              		.section	.text._ZN14DisplayManager6updateEv,"ax",%progbits
- 641              		.align	1
- 642              		.p2align 2,,3
- 643              		.global	_ZN14DisplayManager6updateEv
- 644              		.syntax unified
- 645              		.thumb
- 646              		.thumb_func
- 647              		.fpu fpv5-d16
- 649              	_ZN14DisplayManager6updateEv:
- 650              	.LVL53:
- 651              	.LFB2600:
-  32:DisplayManager.cpp **** 
-  33:DisplayManager.cpp **** /**
-  34:DisplayManager.cpp ****  * Update the display
-  35:DisplayManager.cpp ****  * Call this after any drawing operations to make them visible
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 25
-
-
-  36:DisplayManager.cpp ****  */
-  37:DisplayManager.cpp **** void DisplayManager::update() {
- 652              		.loc 3 37 31 is_stmt 1 view -0
- 653              		.cfi_startproc
- 654              		@ args = 0, pretend = 0, frame = 8
- 655              		@ frame_needed = 0, uses_anonymous_args = 0
-  38:DisplayManager.cpp ****     display_.Update();
- 656              		.loc 3 38 5 view .LVU147
- 657 0000 0068     		ldr	r0, [r0]
- 658              	.LVL54:
- 659              		.loc 3 38 5 is_stmt 0 view .LVU148
- 660 0002 254A     		ldr	r2, .L31
- 661              		.loc 3 38 21 view .LVU149
- 662 0004 0368     		ldr	r3, [r0]
- 663 0006 1B6B     		ldr	r3, [r3, #48]
- 664 0008 9342     		cmp	r3, r2
- 665 000a 44D1     		bne	.L25
-  37:DisplayManager.cpp ****     display_.Update();
- 666              		.loc 3 37 31 view .LVU150
- 667 000c 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 668              		.cfi_def_cfa_offset 24
- 669              		.cfi_offset 4, -24
- 670              		.cfi_offset 5, -20
- 671              		.cfi_offset 6, -16
- 672              		.cfi_offset 7, -12
- 673              		.cfi_offset 8, -8
- 674              		.cfi_offset 14, -4
- 675              	.LBB108:
- 676              	.LBB109:
- 677              	.LBB110:
- 678              	.LBB111:
- 679              	.LBB112:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 680              		.loc 2 124 24 view .LVU151
- 681 0010 00F10806 		add	r6, r0, #8
- 682              	.LBE112:
- 683              	.LBE111:
- 684              	.LBE110:
- 685              	.LBE109:
- 686              	.LBE108:
-  37:DisplayManager.cpp ****     display_.Update();
- 687              		.loc 3 37 31 view .LVU152
- 688 0014 82B0     		sub	sp, sp, #8
- 689              		.cfi_def_cfa_offset 32
- 690              	.LBB132:
- 691              	.LBB131:
- 692              	.LBB130:
- 693              	.LBB117:
- 694              	.LBB113:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 695              		.loc 2 124 24 view .LVU153
- 696 0016 00F11005 		add	r5, r0, #16
- 697 001a 00F11408 		add	r8, r0, #20
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 698              		.loc 2 125 30 view .LVU154
- 699 001e B024     		movs	r4, #176
- 700              	.L27:
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 26
-
-
- 701              	.LVL55:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 702              		.loc 2 125 30 view .LVU155
- 703 0020 0027     		movs	r7, #0
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 704              		.loc 2 124 23 view .LVU156
- 705 0022 2846     		mov	r0, r5
- 706 0024 8DF80740 		strb	r4, [sp, #7]
- 707              	.LVL56:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 708              		.loc 2 124 23 view .LVU157
- 709              	.LBE113:
- 710              	.LBI111:
- 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 711              		.loc 2 122 10 is_stmt 1 view .LVU158
- 712              	.LBB114:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 713              		.loc 2 124 9 view .LVU159
- 714              	.LBE114:
- 715              	.LBE117:
- 716              		.loc 2 383 22 is_stmt 0 view .LVU160
- 717 0028 0134     		adds	r4, r4, #1
- 718              	.LVL57:
- 719              	.LBB118:
- 720              	.LBB115:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 721              		.loc 2 124 23 view .LVU161
- 722 002a 3946     		mov	r1, r7
- 723 002c FFF7FEFF 		bl	dsy_gpio_write
- 724              	.LVL58:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 725              		.loc 2 125 9 is_stmt 1 view .LVU162
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 726              		.loc 2 125 30 is_stmt 0 view .LVU163
- 727 0030 6423     		movs	r3, #100
- 728 0032 0122     		movs	r2, #1
- 729 0034 0DF10701 		add	r1, sp, #7
- 730 0038 3046     		mov	r0, r6
- 731              	.LBE115:
- 732              	.LBE118:
- 733              		.loc 2 383 22 view .LVU164
- 734 003a E4B2     		uxtb	r4, r4
- 735              	.LBB119:
- 736              	.LBB116:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 737              		.loc 2 125 30 view .LVU165
- 738 003c FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 739              	.LVL59:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 740              		.loc 2 125 30 view .LVU166
- 741              	.LBE116:
- 742              	.LBE119:
- 743              	.LBB120:
- 744              	.LBB121:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 745              		.loc 2 124 23 view .LVU167
- 746 0040 3946     		mov	r1, r7
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 27
-
-
- 747 0042 2846     		mov	r0, r5
- 748 0044 8DF80770 		strb	r7, [sp, #7]
- 749              	.LVL60:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 750              		.loc 2 124 23 view .LVU168
- 751              	.LBE121:
- 752              	.LBI120:
- 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 753              		.loc 2 122 10 is_stmt 1 view .LVU169
- 754              	.LBB122:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 755              		.loc 2 124 9 view .LVU170
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 756              		.loc 2 124 23 is_stmt 0 view .LVU171
- 757 0048 FFF7FEFF 		bl	dsy_gpio_write
- 758              	.LVL61:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 759              		.loc 2 125 9 is_stmt 1 view .LVU172
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 760              		.loc 2 125 30 is_stmt 0 view .LVU173
- 761 004c 0122     		movs	r2, #1
- 762 004e 6423     		movs	r3, #100
- 763 0050 0DF10701 		add	r1, sp, #7
- 764 0054 3046     		mov	r0, r6
- 765 0056 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 766              	.LVL62:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 767              		.loc 2 125 30 view .LVU174
- 768 005a 1023     		movs	r3, #16
- 769              	.LBE122:
- 770              	.LBE120:
- 771              	.LBB123:
- 772              	.LBB124:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 773              		.loc 2 124 23 view .LVU175
- 774 005c 3946     		mov	r1, r7
- 775 005e 2846     		mov	r0, r5
- 776 0060 8DF80730 		strb	r3, [sp, #7]
- 777              	.LVL63:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 778              		.loc 2 124 23 view .LVU176
- 779              	.LBE124:
- 780              	.LBI123:
- 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 781              		.loc 2 122 10 is_stmt 1 view .LVU177
- 782              	.LBB125:
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 783              		.loc 2 124 9 view .LVU178
- 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
- 784              		.loc 2 124 23 is_stmt 0 view .LVU179
- 785 0064 FFF7FEFF 		bl	dsy_gpio_write
- 786              	.LVL64:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 787              		.loc 2 125 9 is_stmt 1 view .LVU180
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 788              		.loc 2 125 30 is_stmt 0 view .LVU181
- 789 0068 6423     		movs	r3, #100
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 28
-
-
- 790 006a 0122     		movs	r2, #1
- 791 006c 0DF10701 		add	r1, sp, #7
- 792 0070 3046     		mov	r0, r6
- 793 0072 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 794              	.LVL65:
- 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 795              		.loc 2 125 30 view .LVU182
- 796              	.LBE125:
- 797              	.LBE123:
- 798              	.LBB126:
- 799              	.LBI126:
- 128:../../libDaisy//src/dev/oled_ssd130x.h ****     {
- 800              		.loc 2 128 10 is_stmt 1 view .LVU183
- 801              	.LBB127:
- 130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
- 802              		.loc 2 130 9 view .LVU184
- 130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
- 803              		.loc 2 130 23 is_stmt 0 view .LVU185
- 804 0076 0121     		movs	r1, #1
- 805 0078 2846     		mov	r0, r5
- 806 007a FFF7FEFF 		bl	dsy_gpio_write
- 807              	.LVL66:
- 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 808              		.loc 2 131 9 is_stmt 1 view .LVU186
- 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 809              		.loc 2 131 30 is_stmt 0 view .LVU187
- 810 007e 8022     		movs	r2, #128
- 811 0080 4146     		mov	r1, r8
- 812 0082 6423     		movs	r3, #100
- 813 0084 3046     		mov	r0, r6
- 814              	.LBE127:
- 815              	.LBE126:
- 816              		.loc 2 383 22 view .LVU188
- 817 0086 9044     		add	r8, r8, r2
- 818              	.LVL67:
- 819              	.LBB129:
- 820              	.LBB128:
- 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 821              		.loc 2 131 30 view .LVU189
- 822 0088 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
- 823              	.LVL68:
- 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
- 824              		.loc 2 131 30 view .LVU190
- 825              	.LBE128:
- 826              	.LBE129:
- 827              		.loc 2 383 9 is_stmt 1 view .LVU191
- 828              		.loc 2 383 22 view .LVU192
- 829 008c B82C     		cmp	r4, #184
- 830 008e C7D1     		bne	.L27
- 831              	.LBE130:
- 832              	.LBE131:
- 833              	.LBE132:
-  39:DisplayManager.cpp **** }
- 834              		.loc 3 39 1 is_stmt 0 view .LVU193
- 835 0090 02B0     		add	sp, sp, #8
- 836              		.cfi_def_cfa_offset 24
- 837              		@ sp needed
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 29
-
-
- 838 0092 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 839              	.L25:
- 840              		.cfi_def_cfa_offset 0
- 841              		.cfi_restore 4
- 842              		.cfi_restore 5
- 843              		.cfi_restore 6
- 844              		.cfi_restore 7
- 845              		.cfi_restore 8
- 846              		.cfi_restore 14
-  38:DisplayManager.cpp **** }
- 847              		.loc 3 38 20 view .LVU194
- 848 0096 1847     		bx	r3	@ indirect register sibling call
- 849              	.LVL69:
- 850              	.L32:
- 851              		.align	2
- 852              	.L31:
- 853 0098 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6Updat
- 854              		.cfi_endproc
- 855              	.LFE2600:
- 857              		.section	.text._ZN14DisplayManager5clearEb,"ax",%progbits
- 858              		.align	1
- 859              		.p2align 2,,3
- 860              		.global	_ZN14DisplayManager5clearEb
- 861              		.syntax unified
- 862              		.thumb
- 863              		.thumb_func
- 864              		.fpu fpv5-d16
- 866              	_ZN14DisplayManager5clearEb:
- 867              	.LVL70:
- 868              	.LFB2601:
-  40:DisplayManager.cpp **** 
-  41:DisplayManager.cpp **** /**
-  42:DisplayManager.cpp ****  * Clear the display
-  43:DisplayManager.cpp ****  * @param fill If true, fill with white; if false, fill with black
-  44:DisplayManager.cpp ****  */
-  45:DisplayManager.cpp **** void DisplayManager::clear(bool fill) {
- 869              		.loc 3 45 39 is_stmt 1 view -0
- 870              		.cfi_startproc
- 871              		@ args = 0, pretend = 0, frame = 0
- 872              		@ frame_needed = 0, uses_anonymous_args = 0
- 873              		@ link register save eliminated.
-  46:DisplayManager.cpp ****     display_.Fill(fill);
- 874              		.loc 3 46 5 view .LVU196
- 875 0000 0068     		ldr	r0, [r0]
- 876              	.LVL71:
- 877              		.loc 3 46 23 is_stmt 0 view .LVU197
- 878 0002 0268     		ldr	r2, [r0]
-  45:DisplayManager.cpp ****     display_.Fill(fill);
- 879              		.loc 3 45 39 view .LVU198
- 880 0004 10B4     		push	{r4}
- 881              		.cfi_def_cfa_offset 4
- 882              		.cfi_offset 4, -4
- 883              		.loc 3 46 23 view .LVU199
- 884 0006 1269     		ldr	r2, [r2, #16]
- 885 0008 074C     		ldr	r4, .L36
- 886 000a A242     		cmp	r2, r4
- 887 000c 08D1     		bne	.L34
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 30
-
-
- 888              	.LBB137:
- 889              	.LBB138:
- 890              	.LBB139:
- 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 891              		.loc 2 366 24 view .LVU200
- 892 000e 4942     		rsbs	r1, r1, #0
- 893              	.LVL72:
- 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 894              		.loc 2 366 24 view .LVU201
- 895 0010 4FF48062 		mov	r2, #1024
- 896 0014 1430     		adds	r0, r0, #20
- 897              	.LBE139:
- 898              	.LBE138:
- 899              	.LBE137:
-  47:DisplayManager.cpp **** }
- 900              		.loc 3 47 1 view .LVU202
- 901 0016 5DF8044B 		ldr	r4, [sp], #4
- 902              		.cfi_remember_state
- 903              		.cfi_restore 4
- 904              		.cfi_def_cfa_offset 0
- 905              	.LBB142:
- 906              	.LBB141:
- 907              	.LBB140:
- 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 908              		.loc 2 366 24 view .LVU203
- 909 001a C9B2     		uxtb	r1, r1
- 910 001c FFF7FEBF 		b	memset
- 911              	.LVL73:
- 912              	.L34:
- 913              		.cfi_restore_state
- 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
- 914              		.loc 2 366 24 view .LVU204
- 915              	.LBE140:
- 916              	.LBE141:
- 917              	.LBE142:
- 918              		.loc 3 47 1 view .LVU205
- 919 0020 5DF8044B 		ldr	r4, [sp], #4
- 920              		.cfi_restore 4
- 921              		.cfi_def_cfa_offset 0
-  46:DisplayManager.cpp **** }
- 922              		.loc 3 46 18 view .LVU206
- 923 0024 1047     		bx	r2	@ indirect register sibling call
- 924              	.LVL74:
- 925              	.L37:
-  46:DisplayManager.cpp **** }
- 926              		.loc 3 46 18 view .LVU207
- 927 0026 00BF     		.align	2
- 928              	.L36:
- 929 0028 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillE
- 930              		.cfi_endproc
- 931              	.LFE2601:
- 933              		.section	.text._ZN14DisplayManager9setCursorEhh,"ax",%progbits
- 934              		.align	1
- 935              		.p2align 2,,3
- 936              		.global	_ZN14DisplayManager9setCursorEhh
- 937              		.syntax unified
- 938              		.thumb
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 31
-
-
- 939              		.thumb_func
- 940              		.fpu fpv5-d16
- 942              	_ZN14DisplayManager9setCursorEhh:
- 943              	.LVL75:
- 944              	.LFB2602:
-  48:DisplayManager.cpp **** 
-  49:DisplayManager.cpp **** /**
-  50:DisplayManager.cpp ****  * Set cursor position for text writing
-  51:DisplayManager.cpp ****  * @param x X coordinate (0-127)
-  52:DisplayManager.cpp ****  * @param y Y coordinate (0-63)
-  53:DisplayManager.cpp ****  */
-  54:DisplayManager.cpp **** void DisplayManager::setCursor(uint8_t x, uint8_t y) {
- 945              		.loc 3 54 54 is_stmt 1 view -0
- 946              		.cfi_startproc
- 947              		@ args = 0, pretend = 0, frame = 0
- 948              		@ frame_needed = 0, uses_anonymous_args = 0
-  55:DisplayManager.cpp ****     display_.SetCursor(x, y);
- 949              		.loc 3 55 5 view .LVU209
-  54:DisplayManager.cpp ****     display_.SetCursor(x, y);
- 950              		.loc 3 54 54 is_stmt 0 view .LVU210
- 951 0000 70B5     		push	{r4, r5, r6, lr}
- 952              		.cfi_def_cfa_offset 16
- 953              		.cfi_offset 4, -16
- 954              		.cfi_offset 5, -12
- 955              		.cfi_offset 6, -8
- 956              		.cfi_offset 14, -4
- 957              		.loc 3 55 5 view .LVU211
- 958 0002 0468     		ldr	r4, [r0]
- 959              		.loc 3 55 23 view .LVU212
- 960 0004 0E46     		mov	r6, r1
- 961 0006 1546     		mov	r5, r2
- 962              	.LVL76:
- 963              	.LBB145:
- 964              	.LBI145:
+ 640 012a 04B0     		add	sp, sp, #16
+ 641              		.cfi_remember_state
+ 642              		.cfi_def_cfa_offset 32
+ 643              		@ sp needed
+ 644 012c BDE8F047 		pop	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 645              		.cfi_restore 14
+ 646              		.cfi_restore 10
+ 647              		.cfi_restore 9
+ 648              		.cfi_restore 8
+ 649              		.cfi_restore 7
+ 650              		.cfi_restore 6
+ 651              		.cfi_restore 5
+ 652              		.cfi_restore 4
+ 653              		.cfi_def_cfa_offset 0
+ 654              	.LVL52:
+  90:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
+ 655              		.loc 3 90 16 view .LVU167
+ 656 0130 FFF7FEBF 		b	_ZN5daisy8DaisyPod7DelayMsEj
+ 657              	.LVL53:
+ 658              	.L40:
+ 659              		.cfi_restore_state
+ 660              	.LBB113:
+ 661              	.LBB89:
+  52:DisplayManager.cpp ****             cursorX = 0;
+ 662              		.loc 3 52 13 is_stmt 1 view .LVU168
+  52:DisplayManager.cpp ****             cursorX = 0;
+ 663              		.loc 3 52 21 is_stmt 0 view .LVU169
+ 664 0134 0A34     		adds	r4, r4, #10
+ 665              	.LVL54:
+  52:DisplayManager.cpp ****             cursorX = 0;
+ 666              		.loc 3 52 21 view .LVU170
+ 667 0136 E4B2     		uxtb	r4, r4
+ 668              	.LVL55:
+  53:DisplayManager.cpp ****             charsOnLine = 0;
+ 669              		.loc 3 53 13 is_stmt 1 view .LVU171
+  54:DisplayManager.cpp ****             
+ 670              		.loc 3 54 13 view .LVU172
+  57:DisplayManager.cpp ****                 break;  // Can't display more text
+ 671              		.loc 3 57 13 view .LVU173
+ 672 0138 3F2C     		cmp	r4, #63
+ 673 013a AFD8     		bhi	.L14
+  61:DisplayManager.cpp ****             continue;  // Skip writing the "*" character
+ 674              		.loc 3 61 13 view .LVU174
+ 675 013c D9F80050 		ldr	r5, [r9]
+ 676              	.LVL56:
+  61:DisplayManager.cpp ****             continue;  // Skip writing the "*" character
+ 677              		.loc 3 61 31 is_stmt 0 view .LVU175
+ 678 0140 A7B2     		uxth	r7, r4
+ 679              	.LVL57:
+ 680              	.LBB81:
+ 681              	.LBI81:
  171:../../libDaisy//src/hid/disp/display.h ****     {
- 965              		.loc 4 171 10 is_stmt 1 view .LVU213
- 966              	.LBB146:
+ 682              		.loc 4 171 10 is_stmt 1 view .LVU176
+ 683              	.LBB82:
  173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 967              		.loc 4 173 9 view .LVU214
+ 684              		.loc 4 173 9 view .LVU177
  173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 968              		.loc 4 173 33 is_stmt 0 view .LVU215
- 969 0008 2368     		ldr	r3, [r4]
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 970              		.loc 4 173 32 view .LVU216
- 971 000a 2046     		mov	r0, r4
- 972              	.LVL77:
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 973              		.loc 4 173 32 view .LVU217
- 974 000c DB68     		ldr	r3, [r3, #12]
- 975 000e 9847     		blx	r3
- 976              	.LVL78:
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 977              		.loc 4 173 19 view .LVU218
- 978 0010 8642     		cmp	r6, r0
- 979 0012 05D3     		bcc	.L39
- 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 980              		.loc 4 173 44 view .LVU219
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 32
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 27
 
 
- 981 0014 2368     		ldr	r3, [r4]
+ 685              		.loc 4 173 33 is_stmt 0 view .LVU178
+ 686 0142 2B68     		ldr	r3, [r5]
  173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 982              		.loc 4 173 43 view .LVU220
- 983 0016 2046     		mov	r0, r4
- 984 0018 DB68     		ldr	r3, [r3, #12]
- 985 001a 9847     		blx	r3
- 986              	.LVL79:
+ 687              		.loc 4 173 32 view .LVU179
+ 688 0144 2846     		mov	r0, r5
+ 689 0146 DB68     		ldr	r3, [r3, #12]
+ 690 0148 9847     		blx	r3
+ 691              	.LVL58:
  173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 987              		.loc 4 173 19 view .LVU221
- 988 001c 0138     		subs	r0, r0, #1
- 989 001e 86B2     		uxth	r6, r0
- 990              	.LVL80:
- 991              	.L39:
- 992              		.loc 4 174 34 view .LVU222
- 993 0020 2368     		ldr	r3, [r4]
- 994              		.loc 4 174 33 view .LVU223
- 995 0022 2046     		mov	r0, r4
+ 692              		.loc 4 173 19 view .LVU180
+ 693 014a 0028     		cmp	r0, #0
+ 694 014c 40D0     		beq	.L41
+ 695 014e 0023     		movs	r3, #0
+ 696              	.L17:
+ 697 0150 AB80     		strh	r3, [r5, #4]	@ movhi
+ 698              		.loc 4 174 9 is_stmt 1 view .LVU181
+ 699              		.loc 4 174 33 is_stmt 0 view .LVU182
+ 700 0152 2846     		mov	r0, r5
+ 701              		.loc 4 174 34 view .LVU183
+ 702 0154 2B68     		ldr	r3, [r5]
+ 703              		.loc 4 174 33 view .LVU184
+ 704 0156 9B68     		ldr	r3, [r3, #8]
+ 705 0158 9847     		blx	r3
+ 706              	.LVL59:
+ 707              		.loc 4 174 19 view .LVU185
+ 708 015a 8742     		cmp	r7, r0
+ 709 015c 05D3     		bcc	.L18
+ 710              		.loc 4 174 46 view .LVU186
+ 711 015e 2B68     		ldr	r3, [r5]
+ 712              		.loc 4 174 45 view .LVU187
+ 713 0160 2846     		mov	r0, r5
+ 714 0162 9B68     		ldr	r3, [r3, #8]
+ 715 0164 9847     		blx	r3
+ 716              	.LVL60:
+ 717              		.loc 4 174 19 view .LVU188
+ 718 0166 0138     		subs	r0, r0, #1
+ 719 0168 87B2     		uxth	r7, r0
+ 720              	.LVL61:
+ 721              	.L18:
+ 722              		.loc 4 174 19 view .LVU189
+ 723 016a EF80     		strh	r7, [r5, #6]	@ movhi
+ 724              	.LVL62:
+ 725              		.loc 4 174 19 view .LVU190
+ 726              	.LBE82:
+ 727              	.LBE81:
+  62:DisplayManager.cpp ****         }
+ 728              		.loc 3 62 13 is_stmt 1 view .LVU191
+  54:DisplayManager.cpp ****             
+ 729              		.loc 3 54 25 is_stmt 0 view .LVU192
+ 730 016c 0027     		movs	r7, #0
+ 731 016e 91E7     		b	.L19
+ 732              	.LVL63:
+ 733              	.L20:
+  68:DisplayManager.cpp ****             cursorX = 0;
+ 734              		.loc 3 68 13 is_stmt 1 view .LVU193
+  68:DisplayManager.cpp ****             cursorX = 0;
+ 735              		.loc 3 68 21 is_stmt 0 view .LVU194
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 28
+
+
+ 736 0170 0A34     		adds	r4, r4, #10
+ 737              	.LVL64:
+  68:DisplayManager.cpp ****             cursorX = 0;
+ 738              		.loc 3 68 21 view .LVU195
+ 739 0172 E4B2     		uxtb	r4, r4
+ 740              	.LVL65:
+  69:DisplayManager.cpp ****             charsOnLine = 0;
+ 741              		.loc 3 69 13 is_stmt 1 view .LVU196
+  70:DisplayManager.cpp ****             
+ 742              		.loc 3 70 13 view .LVU197
+  73:DisplayManager.cpp ****                 break;  // Can't display more text
+ 743              		.loc 3 73 13 view .LVU198
+ 744 0174 3F2C     		cmp	r4, #63
+ 745 0176 91D8     		bhi	.L14
+  77:DisplayManager.cpp ****         }
+ 746              		.loc 3 77 13 view .LVU199
+ 747 0178 D9F80070 		ldr	r7, [r9]
+  77:DisplayManager.cpp ****         }
+ 748              		.loc 3 77 31 is_stmt 0 view .LVU200
+ 749 017c 1FFA84F8 		uxth	r8, r4
+ 750              	.LVL66:
+ 751              	.LBB84:
+ 752              	.LBI84:
+ 171:../../libDaisy//src/hid/disp/display.h ****     {
+ 753              		.loc 4 171 10 is_stmt 1 view .LVU201
+ 754              	.LBB85:
  173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
- 996              		.loc 4 173 19 view .LVU224
- 997 0024 A680     		strh	r6, [r4, #4]	@ movhi
- 998              		.loc 4 174 9 is_stmt 1 view .LVU225
- 999              		.loc 4 174 33 is_stmt 0 view .LVU226
- 1000 0026 9B68     		ldr	r3, [r3, #8]
- 1001 0028 9847     		blx	r3
- 1002              	.LVL81:
- 1003              		.loc 4 174 19 view .LVU227
- 1004 002a 8542     		cmp	r5, r0
- 1005 002c 05D3     		bcc	.L40
- 1006              		.loc 4 174 46 view .LVU228
- 1007 002e 2368     		ldr	r3, [r4]
- 1008              		.loc 4 174 45 view .LVU229
- 1009 0030 2046     		mov	r0, r4
- 1010 0032 9B68     		ldr	r3, [r3, #8]
- 1011 0034 9847     		blx	r3
- 1012              	.LVL82:
- 1013              		.loc 4 174 19 view .LVU230
- 1014 0036 0138     		subs	r0, r0, #1
- 1015 0038 85B2     		uxth	r5, r0
- 1016              	.LVL83:
- 1017              	.L40:
- 1018              		.loc 4 174 19 view .LVU231
- 1019 003a E580     		strh	r5, [r4, #6]	@ movhi
- 1020              	.LVL84:
- 1021              		.loc 4 174 19 view .LVU232
- 1022              	.LBE146:
- 1023              	.LBE145:
-  56:DisplayManager.cpp **** }
- 1024              		.loc 3 56 1 view .LVU233
- 1025 003c 70BD     		pop	{r4, r5, r6, pc}
- 1026              		.cfi_endproc
- 1027              	.LFE2602:
- 1029 003e 00BF     		.section	.text._ZN14DisplayManager11writeStringEPKc7FontDefb,"ax",%progbits
- 1030              		.align	1
- 1031              		.p2align 2,,3
- 1032              		.global	_ZN14DisplayManager11writeStringEPKc7FontDefb
- 1033              		.syntax unified
- 1034              		.thumb
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 33
+ 755              		.loc 4 173 9 view .LVU202
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 756              		.loc 4 173 33 is_stmt 0 view .LVU203
+ 757 0180 3B68     		ldr	r3, [r7]
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 758              		.loc 4 173 32 view .LVU204
+ 759 0182 3846     		mov	r0, r7
+ 760 0184 DB68     		ldr	r3, [r3, #12]
+ 761 0186 9847     		blx	r3
+ 762              	.LVL67:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 763              		.loc 4 173 19 view .LVU205
+ 764 0188 B0B1     		cbz	r0, .L42
+ 765 018a 0023     		movs	r3, #0
+ 766              	.L22:
+ 767 018c BB80     		strh	r3, [r7, #4]	@ movhi
+ 768              		.loc 4 174 9 is_stmt 1 view .LVU206
+ 769              		.loc 4 174 33 is_stmt 0 view .LVU207
+ 770 018e 3846     		mov	r0, r7
+ 771              		.loc 4 174 34 view .LVU208
+ 772 0190 3B68     		ldr	r3, [r7]
+ 773              		.loc 4 174 33 view .LVU209
+ 774 0192 9B68     		ldr	r3, [r3, #8]
+ 775 0194 9847     		blx	r3
+ 776              	.LVL68:
+ 777              		.loc 4 174 19 view .LVU210
+ 778 0196 8045     		cmp	r8, r0
+ 779 0198 06D3     		bcc	.L23
+ 780              		.loc 4 174 46 view .LVU211
+ 781 019a 3B68     		ldr	r3, [r7]
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 29
 
 
- 1035              		.thumb_func
- 1036              		.fpu fpv5-d16
- 1038              	_ZN14DisplayManager11writeStringEPKc7FontDefb:
- 1039              	.LVL85:
- 1040              	.LFB2603:
-  57:DisplayManager.cpp **** 
-  58:DisplayManager.cpp **** /**
-  59:DisplayManager.cpp ****  * Write text at the current cursor position
-  60:DisplayManager.cpp ****  * @param text The text to write
-  61:DisplayManager.cpp ****  * @param font Pointer to font data (e.g., Font_7x10, Font_6x8, Font_11x18)
-  62:DisplayManager.cpp ****  * @param on If true, text is white; if false, text is black
-  63:DisplayManager.cpp ****  */
-  64:DisplayManager.cpp **** void DisplayManager::writeString(const char* text, FontDef font, bool on) {
- 1041              		.loc 3 64 75 is_stmt 1 view -0
- 1042              		.cfi_startproc
- 1043              		@ args = 4, pretend = 0, frame = 8
- 1044              		@ frame_needed = 0, uses_anonymous_args = 0
- 1045              		@ link register save eliminated.
-  65:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1046              		.loc 3 65 5 view .LVU235
-  64:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1047              		.loc 3 64 75 is_stmt 0 view .LVU236
- 1048 0000 10B4     		push	{r4}
- 1049              		.cfi_def_cfa_offset 4
- 1050              		.cfi_offset 4, -4
- 1051 0002 83B0     		sub	sp, sp, #12
- 1052              		.cfi_def_cfa_offset 16
- 1053              		.loc 3 65 5 view .LVU237
- 1054 0004 0068     		ldr	r0, [r0]
- 1055              	.LVL86:
-  64:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1056              		.loc 3 64 75 view .LVU238
- 1057 0006 EC46     		mov	ip, sp
- 1058              		.loc 3 65 47 view .LVU239
- 1059 0008 0468     		ldr	r4, [r0]
-  64:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1060              		.loc 3 64 75 view .LVU240
- 1061 000a 8CE80C00 		stm	ip, {r2, r3}
- 1062 000e 9DF81030 		ldrb	r3, [sp, #16]	@ zero_extendqisi2
- 1063              		.loc 3 65 25 view .LVU241
- 1064 0012 0493     		str	r3, [sp, #16]
- 1065              	.LVL87:
- 1066              		.loc 3 65 25 view .LVU242
- 1067 0014 A46A     		ldr	r4, [r4, #40]
- 1068 0016 9CE80C00 		ldm	ip, {r2, r3}
- 1069 001a A446     		mov	ip, r4
-  66:DisplayManager.cpp **** }
- 1070              		.loc 3 66 1 view .LVU243
- 1071 001c 03B0     		add	sp, sp, #12
- 1072              		.cfi_def_cfa_offset 4
- 1073              		@ sp needed
- 1074 001e 5DF8044B 		ldr	r4, [sp], #4
- 1075              		.cfi_restore 4
- 1076              		.cfi_def_cfa_offset 0
-  65:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1077              		.loc 3 65 25 view .LVU244
- 1078 0022 6047     		bx	ip
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 34
+ 782              		.loc 4 174 45 view .LVU212
+ 783 019c 3846     		mov	r0, r7
+ 784 019e 9B68     		ldr	r3, [r3, #8]
+ 785 01a0 9847     		blx	r3
+ 786              	.LVL69:
+ 787              		.loc 4 174 19 view .LVU213
+ 788 01a2 0138     		subs	r0, r0, #1
+ 789 01a4 1FFA80F8 		uxth	r8, r0
+ 790              	.LVL70:
+ 791              	.L23:
+ 792              		.loc 4 174 19 view .LVU214
+ 793 01a8 A7F80680 		strh	r8, [r7, #6]	@ movhi
+ 175:../../libDaisy//src/hid/disp/display.h ****     }
+ 794              		.loc 4 175 5 view .LVU215
+ 795 01ac 0127     		movs	r7, #1
+ 796              	.LVL71:
+ 797              		.loc 4 175 5 view .LVU216
+ 798 01ae 62E7     		b	.L21
+ 799              	.LVL72:
+ 800              	.L30:
+ 801              		.loc 4 175 5 view .LVU217
+ 802              	.LBE85:
+ 803              	.LBE84:
+ 804              	.LBE89:
+ 805              	.LBE113:
+ 806              	.LBB114:
+ 807              	.LBB78:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 808              		.loc 4 174 19 view .LVU218
+ 809 01b0 0023     		movs	r3, #0
+ 810 01b2 55E7     		b	.L12
+ 811              	.L29:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 812              		.loc 4 173 19 view .LVU219
+ 813 01b4 0023     		movs	r3, #0
+ 814 01b6 45E7     		b	.L11
+ 815              	.LVL73:
+ 816              	.L42:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 817              		.loc 4 173 19 view .LVU220
+ 818              	.LBE78:
+ 819              	.LBE114:
+ 820              	.LBB115:
+ 821              	.LBB90:
+ 822              	.LBB87:
+ 823              	.LBB86:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 824              		.loc 4 173 44 view .LVU221
+ 825 01b8 3B68     		ldr	r3, [r7]
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 826              		.loc 4 173 43 view .LVU222
+ 827 01ba 3846     		mov	r0, r7
+ 828 01bc DB68     		ldr	r3, [r3, #12]
+ 829 01be 9847     		blx	r3
+ 830              	.LVL74:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 831              		.loc 4 173 19 view .LVU223
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 30
 
 
- 1079              	.LVL88:
-  65:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
- 1080              		.loc 3 65 25 view .LVU245
- 1081              		.cfi_endproc
- 1082              	.LFE2603:
- 1084              		.text
- 1085              	.Letext0:
- 1086              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1087              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1088              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
- 1089              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
- 1090              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
- 1091              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
- 1092              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
- 1093              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
- 1094              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
- 1095              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
- 1096              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
- 1097              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
- 1098              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
- 1099              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
- 1100              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\initializer_list
- 1101              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
- 1102              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
- 1103              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
- 1104              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
- 1105              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
- 1106              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
- 1107              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
- 1108              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
- 1109              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
- 1110              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
- 1111              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
- 1112              		.file 31 "../../libDaisy//src/daisy_core.h"
- 1113              		.file 32 "../../libDaisy//src/per/tim.h"
- 1114              		.file 33 "../../libDaisy//src/sys/system.h"
- 1115              		.file 34 "../../libDaisy//src/per/qspi.h"
- 1116              		.file 35 "../../libDaisy//src/per/dac.h"
- 1117              		.file 36 "../../libDaisy//src/per/sai.h"
- 1118              		.file 37 "../../libDaisy//src/hid/audio.h"
- 1119              		.file 38 "../../libDaisy//src/per/adc.h"
- 1120              		.file 39 "../../libDaisy//src/per/uart.h"
- 1121              		.file 40 "../../libDaisy//src/hid/MidiEvent.h"
- 1122              		.file 41 "../../libDaisy//src/hid/midi_parser.h"
- 1123              		.file 42 "../../libDaisy//src/hid/usb.h"
- 1124              		.file 43 "../../libDaisy//src/hid/midi.h"
- 1125              		.file 44 "../../libDaisy//src/util/FIFO.h"
- 1126              		.file 45 "../../libDaisy//src/hid/switch.h"
- 1127              		.file 46 "../../libDaisy//src/hid/encoder.h"
- 1128              		.file 47 "../../libDaisy//src/hid/ctrl.h"
- 1129              		.file 48 "../../libDaisy//src/per/spi.h"
- 1130              		.file 49 "../../libDaisy//src/hid/disp/graphics_common.h"
- 1131              		.file 50 "../../libDaisy//src/util/wav_format.h"
- 1132              		.file 51 "../../libDaisy//src/hid/led.h"
- 1133              		.file 52 "../../libDaisy//src/util/color.h"
- 1134              		.file 53 "../../libDaisy//src/hid/rgb_led.h"
- 1135              		.file 54 "../../libDaisy//src/dev/max11300.h"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 35
+ 832 01c0 0138     		subs	r0, r0, #1
+ 833 01c2 83B2     		uxth	r3, r0
+ 834 01c4 E2E7     		b	.L22
+ 835              	.LVL75:
+ 836              	.L26:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 837              		.loc 4 173 19 view .LVU224
+ 838              	.LBE86:
+ 839              	.LBE87:
+ 840              	.LBE90:
+ 841              	.LBE115:
+  89:DisplayManager.cpp ****     hw_.DelayMs(delayMs);                       // Wait for specified time
+ 842              		.loc 3 89 20 view .LVU225
+ 843 01c6 9847     		blx	r3
+ 844              	.LVL76:
+ 845 01c8 ACE7     		b	.L27
+ 846              	.LVL77:
+ 847              	.L9:
+  31:DisplayManager.cpp ****     
+ 848              		.loc 3 31 18 view .LVU226
+ 849 01ca 0021     		movs	r1, #0
+ 850              	.LVL78:
+  31:DisplayManager.cpp ****     
+ 851              		.loc 3 31 18 view .LVU227
+ 852 01cc 9847     		blx	r3
+ 853              	.LVL79:
+ 854 01ce 2AE7     		b	.L10
+ 855              	.LVL80:
+ 856              	.L41:
+ 857              	.LBB116:
+ 858              	.LBB91:
+ 859              	.LBB88:
+ 860              	.LBB83:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 861              		.loc 4 173 44 view .LVU228
+ 862 01d0 2B68     		ldr	r3, [r5]
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 863              		.loc 4 173 43 view .LVU229
+ 864 01d2 2846     		mov	r0, r5
+ 865 01d4 DB68     		ldr	r3, [r3, #12]
+ 866 01d6 9847     		blx	r3
+ 867              	.LVL81:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 868              		.loc 4 173 19 view .LVU230
+ 869 01d8 0138     		subs	r0, r0, #1
+ 870 01da 83B2     		uxth	r3, r0
+ 871 01dc B8E7     		b	.L17
+ 872              	.L44:
+ 873 01de 00BF     		.align	2
+ 874              	.L43:
+ 875 01e0 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillE
+ 876 01e4 00000000 		.word	Font_7x10
+ 877 01e8 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6Updat
+ 878              	.LBE83:
+ 879              	.LBE88:
+ 880              	.LBE91:
+ 881              	.LBE116:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 31
 
 
- 1136              		.file 55 "../../libDaisy//src/daisy_seed.h"
- 1137              		.file 56 "../../libDaisy//src/daisy_pod.h"
- 1138              		.file 57 "../../libDaisy//src/per/gpio.h"
- 1139              		.file 58 "../../libDaisy//src/dev/sdram.h"
- 1140              		.file 59 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
- 1141              		.file 60 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
- 1142              		.file 61 "../../libDaisy//src/util/oled_fonts.h"
- 1143              		.file 62 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
- 1144              		.file 63 "DisplayManager.h"
- 1145              		.file 64 "<built-in>"
- 1146              		.file 65 "../../libDaisy//src/dev/sr_595.h"
-ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s 			page 36
+ 882              		.cfi_endproc
+ 883              	.LFE2599:
+ 885              		.section	.text._ZN14DisplayManager6updateEv,"ax",%progbits
+ 886              		.align	1
+ 887              		.p2align 2,,3
+ 888              		.global	_ZN14DisplayManager6updateEv
+ 889              		.syntax unified
+ 890              		.thumb
+ 891              		.thumb_func
+ 892              		.fpu fpv5-d16
+ 894              	_ZN14DisplayManager6updateEv:
+ 895              	.LVL82:
+ 896              	.LFB2600:
+  92:DisplayManager.cpp **** 
+  93:DisplayManager.cpp **** /**
+  94:DisplayManager.cpp ****  * Update the display
+  95:DisplayManager.cpp ****  * Call this after any drawing operations to make them visible
+  96:DisplayManager.cpp ****  */
+  97:DisplayManager.cpp **** void DisplayManager::update() {
+ 897              		.loc 3 97 31 is_stmt 1 view -0
+ 898              		.cfi_startproc
+ 899              		@ args = 0, pretend = 0, frame = 8
+ 900              		@ frame_needed = 0, uses_anonymous_args = 0
+  98:DisplayManager.cpp ****     display_.Update();
+ 901              		.loc 3 98 5 view .LVU232
+ 902 0000 0068     		ldr	r0, [r0]
+ 903              	.LVL83:
+ 904              		.loc 3 98 5 is_stmt 0 view .LVU233
+ 905 0002 254A     		ldr	r2, .L52
+ 906              		.loc 3 98 21 view .LVU234
+ 907 0004 0368     		ldr	r3, [r0]
+ 908 0006 1B6B     		ldr	r3, [r3, #48]
+ 909 0008 9342     		cmp	r3, r2
+ 910 000a 44D1     		bne	.L46
+  97:DisplayManager.cpp ****     display_.Update();
+ 911              		.loc 3 97 31 view .LVU235
+ 912 000c 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 913              		.cfi_def_cfa_offset 24
+ 914              		.cfi_offset 4, -24
+ 915              		.cfi_offset 5, -20
+ 916              		.cfi_offset 6, -16
+ 917              		.cfi_offset 7, -12
+ 918              		.cfi_offset 8, -8
+ 919              		.cfi_offset 14, -4
+ 920              	.LBB129:
+ 921              	.LBB130:
+ 922              	.LBB131:
+ 923              	.LBB132:
+ 924              	.LBB133:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 925              		.loc 2 124 24 view .LVU236
+ 926 0010 00F10806 		add	r6, r0, #8
+ 927              	.LBE133:
+ 928              	.LBE132:
+ 929              	.LBE131:
+ 930              	.LBE130:
+ 931              	.LBE129:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 32
+
+
+  97:DisplayManager.cpp ****     display_.Update();
+ 932              		.loc 3 97 31 view .LVU237
+ 933 0014 82B0     		sub	sp, sp, #8
+ 934              		.cfi_def_cfa_offset 32
+ 935              	.LBB153:
+ 936              	.LBB152:
+ 937              	.LBB151:
+ 938              	.LBB138:
+ 939              	.LBB134:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 940              		.loc 2 124 24 view .LVU238
+ 941 0016 00F11005 		add	r5, r0, #16
+ 942 001a 00F11408 		add	r8, r0, #20
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 943              		.loc 2 125 30 view .LVU239
+ 944 001e B024     		movs	r4, #176
+ 945              	.L48:
+ 946              	.LVL84:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 947              		.loc 2 125 30 view .LVU240
+ 948 0020 0027     		movs	r7, #0
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 949              		.loc 2 124 23 view .LVU241
+ 950 0022 2846     		mov	r0, r5
+ 951 0024 8DF80740 		strb	r4, [sp, #7]
+ 952              	.LVL85:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 953              		.loc 2 124 23 view .LVU242
+ 954              	.LBE134:
+ 955              	.LBI132:
+ 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 956              		.loc 2 122 10 is_stmt 1 view .LVU243
+ 957              	.LBB135:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 958              		.loc 2 124 9 view .LVU244
+ 959              	.LBE135:
+ 960              	.LBE138:
+ 961              		.loc 2 383 22 is_stmt 0 view .LVU245
+ 962 0028 0134     		adds	r4, r4, #1
+ 963              	.LVL86:
+ 964              	.LBB139:
+ 965              	.LBB136:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 966              		.loc 2 124 23 view .LVU246
+ 967 002a 3946     		mov	r1, r7
+ 968 002c FFF7FEFF 		bl	dsy_gpio_write
+ 969              	.LVL87:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 970              		.loc 2 125 9 is_stmt 1 view .LVU247
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 971              		.loc 2 125 30 is_stmt 0 view .LVU248
+ 972 0030 6423     		movs	r3, #100
+ 973 0032 0122     		movs	r2, #1
+ 974 0034 0DF10701 		add	r1, sp, #7
+ 975 0038 3046     		mov	r0, r6
+ 976              	.LBE136:
+ 977              	.LBE139:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 33
+
+
+ 978              		.loc 2 383 22 view .LVU249
+ 979 003a E4B2     		uxtb	r4, r4
+ 980              	.LBB140:
+ 981              	.LBB137:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 982              		.loc 2 125 30 view .LVU250
+ 983 003c FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 984              	.LVL88:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 985              		.loc 2 125 30 view .LVU251
+ 986              	.LBE137:
+ 987              	.LBE140:
+ 988              	.LBB141:
+ 989              	.LBB142:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 990              		.loc 2 124 23 view .LVU252
+ 991 0040 3946     		mov	r1, r7
+ 992 0042 2846     		mov	r0, r5
+ 993 0044 8DF80770 		strb	r7, [sp, #7]
+ 994              	.LVL89:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 995              		.loc 2 124 23 view .LVU253
+ 996              	.LBE142:
+ 997              	.LBI141:
+ 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 998              		.loc 2 122 10 is_stmt 1 view .LVU254
+ 999              	.LBB143:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 1000              		.loc 2 124 9 view .LVU255
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 1001              		.loc 2 124 23 is_stmt 0 view .LVU256
+ 1002 0048 FFF7FEFF 		bl	dsy_gpio_write
+ 1003              	.LVL90:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1004              		.loc 2 125 9 is_stmt 1 view .LVU257
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1005              		.loc 2 125 30 is_stmt 0 view .LVU258
+ 1006 004c 0122     		movs	r2, #1
+ 1007 004e 6423     		movs	r3, #100
+ 1008 0050 0DF10701 		add	r1, sp, #7
+ 1009 0054 3046     		mov	r0, r6
+ 1010 0056 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 1011              	.LVL91:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1012              		.loc 2 125 30 view .LVU259
+ 1013 005a 1023     		movs	r3, #16
+ 1014              	.LBE143:
+ 1015              	.LBE141:
+ 1016              	.LBB144:
+ 1017              	.LBB145:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 1018              		.loc 2 124 23 view .LVU260
+ 1019 005c 3946     		mov	r1, r7
+ 1020 005e 2846     		mov	r0, r5
+ 1021 0060 8DF80730 		strb	r3, [sp, #7]
+ 1022              	.LVL92:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 34
+
+
+ 1023              		.loc 2 124 23 view .LVU261
+ 1024              	.LBE145:
+ 1025              	.LBI144:
+ 122:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 1026              		.loc 2 122 10 is_stmt 1 view .LVU262
+ 1027              	.LBB146:
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 1028              		.loc 2 124 9 view .LVU263
+ 124:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(&cmd, 1);
+ 1029              		.loc 2 124 23 is_stmt 0 view .LVU264
+ 1030 0064 FFF7FEFF 		bl	dsy_gpio_write
+ 1031              	.LVL93:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1032              		.loc 2 125 9 is_stmt 1 view .LVU265
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1033              		.loc 2 125 30 is_stmt 0 view .LVU266
+ 1034 0068 6423     		movs	r3, #100
+ 1035 006a 0122     		movs	r2, #1
+ 1036 006c 0DF10701 		add	r1, sp, #7
+ 1037 0070 3046     		mov	r0, r6
+ 1038 0072 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ 1039              	.LVL94:
+ 125:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1040              		.loc 2 125 30 view .LVU267
+ 1041              	.LBE146:
+ 1042              	.LBE144:
+ 1043              	.LBB147:
+ 1044              	.LBI147:
+ 128:../../libDaisy//src/dev/oled_ssd130x.h ****     {
+ 1045              		.loc 2 128 10 is_stmt 1 view .LVU268
+ 1046              	.LBB148:
+ 130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
+ 1047              		.loc 2 130 9 view .LVU269
+ 130:../../libDaisy//src/dev/oled_ssd130x.h ****         spi_.BlockingTransmit(buff, size);
+ 1048              		.loc 2 130 23 is_stmt 0 view .LVU270
+ 1049 0076 0121     		movs	r1, #1
+ 1050 0078 2846     		mov	r0, r5
+ 1051 007a FFF7FEFF 		bl	dsy_gpio_write
+ 1052              	.LVL95:
+ 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1053              		.loc 2 131 9 is_stmt 1 view .LVU271
+ 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1054              		.loc 2 131 30 is_stmt 0 view .LVU272
+ 1055 007e 8022     		movs	r2, #128
+ 1056 0080 4146     		mov	r1, r8
+ 1057 0082 6423     		movs	r3, #100
+ 1058 0084 3046     		mov	r0, r6
+ 1059              	.LBE148:
+ 1060              	.LBE147:
+ 1061              		.loc 2 383 22 view .LVU273
+ 1062 0086 9044     		add	r8, r8, r2
+ 1063              	.LVL96:
+ 1064              	.LBB150:
+ 1065              	.LBB149:
+ 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1066              		.loc 2 131 30 view .LVU274
+ 1067 0088 FFF7FEFF 		bl	_ZN5daisy9SpiHandle16BlockingTransmitEPhjm
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 35
+
+
+ 1068              	.LVL97:
+ 131:../../libDaisy//src/dev/oled_ssd130x.h ****     };
+ 1069              		.loc 2 131 30 view .LVU275
+ 1070              	.LBE149:
+ 1071              	.LBE150:
+ 1072              		.loc 2 383 9 is_stmt 1 view .LVU276
+ 1073              		.loc 2 383 22 view .LVU277
+ 1074 008c B82C     		cmp	r4, #184
+ 1075 008e C7D1     		bne	.L48
+ 1076              	.LBE151:
+ 1077              	.LBE152:
+ 1078              	.LBE153:
+  99:DisplayManager.cpp **** }
+ 1079              		.loc 3 99 1 is_stmt 0 view .LVU278
+ 1080 0090 02B0     		add	sp, sp, #8
+ 1081              		.cfi_def_cfa_offset 24
+ 1082              		@ sp needed
+ 1083 0092 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1084              	.L46:
+ 1085              		.cfi_def_cfa_offset 0
+ 1086              		.cfi_restore 4
+ 1087              		.cfi_restore 5
+ 1088              		.cfi_restore 6
+ 1089              		.cfi_restore 7
+ 1090              		.cfi_restore 8
+ 1091              		.cfi_restore 14
+  98:DisplayManager.cpp **** }
+ 1092              		.loc 3 98 20 view .LVU279
+ 1093 0096 1847     		bx	r3	@ indirect register sibling call
+ 1094              	.LVL98:
+ 1095              	.L53:
+ 1096              		.align	2
+ 1097              	.L52:
+ 1098 0098 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6Updat
+ 1099              		.cfi_endproc
+ 1100              	.LFE2600:
+ 1102              		.section	.text._ZN14DisplayManager5clearEb,"ax",%progbits
+ 1103              		.align	1
+ 1104              		.p2align 2,,3
+ 1105              		.global	_ZN14DisplayManager5clearEb
+ 1106              		.syntax unified
+ 1107              		.thumb
+ 1108              		.thumb_func
+ 1109              		.fpu fpv5-d16
+ 1111              	_ZN14DisplayManager5clearEb:
+ 1112              	.LVL99:
+ 1113              	.LFB2601:
+ 100:DisplayManager.cpp **** 
+ 101:DisplayManager.cpp **** /**
+ 102:DisplayManager.cpp ****  * Clear the display
+ 103:DisplayManager.cpp ****  * @param fill If true, fill with white; if false, fill with black
+ 104:DisplayManager.cpp ****  */
+ 105:DisplayManager.cpp **** void DisplayManager::clear(bool fill) {
+ 1114              		.loc 3 105 39 is_stmt 1 view -0
+ 1115              		.cfi_startproc
+ 1116              		@ args = 0, pretend = 0, frame = 0
+ 1117              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 36
+
+
+ 1118              		@ link register save eliminated.
+ 106:DisplayManager.cpp ****     display_.Fill(fill);
+ 1119              		.loc 3 106 5 view .LVU281
+ 1120 0000 0068     		ldr	r0, [r0]
+ 1121              	.LVL100:
+ 1122              		.loc 3 106 23 is_stmt 0 view .LVU282
+ 1123 0002 0268     		ldr	r2, [r0]
+ 105:DisplayManager.cpp ****     display_.Fill(fill);
+ 1124              		.loc 3 105 39 view .LVU283
+ 1125 0004 10B4     		push	{r4}
+ 1126              		.cfi_def_cfa_offset 4
+ 1127              		.cfi_offset 4, -4
+ 1128              		.loc 3 106 23 view .LVU284
+ 1129 0006 1269     		ldr	r2, [r2, #16]
+ 1130 0008 074C     		ldr	r4, .L57
+ 1131 000a A242     		cmp	r2, r4
+ 1132 000c 08D1     		bne	.L55
+ 1133              	.LBB158:
+ 1134              	.LBB159:
+ 1135              	.LBB160:
+ 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
+ 1136              		.loc 2 366 24 view .LVU285
+ 1137 000e 4942     		rsbs	r1, r1, #0
+ 1138              	.LVL101:
+ 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
+ 1139              		.loc 2 366 24 view .LVU286
+ 1140 0010 4FF48062 		mov	r2, #1024
+ 1141 0014 1430     		adds	r0, r0, #20
+ 1142              	.LBE160:
+ 1143              	.LBE159:
+ 1144              	.LBE158:
+ 107:DisplayManager.cpp **** }
+ 1145              		.loc 3 107 1 view .LVU287
+ 1146 0016 5DF8044B 		ldr	r4, [sp], #4
+ 1147              		.cfi_remember_state
+ 1148              		.cfi_restore 4
+ 1149              		.cfi_def_cfa_offset 0
+ 1150              	.LBB163:
+ 1151              	.LBB162:
+ 1152              	.LBB161:
+ 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
+ 1153              		.loc 2 366 24 view .LVU288
+ 1154 001a C9B2     		uxtb	r1, r1
+ 1155 001c FFF7FEBF 		b	memset
+ 1156              	.LVL102:
+ 1157              	.L55:
+ 1158              		.cfi_restore_state
+ 366:../../libDaisy//src/dev/oled_ssd130x.h ****         }
+ 1159              		.loc 2 366 24 view .LVU289
+ 1160              	.LBE161:
+ 1161              	.LBE162:
+ 1162              	.LBE163:
+ 1163              		.loc 3 107 1 view .LVU290
+ 1164 0020 5DF8044B 		ldr	r4, [sp], #4
+ 1165              		.cfi_restore 4
+ 1166              		.cfi_def_cfa_offset 0
+ 106:DisplayManager.cpp **** }
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 37
+
+
+ 1167              		.loc 3 106 18 view .LVU291
+ 1168 0024 1047     		bx	r2	@ indirect register sibling call
+ 1169              	.LVL103:
+ 1170              	.L58:
+ 106:DisplayManager.cpp **** }
+ 1171              		.loc 3 106 18 view .LVU292
+ 1172 0026 00BF     		.align	2
+ 1173              	.L57:
+ 1174 0028 00000000 		.word	_ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillE
+ 1175              		.cfi_endproc
+ 1176              	.LFE2601:
+ 1178              		.section	.text._ZN14DisplayManager9setCursorEhh,"ax",%progbits
+ 1179              		.align	1
+ 1180              		.p2align 2,,3
+ 1181              		.global	_ZN14DisplayManager9setCursorEhh
+ 1182              		.syntax unified
+ 1183              		.thumb
+ 1184              		.thumb_func
+ 1185              		.fpu fpv5-d16
+ 1187              	_ZN14DisplayManager9setCursorEhh:
+ 1188              	.LVL104:
+ 1189              	.LFB2602:
+ 108:DisplayManager.cpp **** 
+ 109:DisplayManager.cpp **** /**
+ 110:DisplayManager.cpp ****  * Set cursor position for text writing
+ 111:DisplayManager.cpp ****  * @param x X coordinate (0-127)
+ 112:DisplayManager.cpp ****  * @param y Y coordinate (0-63)
+ 113:DisplayManager.cpp ****  */
+ 114:DisplayManager.cpp **** void DisplayManager::setCursor(uint8_t x, uint8_t y) {
+ 1190              		.loc 3 114 54 is_stmt 1 view -0
+ 1191              		.cfi_startproc
+ 1192              		@ args = 0, pretend = 0, frame = 0
+ 1193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115:DisplayManager.cpp ****     display_.SetCursor(x, y);
+ 1194              		.loc 3 115 5 view .LVU294
+ 114:DisplayManager.cpp ****     display_.SetCursor(x, y);
+ 1195              		.loc 3 114 54 is_stmt 0 view .LVU295
+ 1196 0000 70B5     		push	{r4, r5, r6, lr}
+ 1197              		.cfi_def_cfa_offset 16
+ 1198              		.cfi_offset 4, -16
+ 1199              		.cfi_offset 5, -12
+ 1200              		.cfi_offset 6, -8
+ 1201              		.cfi_offset 14, -4
+ 1202              		.loc 3 115 5 view .LVU296
+ 1203 0002 0468     		ldr	r4, [r0]
+ 1204              		.loc 3 115 23 view .LVU297
+ 1205 0004 0E46     		mov	r6, r1
+ 1206 0006 1546     		mov	r5, r2
+ 1207              	.LVL105:
+ 1208              	.LBB166:
+ 1209              	.LBI166:
+ 171:../../libDaisy//src/hid/disp/display.h ****     {
+ 1210              		.loc 4 171 10 is_stmt 1 view .LVU298
+ 1211              	.LBB167:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1212              		.loc 4 173 9 view .LVU299
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 38
+
+
+ 1213              		.loc 4 173 33 is_stmt 0 view .LVU300
+ 1214 0008 2368     		ldr	r3, [r4]
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1215              		.loc 4 173 32 view .LVU301
+ 1216 000a 2046     		mov	r0, r4
+ 1217              	.LVL106:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1218              		.loc 4 173 32 view .LVU302
+ 1219 000c DB68     		ldr	r3, [r3, #12]
+ 1220 000e 9847     		blx	r3
+ 1221              	.LVL107:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1222              		.loc 4 173 19 view .LVU303
+ 1223 0010 8642     		cmp	r6, r0
+ 1224 0012 05D3     		bcc	.L60
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1225              		.loc 4 173 44 view .LVU304
+ 1226 0014 2368     		ldr	r3, [r4]
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1227              		.loc 4 173 43 view .LVU305
+ 1228 0016 2046     		mov	r0, r4
+ 1229 0018 DB68     		ldr	r3, [r3, #12]
+ 1230 001a 9847     		blx	r3
+ 1231              	.LVL108:
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1232              		.loc 4 173 19 view .LVU306
+ 1233 001c 0138     		subs	r0, r0, #1
+ 1234 001e 86B2     		uxth	r6, r0
+ 1235              	.LVL109:
+ 1236              	.L60:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1237              		.loc 4 174 34 view .LVU307
+ 1238 0020 2368     		ldr	r3, [r4]
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1239              		.loc 4 174 33 view .LVU308
+ 1240 0022 2046     		mov	r0, r4
+ 173:../../libDaisy//src/hid/disp/display.h ****         currentY_ = (y >= Height()) ? Height() - 1 : y;
+ 1241              		.loc 4 173 19 view .LVU309
+ 1242 0024 A680     		strh	r6, [r4, #4]	@ movhi
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1243              		.loc 4 174 9 is_stmt 1 view .LVU310
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1244              		.loc 4 174 33 is_stmt 0 view .LVU311
+ 1245 0026 9B68     		ldr	r3, [r3, #8]
+ 1246 0028 9847     		blx	r3
+ 1247              	.LVL110:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1248              		.loc 4 174 19 view .LVU312
+ 1249 002a 8542     		cmp	r5, r0
+ 1250 002c 05D3     		bcc	.L61
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1251              		.loc 4 174 46 view .LVU313
+ 1252 002e 2368     		ldr	r3, [r4]
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1253              		.loc 4 174 45 view .LVU314
+ 1254 0030 2046     		mov	r0, r4
+ 1255 0032 9B68     		ldr	r3, [r3, #8]
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 39
+
+
+ 1256 0034 9847     		blx	r3
+ 1257              	.LVL111:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1258              		.loc 4 174 19 view .LVU315
+ 1259 0036 0138     		subs	r0, r0, #1
+ 1260 0038 85B2     		uxth	r5, r0
+ 1261              	.LVL112:
+ 1262              	.L61:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1263              		.loc 4 174 19 view .LVU316
+ 1264 003a E580     		strh	r5, [r4, #6]	@ movhi
+ 1265              	.LVL113:
+ 174:../../libDaisy//src/hid/disp/display.h ****     }
+ 1266              		.loc 4 174 19 view .LVU317
+ 1267              	.LBE167:
+ 1268              	.LBE166:
+ 116:DisplayManager.cpp **** }
+ 1269              		.loc 3 116 1 view .LVU318
+ 1270 003c 70BD     		pop	{r4, r5, r6, pc}
+ 1271              		.cfi_endproc
+ 1272              	.LFE2602:
+ 1274 003e 00BF     		.section	.text._ZN14DisplayManager11writeStringEPKc7FontDefb,"ax",%progbits
+ 1275              		.align	1
+ 1276              		.p2align 2,,3
+ 1277              		.global	_ZN14DisplayManager11writeStringEPKc7FontDefb
+ 1278              		.syntax unified
+ 1279              		.thumb
+ 1280              		.thumb_func
+ 1281              		.fpu fpv5-d16
+ 1283              	_ZN14DisplayManager11writeStringEPKc7FontDefb:
+ 1284              	.LVL114:
+ 1285              	.LFB2603:
+ 117:DisplayManager.cpp **** 
+ 118:DisplayManager.cpp **** /**
+ 119:DisplayManager.cpp ****  * Write text at the current cursor position
+ 120:DisplayManager.cpp ****  * @param text The text to write
+ 121:DisplayManager.cpp ****  * @param font Pointer to font data (e.g., Font_7x10, Font_6x8, Font_11x18)
+ 122:DisplayManager.cpp ****  * @param on If true, text is white; if false, text is black
+ 123:DisplayManager.cpp ****  */
+ 124:DisplayManager.cpp **** void DisplayManager::writeString(const char* text, FontDef font, bool on) {
+ 1286              		.loc 3 124 75 is_stmt 1 view -0
+ 1287              		.cfi_startproc
+ 1288              		@ args = 4, pretend = 0, frame = 8
+ 1289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1290              		@ link register save eliminated.
+ 125:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1291              		.loc 3 125 5 view .LVU320
+ 124:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1292              		.loc 3 124 75 is_stmt 0 view .LVU321
+ 1293 0000 10B4     		push	{r4}
+ 1294              		.cfi_def_cfa_offset 4
+ 1295              		.cfi_offset 4, -4
+ 1296 0002 83B0     		sub	sp, sp, #12
+ 1297              		.cfi_def_cfa_offset 16
+ 1298              		.loc 3 125 5 view .LVU322
+ 1299 0004 0068     		ldr	r0, [r0]
+ 1300              	.LVL115:
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 40
+
+
+ 124:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1301              		.loc 3 124 75 view .LVU323
+ 1302 0006 EC46     		mov	ip, sp
+ 1303              		.loc 3 125 47 view .LVU324
+ 1304 0008 0468     		ldr	r4, [r0]
+ 124:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1305              		.loc 3 124 75 view .LVU325
+ 1306 000a 8CE80C00 		stm	ip, {r2, r3}
+ 1307 000e 9DF81030 		ldrb	r3, [sp, #16]	@ zero_extendqisi2
+ 1308              		.loc 3 125 25 view .LVU326
+ 1309 0012 0493     		str	r3, [sp, #16]
+ 1310              	.LVL116:
+ 1311              		.loc 3 125 25 view .LVU327
+ 1312 0014 A46A     		ldr	r4, [r4, #40]
+ 1313 0016 9CE80C00 		ldm	ip, {r2, r3}
+ 1314 001a A446     		mov	ip, r4
+ 126:DisplayManager.cpp **** }
+ 1315              		.loc 3 126 1 view .LVU328
+ 1316 001c 03B0     		add	sp, sp, #12
+ 1317              		.cfi_def_cfa_offset 4
+ 1318              		@ sp needed
+ 1319 001e 5DF8044B 		ldr	r4, [sp], #4
+ 1320              		.cfi_restore 4
+ 1321              		.cfi_def_cfa_offset 0
+ 125:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1322              		.loc 3 125 25 view .LVU329
+ 1323 0022 6047     		bx	ip
+ 1324              	.LVL117:
+ 125:DisplayManager.cpp ****     display_.WriteString((char*)text, font, on);
+ 1325              		.loc 3 125 25 view .LVU330
+ 1326              		.cfi_endproc
+ 1327              	.LFE2603:
+ 1329              		.section	.text._ZN14DisplayManager12showMessagefEPKcmz,"ax",%progbits
+ 1330              		.align	1
+ 1331              		.p2align 2,,3
+ 1332              		.global	_ZN14DisplayManager12showMessagefEPKcmz
+ 1333              		.syntax unified
+ 1334              		.thumb
+ 1335              		.thumb_func
+ 1336              		.fpu fpv5-d16
+ 1338              	_ZN14DisplayManager12showMessagefEPKcmz:
+ 1339              	.LVL118:
+ 1340              	.LFB2604:
+ 127:DisplayManager.cpp **** 
+ 128:DisplayManager.cpp **** /**
+ 129:DisplayManager.cpp ****  * Display a formatted message with a delay (printf-style)
+ 130:DisplayManager.cpp ****  *
+ 131:DisplayManager.cpp ****  * This function allows you to display multiple variables using format specifiers.
+ 132:DisplayManager.cpp ****  * Common format specifiers:
+ 133:DisplayManager.cpp ****  *   %s - string
+ 134:DisplayManager.cpp ****  *   %d - integer
+ 135:DisplayManager.cpp ****  *   %f - float
+ 136:DisplayManager.cpp ****  *   %c - character
+ 137:DisplayManager.cpp ****  *   %u - unsigned integer
+ 138:DisplayManager.cpp ****  *   %x - hexadecimal
+ 139:DisplayManager.cpp ****  *
+ 140:DisplayManager.cpp ****  * @param format Printf-style format string (use "*" for manual line breaks)
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 41
+
+
+ 141:DisplayManager.cpp ****  * @param delayMs How long to show the message (in milliseconds)
+ 142:DisplayManager.cpp ****  * @param ... Variable arguments matching format specifiers
+ 143:DisplayManager.cpp ****  */
+ 144:DisplayManager.cpp **** void DisplayManager::showMessagef(const char* format, uint32_t delayMs, ...) {
+ 1341              		.loc 3 144 78 is_stmt 1 view -0
+ 1342              		.cfi_startproc
+ 1343              		@ args = 4, pretend = 8, frame = 264
+ 1344              		@ frame_needed = 0, uses_anonymous_args = 1
+ 145:DisplayManager.cpp ****     char buffer[256];  // Buffer to hold the formatted string
+ 1345              		.loc 3 145 5 view .LVU332
+ 146:DisplayManager.cpp ****     
+ 147:DisplayManager.cpp ****     // Use va_list to handle variable arguments
+ 148:DisplayManager.cpp ****     va_list args;
+ 1346              		.loc 3 148 5 view .LVU333
+ 149:DisplayManager.cpp ****     va_start(args, delayMs);
+ 1347              		.loc 3 149 5 view .LVU334
+ 144:DisplayManager.cpp ****     char buffer[256];  // Buffer to hold the formatted string
+ 1348              		.loc 3 144 78 is_stmt 0 view .LVU335
+ 1349 0000 0CB4     		push	{r2, r3}
+ 1350              		.cfi_def_cfa_offset 8
+ 1351              		.cfi_offset 2, -8
+ 1352              		.cfi_offset 3, -4
+ 1353 0002 30B5     		push	{r4, r5, lr}
+ 1354              		.cfi_def_cfa_offset 20
+ 1355              		.cfi_offset 4, -20
+ 1356              		.cfi_offset 5, -16
+ 1357              		.cfi_offset 14, -12
+ 1358 0004 C3B0     		sub	sp, sp, #268
+ 1359              		.cfi_def_cfa_offset 288
+ 144:DisplayManager.cpp ****     char buffer[256];  // Buffer to hold the formatted string
+ 1360              		.loc 3 144 78 view .LVU336
+ 1361 0006 0446     		mov	r4, r0
+ 1362 0008 0A46     		mov	r2, r1
+ 150:DisplayManager.cpp ****     
+ 151:DisplayManager.cpp ****     // Format the string into the buffer
+ 152:DisplayManager.cpp ****     vsnprintf(buffer, sizeof(buffer), format, args);
+ 1363              		.loc 3 152 14 view .LVU337
+ 1364 000a 4FF48071 		mov	r1, #256
+ 1365              	.LVL119:
+ 144:DisplayManager.cpp ****     char buffer[256];  // Buffer to hold the formatted string
+ 1366              		.loc 3 144 78 view .LVU338
+ 1367 000e 46AB     		add	r3, sp, #280
+ 1368              		.loc 3 152 14 view .LVU339
+ 1369 0010 02A8     		add	r0, sp, #8
+ 144:DisplayManager.cpp ****     char buffer[256];  // Buffer to hold the formatted string
+ 1370              		.loc 3 144 78 view .LVU340
+ 1371 0012 53F8045B 		ldr	r5, [r3], #4
+ 149:DisplayManager.cpp ****     
+ 1372              		.loc 3 149 5 view .LVU341
+ 1373 0016 0193     		str	r3, [sp, #4]
+ 1374              		.loc 3 152 5 is_stmt 1 view .LVU342
+ 1375              		.loc 3 152 14 is_stmt 0 view .LVU343
+ 1376 0018 FFF7FEFF 		bl	vsnprintf
+ 1377              	.LVL120:
+ 153:DisplayManager.cpp ****     
+ 154:DisplayManager.cpp ****     // Clean up variable arguments
+ 155:DisplayManager.cpp ****     va_end(args);
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 42
+
+
+ 1378              		.loc 3 155 5 is_stmt 1 view .LVU344
+ 156:DisplayManager.cpp ****     
+ 157:DisplayManager.cpp ****     // Call the regular showMessage with the formatted string
+ 158:DisplayManager.cpp ****     showMessage(buffer, delayMs);
+ 1379              		.loc 3 158 5 view .LVU345
+ 1380              		.loc 3 158 16 is_stmt 0 view .LVU346
+ 1381 001c 2A46     		mov	r2, r5
+ 1382 001e 02A9     		add	r1, sp, #8
+ 1383 0020 2046     		mov	r0, r4
+ 1384 0022 FFF7FEFF 		bl	_ZN14DisplayManager11showMessageEPKcm
+ 1385              	.LVL121:
+ 159:DisplayManager.cpp **** }
+ 1386              		.loc 3 159 1 view .LVU347
+ 1387 0026 43B0     		add	sp, sp, #268
+ 1388              		.cfi_def_cfa_offset 20
+ 1389              		@ sp needed
+ 1390 0028 BDE83040 		pop	{r4, r5, lr}
+ 1391              		.cfi_restore 14
+ 1392              		.cfi_restore 5
+ 1393              		.cfi_restore 4
+ 1394              		.cfi_def_cfa_offset 8
+ 1395              	.LVL122:
+ 1396              		.loc 3 159 1 view .LVU348
+ 1397 002c 02B0     		add	sp, sp, #8
+ 1398              		.cfi_restore 3
+ 1399              		.cfi_restore 2
+ 1400              		.cfi_def_cfa_offset 0
+ 1401 002e 7047     		bx	lr
+ 1402              		.cfi_endproc
+ 1403              	.LFE2604:
+ 1405              		.text
+ 1406              	.Letext0:
+ 1407              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1408              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1409              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 1410              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 1411              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 1412              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1413              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 1414              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 1415              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 1416              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 1417              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 1418              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 1419              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 1420              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 1421              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\initializer_list
+ 1422              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
+ 1423              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 1424              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 1425              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 1426              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 1427              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 1428              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 1429              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 1430              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 1431              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 43
+
+
+ 1432              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 1433              		.file 31 "../../libDaisy//src/daisy_core.h"
+ 1434              		.file 32 "../../libDaisy//src/per/tim.h"
+ 1435              		.file 33 "../../libDaisy//src/sys/system.h"
+ 1436              		.file 34 "../../libDaisy//src/per/qspi.h"
+ 1437              		.file 35 "../../libDaisy//src/per/dac.h"
+ 1438              		.file 36 "../../libDaisy//src/per/sai.h"
+ 1439              		.file 37 "../../libDaisy//src/hid/audio.h"
+ 1440              		.file 38 "../../libDaisy//src/per/adc.h"
+ 1441              		.file 39 "../../libDaisy//src/per/uart.h"
+ 1442              		.file 40 "../../libDaisy//src/hid/MidiEvent.h"
+ 1443              		.file 41 "../../libDaisy//src/hid/midi_parser.h"
+ 1444              		.file 42 "../../libDaisy//src/hid/usb.h"
+ 1445              		.file 43 "../../libDaisy//src/hid/midi.h"
+ 1446              		.file 44 "../../libDaisy//src/util/FIFO.h"
+ 1447              		.file 45 "../../libDaisy//src/hid/switch.h"
+ 1448              		.file 46 "../../libDaisy//src/hid/encoder.h"
+ 1449              		.file 47 "../../libDaisy//src/hid/ctrl.h"
+ 1450              		.file 48 "../../libDaisy//src/per/spi.h"
+ 1451              		.file 49 "../../libDaisy//src/hid/disp/graphics_common.h"
+ 1452              		.file 50 "../../libDaisy//src/util/wav_format.h"
+ 1453              		.file 51 "../../libDaisy//src/hid/led.h"
+ 1454              		.file 52 "../../libDaisy//src/util/color.h"
+ 1455              		.file 53 "../../libDaisy//src/hid/rgb_led.h"
+ 1456              		.file 54 "../../libDaisy//src/dev/max11300.h"
+ 1457              		.file 55 "../../libDaisy//src/daisy_seed.h"
+ 1458              		.file 56 "../../libDaisy//src/daisy_pod.h"
+ 1459              		.file 57 "../../libDaisy//src/per/gpio.h"
+ 1460              		.file 58 "../../libDaisy//src/dev/sdram.h"
+ 1461              		.file 59 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 1462              		.file 60 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 1463              		.file 61 "../../libDaisy//src/util/oled_fonts.h"
+ 1464              		.file 62 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 1465              		.file 63 "DisplayManager.h"
+ 1466              		.file 64 "../../libDaisy//src/dev/sr_595.h"
+ 1467              		.file 65 "<built-in>"
+ARM GAS  C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s 			page 44
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 DisplayManager.cpp
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:17     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:26     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb:00000000 _ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:59     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:67     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv:00000000 _ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:254    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:262    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 _ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:262    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 _ZN14DisplayManagerC1ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:283    .text._ZN14DisplayManager11showMessageEPKcm:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:291    .text._ZN14DisplayManager11showMessageEPKcm:00000000 _ZN14DisplayManager11showMessageEPKcm
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:634    .text._ZN14DisplayManager11showMessageEPKcm:00000120 $d
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:641    .text._ZN14DisplayManager6updateEv:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:649    .text._ZN14DisplayManager6updateEv:00000000 _ZN14DisplayManager6updateEv
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:853    .text._ZN14DisplayManager6updateEv:00000098 $d
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:858    .text._ZN14DisplayManager5clearEb:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:866    .text._ZN14DisplayManager5clearEb:00000000 _ZN14DisplayManager5clearEb
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:929    .text._ZN14DisplayManager5clearEb:00000028 $d
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:934    .text._ZN14DisplayManager9setCursorEhh:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:942    .text._ZN14DisplayManager9setCursorEhh:00000000 _ZN14DisplayManager9setCursorEhh
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:1030   .text._ZN14DisplayManager11writeStringEPKc7FontDefb:00000000 $t
-C:\Users\halcyon\AppData\Local\Temp\cca6qHSK.s:1038   .text._ZN14DisplayManager11writeStringEPKc7FontDefb:00000000 _ZN14DisplayManager11writeStringEPKc7FontDefb
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:17     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:26     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb:00000000 _ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE4FillEb
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:59     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:67     .text._ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv:00000000 _ZN5daisy11OledDisplayINS_13SSD130xDriverILj128ELj64ENS_24SSD130x4WireSpiTransportEEEE6UpdateEv
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:254    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:262    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 _ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:262    .text._ZN14DisplayManagerC2ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE:00000000 _ZN14DisplayManagerC1ERN5daisy11OledDisplayINS0_13SSD130xDriverILj128ELj64ENS0_24SSD130x4WireSpiTransportEEEEERNS0_8DaisyPodE
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:283    .text._ZN14DisplayManager11showMessageEPKcm:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:291    .text._ZN14DisplayManager11showMessageEPKcm:00000000 _ZN14DisplayManager11showMessageEPKcm
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:875    .text._ZN14DisplayManager11showMessageEPKcm:000001e0 $d
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:886    .text._ZN14DisplayManager6updateEv:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:894    .text._ZN14DisplayManager6updateEv:00000000 _ZN14DisplayManager6updateEv
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1098   .text._ZN14DisplayManager6updateEv:00000098 $d
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1103   .text._ZN14DisplayManager5clearEb:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1111   .text._ZN14DisplayManager5clearEb:00000000 _ZN14DisplayManager5clearEb
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1174   .text._ZN14DisplayManager5clearEb:00000028 $d
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1179   .text._ZN14DisplayManager9setCursorEhh:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1187   .text._ZN14DisplayManager9setCursorEhh:00000000 _ZN14DisplayManager9setCursorEhh
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1275   .text._ZN14DisplayManager11writeStringEPKc7FontDefb:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1283   .text._ZN14DisplayManager11writeStringEPKc7FontDefb:00000000 _ZN14DisplayManager11writeStringEPKc7FontDefb
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1330   .text._ZN14DisplayManager12showMessagefEPKcmz:00000000 $t
+C:\Users\halcyon\AppData\Local\Temp\cc59CSLG.s:1338   .text._ZN14DisplayManager12showMessagefEPKcmz:00000000 _ZN14DisplayManager12showMessagefEPKcmz
 
 UNDEFINED SYMBOLS
 memset
@@ -2084,3 +2591,4 @@ dsy_gpio_write
 _ZN5daisy9SpiHandle16BlockingTransmitEPhjm
 _ZN5daisy8DaisyPod7DelayMsEj
 Font_7x10
+vsnprintf

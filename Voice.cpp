@@ -41,7 +41,7 @@ int Voice::process(int numSamples, float* outLeft, float* outRight) {
     // Generate audio samples using b3ReadWavFile::tick()
     sample_->reader.tick(
         &ticker_,          // Our playback position tracker
-        sample_->data,      // The audio data in SDRAM
+        sample_->dataSource,      // The audio data in SDRAM
         speed_,            // Playback speed/pitch
         volume_,            // Volume
         numSamples,         // How many samples to generate

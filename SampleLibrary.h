@@ -5,6 +5,7 @@
 #include "daisy_core.h"
 #include "daisy_seed.h"
 #include "DisplayManager.h"
+
 #include <string>
 
 using namespace daisy;
@@ -20,15 +21,19 @@ struct SampleInfo {
     int channels;               // 1 = mono, 2 = stereo
     int sampleRate;             // Sample rate (e.g., 48000)
     int bitsPerSample;          // 8, 16, 24, or 32
-    MemoryDataSource data;       // Pointer to audio data in SDRAM
+    MemoryDataSource dataSource;       // Pointer to audio data in SDRAM
     b3ReadWavFile reader;      // WAV file reader/parser
     bool loaded;               // Is metadata loaded?
     bool audioDataLoaded;       // Is full audio data loaded in RAM?
 };
 
+
+
 class SampleLibrary {
 private:
     SampleInfo samples_[MAX_SAMPLES];  // Array of loaded samples
+    b3WavTicker wavTickers[MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
+
     int sampleCount_;                 // How many samples are loaded
     
     // External references (from main.cpp)

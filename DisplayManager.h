@@ -28,11 +28,21 @@ public:
 
     /**
      * Display a message on the OLED screen with a delay
-     * 
+     *
      * @param message The text message to display
      * @param delayMs How long to display the message in milliseconds
      */
     void showMessage(const char* message, uint32_t delayMs);
+
+    /**
+     * Display a formatted message on the OLED screen with a delay
+     * Works like printf - supports format specifiers (e.g., %s, %d, %f)
+     *
+     * @param format Printf-style format string (e.g., "Value: %d*Name: %s")
+     * @param delayMs How long to display the message in milliseconds
+     * @param ... Variable arguments for format string
+     */
+    void showMessagef(const char* format, uint32_t delayMs, ...);
 
     /**
      * Update the display (call this after any drawing operations)
