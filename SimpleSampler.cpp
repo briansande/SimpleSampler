@@ -262,13 +262,14 @@ void DisplayMessage(const char* message, uint32_t delayMs) {
 
 
 // Audio Callback
-void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
-                   AudioHandle::InterleavingOutputBuffer out,
+void AudioCallback(AudioHandle::InputBuffer  in,
+                   AudioHandle::OutputBuffer out,
                    size_t                                size)
 {
-    
+    // Process audio for all active samples
+    // This will clear output buffers and mix in all playing samples
 
-
+    library->processAudio(out, size);
 }
 
 
@@ -348,6 +349,18 @@ int main(void)
     while(1)
     {
         uint32_t now = System::GetNow();
+        hw.ProcessDigitalControls();
+
+        if(hw.button1.RisingEdge()){
+            library->triggerSample(0);  // Trigger first sample
+            display_.showMessage("Triggered Sample 0", 0);
+        }  
+        if(hw.button2.RisingEdge()){
+            library->triggerSample(1);  // Trigger first sample
+            display_.showMessage("Triggered Sample 1", 0);
+        }
+            
+
 
         r = p_knob1.Process();
         g = p_knob2.Process();
@@ -356,34 +369,36 @@ int main(void)
 
         hw.UpdateLeds();
 
-        // Only update based on DISPLAY_FPS
-        if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
-        {        
+        
+
+        // // Only update based on DISPLAY_FPS
+        // if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
+        // {        
 
 
-            // SampleLibrary.samples_;
-            // display_.showMessage("Main Loop", 0);
+        //     // SampleLibrary.samples_;
+        //     // display_.showMessage("Main Loop", 0);
 
-            // Loop to show all samples in SampleLibrary
-            int sampleCount = library->getSampleCount();
-            display_.showMessagef("Total Samples:\n%d", 1000,
-                sampleCount);
+        //     // Loop to show all samples in SampleLibrary
+        //     int sampleCount = library->getSampleCount();
+        //     display_.showMessagef("Total Samples:\n%d", 1000,
+        //         sampleCount);
 
-            for(int i = 0; i < sampleCount; i++) {
-                SampleInfo* sample = library->getSample(i);
-                display_.showMessagef("Sample %d:\n%s\n%d Hz, %d ch", 1000,
-                    i + 1,
-                    sample->name,
-                    sample->sampleRate,
-                    sample->channels);
-            }
-
-
+        //     for(int i = 0; i < sampleCount; i++) {
+        //         SampleInfo* sample = library->getSample(i);
+        //         display_.showMessagef("Sample %d:\n%s\n%d Hz, %d ch", 1000,
+        //             i + 1,
+        //             sample->name,
+        //             sample->sampleRate,
+        //             sample->channels);
+        //     }
 
 
-            // display.Update();
-            lastUpdateTime = now;
-        }
+
+
+        //     // display.Update();
+        //     lastUpdateTime = now;
+        // }
 
 
 

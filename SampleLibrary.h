@@ -66,6 +66,18 @@ public:
     
     // Find sample by name (returns index, or -1 if not found)
     int findSample(const char* name);
+    
+    // Process audio for active samples
+    // Called from AudioCallback to generate audio output
+    void processAudio(float** out, size_t size);
+    
+    // Trigger a sample to start playing
+    // Returns true if sample was triggered successfully
+    bool triggerSample(int index);
+    
+    // Stop a currently playing sample
+    // Returns true if sample was stopped successfully
+    bool stopSample(int index);
 };
 
 #endif // SAMPLE_LIBRARY_H

@@ -168,3 +168,60 @@ bool SampleLibrary::ensureSampleLoaded(int index) {
     return samples_[index].audioDataLoaded;
 }
 
+// Process audio for all active samples
+void SampleLibrary::processAudio(float** out, size_t size) {
+    // Clear output buffers to zero
+    for (size_t i = 0; i < size; i++) {
+        out[0][i] = 0.0f;
+        out[1][i] = 0.0f;
+    }
+    
+    // Process each sample that is actively playing
+    for (int i = 0; i < sampleCount_; i++) {
+        if (!wavTickers[i].finished_) {
+            // Call the reader's tick method to generate audio
+            // Fixed speed: 1.0 (normal playback)
+            // Fixed volume: 1.0 (full volume)
+            samples_[i].reader.tick(
+                &wavTickers[i],
+                samples_[i].dataSource,
+                1.0,  // speed
+                1.0,  // volume
+                size,
+                out[0],
+                out[1]
+            );
+            
+            // The tick() method automatically sets finished_ to true
+            // when the sample reaches the end, so no additional handling needed
+        }
+    }
+}
+
+// Trigger a sample to start playing
+bool SampleLibrary::triggerSample(int index) {
+    // Validate index bounds
+    if (index < 0 || index >= sampleCount_) {
+        return false;
+    }
+    
+    // Reset the ticker to the start position
+    wavTickers[index].time_ = wavTickers[index].starttime_;
+    wavTickers[index].finished_ = false;
+    
+    return true;
+}
+
+// Stop a currently playing sample
+bool SampleLibrary::stopSample(int index) {
+    // Validate index bounds
+    if (index < 0 || index >= sampleCount_) {
+        return false;
+    }
+    
+    // Mark the sample as finished (stopped)
+    wavTickers[index].finished_ = true;
+    
+    return true;
+}
+
