@@ -229,7 +229,7 @@ bool SampleLibrary::stopSample(int index) {
 // Set the playback speed for a sample
 void SampleLibrary::setSampleSpeed(int index, float speed) {
     // Validate index bounds
-    if (index >= 0 && index < MAX_SAMPLES) {
+    if (index >= 0 && index < sampleCount_) {
         sampleSpeeds_[index] = speed;
     }
 }

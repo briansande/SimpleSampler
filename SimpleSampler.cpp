@@ -250,17 +250,6 @@ void DisplayFilesOnScreen() {
 
 
 
-// Helper function to display a message with a delay
-void DisplayMessage(const char* message, uint32_t delayMs) {
-    display.Fill(false);                    // Clear the screen
-    display.SetCursor(0, 0);                 // Position cursor at top-left
-    display.WriteString((char*)message, Font_7x10, true);  // Write the message
-    display.Update();                       // Update the display
-    hw.DelayMs(delayMs);                    // Wait for specified time
-}
-
-
-
 // Audio Callback
 void AudioCallback(AudioHandle::InputBuffer  in,
                    AudioHandle::OutputBuffer out,
@@ -308,12 +297,9 @@ int main(void)
     // Read all filenames from SD card into memory once at startup.
     // This is much faster than reading the SD card every frame.
     // We do this AFTER mounting so the filesystem is ready.
-    // strcpy(currentPath, "/");  // Start at root directory
-    // CacheFileList();
-
-
-    DisplayMessage("Sampler Started", 1000);
-    DisplayMessage("Loading Samples...", 1000);
+    
+    display_.showMessage("Sampler Started", 1000);
+    display_.showMessage("Loading Samples...", 1000);
 
 
     /* SD Card Additions */
@@ -327,18 +313,18 @@ int main(void)
 
     // Mount SD Card
     f_mount(&fsi.GetSDFileSystem(), "/", 1);
-    
-    DisplayMessage("Starting Library Initialization", 1000);
+        
+    display_.showMessage("Starting Library Initialization", 1000);
     // Initialize library
     library = new SampleLibrary(sdcard, fsi, display_);
-    DisplayMessage("Library created, calling init...", 1000);
+    display_.showMessage("Library created, calling init...", 1000);
     if (!library->init()) {
         display.SetCursor(0, 0);
         display.WriteString((char*)"SD Card Error!", Font_7x10, true);
         display.Update();
         while(1);  // Halt
-    }
-    DisplayMessage("Library Initialized", 1000);
+            }
+            display_.showMessage("Library Initialized", 1000);
 
 
 
@@ -380,38 +366,6 @@ int main(void)
         hw.led1.Set(r, g, b);
 
         hw.UpdateLeds();
-
-        
-
-        // // Only update based on DISPLAY_FPS
-        // if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
-        // {        
-
-
-        //     // SampleLibrary.samples_;
-        //     // display_.showMessage("Main Loop", 0);
-
-        //     // Loop to show all samples in SampleLibrary
-        //     int sampleCount = library->getSampleCount();
-        //     display_.showMessagef("Total Samples:\n%d", 1000,
-        //         sampleCount);
-
-        //     for(int i = 0; i < sampleCount; i++) {
-        //         SampleInfo* sample = library->getSample(i);
-        //         display_.showMessagef("Sample %d:\n%s\n%d Hz, %d ch", 1000,
-        //             i + 1,
-        //             sample->name,
-        //             sample->sampleRate,
-        //             sample->channels);
-        //     }
-
-
-
-
-        //     // display.Update();
-        //     lastUpdateTime = now;
-        // }
-
 
 
 
