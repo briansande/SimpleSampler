@@ -5,7 +5,11 @@ TARGET = SimpleSampler
 CPP_SOURCES = SimpleSampler.cpp \
               SampleLibrary.cpp \
               b3ReadWavFile.cpp \
-              DisplayManager.cpp
+              DisplayManager.cpp \
+              Sequencer.cpp \
+              Metronome.cpp \
+              UIManager.cpp \
+              Menus.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/

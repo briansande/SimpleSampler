@@ -1,0 +1,427 @@
+#include "Menus.h"
+#include "UIManager.h"
+#include <stdio.h>
+#include <string.h>
+
+// ============================================================================
+// TrackSelectMenu Implementation
+// ============================================================================
+
+TrackSelectMenu::TrackSelectMenu(DisplayManager* display, Sequencer* sequencer,
+                                 SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , selectedIndex_(0)
+{
+}
+
+void TrackSelectMenu::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    display_->writeString("TRACK SELECT", Font_7x10);
+
+    // Display track list
+    for (int i = 0; i < 3; i++) {
+        int yPos = 12 + (i * 12);
+
+        // Show selection indicator
+        if (i == selectedIndex_) {
+            display_->setCursor(0, yPos);
+            display_->writeString(">", Font_7x10);
+        } else {
+            display_->setCursor(0, yPos);
+            display_->writeString(" ", Font_7x10);
+        }
+
+        // Get track info
+        const Track* track = sequencer_->getTrack(i);
+        char trackLine[32];
+
+        if (track->sampleIndex >= 0) {
+            const SampleInfo* sample = sampleLibrary_->getSample(track->sampleIndex);
+            if (sample && sample->loaded) {
+                snprintf(trackLine, sizeof(trackLine), "Track %d: %s", i + 1, sample->name);
+            } else {
+                snprintf(trackLine, sizeof(trackLine), "Track %d: None", i + 1);
+            }
+        } else {
+            snprintf(trackLine, sizeof(trackLine), "Track %d: None", i + 1);
+        }
+
+        display_->setCursor(8, yPos);
+        display_->writeString(trackLine, Font_7x10);
+    }
+
+    // Display footer
+    display_->setCursor(0, 54);
+    display_->writeString("Click to Edit*", Font_7x10);
+
+    display_->update();
+}
+
+void TrackSelectMenu::onEncoderIncrement()
+{
+    selectedIndex_ = (selectedIndex_ + 1) % 3;
+    state_->selectedTrack = selectedIndex_;
+}
+
+void TrackSelectMenu::onEncoderDecrement()
+{
+    selectedIndex_ = (selectedIndex_ - 1 + 3) % 3;
+    state_->selectedTrack = selectedIndex_;
+}
+
+void TrackSelectMenu::onEncoderClick()
+{
+    // Store selected track and navigate to track edit menu
+    state_->selectedTrack = selectedIndex_;
+    uiManager_->pushScreen(SCREEN_TRACK_EDIT);
+}
+
+void TrackSelectMenu::onEncoderHold()
+{
+    // No action at root level
+}
+
+void TrackSelectMenu::onButton1Press()
+{
+    // No action on this screen
+}
+
+void TrackSelectMenu::onButton2Press()
+{
+    // No action on this screen
+}
+
+// ============================================================================
+// TrackEditMenu Implementation
+// ============================================================================
+
+TrackEditMenu::TrackEditMenu(DisplayManager* display, Sequencer* sequencer,
+                              SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , selectedOption_(Option::Sample)
+{
+}
+
+void TrackEditMenu::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    char header[32];
+    snprintf(header, sizeof(header), "TRACK %d EDIT", state_->selectedTrack + 1);
+    display_->writeString(header, Font_7x10);
+
+    // Get track info for sample name display
+    const Track* track = sequencer_->getTrack(state_->selectedTrack);
+    char sampleName[32] = "None";
+    if (track->sampleIndex >= 0) {
+        const SampleInfo* sample = sampleLibrary_->getSample(track->sampleIndex);
+        if (sample && sample->loaded) {
+            strncpy(sampleName, sample->name, sizeof(sampleName) - 1);
+            sampleName[sizeof(sampleName) - 1] = '\0';
+        }
+    }
+
+    // Display options
+    int yPos = 12;
+
+    // Sample option
+    if (selectedOption_ == Option::Sample) {
+        display_->setCursor(0, yPos);
+        display_->writeString(">", Font_7x10);
+    } else {
+        display_->setCursor(0, yPos);
+        display_->writeString(" ", Font_7x10);
+    }
+    display_->setCursor(8, yPos);
+    char sampleLine[32];
+    snprintf(sampleLine, sizeof(sampleLine), "Sample: %s", sampleName);
+    display_->writeString(sampleLine, Font_7x10);
+
+    // Sequence option
+    yPos = 24;
+    if (selectedOption_ == Option::Sequence) {
+        display_->setCursor(0, yPos);
+        display_->writeString(">", Font_7x10);
+    } else {
+        display_->setCursor(0, yPos);
+        display_->writeString(" ", Font_7x10);
+    }
+    display_->setCursor(8, yPos);
+    display_->writeString("Sequence", Font_7x10);
+
+    // Display footer
+    display_->setCursor(0, 54);
+    display_->writeString("Click: Enter*", Font_7x10);
+    display_->setCursor(0, 64);
+    display_->writeString("Hold: Back*", Font_7x10);
+
+    display_->update();
+}
+
+void TrackEditMenu::onEncoderIncrement()
+{
+    selectedOption_ = (selectedOption_ == Option::Sample) ? Option::Sequence : Option::Sample;
+}
+
+void TrackEditMenu::onEncoderDecrement()
+{
+    selectedOption_ = (selectedOption_ == Option::Sequence) ? Option::Sample : Option::Sequence;
+}
+
+void TrackEditMenu::onEncoderClick()
+{
+    // Navigate to selected submenu
+    if (selectedOption_ == Option::Sample) {
+        uiManager_->pushScreen(SCREEN_SAMPLE_SELECT);
+    } else if (selectedOption_ == Option::Sequence) {
+        uiManager_->pushScreen(SCREEN_SEQUENCE_EDITOR);
+    }
+}
+
+void TrackEditMenu::onEncoderHold()
+{
+    // Navigate back to track select
+    uiManager_->popScreen();
+}
+
+void TrackEditMenu::onButton1Press()
+{
+    // No action on this screen
+}
+
+void TrackEditMenu::onButton2Press()
+{
+    // No action on this screen
+}
+
+// ============================================================================
+// SampleSelectMenu Implementation
+// ============================================================================
+
+SampleSelectMenu::SampleSelectMenu(DisplayManager* display, Sequencer* sequencer,
+                                    SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , selectedIndex_(0)
+    , windowStart_(0)
+{
+}
+
+void SampleSelectMenu::updateWindow()
+{
+    int numSamples = sampleLibrary_->getSampleCount();
+
+    // Adjust window start if selection is out of view
+    if (selectedIndex_ < windowStart_) {
+        windowStart_ = selectedIndex_;
+    } else if (selectedIndex_ >= windowStart_ + ITEMS_PER_SCREEN) {
+        windowStart_ = selectedIndex_ - ITEMS_PER_SCREEN + 1;
+    }
+
+    // Ensure window doesn't go beyond bounds
+    if (windowStart_ + ITEMS_PER_SCREEN > numSamples) {
+        windowStart_ = (numSamples > ITEMS_PER_SCREEN) ? numSamples - ITEMS_PER_SCREEN : 0;
+    }
+}
+
+void SampleSelectMenu::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    display_->writeString("SELECT SAMPLE", Font_7x10);
+
+    int numSamples = sampleLibrary_->getSampleCount();
+
+    // Update window for scrolling
+    updateWindow();
+
+    // Display sample list
+    for (int i = 0; i < ITEMS_PER_SCREEN; i++) {
+        int sampleIndex = windowStart_ + i;
+        if (sampleIndex >= numSamples) {
+            break;
+        }
+
+        int yPos = 12 + (i * 12);
+
+        // Show selection indicator
+        if (sampleIndex == selectedIndex_) {
+            display_->setCursor(0, yPos);
+            display_->writeString(">", Font_7x10);
+        } else {
+            display_->setCursor(0, yPos);
+            display_->writeString(" ", Font_7x10);
+        }
+
+        // Get sample name
+        const SampleInfo* sample = sampleLibrary_->getSample(sampleIndex);
+        if (sample && sample->loaded) {
+            display_->setCursor(8, yPos);
+            display_->writeString(sample->name, Font_7x10);
+        }
+    }
+
+    // Display footer with position
+    display_->setCursor(0, 54);
+    char footer[32];
+    snprintf(footer, sizeof(footer), "%d/%d*", selectedIndex_ + 1, numSamples);
+    display_->writeString(footer, Font_7x10);
+    display_->setCursor(0, 64);
+    display_->writeString("Hold: Back*", Font_7x10);
+
+    display_->update();
+}
+
+void SampleSelectMenu::onEncoderIncrement()
+{
+    int numSamples = sampleLibrary_->getSampleCount();
+    if (numSamples > 0) {
+        selectedIndex_ = (selectedIndex_ + 1) % numSamples;
+        state_->selectedSample = selectedIndex_;
+    }
+}
+
+void SampleSelectMenu::onEncoderDecrement()
+{
+    int numSamples = sampleLibrary_->getSampleCount();
+    if (numSamples > 0) {
+        selectedIndex_ = (selectedIndex_ - 1 + numSamples) % numSamples;
+        state_->selectedSample = selectedIndex_;
+    }
+}
+
+void SampleSelectMenu::onEncoderClick()
+{
+    // Assign selected sample to current track
+    sequencer_->setTrackSample(state_->selectedTrack, selectedIndex_);
+    // Navigate back to track edit
+    uiManager_->popScreen();
+}
+
+void SampleSelectMenu::onEncoderHold()
+{
+    // Navigate back to track edit
+    uiManager_->popScreen();
+}
+
+void SampleSelectMenu::onButton1Press()
+{
+    // No action on this screen
+}
+
+void SampleSelectMenu::onButton2Press()
+{
+    // No action on this screen
+}
+
+// ============================================================================
+// SequenceEditorMenu Implementation
+// ============================================================================
+
+SequenceEditorMenu::SequenceEditorMenu(DisplayManager* display, Sequencer* sequencer,
+                                        SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , selectedStep_(0)
+{
+}
+
+void SequenceEditorMenu::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    char header[32];
+    snprintf(header, sizeof(header), "TRACK %d PATTERN", state_->selectedTrack + 1);
+    display_->writeString(header, Font_7x10);
+
+    // Get track steps
+    const Track* track = sequencer_->getTrack(state_->selectedTrack);
+
+    // Display step pattern (2 rows of 8 steps each)
+    // Row 1: Steps 0-7
+    int yPos = 12;
+    for (int i = 0; i < 8; i++) {
+        int xPos = (i * 16) + 4;
+        if (track->steps[i]) {
+            display_->setCursor(xPos, yPos);
+            display_->writeString("X", Font_7x10);
+        } else {
+            display_->setCursor(xPos, yPos);
+            display_->writeString(".", Font_7x10);
+        }
+    }
+
+    // Row 2: Steps 8-15
+    yPos = 24;
+    for (int i = 8; i < 16; i++) {
+        int xPos = ((i - 8) * 16) + 4;
+        if (track->steps[i]) {
+            display_->setCursor(xPos, yPos);
+            display_->writeString("X", Font_7x10);
+        } else {
+            display_->setCursor(xPos, yPos);
+            display_->writeString(".", Font_7x10);
+        }
+    }
+
+    // Show selected step indicator
+    int selectedRow = (selectedStep_ < 8) ? 12 : 24;
+    int selectedCol = (selectedStep_ < 8) ? selectedStep_ : (selectedStep_ - 8);
+    int selectedX = (selectedCol * 16);
+    display_->setCursor(selectedX, selectedRow + 10);
+    display_->writeString("^", Font_7x10);
+
+    // Display footer
+    display_->setCursor(0, 54);
+    char footer[32];
+    snprintf(footer, sizeof(footer), "Step: %d*", selectedStep_);
+    display_->writeString(footer, Font_7x10);
+    display_->setCursor(0, 64);
+    display_->writeString("B1:ON B2:OFF*", Font_7x10);
+
+    display_->update();
+}
+
+void SequenceEditorMenu::onEncoderIncrement()
+{
+    selectedStep_ = (selectedStep_ + 1) % 16;
+    state_->selectedStep = selectedStep_;
+}
+
+void SequenceEditorMenu::onEncoderDecrement()
+{
+    selectedStep_ = (selectedStep_ - 1 + 16) % 16;
+    state_->selectedStep = selectedStep_;
+}
+
+void SequenceEditorMenu::onEncoderClick()
+{
+    // Navigate back to track edit
+    uiManager_->popScreen();
+}
+
+void SequenceEditorMenu::onEncoderHold()
+{
+    // Navigate back to track edit
+    uiManager_->popScreen();
+}
+
+void SequenceEditorMenu::onButton1Press()
+{
+    // Activate selected step
+    sequencer_->setStepActive(state_->selectedTrack, selectedStep_, true);
+}
+
+void SequenceEditorMenu::onButton2Press()
+{
+    // Deactivate selected step
+    sequencer_->setStepActive(state_->selectedTrack, selectedStep_, false);
+}
