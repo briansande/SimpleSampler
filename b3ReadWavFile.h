@@ -206,6 +206,27 @@ public:
 	{
 	  return fileDataRate_;
 	}
+
+	unsigned int getChannels() const
+	{
+		return channels_;
+	}
+
+	unsigned long getDataType() const
+	{
+		return dataType_;
+	}
+
+	int getBitsPerSample() const
+	{
+		if (dataType_ & 0x1) return 8;   // B3_SINT8
+		if (dataType_ & 0x2) return 16;  // B3_SINT16
+		if (dataType_ & 0x4) return 24;  // B3_SINT24
+		if (dataType_ & 0x8) return 32;  // B3_SINT32
+		if (dataType_ & 0x10) return 32; // B3_FLOAT32
+		if (dataType_ & 0x20) return 64; // B3_FLOAT64
+		return 0;
+	}
 };
 
 #endif  //B3_READ_WAV_FILE_H

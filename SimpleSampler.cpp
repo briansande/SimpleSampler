@@ -21,7 +21,7 @@ namespace Config {
 
 
 using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
-const uint32_t DISPLAY_FPS = 10;                        //  FPS for OLED screen
+const uint32_t DISPLAY_FPS = 3;                        //  FPS for OLED screen
 
 DaisyPod      hw;
 MyOledDisplay display;
@@ -292,7 +292,7 @@ int main(void)
     // Line 289: Construct in-place using placement new
     new (&display_) DisplayManager(display, hw);
 
-    display_.showMessage("Initializing...", 500);
+    display_.showMessage("Initializing...", 100);
 
     // Initialize the knobs
     float r = 0, g = 0, b = 0;
@@ -347,8 +347,47 @@ int main(void)
     
     while(1)
     {
-        // SampleLibrary.samples_;
-        display_.showMessage("Main Loop", 10000);
+        uint32_t now = System::GetNow();
+
+        r = p_knob1.Process();
+        g = p_knob2.Process();
+
+        hw.led1.Set(r, g, b);
+
+        hw.UpdateLeds();
+
+        // Only update based on DISPLAY_FPS
+        if(now - lastUpdateTime >= 1000/(DISPLAY_FPS))
+        {        
+
+
+            // SampleLibrary.samples_;
+            // display_.showMessage("Main Loop", 0);
+
+            // Loop to show all samples in SampleLibrary
+            int sampleCount = library->getSampleCount();
+            display_.showMessagef("Total Samples:\n%d", 1000,
+                sampleCount);
+
+            for(int i = 0; i < sampleCount; i++) {
+                SampleInfo* sample = library->getSample(i);
+                display_.showMessagef("Sample %d:\n%s\n%d Hz, %d ch", 1000,
+                    i + 1,
+                    sample->name,
+                    sample->sampleRate,
+                    sample->channels);
+            }
+
+
+
+
+            // display.Update();
+            lastUpdateTime = now;
+        }
+
+
+
+
         
     }
 }

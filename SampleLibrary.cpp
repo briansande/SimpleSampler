@@ -24,21 +24,21 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
 
 bool SampleLibrary::init() {
     // Show initialization message
-    display_.showMessage("Initializing Library...", 1000);
+    display_.showMessage("Initializing Library...", 200);
     
     // Filesystem is already mounted by SimpleSampler
     // (passed in via constructor reference)
     
-    display_.showMessage("Opening dir...", 1000);
+    display_.showMessage("Opening dir...", 200);
     
     // Open the root directory
     DIR dir;
     if (f_opendir(&dir, "/") != FR_OK) {
-        display_.showMessage("Dir open failed!", 1000);
+        display_.showMessage("Dir open failed!", 200);
         return false;  // Failed to open directory
     }
     
-    display_.showMessage("Scanning files...", 1000);
+    display_.showMessage("Scanning files...", 200);
     
     // Scan for WAV files
     FILINFO fno;
@@ -55,13 +55,13 @@ bool SampleLibrary::init() {
         // check if filename contains .wav or .WAV
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
             // Found a WAV file
-            display_.showMessagef("Found WAV: %s", 1000, fno.fname);
+            display_.showMessagef("Found WAV: %s", 200, fno.fname);
             if (fileCount < MAX_SAMPLES) {
                 // Load sample info
                 if(f_open(&SDFile, fno.fname, (FA_OPEN_EXISTING | FA_READ)) == FR_OK){
                     //print file name
                     int size = f_size(&SDFile);
-                    display_.showMessagef("Size: %d bytes", 1000, size);
+                    display_.showMessagef("Size: %d bytes", 200, size);
 
                     // Allocate memory from custom pool, return pointer to buffer
                     char* memoryBuffer = 0;
@@ -69,32 +69,43 @@ bool SampleLibrary::init() {
 
                     // If memory allocation succeeded, read file into buffer
                     if(memoryBuffer){
-                        display_.showMessagef("Alloc OK, reading...", 1000);
+                        display_.showMessagef("Alloc OK, reading...", 200);
                         UINT bytesRead;
                         if(f_read(&SDFile, memoryBuffer, size, &bytesRead) == FR_OK && bytesRead == size){
-                            display_.showMessagef("Read OK, parsing...", 1000);
+                            display_.showMessagef("Read OK, parsing...", 200);
                             samples_[fileCount].dataSource = MemoryDataSource(memoryBuffer, size);
                             samples_[fileCount].reader.getWavInfo(samples_[fileCount].dataSource);
-                            display_.showMessagef("Parsed OK, creating ticker...", 1000);
+                            
+                            // Copy filename to SampleInfo
+                            strncpy(samples_[fileCount].name, fno.fname, 31);
+                            samples_[fileCount].name[31] = '\0';
+                            
+                            // Copy WAV metadata from reader to SampleInfo
+                            samples_[fileCount].numFrames = samples_[fileCount].reader.getNumFrames();
+                            samples_[fileCount].channels = samples_[fileCount].reader.getChannels();
+                            samples_[fileCount].sampleRate = (int)samples_[fileCount].reader.getFileDataRate();
+                            samples_[fileCount].bitsPerSample = samples_[fileCount].reader.getBitsPerSample();
+                            
+                            display_.showMessagef("Parsed OK, creating ticker...", 200);
                             wavTickers[fileCount] = samples_[fileCount].reader.createWavTicker(Config::samplerate);
-                            display_.showMessagef("Ticker created!", 1000);
+                            display_.showMessagef("Ticker created!", 200);
                             wavTickers[fileCount].finished_ = true; // Mark as finished initially
                             
-                            display_.showMessagef("Loaded: %s", 1000, fno.fname);
+                            display_.showMessagef("Loaded: %s", 200, fno.fname);
 
                             fileCount++;
                         
                         } else {
-                            display_.showMessagef("Read failed!", 1000);
+                            display_.showMessagef("Read failed!", 200);
                         }
 
                     } else {
-                        display_.showMessagef("Alloc failed!", 1000);
+                        display_.showMessagef("Alloc failed!", 200);
                     }
                     f_close(&SDFile);
                     
                 } else {
-                    display_.showMessagef("Open failed!", 1000);
+                    display_.showMessagef("Open failed!", 200);
                 }
 
 
@@ -111,8 +122,49 @@ bool SampleLibrary::init() {
     // Print total files found
     char msg[64];
     snprintf(msg, sizeof(msg), "WAV Files: %d", fileCount);
-    display_.showMessage(msg, 1000);
+    display_.showMessage(msg, 200);
+
+    // Store the number of loaded samples
+    sampleCount_ = fileCount;
 
     return true;
+}
+
+// Get a sample by index
+SampleInfo* SampleLibrary::getSample(int index) {
+    // Check bounds
+    if (index < 0 || index >= sampleCount_) {
+        return nullptr;
+    }
+    return &samples_[index];
+}
+
+// Find sample by name (returns index, or -1 if not found)
+int SampleLibrary::findSample(const char* name) {
+    for (int i = 0; i < sampleCount_; i++) {
+        if (strcmp(samples_[i].name, name) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+// Load audio data for a sample (lazy loading)
+// Call this before playing a sample if audioDataLoaded is false
+bool SampleLibrary::ensureSampleLoaded(int index) {
+    // Check bounds
+    if (index < 0 || index >= sampleCount_) {
+        return false;
+    }
+    
+    // If already loaded, return true
+    if (samples_[index].audioDataLoaded) {
+        return true;
+    }
+    
+    // Note: In the current implementation, audio data is loaded during init()
+    // This method is provided for future lazy loading support
+    // For now, return the current state
+    return samples_[index].audioDataLoaded;
 }
 
