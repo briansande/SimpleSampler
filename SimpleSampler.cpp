@@ -362,9 +362,21 @@ int main(void)
             
 
 
-        r = p_knob1.Process();
-        g = p_knob2.Process();
-
+        // Read knob values and map to speed range (0.1 to 3.0)
+        float knob1_value = p_knob1.Process();
+        float knob2_value = p_knob2.Process();
+        
+        // Map 0-1 to 0.1-3.0
+        float speed0 = 0.1f + (knob1_value * 2.9f);  // Sample 0 speed
+        float speed1 = 0.1f + (knob2_value * 2.9f);  // Sample 1 speed
+        
+        // Update sample speeds in real-time
+        library->setSampleSpeed(0, speed0);
+        library->setSampleSpeed(1, speed1);
+        
+        // Use knob values for LED feedback (optional visual indicator)
+        r = knob1_value;
+        g = knob2_value;
         hw.led1.Set(r, g, b);
 
         hw.UpdateLeds();

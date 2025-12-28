@@ -19,6 +19,7 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
     for (int i = 0; i < MAX_SAMPLES; i++) {
         samples_[i].loaded = false;
         samples_[i].audioDataLoaded = false;
+        sampleSpeeds_[i] = 1.0f;  // Default to normal playback speed
     }
 }
 
@@ -180,12 +181,12 @@ void SampleLibrary::processAudio(float** out, size_t size) {
     for (int i = 0; i < sampleCount_; i++) {
         if (!wavTickers[i].finished_) {
             // Call the reader's tick method to generate audio
-            // Fixed speed: 1.0 (normal playback)
+            // Use per-sample speed from sampleSpeeds_ array (controlled by knobs)
             // Fixed volume: 1.0 (full volume)
             samples_[i].reader.tick(
                 &wavTickers[i],
                 samples_[i].dataSource,
-                1.0,  // speed
+                sampleSpeeds_[i],  // speed (controlled by knobs)
                 1.0,  // volume
                 size,
                 out[0],
@@ -223,5 +224,13 @@ bool SampleLibrary::stopSample(int index) {
     wavTickers[index].finished_ = true;
     
     return true;
+}
+
+// Set the playback speed for a sample
+void SampleLibrary::setSampleSpeed(int index, float speed) {
+    // Validate index bounds
+    if (index >= 0 && index < MAX_SAMPLES) {
+        sampleSpeeds_[index] = speed;
+    }
 }
 

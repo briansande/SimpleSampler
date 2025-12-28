@@ -33,6 +33,7 @@ class SampleLibrary {
 private:
     SampleInfo samples_[MAX_SAMPLES];  // Array of loaded samples
     b3WavTicker wavTickers[MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
+    float sampleSpeeds_[MAX_SAMPLES];   // Per-sample playback speed (default 1.0 = normal speed)
 
     int sampleCount_;                 // How many samples are loaded
     
@@ -78,6 +79,10 @@ public:
     // Stop a currently playing sample
     // Returns true if sample was stopped successfully
     bool stopSample(int index);
+    
+    // Set the playback speed for a sample
+    // Speed values: 0.1 = 10% speed, 1.0 = normal speed, 3.0 = 300% speed
+    void setSampleSpeed(int index, float speed);
 };
 
 #endif // SAMPLE_LIBRARY_H
