@@ -23,7 +23,7 @@ UIManager::UIManager(DisplayManager* display, Sequencer* sequencer,
     , currentMenu_(nullptr)
 {
     // Initialize all menu pointers to null
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < UIManager::NUM_SCREENS; i++) {
         menus_[i] = nullptr;
     }
 }
@@ -31,7 +31,7 @@ UIManager::UIManager(DisplayManager* display, Sequencer* sequencer,
 UIManager::~UIManager()
 {
     // Clean up menu instances
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < UIManager::NUM_SCREENS; i++) {
         if (menus_[i] != nullptr) {
             delete menus_[i];
             menus_[i] = nullptr;

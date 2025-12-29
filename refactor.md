@@ -261,7 +261,7 @@ const Track* Sequencer::getTrack(int index) const {
 
 ---
 
-### [ ] Task 8: Update Hardcoded Menu Array Size
+### [x] Task 8: Update Hardcoded Menu Array Size
 
 **File to Modify**: [`UIManager.h`](UIManager.h)
 
@@ -755,8 +755,8 @@ After completing all tasks, verify:
 | Priority | Total Tasks | Completed |
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
-| MEDIUM | 7 | [1] |
+| MEDIUM | 7 | [2] |
 | LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[6]** |
+| **TOTAL** | **16** | **[7]** |
 
 Last Updated: 2025-12-29

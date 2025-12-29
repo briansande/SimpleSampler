@@ -135,7 +135,8 @@ private:
 
     // Menu instances (owned by UIManager)
     BaseMenu* currentMenu_;
-    BaseMenu* menus_[4];  // One for each ScreenType
+    static constexpr int NUM_SCREENS = 4;  // Number of screen types
+    BaseMenu* menus_[NUM_SCREENS];  // One for each ScreenType
 
     // Helper to create menu instances
     void createMenus();
