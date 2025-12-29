@@ -290,7 +290,7 @@ BaseMenu* menus_[NUM_SCREENS];  // One for each ScreenType
 
 ---
 
-### [ ] Task 9: Extract DisplayManager Constants
+### [x] Task 9: Extract DisplayManager Constants
 
 **File to Modify**: [`DisplayManager.h`](DisplayManager.h)
 
@@ -755,8 +755,8 @@ After completing all tasks, verify:
 | Priority | Total Tasks | Completed |
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
-| MEDIUM | 7 | [2] |
+| MEDIUM | 7 | [3] |
 | LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[7]** |
+| **TOTAL** | **16** | **[8]** |
 
 Last Updated: 2025-12-29
