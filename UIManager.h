@@ -44,6 +44,11 @@ struct UIState {
     uint32_t lastDisplayUpdate;
     bool displayDirty;           // Flag to trigger display refresh
 
+    // Horizontal Text Scrolling State
+    int scrollOffset;            // Current character offset for scrolling (0 = start)
+    uint32_t lastScrollUpdate;  // Timestamp of last scroll position update
+    static const uint32_t SCROLL_DELAY_MS = 200;  // Milliseconds per character scroll
+
     // Initialization
     void init() {
         currentScreen = SCREEN_TRACK_SELECT;
@@ -57,6 +62,8 @@ struct UIState {
         encoderHeld = false;
         lastDisplayUpdate = 0;
         displayDirty = true;
+        scrollOffset = 0;
+        lastScrollUpdate = 0;
     }
 };
 
@@ -133,6 +140,9 @@ private:
 
     // Helper to create menu instances
     void createMenus();
+
+    // Update horizontal text scrolling state
+    void updateScrolling();
 
 public:
     // Constructor

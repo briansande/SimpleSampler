@@ -92,9 +92,14 @@ private:
     int selectedIndex_;      // Currently selected sample
     int windowStart_;        // First sample visible in window
     static const int ITEMS_PER_SCREEN = 4;  // Samples shown at once
+    static const int CHAR_WIDTH = 7;        // Width of each character in Font_7x10
+    static const int MAX_CHARS_PER_LINE = 17; // ~120px available for text
 
     // Update window for scrolling
     void updateWindow();
+
+    // Reset horizontal scroll offset when selection changes
+    void resetScroll();
 
 public:
     // Constructor

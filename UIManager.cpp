@@ -65,6 +65,11 @@ void UIManager::init()
 
 void UIManager::update()
 {
+    // Update scrolling state when on sample select screen
+    if (state_.currentScreen == SCREEN_SAMPLE_SELECT) {
+        updateScrolling();
+    }
+
     // Check if display needs updating
     if (state_.displayDirty) {
         render();
@@ -154,5 +159,21 @@ void UIManager::render()
 {
     if (currentMenu_ != nullptr) {
         currentMenu_->render();
+    }
+}
+
+void UIManager::updateScrolling()
+{
+    uint32_t now = System::GetNow();
+    
+    // Check if enough time has passed since last scroll update
+    if (now - state_.lastScrollUpdate >= UIState::SCROLL_DELAY_MS) {
+        state_.lastScrollUpdate = now;
+        
+        // Increment scroll offset
+        state_.scrollOffset++;
+        
+        // Mark display as dirty so it will be re-rendered
+        state_.displayDirty = true;
     }
 }

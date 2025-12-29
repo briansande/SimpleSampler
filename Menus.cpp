@@ -229,6 +229,13 @@ void SampleSelectMenu::updateWindow()
     }
 }
 
+void SampleSelectMenu::resetScroll()
+{
+    // Reset scroll offset to start
+    state_->scrollOffset = 0;
+    state_->lastScrollUpdate = System::GetNow();
+}
+
 void SampleSelectMenu::render()
 {
     display_->clear();
@@ -264,7 +271,37 @@ void SampleSelectMenu::render()
         const SampleInfo* sample = sampleLibrary_->getSample(sampleIndex);
         if (sample && sample->loaded) {
             display_->setCursor(8, yPos);
-            display_->writeString(sample->name, Font_7x10);
+            
+            // For selected sample, implement horizontal scrolling
+            if (sampleIndex == selectedIndex_) {
+                const char* sampleName = sample->name;
+                int nameLength = strlen(sampleName);
+                
+                // Calculate how many characters we can display
+                int availableChars = nameLength - state_->scrollOffset;
+                
+                if (availableChars > 0) {
+                    // Create substring starting from scroll offset
+                    char displayBuffer[32];
+                    int charsToCopy = (availableChars > MAX_CHARS_PER_LINE) ? MAX_CHARS_PER_LINE : availableChars;
+                    
+                    // Copy characters starting from scroll offset
+                    for (int j = 0; j < charsToCopy; j++) {
+                        displayBuffer[j] = sampleName[state_->scrollOffset + j];
+                    }
+                    displayBuffer[charsToCopy] = '\0';
+                    
+                    display_->writeString(displayBuffer, Font_7x10);
+                }
+                // If scroll offset is beyond name length, reset it
+                else {
+                    resetScroll();
+                    display_->writeString(sample->name, Font_7x10);
+                }
+            } else {
+                // For non-selected samples, display full name normally
+                display_->writeString(sample->name, Font_7x10);
+            }
         }
     }
 
@@ -285,6 +322,8 @@ void SampleSelectMenu::onEncoderIncrement()
     if (numSamples > 0) {
         selectedIndex_ = (selectedIndex_ + 1) % numSamples;
         state_->selectedSample = selectedIndex_;
+        // Reset scroll offset when selection changes
+        resetScroll();
     }
 }
 
@@ -294,6 +333,8 @@ void SampleSelectMenu::onEncoderDecrement()
     if (numSamples > 0) {
         selectedIndex_ = (selectedIndex_ - 1 + numSamples) % numSamples;
         state_->selectedSample = selectedIndex_;
+        // Reset scroll offset when selection changes
+        resetScroll();
     }
 }
 
