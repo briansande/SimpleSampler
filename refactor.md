@@ -192,7 +192,7 @@ while(1);  // Halt
 
 ## MEDIUM PRIORITY TASKS
 
-### [ ] Task 6: Add Default Implementations to BaseMenu
+### [X] Task 6: Add Default Implementations to BaseMenu
 
 **File to Modify**: [`UIManager.h`](UIManager.h)
 
@@ -239,7 +239,7 @@ virtual void onButton2Press() {}  // Default: do nothing
 
 ---
 
-### [ ] Task 7: Refactor getTrack() to Eliminate Duplication
+### [x] Task 7: Refactor getTrack() to Eliminate Duplication
 
 **File to Modify**: [`Sequencer.cpp`](Sequencer.cpp)
 
@@ -755,8 +755,8 @@ After completing all tasks, verify:
 | Priority | Total Tasks | Completed |
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
-| MEDIUM | 7 | [ ] |
+| MEDIUM | 7 | [1] |
 | LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[5]** |
+| **TOTAL** | **16** | **[6]** |
 
 Last Updated: 2025-12-29

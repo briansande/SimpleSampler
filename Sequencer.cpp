@@ -157,12 +157,8 @@ Track* Sequencer::getTrack(int index)
     return &state_.tracks[index];
 }
 
-const Track* Sequencer::getTrack(int index) const
-{
-    if (index < 0 || index >= Constants::Sequencer::NUM_TRACKS) {
-        return nullptr;
-    }
-    return &state_.tracks[index];
+const Track* Sequencer::getTrack(int index) const {
+    return const_cast<Sequencer*>(this)->getTrack(index);
 }
 
 void Sequencer::setTrackSample(int trackIndex, int sampleIndex)
