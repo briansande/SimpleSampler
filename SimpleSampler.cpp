@@ -182,26 +182,29 @@ int main(void)
             uiManager->handleEncoderDecrement();
         }
         
+        // Encoder click detection (rising edge = button pressed)
         if(hw.encoder.RisingEdge()) {
-            // DEBUG: Log encoder click
-            display_.showMessage("CLICK DETECTED", 500);
+            // Record press time for hold detection
+            const_cast<UIState&>(uiManager->getState()).encoderPressed = true;
+            const_cast<UIState&>(uiManager->getState()).encoderPressTime = System::GetNow();
+            const_cast<UIState&>(uiManager->getState()).encoderHeld = false;
             uiManager->handleEncoderClick();
         }
         
-        // Encoder hold detection (check if pressed for more than 500ms)
-        if(hw.encoder.Pressed()) {
-            uint32_t pressTime = System::GetNow();
-            // DEBUG: Log hold detection start
-            display_.showMessage("HOLD CHECK...", 100);
-            while(hw.encoder.Pressed() && (System::GetNow() - pressTime) < 500) {
-                // Wait for release or timeout
-            }
-            if(hw.encoder.Pressed()) {
-                // DEBUG: Log hold detected
-                display_.showMessage("HOLD DETECTED", 500);
+        // Encoder release detection (falling edge = button released)
+        if(hw.encoder.FallingEdge()) {
+            // Reset hold state
+            const_cast<UIState&>(uiManager->getState()).encoderPressed = false;
+            const_cast<UIState&>(uiManager->getState()).encoderHeld = false;
+        }
+        
+        // Non-blocking hold detection (check if pressed for more than 500ms)
+        if(uiManager->getState().encoderPressed && !uiManager->getState().encoderHeld) {
+            uint32_t pressDuration = System::GetNow() - uiManager->getState().encoderPressTime;
+            if(pressDuration >= 500) {
+                // Hold detected - call handleEncoderHold() once
+                const_cast<UIState&>(uiManager->getState()).encoderHeld = true;
                 uiManager->handleEncoderHold();
-                // Wait for release
-                while(hw.encoder.Pressed()) {}
             }
         }
         

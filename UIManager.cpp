@@ -122,11 +122,6 @@ void UIManager::handleButton2Press()
 
 void UIManager::pushScreen(ScreenType screen)
 {
-    // DEBUG: Log screen push
-    char debugMsg[64];
-    snprintf(debugMsg, sizeof(debugMsg), "PUSH: %d->%d", state_.currentScreen, screen);
-    display_->showMessage(debugMsg, 300);
-    
     // Push current screen to navigation stack
     if (stackDepth_ < MAX_STACK_DEPTH) {
         navigationStack_[stackDepth_] = state_.currentScreen;
@@ -139,12 +134,6 @@ void UIManager::pushScreen(ScreenType screen)
 
 void UIManager::popScreen()
 {
-    // DEBUG: Log screen pop
-    char debugMsg[64];
-    snprintf(debugMsg, sizeof(debugMsg), "POP: %d->%d", state_.currentScreen,
-             stackDepth_ > 0 ? navigationStack_[stackDepth_ - 1] : -1);
-    display_->showMessage(debugMsg, 300);
-    
     if (stackDepth_ > 0) {
         stackDepth_--;
         ScreenType previousScreen = navigationStack_[stackDepth_];
