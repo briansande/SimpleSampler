@@ -1,10 +1,10 @@
-#ifndef MENUS_H
-#define MENUS_H
+#pragma once
 
 #include "UIManager.h"
 #include "DisplayManager.h"
 #include "Sequencer.h"
 #include "SampleLibrary.h"
+#include "Constants.h"
 
 // Forward declaration of UIManager (to avoid circular dependency)
 class UIManager;
@@ -33,13 +33,6 @@ public:
 
     // Enter track edit
     void onEncoderClick() override;
-
-    // No action for hold on this screen (at root level)
-    void onEncoderHold() override;
-
-    // No action for buttons on this screen
-    void onButton1Press() override;
-    void onButton2Press() override;
 };
 
 /**
@@ -75,10 +68,6 @@ public:
 
     // Go back to track select
     void onEncoderHold() override;
-
-    // No action for buttons on this screen
-    void onButton1Press() override;
-    void onButton2Press() override;
 };
 
 /**
@@ -91,9 +80,7 @@ class SampleSelectMenu : public BaseMenu {
 private:
     int selectedIndex_;      // Currently selected sample
     int windowStart_;        // First sample visible in window
-    static const int ITEMS_PER_SCREEN = 4;  // Samples shown at once
-    static const int CHAR_WIDTH = 7;        // Width of each character in Font_7x10
-    static const int MAX_CHARS_PER_LINE = 17; // ~120px available for text
+    static const int ITEMS_PER_SCREEN = 4;  // Samples shown at once (kept as is - not in Constants.h)
 
     // Update window for scrolling
     void updateWindow();
@@ -118,10 +105,6 @@ public:
 
     // Go back to track edit
     void onEncoderHold() override;
-
-    // No action for buttons on this screen
-    void onButton1Press() override;
-    void onButton2Press() override;
 };
 
 /**
@@ -160,5 +143,3 @@ public:
     // Deactivate selected step
     void onButton2Press() override;
 };
-
-#endif // MENUS_H

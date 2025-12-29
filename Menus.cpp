@@ -80,20 +80,6 @@ void TrackSelectMenu::onEncoderClick()
     uiManager_->pushScreen(SCREEN_TRACK_EDIT);
 }
 
-void TrackSelectMenu::onEncoderHold()
-{
-    // No action at root level
-}
-
-void TrackSelectMenu::onButton1Press()
-{
-    // No action on this screen
-}
-
-void TrackSelectMenu::onButton2Press()
-{
-    // No action on this screen
-}
 
 // ============================================================================
 // TrackEditMenu Implementation
@@ -190,15 +176,6 @@ void TrackEditMenu::onEncoderHold()
     uiManager_->popScreen();
 }
 
-void TrackEditMenu::onButton1Press()
-{
-    // No action on this screen
-}
-
-void TrackEditMenu::onButton2Press()
-{
-    // No action on this screen
-}
 
 // ============================================================================
 // SampleSelectMenu Implementation
@@ -283,7 +260,7 @@ void SampleSelectMenu::render()
                 if (availableChars > 0) {
                     // Create substring starting from scroll offset
                     char displayBuffer[32];
-                    int charsToCopy = (availableChars > MAX_CHARS_PER_LINE) ? MAX_CHARS_PER_LINE : availableChars;
+                    int charsToCopy = (availableChars > Constants::Display::MAX_CHARS_PER_LINE) ? Constants::Display::MAX_CHARS_PER_LINE : availableChars;
                     
                     // Copy characters starting from scroll offset
                     for (int j = 0; j < charsToCopy; j++) {
@@ -352,15 +329,6 @@ void SampleSelectMenu::onEncoderHold()
     uiManager_->popScreen();
 }
 
-void SampleSelectMenu::onButton1Press()
-{
-    // No action on this screen
-}
-
-void SampleSelectMenu::onButton2Press()
-{
-    // No action on this screen
-}
 
 // ============================================================================
 // SequenceEditorMenu Implementation

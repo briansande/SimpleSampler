@@ -13,6 +13,7 @@
 #include "UIManager.h"
 #include "Menus.h"
 #include "daisysp.h"
+#include "Constants.h"
 
 using namespace daisy;
 using namespace daisysp;
@@ -24,13 +25,10 @@ namespace Config {
 }
 
 using MyOledDisplay = OledDisplay<SSD130x4WireSpi128x64Driver>;
-const uint32_t DISPLAY_FPS = 3;                        //  FPS for OLED screen
 
 DaisyPod      hw;
 MyOledDisplay display;
 Parameter p_knob1, p_knob2;
-
-static int32_t  inc;
 
 // SD Card and filesystem
 SdmmcHandler   sdcard;
@@ -52,13 +50,12 @@ static Metronome* metronome = nullptr;
 static UIManager* uiManager = nullptr;
 
 // Memory pool for SDRAM
-#define CUSTOM_POOL_SIZE (48*1024*1024)
-DSY_SDRAM_BSS char custom_pool[CUSTOM_POOL_SIZE];
+DSY_SDRAM_BSS char custom_pool[Constants::Memory::CUSTOM_POOL_SIZE];
 size_t pool_index = 0;
 
 // Custom memory allocator
 void* custom_pool_allocate(size_t size) {
-    if (pool_index + size >= CUSTOM_POOL_SIZE) {
+    if (pool_index + size >= Constants::Memory::CUSTOM_POOL_SIZE) {
         return nullptr;
     }
     void* ptr = &custom_pool[pool_index];
@@ -91,9 +88,6 @@ int main(void)
     hw.Init();
     // Set the sample rate now that hw is initialized
     Config::samplerate = hw.AudioSampleRate();
-    inc     = 0;
-
-    uint32_t lastUpdateTime = System::GetNow();             // Initialize lastUpdateTime to the current time
 
     /** Configure then initialize the Display */
     MyOledDisplay::Config disp_cfg;
@@ -133,9 +127,7 @@ int main(void)
     library = new SampleLibrary(sdcard, fsi, display_);
     display_.showMessage("Library created, calling init...", 1000);
     if (!library->init()) {
-        display.SetCursor(0, 0);
-        display.WriteString((char*)"SD Card Error!", Font_7x10, true);
-        display.Update();
+        display_.showMessage("SD Card Error!", 0);
         while(1);  // Halt
     }
     display_.showMessage("Library Initialized", 1000);
@@ -167,7 +159,7 @@ int main(void)
 
         // === Knob 1: BPM Control (60-180) ===
         float knob1_value = p_knob1.Process();
-        float bpm = 60.0f + (knob1_value * 120.0f);  // Map 0.0-1.0 to 60-180 BPM
+        float bpm = Constants::UI::MIN_BPM + (knob1_value * Constants::UI::BPM_RANGE);  // Map 0.0-1.0 to 60-180 BPM
         sequencer->setBpm(bpm);
         
         // === Knob 2: Metronome Volume (0.0-1.0) ===
@@ -185,25 +177,25 @@ int main(void)
         // Encoder click detection (rising edge = button pressed)
         if(hw.encoder.RisingEdge()) {
             // Record press time for hold detection
-            const_cast<UIState&>(uiManager->getState()).encoderPressed = true;
-            const_cast<UIState&>(uiManager->getState()).encoderPressTime = System::GetNow();
-            const_cast<UIState&>(uiManager->getState()).encoderHeld = false;
+            uiManager->getState().encoderPressed = true;
+            uiManager->getState().encoderPressTime = System::GetNow();
+            uiManager->getState().encoderHeld = false;
             uiManager->handleEncoderClick();
         }
         
         // Encoder release detection (falling edge = button released)
         if(hw.encoder.FallingEdge()) {
             // Reset hold state
-            const_cast<UIState&>(uiManager->getState()).encoderPressed = false;
-            const_cast<UIState&>(uiManager->getState()).encoderHeld = false;
+            uiManager->getState().encoderPressed = false;
+            uiManager->getState().encoderHeld = false;
         }
         
         // Non-blocking hold detection (check if pressed for more than 500ms)
         if(uiManager->getState().encoderPressed && !uiManager->getState().encoderHeld) {
             uint32_t pressDuration = System::GetNow() - uiManager->getState().encoderPressTime;
-            if(pressDuration >= 500) {
+            if(pressDuration >= Constants::UI::HOLD_DETECT_MS) {
                 // Hold detected - call handleEncoderHold() once
-                const_cast<UIState&>(uiManager->getState()).encoderHeld = true;
+                uiManager->getState().encoderHeld = true;
                 uiManager->handleEncoderHold();
             }
         }

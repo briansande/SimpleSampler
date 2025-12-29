@@ -1,5 +1,4 @@
-#ifndef UI_MANAGER_H
-#define UI_MANAGER_H
+#pragma once
 
 #include "DisplayManager.h"
 #include "Sequencer.h"
@@ -104,13 +103,13 @@ public:
     virtual void onEncoderClick() = 0;
 
     // Handle encoder hold (long press - exit)
-    virtual void onEncoderHold() = 0;
+    virtual void onEncoderHold() {}
 
     // Handle button1 press
-    virtual void onButton1Press() = 0;
+    virtual void onButton1Press() {}
 
     // Handle button2 press
-    virtual void onButton2Press() = 0;
+    virtual void onButton2Press() {}
 };
 
 /**
@@ -176,11 +175,12 @@ public:
     // Render current screen
     void render();
 
-    // Get UI state
+    // Get UI state (non-const version for modification)
+    UIState& getState() { return state_; }
+
+    // Get UI state (const version for read-only access)
     const UIState& getState() const { return state_; }
 
     // Set current screen directly (for navigation)
     void setCurrentScreen(ScreenType screen);
 };
-
-#endif // UI_MANAGER_H

@@ -32,10 +32,10 @@ uint32_t Sequencer::calculateSamplesPerStep(int bpm)
 void Sequencer::setBpm(float bpm)
 {
     // Clamp BPM to valid range
-    if (bpm < static_cast<float>(MIN_BPM)) {
-        bpm = static_cast<float>(MIN_BPM);
-    } else if (bpm > static_cast<float>(MAX_BPM)) {
-        bpm = static_cast<float>(MAX_BPM);
+    if (bpm < Constants::UI::MIN_BPM) {
+        bpm = Constants::UI::MIN_BPM;
+    } else if (bpm > Constants::UI::MAX_BPM) {
+        bpm = Constants::UI::MAX_BPM;
     }
 
     state_.bpm = static_cast<int>(bpm);
@@ -74,7 +74,7 @@ void Sequencer::processAudio(float** out, size_t size)
         samplesSinceLastStep_ -= state_.samplesPerStep;
 
         // Advance to next step
-        state_.currentStep = (state_.currentStep + 1) % NUM_STEPS;
+        state_.currentStep = (state_.currentStep + 1) % Constants::Sequencer::NUM_STEPS;
 
         // Update step start time
         state_.stepStartTime = daisy::System::GetNow();
@@ -92,10 +92,10 @@ void Sequencer::processAudio(float** out, size_t size)
 bool Sequencer::shouldTriggerTrack(int trackIndex, int step)
 {
     // Check bounds
-    if (trackIndex < 0 || trackIndex >= NUM_TRACKS) {
+    if (trackIndex < 0 || trackIndex >= Constants::Sequencer::NUM_TRACKS) {
         return false;
     }
-    if (step < 0 || step >= NUM_STEPS) {
+    if (step < 0 || step >= Constants::Sequencer::NUM_STEPS) {
         return false;
     }
 
@@ -113,7 +113,7 @@ bool Sequencer::shouldTriggerTrack(int trackIndex, int step)
 void Sequencer::triggerTrack(int trackIndex)
 {
     // Check bounds
-    if (trackIndex < 0 || trackIndex >= NUM_TRACKS) {
+    if (trackIndex < 0 || trackIndex >= Constants::Sequencer::NUM_TRACKS) {
         return;
     }
 
@@ -135,7 +135,7 @@ void Sequencer::triggerTrack(int trackIndex)
 void Sequencer::triggerStep(int step)
 {
     // Check all tracks and trigger those with active steps
-    for (int trackIdx = 0; trackIdx < NUM_TRACKS; trackIdx++) {
+    for (int trackIdx = 0; trackIdx < Constants::Sequencer::NUM_TRACKS; trackIdx++) {
         if (shouldTriggerTrack(trackIdx, step)) {
             triggerTrack(trackIdx);
         }
@@ -151,7 +151,7 @@ void Sequencer::triggerMetronome()
 
 Track* Sequencer::getTrack(int index)
 {
-    if (index < 0 || index >= NUM_TRACKS) {
+    if (index < 0 || index >= Constants::Sequencer::NUM_TRACKS) {
         return nullptr;
     }
     return &state_.tracks[index];
@@ -159,7 +159,7 @@ Track* Sequencer::getTrack(int index)
 
 const Track* Sequencer::getTrack(int index) const
 {
-    if (index < 0 || index >= NUM_TRACKS) {
+    if (index < 0 || index >= Constants::Sequencer::NUM_TRACKS) {
         return nullptr;
     }
     return &state_.tracks[index];
@@ -195,7 +195,7 @@ void Sequencer::setStepActive(int trackIndex, int stepIndex, bool active)
         return;
     }
 
-    if (stepIndex >= 0 && stepIndex < NUM_STEPS) {
+    if (stepIndex >= 0 && stepIndex < Constants::Sequencer::NUM_STEPS) {
         track->steps[stepIndex] = active;
     }
 }
@@ -207,7 +207,7 @@ bool Sequencer::isStepActive(int trackIndex, int stepIndex) const
         return false;
     }
 
-    if (stepIndex >= 0 && stepIndex < NUM_STEPS) {
+    if (stepIndex >= 0 && stepIndex < Constants::Sequencer::NUM_STEPS) {
         return track->steps[stepIndex];
     }
 

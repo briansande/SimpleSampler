@@ -1,5 +1,4 @@
-#ifndef METRONOME_H
-#define METRONOME_H
+#pragma once
 
 #include "daisysp.h"
 
@@ -91,5 +90,3 @@ private:
     float duration_;              // Click duration in seconds
     float sampleRate_;            // Sample rate for calculations
 };
-
-#endif // METRONOME_H

@@ -16,7 +16,7 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
       display_(display)
 {
     // Initialize all samples as not loaded
-    for (int i = 0; i < MAX_SAMPLES; i++) {
+    for (int i = 0; i < Constants::SampleLibrary::MAX_SAMPLES; i++) {
         samples_[i].loaded = false;
         samples_[i].audioDataLoaded = false;
         sampleSpeeds_[i] = 1.0f;  // Default to normal playback speed
@@ -57,7 +57,7 @@ bool SampleLibrary::init() {
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
             // Found a WAV file
             display_.showMessagef("Found WAV: %s", 200, fno.fname);
-            if (fileCount < MAX_SAMPLES) {
+            if (fileCount < Constants::SampleLibrary::MAX_SAMPLES) {
                 // Load sample info
                 if(f_open(&SDFile, fno.fname, (FA_OPEN_EXISTING | FA_READ)) == FR_OK){
                     //print file name

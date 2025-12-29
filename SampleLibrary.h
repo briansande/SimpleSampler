@@ -1,5 +1,4 @@
-#ifndef SAMPLE_LIBRARY_H
-#define SAMPLE_LIBRARY_H
+#pragma once
 
 #include "b3ReadWavFile.h"
 #include "daisy_core.h"
@@ -7,12 +6,10 @@
 #include "DisplayManager.h"
 
 #include <string>
+#include "Constants.h"
 
 using namespace daisy;
 using namespace std;
-
-// Maximum number of samples we can load at once
-#define MAX_SAMPLES 64
 
 // Structure to hold information about a loaded sample
 struct SampleInfo {
@@ -31,9 +28,9 @@ struct SampleInfo {
 
 class SampleLibrary {
 private:
-    SampleInfo samples_[MAX_SAMPLES];  // Array of loaded samples
-    b3WavTicker wavTickers[MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
-    float sampleSpeeds_[MAX_SAMPLES];   // Per-sample playback speed (default 1.0 = normal speed)
+    SampleInfo samples_[Constants::SampleLibrary::MAX_SAMPLES];  // Array of loaded samples
+    b3WavTicker wavTickers[Constants::SampleLibrary::MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
+    float sampleSpeeds_[Constants::SampleLibrary::MAX_SAMPLES];   // Per-sample playback speed (default 1.0 = normal speed)
 
     int sampleCount_;                 // How many samples are loaded
     
@@ -84,5 +81,3 @@ public:
     // Speed values: 0.1 = 10% speed, 1.0 = normal speed, 3.0 = 300% speed
     void setSampleSpeed(int index, float speed);
 };
-
-#endif // SAMPLE_LIBRARY_H

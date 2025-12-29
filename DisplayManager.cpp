@@ -1,5 +1,6 @@
 #include "DisplayManager.h"
 #include <cstdarg>  // For va_list, va_start, va_end
+#include "Constants.h"
 
 /**
  * Constructor - Initialize references to display and hardware
@@ -30,12 +31,6 @@ DisplayManager::DisplayManager(MyOledDisplay& display, DaisyPod& hw)
 void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
     display_.Fill(false);                      // Clear the screen (black)
     
-    const uint8_t CHAR_WIDTH = 7;              // Width of each character in Font_7x10
-    const uint8_t LINE_HEIGHT = 10;            // Height of each line (font height)
-    const uint8_t SCREEN_WIDTH = 128;          // OLED display width in pixels
-    const uint8_t SCREEN_HEIGHT = 64;          // OLED display height in pixels
-    const uint8_t MAX_CHARS_PER_LINE = SCREEN_WIDTH / CHAR_WIDTH;  // ~18 chars per line
-    
     uint8_t cursorX = 0;                       // Current X position
     uint8_t cursorY = 0;                       // Current Y position
     uint8_t charsOnLine = 0;                   // Characters written on current line
@@ -49,12 +44,12 @@ void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
         // Check for manual line break character "*"
         if (c == '*') {
             // Move to next line
-            cursorY += LINE_HEIGHT;
+            cursorY += Constants::Display::LINE_HEIGHT;
             cursorX = 0;
             charsOnLine = 0;
             
             // Check if we've exceeded screen height
-            if (cursorY >= SCREEN_HEIGHT) {
+            if (cursorY >= Constants::Display::HEIGHT) {
                 break;  // Can't display more text
             }
             
@@ -63,14 +58,14 @@ void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
         }
         
         // Check if we need automatic line wrapping
-        if (charsOnLine >= MAX_CHARS_PER_LINE) {
+        if (charsOnLine >= Constants::Display::MAX_CHARS_PER_LINE) {
             // Move to next line
-            cursorY += LINE_HEIGHT;
+            cursorY += Constants::Display::LINE_HEIGHT;
             cursorX = 0;
             charsOnLine = 0;
             
             // Check if we've exceeded screen height
-            if (cursorY >= SCREEN_HEIGHT) {
+            if (cursorY >= Constants::Display::HEIGHT) {
                 break;  // Can't display more text
             }
             
@@ -82,7 +77,7 @@ void DisplayManager::showMessage(const char* message, uint32_t delayMs) {
         display_.WriteString(charBuffer, Font_7x10, true);
         
         // Update cursor position
-        cursorX += CHAR_WIDTH;
+        cursorX += Constants::Display::CHAR_WIDTH;
         charsOnLine++;
     }
     

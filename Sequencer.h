@@ -1,15 +1,9 @@
-#ifndef SEQUENCER_H
-#define SEQUENCER_H
+#pragma once
 
 #include "b3ReadWavFile.h"
 #include "SampleLibrary.h"
 #include "daisy_core.h"
-
-// Sequencer Configuration
-#define NUM_STEPS 16
-#define NUM_TRACKS 3
-#define MIN_BPM 60
-#define MAX_BPM 180
+#include "Constants.h"
 
 /**
  * Track - Represents a single sequencer track with sample assignment and step pattern
@@ -26,7 +20,7 @@ struct Track {
     char sampleName[32];          // Cached sample name for display
 
     // Step Pattern (16 steps, each can be active/inactive)
-    bool steps[NUM_STEPS];
+    bool steps[Constants::Sequencer::NUM_STEPS];
 
     // Playback State
     b3WavTicker ticker;          // Independent ticker for polyphonic playback
@@ -41,7 +35,7 @@ struct Track {
     void init() {
         sampleIndex = -1;
         sampleName[0] = '\0';
-        for (int i = 0; i < NUM_STEPS; i++) {
+        for (int i = 0; i < Constants::Sequencer::NUM_STEPS; i++) {
             steps[i] = false;
         }
         isPlaying = false;
@@ -66,7 +60,7 @@ struct SequencerState {
     bool isRunning;              // Sequencer running state
 
     // Track Data
-    Track tracks[NUM_TRACKS];
+    Track tracks[Constants::Sequencer::NUM_TRACKS];
 
     // Metronome
     bool metronomeEnabled;       // Metronome on/off
@@ -82,7 +76,7 @@ struct SequencerState {
         metronomeEnabled = true;
         metronomeVolume = 0.5f;
 
-        for (int i = 0; i < NUM_TRACKS; i++) {
+        for (int i = 0; i < Constants::Sequencer::NUM_TRACKS; i++) {
             tracks[i].init();
         }
     }
@@ -179,5 +173,3 @@ public:
     void setMetronomeVolume(float volume);
     float getMetronomeVolume() const { return state_.metronomeVolume; }
 };
-
-#endif // SEQUENCER_H

@@ -1,5 +1,4 @@
-#ifndef DISPLAY_MANAGER_H
-#define DISPLAY_MANAGER_H
+#pragma once
 
 #include "daisy_pod.h"
 #include "dev/oled_ssd130x.h"
@@ -80,5 +79,3 @@ private:
     MyOledDisplay& display_;  // Reference to the OLED display
     DaisyPod& hw_;             // Reference to hardware (for delays)
 };
-
-#endif // DISPLAY_MANAGER_H
