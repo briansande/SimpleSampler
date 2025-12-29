@@ -87,6 +87,10 @@ bool SampleLibrary::init() {
                             samples_[fileCount].sampleRate = (int)samples_[fileCount].reader.getFileDataRate();
                             samples_[fileCount].bitsPerSample = samples_[fileCount].reader.getBitsPerSample();
                             
+                            // Mark sample as loaded (metadata and audio data both loaded)
+                            samples_[fileCount].loaded = true;
+                            samples_[fileCount].audioDataLoaded = true;
+                            
                             display_.showMessagef("Parsed OK, creating ticker...", 200);
                             wavTickers[fileCount] = samples_[fileCount].reader.createWavTicker(Config::samplerate);
                             display_.showMessagef("Ticker created!", 200);
