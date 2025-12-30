@@ -75,11 +75,14 @@ void AudioCallback(AudioHandle::InputBuffer  in,
         out[1][i] = 0.0f;
     }
     
-    // Process sequencer audio (includes sample playback and metronome triggering)
-    sequencer->processAudio(out, size);
-    
-    // Process metronome (adds metronome sound to output)
-    metronome->process(out, size);
+    // Only process audio when in sequencer mode
+    if (uiManager->getCurrentMode() == MODE_SEQUENCER) {
+        // Process sequencer audio (includes sample playback and metronome triggering)
+        sequencer->processAudio(out, size);
+        
+        // Process metronome (adds metronome sound to output)
+        metronome->process(out, size);
+    }
 }
 
 void updateSequencerLED(DaisyPod& hw, Sequencer* sequencer)
@@ -161,11 +164,11 @@ int main(void)
     uiManager = new UIManager(&display_, sequencer, library);
     uiManager->init();
     
-    // Set default BPM and start sequencer
+    // Set default BPM (but don't start sequencer - user enters from main menu)
     sequencer->setBpm(120.0f);
-    sequencer->setRunning(true);
+    sequencer->setRunning(false);
     
-    display_.showMessage("Sequencer Ready!", 1000);
+    display_.showMessage("Ready!", 1000);
 
     // Start the audio callback
     hw.StartAudio(AudioCallback);
@@ -175,14 +178,21 @@ int main(void)
         uint32_t now = System::GetNow();
         hw.ProcessDigitalControls();
 
-        // === Knob 1: BPM Control (60-180) ===
-        float knob1_value = p_knob1.Process();
-        float bpm = Constants::UI::MIN_BPM + (knob1_value * Constants::UI::BPM_RANGE);  // Map 0.0-1.0 to 60-180 BPM
-        sequencer->setBpm(bpm);
-        
-        // === Knob 2: Metronome Volume (0.0-1.0) ===
-        float knob2_value = p_knob2.Process();
-        metronome->setVolume(knob2_value);
+        // === Knob and Button Handling (only in sequencer mode) ===
+        if (uiManager->getCurrentMode() == MODE_SEQUENCER) {
+            // === Knob 1: BPM Control (60-180) ===
+            float knob1_value = p_knob1.Process();
+            float bpm = Constants::UI::MIN_BPM + (knob1_value * Constants::UI::BPM_RANGE);  // Map 0.0-1.0 to 60-180 BPM
+            sequencer->setBpm(bpm);
+            
+            // === Knob 2: Metronome Volume (0.0-1.0) ===
+            float knob2_value = p_knob2.Process();
+            metronome->setVolume(knob2_value);
+        } else {
+            // Process knobs anyway to prevent stale values
+            p_knob1.Process();
+            p_knob2.Process();
+        }
         
         // === Encoder Handling ===
         int32_t enc_incr = hw.encoder.Increment();
@@ -229,11 +239,23 @@ int main(void)
         // === Update UI ===
         uiManager->update();
         
-        // === LED Feedback ===
-        updateSequencerLED(hw, sequencer);
+        // === LED Feedback (only in sequencer mode) ===
+        if (uiManager->getCurrentMode() == MODE_SEQUENCER) {
+            updateSequencerLED(hw, sequencer);
 
-        // LED2 shows metronome volume level
-        hw.led2.Set(knob2_value, 0.0f, 0.0f);
+            // LED2 shows metronome volume level
+            float knob2_value = p_knob2.Process();
+            hw.led2.Set(knob2_value, 0.0f, 0.0f);
+        } else {
+            // In main menu or granular mode, set LEDs to indicate mode
+            if (uiManager->getCurrentMode() == MODE_MAIN_MENU) {
+                hw.led1.Set(0.0f, 0.5f, 0.0f);  // Green for main menu
+                hw.led2.Set(0.0f, 0.5f, 0.0f);
+            } else if (uiManager->getCurrentMode() == MODE_GRANULAR) {
+                hw.led1.Set(0.5f, 0.0f, 0.5f);  // Purple for granular
+                hw.led2.Set(0.5f, 0.0f, 0.5f);
+            }
+        }
         
         hw.UpdateLeds();
     }

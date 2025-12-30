@@ -42,13 +42,15 @@ UIManager::~UIManager()
 void UIManager::createMenus()
 {
     // Create each menu instance, passing 'this' as UIManager reference
+    menus_[SCREEN_MAIN_MENU] = new MainMenu(display_, sequencer_, sampleLibrary_, &state_, this);
+    menus_[SCREEN_GRANULAR_PLACEHOLDER] = new GranularPlaceholder(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_TRACK_SELECT] = new TrackSelectMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_TRACK_EDIT] = new TrackEditMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_SAMPLE_SELECT] = new SampleSelectMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_SEQUENCE_EDITOR] = new SequenceEditorMenu(display_, sequencer_, sampleLibrary_, &state_, this);
 
-    // Set current menu to track select
-    currentMenu_ = menus_[SCREEN_TRACK_SELECT];
+    // Set current menu to main menu
+    currentMenu_ = menus_[SCREEN_MAIN_MENU];
 }
 
 void UIManager::init()
@@ -103,6 +105,16 @@ void UIManager::handleEncoderClick()
 
 void UIManager::handleEncoderHold()
 {
+    // Special handling: if in sequencer mode and at track select, return to main menu
+    if (state_.currentMode == MODE_SEQUENCER && state_.currentScreen == SCREEN_TRACK_SELECT) {
+        setAppMode(MODE_MAIN_MENU);
+        setCurrentScreen(SCREEN_MAIN_MENU);
+        // Clear navigation stack when returning to main menu
+        stackDepth_ = 0;
+        state_.displayDirty = true;
+        return;
+    }
+
     if (currentMenu_ != nullptr) {
         currentMenu_->onEncoderHold();
         state_.displayDirty = true;
@@ -176,4 +188,9 @@ void UIManager::updateScrolling()
         // Mark display as dirty so it will be re-rendered
         state_.displayDirty = true;
     }
+}
+
+void UIManager::setAppMode(AppMode mode)
+{
+    state_.currentMode = mode;
 }

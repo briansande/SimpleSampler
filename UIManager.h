@@ -6,11 +6,25 @@
 #include "daisy_core.h"
 
 /**
+ * AppMode - Enum defining the current application mode
+ *
+ * Tracks which high-level mode the Daisy is currently in.
+ * This determines which UI screens and audio processing are active.
+ */
+enum AppMode {
+    MODE_MAIN_MENU,           // Main menu for mode selection
+    MODE_GRANULAR,            // Granular synthesizer (placeholder)
+    MODE_SEQUENCER            // Step sequencer (existing)
+};
+
+/**
  * ScreenType - Enum defining all available screen types in the UI
- * 
+ *
  * Each screen represents a different menu or view in the UI system.
  */
 enum ScreenType {
+    SCREEN_MAIN_MENU,         // Main menu: select Granular or Sequencer
+    SCREEN_GRANULAR_PLACEHOLDER,  // Placeholder screen for granular synth
     SCREEN_TRACK_SELECT,      // List all 3 tracks for selection
     SCREEN_TRACK_EDIT,        // Edit selected track (sample/sequence options)
     SCREEN_SAMPLE_SELECT,     // Choose sample for track
@@ -19,11 +33,14 @@ enum ScreenType {
 
 /**
  * UIState - Holds all UI state information
- * 
+ *
  * Contains current screen, selection indices, navigation stack,
  * and display update timing.
  */
 struct UIState {
+    // Current Mode (high-level application state)
+    AppMode currentMode;
+
     // Current Screen
     ScreenType currentScreen;
     ScreenType previousScreen;   // For navigation stack
@@ -50,8 +67,9 @@ struct UIState {
 
     // Initialization
     void init() {
-        currentScreen = SCREEN_TRACK_SELECT;
-        previousScreen = SCREEN_TRACK_SELECT;
+        currentMode = MODE_MAIN_MENU;
+        currentScreen = SCREEN_MAIN_MENU;
+        previousScreen = SCREEN_MAIN_MENU;
         selectedTrack = 0;
         selectedStep = 0;
         selectedSample = 0;
@@ -138,7 +156,7 @@ private:
 
     // Menu instances (owned by UIManager)
     BaseMenu* currentMenu_;
-    static constexpr int NUM_SCREENS = 4;  // Number of screen types
+    static constexpr int NUM_SCREENS = 6;  // Number of screen types
     BaseMenu* menus_[NUM_SCREENS];  // One for each ScreenType
 
     // Helper to create menu instances
@@ -187,4 +205,10 @@ public:
 
     // Set current screen directly (for navigation)
     void setCurrentScreen(ScreenType screen);
+
+    // Set current application mode
+    void setAppMode(AppMode mode);
+
+    // Get current application mode
+    AppMode getCurrentMode() const { return state_.currentMode; }
 };

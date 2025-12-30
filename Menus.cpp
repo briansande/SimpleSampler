@@ -14,6 +14,121 @@ void BaseMenu::renderSelectionIndicator(int yPos, bool isSelected)
 }
 
 // ============================================================================
+// MainMenu Implementation
+// ============================================================================
+
+MainMenu::MainMenu(DisplayManager* display, Sequencer* sequencer,
+                  SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , selectedOption_(Option::SEQUENCER)
+{
+}
+
+void MainMenu::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    display_->writeString("MAIN MENU", Font_7x10);
+
+    // Display options
+    int yPos = 20;
+
+    // Granular option
+    renderSelectionIndicator(yPos, selectedOption_ == Option::GRANULAR);
+    display_->setCursor(8, yPos);
+    display_->writeString("Granular Synth", Font_7x10);
+
+    // Sequencer option
+    yPos = 32;
+    renderSelectionIndicator(yPos, selectedOption_ == Option::SEQUENCER);
+    display_->setCursor(8, yPos);
+    display_->writeString("Step Sequencer", Font_7x10);
+
+    // Display footer
+    display_->setCursor(0, 54);
+    display_->writeString("Click to Select*", Font_7x10);
+
+    display_->update();
+}
+
+void MainMenu::onEncoderIncrement()
+{
+    selectedOption_ = (selectedOption_ == Option::GRANULAR) ? Option::SEQUENCER : Option::GRANULAR;
+}
+
+void MainMenu::onEncoderDecrement()
+{
+    selectedOption_ = (selectedOption_ == Option::SEQUENCER) ? Option::GRANULAR : Option::SEQUENCER;
+}
+
+void MainMenu::onEncoderClick()
+{
+    // Enter selected mode
+    if (selectedOption_ == Option::GRANULAR) {
+        uiManager_->setAppMode(MODE_GRANULAR);
+        uiManager_->setCurrentScreen(SCREEN_GRANULAR_PLACEHOLDER);
+    } else if (selectedOption_ == Option::SEQUENCER) {
+        uiManager_->setAppMode(MODE_SEQUENCER);
+        uiManager_->setCurrentScreen(SCREEN_TRACK_SELECT);
+    }
+}
+
+
+// ============================================================================
+// GranularPlaceholder Implementation
+// ============================================================================
+
+GranularPlaceholder::GranularPlaceholder(DisplayManager* display, Sequencer* sequencer,
+                                         SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+    : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+{
+}
+
+void GranularPlaceholder::render()
+{
+    display_->clear();
+
+    // Display header
+    display_->setCursor(0, 0);
+    display_->writeString("GRANULAR SYNTH", Font_7x10);
+
+    // Display message
+    display_->setCursor(0, 24);
+    display_->writeString("Coming Soon...", Font_7x10);
+
+    // Display footer
+    display_->setCursor(0, 54);
+    display_->writeString("Hold: Main Menu*", Font_7x10);
+
+    display_->update();
+}
+
+void GranularPlaceholder::onEncoderIncrement()
+{
+    // No-op - no navigation in placeholder
+}
+
+void GranularPlaceholder::onEncoderDecrement()
+{
+    // No-op - no navigation in placeholder
+}
+
+void GranularPlaceholder::onEncoderClick()
+{
+    // No-op - no action on click in placeholder
+}
+
+void GranularPlaceholder::onEncoderHold()
+{
+    // Return to main menu
+    uiManager_->setAppMode(MODE_MAIN_MENU);
+    uiManager_->setCurrentScreen(SCREEN_MAIN_MENU);
+}
+
+
+// ============================================================================
 // TrackSelectMenu Implementation
 // ============================================================================
 

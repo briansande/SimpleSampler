@@ -10,6 +10,62 @@
 class UIManager;
 
 /**
+ * MainMenu - Main menu screen for mode selection
+ *
+ * Displays Granular Synth and Step Sequencer options.
+ * Encoder navigates between options, click enters selected mode.
+ */
+class MainMenu : public BaseMenu {
+private:
+    enum class Option {
+        GRANULAR,
+        SEQUENCER
+    };
+    Option selectedOption_;
+
+public:
+    // Constructor
+    MainMenu(DisplayManager* display, Sequencer* sequencer,
+             SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager);
+
+    // Render main menu options
+    void render() override;
+
+    // Navigate between options
+    void onEncoderIncrement() override;
+    void onEncoderDecrement() override;
+
+    // Enter selected mode
+    void onEncoderClick() override;
+};
+
+/**
+ * GranularPlaceholder - Placeholder screen for granular synthesizer
+ *
+ * Shows a "Coming Soon" message.
+ * Hold encoder to return to main menu.
+ */
+class GranularPlaceholder : public BaseMenu {
+public:
+    // Constructor
+    GranularPlaceholder(DisplayManager* display, Sequencer* sequencer,
+                       SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager);
+
+    // Render placeholder screen
+    void render() override;
+
+    // No-op for encoder navigation
+    void onEncoderIncrement() override;
+    void onEncoderDecrement() override;
+
+    // No-op for encoder click
+    void onEncoderClick() override;
+
+    // Return to main menu on hold
+    void onEncoderHold() override;
+};
+
+/**
  * TrackSelectMenu - Screen to select a track for editing
  *
  * Displays all 3 tracks with their current sample assignment.
