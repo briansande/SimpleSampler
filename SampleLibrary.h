@@ -24,6 +24,13 @@ struct SampleInfo {
     bool audioDataLoaded;       // Is full audio data loaded in RAM?
 };
 
+// Structure representing a single grain in granular synthesis
+// A grain is a short segment of audio that plays with an envelope
+struct Grain {
+    b3WavTicker ticker;          // Playback position tracker
+    int sampleIndex;              // Which sample file this grain uses
+    float envelopePhase;          // Progress through grain (0.0 to 1.0)
+};
 
 
 class SampleLibrary {
