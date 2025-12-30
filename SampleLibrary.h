@@ -103,4 +103,25 @@ public:
     // Set the playback speed for a sample
     // Speed values: 0.1 = 10% speed, 1.0 = normal speed, 3.0 = 300% speed
     void setSampleSpeed(int index, float speed);
+
+    // ========== Granular Synthesis Methods ==========
+
+    // Enable or disable granular synthesis mode
+    void setGranularMode(bool enabled);
+    bool isGranularModeEnabled() const { return granularModeEnabled_; }
+
+    // Set which sample to use for granular synthesis
+    bool setGranularSampleIndex(int index);
+    int getGranularSampleIndex() const { return granularSampleIndex_; }
+
+    // Spawn a new grain from a sample
+    // sampleIndex: which sample to use (or -1 to use granularSampleIndex_)
+    // startPosition: where in sample to start (0.0 to 1.0)
+    // duration: how long grain lasts (in seconds)
+    // speed: playback speed/pitch (1.0 = normal)
+    // Returns true if grain was spawned successfully
+    bool spawnGrain(int sampleIndex, float startPosition, float duration, float speed);
+
+    // Get number of currently active grains
+    int getActiveGrainCount() const { return activeGrainCount_; }
 };
