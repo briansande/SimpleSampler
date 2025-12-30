@@ -44,6 +44,11 @@ static DisplayManager& display_ = *reinterpret_cast<DisplayManager*>(display_sto
 
 static SampleLibrary* library = nullptr;
 
+// DEBUG: Debug state tracking
+static uint32_t debugLastDisplayUpdate = 0;
+static const uint32_t DEBUG_DISPLAY_INTERVAL_MS = 2000;  // Update debug display every 2 seconds
+static bool debugEnabled = false;  // Set to false to disable debug output
+
 // Sequencer components (pointers, initialized in main)
 static Sequencer* sequencer = nullptr;
 static Metronome* metronome = nullptr;
@@ -75,6 +80,14 @@ void AudioCallback(AudioHandle::InputBuffer  in,
         out[1][i] = 0.0f;
     }
     
+    // DEBUG: Log current mode
+    static uint32_t debugCounter = 0;
+    debugCounter++;
+    if (debugCounter % 48000 == 0) {  // Log every ~1 second (assuming 48kHz)
+        // We'll use the display for debugging since we can't use printf in audio callback
+        // The display update will be handled in the main loop
+    }
+    
     // Only process audio when in sequencer mode
     if (uiManager->getCurrentMode() == MODE_SEQUENCER) {
         // Process sequencer audio (includes sample playback and metronome triggering)
@@ -103,6 +116,50 @@ void updateSequencerLED(DaisyPod& hw, Sequencer* sequencer)
     }
 }
 
+
+// DEBUG: Display current mode and sequencer state
+void debugDisplayState()
+{
+    if (!debugEnabled) return;
+    
+    uint32_t now = System::GetNow();
+    if (now - debugLastDisplayUpdate < DEBUG_DISPLAY_INTERVAL_MS) {
+        return;
+    }
+    debugLastDisplayUpdate = now;
+    
+    // Get current state
+    AppMode mode = uiManager->getCurrentMode();
+    bool isRunning = sequencer->isRunning();
+    
+    // Clear and display debug info
+    display_.clear();
+    display_.setCursor(0, 0);
+    display_.writeString("DEBUG INFO:", Font_7x10);
+    
+    // Display mode
+    display_.setCursor(0, 12);
+    const char* modeStr = (mode == MODE_MAIN_MENU) ? "MAIN MENU" :
+                          (mode == MODE_GRANULAR) ? "GRANULAR" :
+                          (mode == MODE_SEQUENCER) ? "SEQUENCER" : "UNKNOWN";
+    display_.writeString("Mode: ", Font_7x10);
+    display_.setCursor(42, 12);
+    display_.writeString(modeStr, Font_7x10);
+    
+    // Display sequencer running state
+    display_.setCursor(0, 24);
+    display_.writeString("Seq Run: ", Font_7x10);
+    display_.setCursor(56, 24);
+    display_.writeString(isRunning ? "YES" : "NO", Font_7x10);
+    
+    // Display audio processing state
+    display_.setCursor(0, 36);
+    display_.writeString("Audio: ", Font_7x10);
+    display_.setCursor(42, 36);
+    display_.writeString((mode == MODE_SEQUENCER) ? "ENABLED" : "DISABLED", Font_7x10);
+    
+    display_.update();
+}
 
 int main(void)
 {
@@ -238,6 +295,9 @@ int main(void)
         
         // === Update UI ===
         uiManager->update();
+        
+        // === DEBUG: Display debug state ===
+        debugDisplayState();
         
         // === LED Feedback (only in sequencer mode) ===
         if (uiManager->getCurrentMode() == MODE_SEQUENCER) {

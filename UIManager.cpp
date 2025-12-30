@@ -107,6 +107,8 @@ void UIManager::handleEncoderHold()
 {
     // Special handling: if in sequencer mode and at track select, return to main menu
     if (state_.currentMode == MODE_SEQUENCER && state_.currentScreen == SCREEN_TRACK_SELECT) {
+        // Stop the sequencer when returning to main menu
+        sequencer_->setRunning(false);
         setAppMode(MODE_MAIN_MENU);
         setCurrentScreen(SCREEN_MAIN_MENU);
         // Clear navigation stack when returning to main menu

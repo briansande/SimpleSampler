@@ -70,6 +70,8 @@ void MainMenu::onEncoderClick()
         uiManager_->setAppMode(MODE_GRANULAR);
         uiManager_->setCurrentScreen(SCREEN_GRANULAR_PLACEHOLDER);
     } else if (selectedOption_ == Option::SEQUENCER) {
+        // Start the sequencer when entering sequencer mode
+        sequencer_->setRunning(true);
         uiManager_->setAppMode(MODE_SEQUENCER);
         uiManager_->setCurrentScreen(SCREEN_TRACK_SELECT);
     }
