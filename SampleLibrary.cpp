@@ -11,6 +11,11 @@ extern void* custom_pool_allocate(size_t size);
 
 SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fileSystem, DisplayManager& display)
     : sampleCount_(0),
+      activeGrainCount_(0),
+      granularModeEnabled_(false),
+      granularSampleIndex_(0),
+      timeSinceLastGrain_(0.0f),
+      spawnRate_(30.0f),  // 30 grains per second default
       sdHandler_(sdHandler),
       fileSystem_(fileSystem),
       display_(display)
@@ -19,13 +24,20 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
     for (int i = 0; i < Constants::SampleLibrary::MAX_SAMPLES; i++) {
         samples_[i].loaded = false;
         samples_[i].audioDataLoaded = false;
-        sampleSpeeds_[i] = 1.0f;  // Default to normal playback speed
+        sampleSpeeds_[i] = 1.0f;
+    }
+    
+    // Initialize all grains as finished (inactive)
+    for (int i = 0; i < Constants::SampleLibrary::MAX_GRAINS; i++) {
+        grains_[i].ticker.finished_ = true;
+        grains_[i].sampleIndex = -1;
+        grains_[i].envelopePhase = 0.0f;
     }
 }
 
 bool SampleLibrary::init() {
     // Show initialization message
-    display_.showMessage("Initializing Library...", 200);
+    // display_.showMessage("Initializing Library...", 200);
     
     // Scan directory and load all WAV files
     return scanAndLoadFiles();
@@ -34,7 +46,7 @@ bool SampleLibrary::init() {
 
 bool SampleLibrary::scanAndLoadFiles()
 {
-    display_.showMessage("Opening dir...", 200);
+    // display_.showMessage("Opening dir...", 200);
     
     // Open the root directory
     DIR dir;
@@ -43,7 +55,7 @@ bool SampleLibrary::scanAndLoadFiles()
         return false;
     }
     
-    display_.showMessage("Scanning files...", 200);
+    // display_.showMessage("Scanning files...", 200);
     
     // Scan for WAV files
     FILINFO fno;
@@ -55,7 +67,7 @@ bool SampleLibrary::scanAndLoadFiles()
         
         // Check if filename contains .wav or .WAV
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
-            display_.showMessagef("Found WAV: %s", 200, fno.fname);
+            // display_.showMessagef("Found WAV: %s", 200, fno.fname);
             if (fileCount < Constants::SampleLibrary::MAX_SAMPLES) {
                 if (loadWavFile(fno.fname, fileCount)) {
                     fileCount++;
@@ -67,7 +79,7 @@ bool SampleLibrary::scanAndLoadFiles()
     // Close directory
     f_closedir(&dir);
     
-    display_.showMessage("Files scanned", 300);
+    // display_.showMessage("Files scanned", 300);
     char msg[64];
     snprintf(msg, sizeof(msg), "WAV Files: %d", fileCount);
     display_.showMessage(msg, 200);
