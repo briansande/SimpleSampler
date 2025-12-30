@@ -41,6 +41,16 @@ private:
 
     int sampleCount_;                 // How many samples are loaded
     
+    // Granular synthesis state
+    Grain grains_[Constants::SampleLibrary::MAX_GRAINS];  // Pool of grain objects
+    int activeGrainCount_;                                 // Number of currently active grains
+    bool granularModeEnabled_;                              // Is granular synthesis active?
+    int granularSampleIndex_;                                // Which sample to use for granular
+    
+    // Spawning timer (auto-spawning)
+    float timeSinceLastGrain_;  // Time elapsed since last grain spawned
+    float spawnRate_;           // Grains per second
+    
     // External references (from main.cpp)
     SdmmcHandler& sdHandler_;
     FatFSInterface& fileSystem_;

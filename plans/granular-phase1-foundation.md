@@ -376,7 +376,7 @@ sampleLibrary.spawnGrain(-1, 0.25, 0.1, 1.0);  // Start at 25%, 100ms, normal pi
 ## Success Criteria
 
 - [x] Grain data structure is defined
-- [ ] Grain pool is added to SampleLibrary class
+- [x] Grain pool is added to SampleLibrary class
 - [ ] Granular mode can be enabled/disabled
 - [ ] Sample for granular playback can be selected
 - [ ] Grains can be spawned manually
