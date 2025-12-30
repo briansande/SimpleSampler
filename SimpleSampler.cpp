@@ -46,8 +46,8 @@ static SampleLibrary* library = nullptr;
 
 // DEBUG: Debug state tracking
 static uint32_t debugLastDisplayUpdate = 0;
-static const uint32_t DEBUG_DISPLAY_INTERVAL_MS = 2000;  // Update debug display every 2 seconds
-static bool debugEnabled = false;  // Set to false to disable debug output
+static const uint32_t DEBUG_DISPLAY_INTERVAL_MS = 500;  // Update debug display every 0.5 seconds
+static bool debugEnabled = false;  // Set to true to enable debug output
 
 // Sequencer components (pointers, initialized in main)
 static Sequencer* sequencer = nullptr;
@@ -164,17 +164,45 @@ void debugDisplayState()
     display_.setCursor(42, 12);
     display_.writeString(modeStr, Font_7x10);
     
-    // Display sequencer running state
-    display_.setCursor(0, 24);
-    display_.writeString("Seq Run: ", Font_7x10);
-    display_.setCursor(56, 24);
-    display_.writeString(isRunning ? "YES" : "NO", Font_7x10);
-    
-    // Display audio processing state
-    display_.setCursor(0, 36);
-    display_.writeString("Audio: ", Font_7x10);
-    display_.setCursor(42, 36);
-    display_.writeString((mode == MODE_SEQUENCER) ? "ENABLED" : "DISABLED", Font_7x10);
+    // Display mode-specific debug info
+    if (mode == MODE_GRANULAR) {
+        // Granular mode debug info
+        char line[32];
+        
+        // Display grain spawn count
+        display_.setCursor(0, 24);
+        display_.writeString("Spawned:", Font_7x10);
+        display_.setCursor(56, 24);
+        snprintf(line, sizeof(line), "%d", library->getDebugGrainSpawnCount());
+        display_.writeString(line, Font_7x10);
+        
+        // Display grain spawn failures
+        display_.setCursor(0, 36);
+        display_.writeString("Failed:", Font_7x10);
+        display_.setCursor(56, 36);
+        snprintf(line, sizeof(line), "%d", library->getDebugGrainSpawnFailures());
+        display_.writeString(line, Font_7x10);
+        
+        // Display active grain count
+        display_.setCursor(0, 48);
+        display_.writeString("Active:", Font_7x10);
+        display_.setCursor(56, 48);
+        snprintf(line, sizeof(line), "%d", library->getActiveGrainCount());
+        display_.writeString(line, Font_7x10);
+    } else {
+        // Sequencer mode debug info
+        // Display sequencer running state
+        display_.setCursor(0, 24);
+        display_.writeString("Seq Run: ", Font_7x10);
+        display_.setCursor(56, 24);
+        display_.writeString(isRunning ? "YES" : "NO", Font_7x10);
+        
+        // Display audio processing state
+        display_.setCursor(0, 36);
+        display_.writeString("Audio: ", Font_7x10);
+        display_.setCursor(56, 36);
+        display_.writeString((mode == MODE_SEQUENCER) ? "ENABLED" : "DISABLED", Font_7x10);
+    }
     
     display_.update();
 }
@@ -218,15 +246,12 @@ int main(void)
     // Mount SD Card
     f_mount(&fsi.GetSDFileSystem(), "/", 1);
         
-    // display_.showMessage("Starting Library Initialization", 1000);
     // Initialize library
     library = new SampleLibrary(sdcard, fsi, display_);
-    // display_.showMessage("Library created, calling init...", 1000);
     if (!library->init()) {
         display_.showMessage("SD Card Error!", 0);
         while(1);  // Halt
     }
-    // display_.showMessage("Library Initialized", 1000);
 
     // === Initialize Sequencer Components ===
     display_.showMessage("Initializing Sequencer...", 300);
@@ -270,16 +295,8 @@ int main(void)
             previousMode = currentMode;
         }
         
-        // Re-spawn grains as they finish (keep 10 grains active)
-        if (currentMode == MODE_GRANULAR) {
-            int activeCount = library->getActiveGrainCount();
-            while (activeCount < 1) {
-
-                library->spawnGrain(2, 0, 0.14f, 1.0f);  // 100ms, normal pitch
-                activeCount++;
-                display_.showMessagef("Grains: %d", 0, activeCount);
-            }
-        }
+        // Note: Auto-spawning is now handled in SampleLibrary::processAudio()
+        // This legacy code has been removed to avoid conflicts
 
         // === Knob and Button Handling (only in sequencer mode) ===
         if (uiManager->getCurrentMode() == MODE_SEQUENCER) {

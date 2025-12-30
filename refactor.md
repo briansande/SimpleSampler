@@ -421,7 +421,7 @@ bool SampleLibrary::scanAndLoadFiles()
         return false;
     }
 
-    display_.showMessage("Scanning files...", 200);
+    // display_.showMessage("Scanning files...", 200);
 
     // Read entries in a loop
     while (f_readdir(&dir, &fno) == FR_OK) {
@@ -429,7 +429,7 @@ bool SampleLibrary::scanAndLoadFiles()
 
         // Check if filename contains .wav or .WAV
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
-            display_.showMessagef("Found WAV: %s", 200, fno.fname);
+            // display_.showMessagef("Found WAV: %s", 200, fno.fname);
             if (fileCount < MAX_SAMPLES) {
                 if (loadWavFile(fno.fname, fileCount)) {
                     fileCount++;
@@ -457,7 +457,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     }
 
     int size = f_size(&SDFile);
-    display_.showMessagef("Size: %d bytes", 200, size);
+    // display_.showMessagef("Size: %d bytes", 200, size);
 
     // Allocate memory from custom pool
     char* memoryBuffer = (char*) custom_pool_allocate(size);
@@ -468,7 +468,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
 
-    display_.showMessagef("Alloc OK, reading...", 200);
+    // display_.showMessagef("Alloc OK, reading...", 200);
 
     UINT bytesRead;
     if(f_read(&SDFile, memoryBuffer, size, &bytesRead) != FR_OK || bytesRead != size) {
@@ -477,7 +477,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
 
-    display_.showMessagef("Read OK, parsing...", 200);
+    // display_.showMessagef("Read OK, parsing...", 200);
 
     samples_[index].dataSource = MemoryDataSource(memoryBuffer, size);
     samples_[index].reader.getWavInfo(samples_[index].dataSource);

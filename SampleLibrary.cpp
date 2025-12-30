@@ -2,6 +2,10 @@
 #include "SampleLibrary.h"
 
 
+// DEBUG: Variables for granular mode debugging
+static int debugGrainSpawnCount = 0;
+static int debugGrainSpawnFailures = 0;
+
 extern FIL SDFile;
 
 // External declaration for custom memory allocator defined in SimpleSampler.cpp
@@ -195,6 +199,33 @@ void SampleLibrary::processAudio(float** out, size_t size) {
         out[1][i] = 0.0f;
     }
     
+    // Auto-spawning: Only spawn if granular mode is enabled
+    if (granularModeEnabled_) {
+        // Calculate the duration of this audio block in seconds
+        float blockDuration = (float)size / Config::samplerate;
+        
+        // Update the time elapsed since last grain spawn
+        timeSinceLastGrain_ += blockDuration;
+        
+        // Calculate spawn interval from spawn rate (grains per second)
+        float spawnInterval = 1.0f / spawnRate_;
+        
+        // Check if it's time to spawn a new grain
+        while (timeSinceLastGrain_ >= spawnInterval) {
+            // Spawn grain using granularSampleIndex_ (sampleIndex -1)
+            // Parameters: sampleIndex=-1, startPosition=0.5, duration=0.1s, speed=1.0
+            spawnGrain(-1, 0.5f, 0.1f, 1.0f);
+            
+            // Reset timer (subtract interval to handle multiple spawns per block)
+            timeSinceLastGrain_ -= spawnInterval;
+            
+            // Clamp to 0 to prevent negative values
+            if (timeSinceLastGrain_ < 0.0f) {
+                timeSinceLastGrain_ = 0.0f;
+            }
+        }
+    }
+    
     // Process regular sample playback (existing functionality)
     for (int i = 0; i < sampleCount_; i++) {
         if (!wavTickers_[i].finished_) {
@@ -285,11 +316,13 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     
     // Validate sample index
     if (actualSampleIndex < 0 || actualSampleIndex >= sampleCount_) {
+        debugGrainSpawnFailures++;
         return false;
     }
     
     // Validate sample is loaded
     if (!samples_[actualSampleIndex].audioDataLoaded) {
+        debugGrainSpawnFailures++;
         return false;
     }
     
@@ -304,6 +337,7 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     
     // No available slot
     if (availableSlot < 0) {
+        debugGrainSpawnFailures++;
         return false;
     }
     
@@ -345,10 +379,17 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     // Mark grain as active
     grains_[availableSlot].ticker.finished_ = false;
     
+    // DEBUG: Track successful spawns
+    debugGrainSpawnCount++;
+    
     return true;
 }
 
 void SampleLibrary::setGranularMode(bool enabled) {
+    // DEBUG: Log granular mode state change
+    display_.showMessagef("setGranularMode*%s", 300, enabled ? "true" : "false");
+    display_.showMessagef("granularModeEnabled_*%s", 300, enabled ? "true" : "false");
+    
     granularModeEnabled_ = enabled;
     
     // Clear all grains when disabling
@@ -357,19 +398,37 @@ void SampleLibrary::setGranularMode(bool enabled) {
             grains_[i].ticker.finished_ = true;
         }
         activeGrainCount_ = 0;
+        debugGrainSpawnCount = 0;
+        debugGrainSpawnFailures = 0;
     }
 }
 
 bool SampleLibrary::setGranularSampleIndex(int index) {
+    // DEBUG: Log sample index change
+    display_.showMessagef("setGranularSample*%d", 300, index);
+    
     if (index < 0 || index >= sampleCount_) {
+        display_.showMessagef("Invalid index!*%d", 300, index);
         return false;
     }
     
     if (!samples_[index].audioDataLoaded) {
+        display_.showMessagef("Sample not*loaded!*%d", 300, index);
         return false;
     }
     
     granularSampleIndex_ = index;
+    display_.showMessagef("granularSampleIndex_*%d", 300, index);
     return true;
+}
+
+// ========== Debug Getter Methods ==========
+
+int SampleLibrary::getDebugGrainSpawnCount() const {
+    return debugGrainSpawnCount;
+}
+
+int SampleLibrary::getDebugGrainSpawnFailures() const {
+    return debugGrainSpawnFailures;
 }
 

@@ -67,8 +67,16 @@ void MainMenu::onEncoderClick()
 {
     // Enter selected mode
     if (selectedOption_ == Option::GRANULAR) {
+        // DEBUG: Log granular mode selection
+        display_->showMessage("Granular mode*selected*", 300);
+        display_->showMessage("Calling*setGranularMode*", 300);
+        
         uiManager_->setAppMode(MODE_GRANULAR);
         uiManager_->setCurrentScreen(SCREEN_GRANULAR_PLACEHOLDER);
+        // Enable granular mode and select the first sample
+        display_->showMessage("Calling*setGranularSample*", 300);
+        sampleLibrary_->setGranularSampleIndex(0);
+        sampleLibrary_->setGranularMode(true);
     } else if (selectedOption_ == Option::SEQUENCER) {
         // Start the sequencer when entering sequencer mode
         sequencer_->setRunning(true);

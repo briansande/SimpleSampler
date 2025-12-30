@@ -124,4 +124,18 @@ public:
 
     // Get number of currently active grains
     int getActiveGrainCount() const { return activeGrainCount_; }
+    
+    // ========== Debug Methods ==========
+    
+    // Get debug grain spawn count
+    int getDebugGrainSpawnCount() const;
+    
+    // Get debug grain spawn failures
+    int getDebugGrainSpawnFailures() const;
+    
+    // Get time since last grain spawn
+    float getTimeSinceLastGrain() const { return timeSinceLastGrain_; }
+    
+    // Get spawn rate (grains per second)
+    float getSpawnRate() const { return spawnRate_; }
 };
