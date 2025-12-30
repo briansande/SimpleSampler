@@ -44,6 +44,12 @@ private:
     
     // Helper function to load full audio data for a sample (lazy loading)
     bool loadSampleData(int index);
+    
+    // Helper: Scan directory and load all WAV files
+    bool scanAndLoadFiles();
+    
+    // Helper: Load a single WAV file
+    bool loadWavFile(const char* filename, int index);
 
 public:
     // Constructor

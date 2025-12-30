@@ -27,111 +27,114 @@ bool SampleLibrary::init() {
     // Show initialization message
     display_.showMessage("Initializing Library...", 200);
     
-    // Filesystem is already mounted by SimpleSampler
-    // (passed in via constructor reference)
-    
+    // Scan directory and load all WAV files
+    return scanAndLoadFiles();
+}
+
+
+bool SampleLibrary::scanAndLoadFiles()
+{
     display_.showMessage("Opening dir...", 200);
     
     // Open the root directory
     DIR dir;
     if (f_opendir(&dir, "/") != FR_OK) {
         display_.showMessage("Dir open failed!", 200);
-        return false;  // Failed to open directory
+        return false;
     }
     
     display_.showMessage("Scanning files...", 200);
     
     // Scan for WAV files
     FILINFO fno;
-    FRESULT result;
     int fileCount = 0;
-
-
-
+    
     // Read entries in a loop
     while (f_readdir(&dir, &fno) == FR_OK) {
-
         if (fno.fname[0] == 0) break;  // No more files
         
-        // check if filename contains .wav or .WAV
+        // Check if filename contains .wav or .WAV
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
-            // Found a WAV file
             display_.showMessagef("Found WAV: %s", 200, fno.fname);
             if (fileCount < Constants::SampleLibrary::MAX_SAMPLES) {
-                // Load sample info
-                if(f_open(&SDFile, fno.fname, (FA_OPEN_EXISTING | FA_READ)) == FR_OK){
-                    //print file name
-                    int size = f_size(&SDFile);
-                    display_.showMessagef("Size: %d bytes", 200, size);
-
-                    // Allocate memory from custom pool, return pointer to buffer
-                    char* memoryBuffer = 0;
-                    memoryBuffer = (char*) custom_pool_allocate(size);
-
-                    // If memory allocation succeeded, read file into buffer
-                    if(memoryBuffer){
-                        display_.showMessagef("Alloc OK, reading...", 200);
-                        UINT bytesRead;
-                        if(f_read(&SDFile, memoryBuffer, size, &bytesRead) == FR_OK && bytesRead == size){
-                            display_.showMessagef("Read OK, parsing...", 200);
-                            samples_[fileCount].dataSource = MemoryDataSource(memoryBuffer, size);
-                            samples_[fileCount].reader.getWavInfo(samples_[fileCount].dataSource);
-                            
-                            // Copy filename to SampleInfo
-                            strncpy(samples_[fileCount].name, fno.fname, 31);
-                            samples_[fileCount].name[31] = '\0';
-                            
-                            // Copy WAV metadata from reader to SampleInfo
-                            samples_[fileCount].numFrames = samples_[fileCount].reader.getNumFrames();
-                            samples_[fileCount].channels = samples_[fileCount].reader.getChannels();
-                            samples_[fileCount].sampleRate = (int)samples_[fileCount].reader.getFileDataRate();
-                            samples_[fileCount].bitsPerSample = samples_[fileCount].reader.getBitsPerSample();
-                            
-                            // Mark sample as loaded (metadata and audio data both loaded)
-                            samples_[fileCount].loaded = true;
-                            samples_[fileCount].audioDataLoaded = true;
-                            
-                            display_.showMessagef("Parsed OK, creating ticker...", 200);
-                            wavTickers[fileCount] = samples_[fileCount].reader.createWavTicker(Config::samplerate);
-                            display_.showMessagef("Ticker created!", 200);
-                            wavTickers[fileCount].finished_ = true; // Mark as finished initially
-                            
-                            display_.showMessagef("Loaded: %s", 200, fno.fname);
-
-                            fileCount++;
-                        
-                        } else {
-                            display_.showMessagef("Read failed!", 200);
-                        }
-
-                    } else {
-                        display_.showMessagef("Alloc failed!", 200);
-                    }
-                    f_close(&SDFile);
-                    
-                } else {
-                    display_.showMessagef("Open failed!", 200);
+                if (loadWavFile(fno.fname, fileCount)) {
+                    fileCount++;
                 }
-
-
-
             }
         }
-
     }
-
+    
     // Close directory
     f_closedir(&dir);
-
+    
     display_.showMessage("Files scanned", 300);
-    // Print total files found
     char msg[64];
     snprintf(msg, sizeof(msg), "WAV Files: %d", fileCount);
     display_.showMessage(msg, 200);
-
+    
     // Store the number of loaded samples
     sampleCount_ = fileCount;
+    
+    return true;
+}
 
+
+bool SampleLibrary::loadWavFile(const char* filename, int index)
+{
+    // Open the file using the global SDFile
+    if (f_open(&SDFile, filename, (FA_OPEN_EXISTING | FA_READ)) != FR_OK) {
+        display_.showMessagef("Open failed!", 200);
+        return false;
+    }
+    
+    int size = f_size(&SDFile);
+    display_.showMessagef("Size: %d bytes", 200, size);
+    
+    // Allocate memory from custom pool
+    char* memoryBuffer = (char*) custom_pool_allocate(size);
+    
+    if (!memoryBuffer) {
+        display_.showMessagef("Alloc failed!", 200);
+        f_close(&SDFile);
+        return false;
+    }
+    
+    display_.showMessagef("Alloc OK, reading...", 200);
+    
+    UINT bytesRead;
+    if (f_read(&SDFile, memoryBuffer, size, &bytesRead) != FR_OK || bytesRead != size) {
+        display_.showMessagef("Read failed!", 200);
+        f_close(&SDFile);
+        return false;
+    }
+    
+    display_.showMessagef("Read OK, parsing...", 200);
+    
+    samples_[index].dataSource = MemoryDataSource(memoryBuffer, size);
+    samples_[index].reader.getWavInfo(samples_[index].dataSource);
+    
+    // Copy filename to SampleInfo
+    strncpy(samples_[index].name, filename, sizeof(samples_[index].name) - 1);
+    samples_[index].name[sizeof(samples_[index].name) - 1] = '\0';
+    
+    // Copy WAV metadata from reader to SampleInfo
+    samples_[index].numFrames = samples_[index].reader.getNumFrames();
+    samples_[index].channels = samples_[index].reader.getChannels();
+    samples_[index].sampleRate = (int)samples_[index].reader.getFileDataRate();
+    samples_[index].bitsPerSample = samples_[index].reader.getBitsPerSample();
+    
+    // Mark sample as loaded
+    samples_[index].loaded = true;
+    samples_[index].audioDataLoaded = true;
+    
+    display_.showMessagef("Parsed OK, creating ticker...", 200);
+    wavTickers[index] = samples_[index].reader.createWavTicker(Config::samplerate);
+    display_.showMessagef("Ticker created!", 200);
+    wavTickers[index].finished_ = true;
+    
+    display_.showMessagef("Loaded: %s", 200, filename);
+    
+    f_close(&SDFile);
     return true;
 }
 

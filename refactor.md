@@ -374,7 +374,7 @@ hw.led2.Set(knob2_value, 0.0f, 0.0f);
 
 ---
 
-### [ ] Task 11: Refactor SampleLibrary::init() into Smaller Functions
+### [x] Task 11: Refactor SampleLibrary::init() into Smaller Functions
 
 **File to Modify**: [`SampleLibrary.cpp`](SampleLibrary.cpp)
 
@@ -755,8 +755,8 @@ After completing all tasks, verify:
 | Priority | Total Tasks | Completed |
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
-| MEDIUM | 7 | [5] |
+| MEDIUM | 7 | [6] |
 | LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[10]** |
+| **TOTAL** | **16** | **[11]** |
 
 Last Updated: 2025-12-30
