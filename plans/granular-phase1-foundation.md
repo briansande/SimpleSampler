@@ -380,5 +380,5 @@ sampleLibrary.spawnGrain(-1, 0.25, 0.1, 1.0);  // Start at 25%, 100ms, normal pi
 - [x] Granular mode can be enabled/disabled
 - [x] Sample for granular playback can be selected
 - [x] Grains can be spawned manually
-- [ ] Grains play back correctly with proper volume scaling
+- [x] Grains play back correctly with proper volume scaling
 - [ ] Grain lifecycle is properly managed (grains are marked as finished when done)

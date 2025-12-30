@@ -326,3 +326,28 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     return true;
 }
 
+void SampleLibrary::setGranularMode(bool enabled) {
+    granularModeEnabled_ = enabled;
+    
+    // Clear all grains when disabling
+    if (!enabled) {
+        for (int i = 0; i < Constants::SampleLibrary::MAX_GRAINS; i++) {
+            grains_[i].ticker.finished_ = true;
+        }
+        activeGrainCount_ = 0;
+    }
+}
+
+bool SampleLibrary::setGranularSampleIndex(int index) {
+    if (index < 0 || index >= sampleCount_) {
+        return false;
+    }
+    
+    if (!samples_[index].audioDataLoaded) {
+        return false;
+    }
+    
+    granularSampleIndex_ = index;
+    return true;
+}
+
