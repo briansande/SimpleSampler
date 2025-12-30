@@ -54,6 +54,9 @@ static Sequencer* sequencer = nullptr;
 static Metronome* metronome = nullptr;
 static UIManager* uiManager = nullptr;
 
+// Granular test mode state
+static AppMode previousMode = MODE_MAIN_MENU;
+
 // Memory pool for SDRAM
 DSY_SDRAM_BSS char custom_pool[Constants::Memory::CUSTOM_POOL_SIZE];
 size_t pool_index = 0;
@@ -68,6 +71,18 @@ void* custom_pool_allocate(size_t size) {
     return ptr;
 }
 
+
+// Granular test mode: Spawn 5 grains at different positions
+void spawnTestGrains() {
+    library->setGranularSampleIndex(2);  // Use sample 1 for granular test
+    library->setGranularMode(true);       // Enable granular mode
+    
+    // Spawn 5 grains at evenly spaced positions across the sample
+    for (int i = 0; i < 5; i++) {
+        float position = i / 5.0f;  // 0.0, 0.2, 0.4, 0.6, 0.8
+        library->spawnGrain(-1, position, 0.02f, 1.0f);  // 20ms duration, normal pitch
+    }
+}
 
 // Audio Callback
 void AudioCallback(AudioHandle::InputBuffer  in,
@@ -88,13 +103,16 @@ void AudioCallback(AudioHandle::InputBuffer  in,
         // The display update will be handled in the main loop
     }
     
-    // Only process audio when in sequencer mode
+    // Process audio based on current mode
     if (uiManager->getCurrentMode() == MODE_SEQUENCER) {
         // Process sequencer audio (includes sample playback and metronome triggering)
         sequencer->processAudio(out, size);
         
         // Process metronome (adds metronome sound to output)
         metronome->process(out, size);
+    } else if (uiManager->getCurrentMode() == MODE_GRANULAR) {
+        // Process granular synthesis audio
+        library->processAudio(out, size);
     }
 }
 
@@ -185,8 +203,8 @@ int main(void)
 
     hw.StartAdc();
 
-    display_.showMessage("Sampler Started", 1000);
-    display_.showMessage("Loading Samples...", 1000);
+    display_.showMessage("Sampler Started", 400);
+    // display_.showMessage("Loading Samples...", 1000);
 
     /* SD Card Additions */
     // Init SD Card
@@ -200,24 +218,24 @@ int main(void)
     // Mount SD Card
     f_mount(&fsi.GetSDFileSystem(), "/", 1);
         
-    display_.showMessage("Starting Library Initialization", 1000);
+    // display_.showMessage("Starting Library Initialization", 1000);
     // Initialize library
     library = new SampleLibrary(sdcard, fsi, display_);
-    display_.showMessage("Library created, calling init...", 1000);
+    // display_.showMessage("Library created, calling init...", 1000);
     if (!library->init()) {
         display_.showMessage("SD Card Error!", 0);
         while(1);  // Halt
     }
-    display_.showMessage("Library Initialized", 1000);
+    // display_.showMessage("Library Initialized", 1000);
 
     // === Initialize Sequencer Components ===
-    display_.showMessage("Initializing Sequencer...", 1000);
+    display_.showMessage("Initializing Sequencer...", 300);
     sequencer = new Sequencer(library, Config::samplerate);
     sequencer->init();
-    display_.showMessage("Initializing Metronome...", 1000);
+    // display_.showMessage("Initializing Metronome...", 1000);
     metronome = new Metronome();
     metronome->init(static_cast<float>(Config::samplerate));
-    display_.showMessage("Initializing UI...", 1000);
+    // display_.showMessage("Initializing UI...", 1000);
     uiManager = new UIManager(&display_, sequencer, library);
     uiManager->init();
     
@@ -225,7 +243,7 @@ int main(void)
     sequencer->setBpm(120.0f);
     sequencer->setRunning(false);
     
-    display_.showMessage("Ready!", 1000);
+    display_.showMessage("Ready!", 400);
 
     // Start the audio callback
     hw.StartAudio(AudioCallback);
@@ -234,6 +252,34 @@ int main(void)
     {
         uint32_t now = System::GetNow();
         hw.ProcessDigitalControls();
+
+        // === Granular Test Mode Logic ===
+        AppMode currentMode = uiManager->getCurrentMode();
+        
+        // Detect mode changes
+        if (currentMode != previousMode) {
+            // Entering granular mode
+            if (currentMode == MODE_GRANULAR && previousMode != MODE_GRANULAR) {
+                ;
+                //spawnTestGrains();  // Spawn 10 grains
+            }
+            // Exiting granular mode
+            else if (previousMode == MODE_GRANULAR && currentMode != MODE_GRANULAR) {
+                library->setGranularMode(false);  // Clear all grains
+            }
+            previousMode = currentMode;
+        }
+        
+        // Re-spawn grains as they finish (keep 10 grains active)
+        if (currentMode == MODE_GRANULAR) {
+            int activeCount = library->getActiveGrainCount();
+            while (activeCount < 1) {
+
+                library->spawnGrain(2, 0, 0.14f, 1.0f);  // 100ms, normal pitch
+                activeCount++;
+                display_.showMessagef("Grains: %d", 0, activeCount);
+            }
+        }
 
         // === Knob and Button Handling (only in sequencer mode) ===
         if (uiManager->getCurrentMode() == MODE_SEQUENCER) {

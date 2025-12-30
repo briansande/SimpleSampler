@@ -100,7 +100,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     }
     
     int size = f_size(&SDFile);
-    display_.showMessagef("Size: %d bytes", 200, size);
+    // display_.showMessagef("Size: %d bytes", 200, size);
     
     // Allocate memory from custom pool
     char* memoryBuffer = (char*) custom_pool_allocate(size);
@@ -111,7 +111,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
     
-    display_.showMessagef("Alloc OK, reading...", 200);
+    // display_.showMessagef("Alloc OK, reading...", 200);
     
     UINT bytesRead;
     if (f_read(&SDFile, memoryBuffer, size, &bytesRead) != FR_OK || bytesRead != size) {
@@ -120,7 +120,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
     
-    display_.showMessagef("Read OK, parsing...", 200);
+    // display_.showMessagef("Read OK, parsing...", 200);
     
     samples_[index].dataSource = MemoryDataSource(memoryBuffer, size);
     samples_[index].reader.getWavInfo(samples_[index].dataSource);
@@ -139,9 +139,9 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     samples_[index].loaded = true;
     samples_[index].audioDataLoaded = true;
     
-    display_.showMessagef("Parsed OK, creating ticker...", 200);
+    // display_.showMessagef("Parsed OK, creating ticker...", 200);
     wavTickers_[index] = samples_[index].reader.createWavTicker(Config::samplerate);
-    display_.showMessagef("Ticker created!", 200);
+    // display_.showMessagef("Ticker created!", 200);
     wavTickers_[index].finished_ = true;
     
     display_.showMessagef("Loaded: %s", 200, filename);
