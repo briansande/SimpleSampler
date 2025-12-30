@@ -82,6 +82,9 @@ protected:
     UIState* state_;
     UIManager* uiManager_;  // Reference to UIManager for navigation
 
+    // Helper: Render selection indicator
+    void renderSelectionIndicator(int yPos, bool isSelected);
+
 public:
     // Constructor
     BaseMenu(DisplayManager* display, Sequencer* sequencer,

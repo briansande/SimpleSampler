@@ -617,7 +617,7 @@ namespace Utils {
 
 ---
 
-### [ ] Task 14: Extract Selection Indicator Rendering
+### [x] Task 14: Extract Selection Indicator Rendering
 
 **File to Modify**: [`Menus.cpp`](Menus.cpp)
 
@@ -756,7 +756,7 @@ After completing all tasks, verify:
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
 | MEDIUM | 7 | [7] |
-| LOW | 4 | [1] |
-| **TOTAL** | **16** | **[13]** |
+| LOW | 4 | [2] |
+| **TOTAL** | **16** | **[14]** |
 
 Last Updated: 2025-12-30

@@ -4,6 +4,16 @@
 #include <string.h>
 
 // ============================================================================
+// BaseMenu Helper Functions
+// ============================================================================
+
+void BaseMenu::renderSelectionIndicator(int yPos, bool isSelected)
+{
+    display_->setCursor(0, yPos);
+    display_->writeString(isSelected ? ">" : " ", Font_7x10);
+}
+
+// ============================================================================
 // TrackSelectMenu Implementation
 // ============================================================================
 
@@ -27,13 +37,7 @@ void TrackSelectMenu::render()
         int yPos = 12 + (i * 12);
 
         // Show selection indicator
-        if (i == selectedIndex_) {
-            display_->setCursor(0, yPos);
-            display_->writeString(">", Font_7x10);
-        } else {
-            display_->setCursor(0, yPos);
-            display_->writeString(" ", Font_7x10);
-        }
+        renderSelectionIndicator(yPos, i == selectedIndex_);
 
         // Get track info
         const Track* track = sequencer_->getTrack(i);
@@ -117,13 +121,7 @@ void TrackEditMenu::render()
     int yPos = 12;
 
     // Sample option
-    if (selectedOption_ == Option::Sample) {
-        display_->setCursor(0, yPos);
-        display_->writeString(">", Font_7x10);
-    } else {
-        display_->setCursor(0, yPos);
-        display_->writeString(" ", Font_7x10);
-    }
+    renderSelectionIndicator(yPos, selectedOption_ == Option::Sample);
     display_->setCursor(8, yPos);
     char sampleLine[32];
     snprintf(sampleLine, sizeof(sampleLine), "Sample: %s", sampleName);
@@ -131,13 +129,7 @@ void TrackEditMenu::render()
 
     // Sequence option
     yPos = 24;
-    if (selectedOption_ == Option::Sequence) {
-        display_->setCursor(0, yPos);
-        display_->writeString(">", Font_7x10);
-    } else {
-        display_->setCursor(0, yPos);
-        display_->writeString(" ", Font_7x10);
-    }
+    renderSelectionIndicator(yPos, selectedOption_ == Option::Sequence);
     display_->setCursor(8, yPos);
     display_->writeString("Sequence", Font_7x10);
 
@@ -236,13 +228,7 @@ void SampleSelectMenu::render()
         int yPos = 12 + (i * 12);
 
         // Show selection indicator
-        if (sampleIndex == selectedIndex_) {
-            display_->setCursor(0, yPos);
-            display_->writeString(">", Font_7x10);
-        } else {
-            display_->setCursor(0, yPos);
-            display_->writeString(" ", Font_7x10);
-        }
+        renderSelectionIndicator(yPos, sampleIndex == selectedIndex_);
 
         // Get sample name
         const SampleInfo* sample = sampleLibrary_->getSample(sampleIndex);
