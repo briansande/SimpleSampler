@@ -188,7 +188,6 @@ bool SampleLibrary::ensureSampleLoaded(int index) {
     return samples_[index].audioDataLoaded;
 }
 
-// Process audio for all active samples
 void SampleLibrary::processAudio(float** out, size_t size) {
     // Clear output buffers to zero
     for (size_t i = 0; i < size; i++) {
@@ -196,24 +195,47 @@ void SampleLibrary::processAudio(float** out, size_t size) {
         out[1][i] = 0.0f;
     }
     
-    // Process each sample that is actively playing
+    // Process regular sample playback (existing functionality)
     for (int i = 0; i < sampleCount_; i++) {
         if (!wavTickers_[i].finished_) {
-            // Call the reader's tick method to generate audio
-            // Use per-sample speed from sampleSpeeds_ array (controlled by knobs)
-            // Fixed volume: 1.0 (full volume)
             samples_[i].reader.tick(
                 &wavTickers_[i],
                 samples_[i].dataSource,
-                sampleSpeeds_[i],  // speed (controlled by knobs)
-                1.0,  // volume
+                sampleSpeeds_[i],
+                1.0,
                 size,
                 out[0],
                 out[1]
             );
+        }
+    }
+    
+    // First pass: count active grains
+    activeGrainCount_ = 0;
+    for (int i = 0; i < Constants::SampleLibrary::MAX_GRAINS; i++) {
+        if (!grains_[i].ticker.finished_) {
+            activeGrainCount_++;
+        }
+    }
+    
+    // Calculate uniform volume for all grains
+    float grainVolume = (activeGrainCount_ > 0) ? (1.0f / activeGrainCount_) : 0.0f;
+    
+    // Second pass: process all active grains
+    for (int i = 0; i < Constants::SampleLibrary::MAX_GRAINS; i++) {
+        if (!grains_[i].ticker.finished_) {
+            int sampleIndex = grains_[i].sampleIndex;
+            double speed = grains_[i].ticker.speed_;
             
-            // The tick() method automatically sets finished_ to true
-            // when the sample reaches the end, so no additional handling needed
+            samples_[sampleIndex].reader.tick(
+                &grains_[i].ticker,
+                samples_[sampleIndex].dataSource,
+                speed,
+                grainVolume,
+                size,
+                out[0],
+                out[1]
+            );
         }
     }
 }
