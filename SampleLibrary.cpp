@@ -128,9 +128,9 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     samples_[index].audioDataLoaded = true;
     
     display_.showMessagef("Parsed OK, creating ticker...", 200);
-    wavTickers[index] = samples_[index].reader.createWavTicker(Config::samplerate);
+    wavTickers_[index] = samples_[index].reader.createWavTicker(Config::samplerate);
     display_.showMessagef("Ticker created!", 200);
-    wavTickers[index].finished_ = true;
+    wavTickers_[index].finished_ = true;
     
     display_.showMessagef("Loaded: %s", 200, filename);
     
@@ -186,12 +186,12 @@ void SampleLibrary::processAudio(float** out, size_t size) {
     
     // Process each sample that is actively playing
     for (int i = 0; i < sampleCount_; i++) {
-        if (!wavTickers[i].finished_) {
+        if (!wavTickers_[i].finished_) {
             // Call the reader's tick method to generate audio
             // Use per-sample speed from sampleSpeeds_ array (controlled by knobs)
             // Fixed volume: 1.0 (full volume)
             samples_[i].reader.tick(
-                &wavTickers[i],
+                &wavTickers_[i],
                 samples_[i].dataSource,
                 sampleSpeeds_[i],  // speed (controlled by knobs)
                 1.0,  // volume
@@ -214,8 +214,8 @@ bool SampleLibrary::triggerSample(int index) {
     }
     
     // Reset the ticker to the start position
-    wavTickers[index].time_ = wavTickers[index].starttime_;
-    wavTickers[index].finished_ = false;
+    wavTickers_[index].time_ = wavTickers_[index].starttime_;
+    wavTickers_[index].finished_ = false;
     
     return true;
 }
@@ -228,7 +228,7 @@ bool SampleLibrary::stopSample(int index) {
     }
     
     // Mark the sample as finished (stopped)
-    wavTickers[index].finished_ = true;
+    wavTickers_[index].finished_ = true;
     
     return true;
 }

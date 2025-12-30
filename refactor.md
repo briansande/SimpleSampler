@@ -695,7 +695,7 @@ displayBuffer[charsToCopy] = '\0';
 
 ---
 
-### [ ] Task 16: Standardize Naming Convention
+### [x] Task 16: Standardize Naming Convention
 
 **Files to Modify**: All header and source files
 
@@ -756,7 +756,7 @@ After completing all tasks, verify:
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
 | MEDIUM | 7 | [7] |
-| LOW | 4 | [3] |
-| **TOTAL** | **16** | **[15]** |
+| LOW | 4 | [4] |
+| **TOTAL** | **16** | **[16]** |
 
 Last Updated: 2025-12-30

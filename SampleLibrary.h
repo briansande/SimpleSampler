@@ -29,7 +29,7 @@ struct SampleInfo {
 class SampleLibrary {
 private:
     SampleInfo samples_[Constants::SampleLibrary::MAX_SAMPLES];  // Array of loaded samples
-    b3WavTicker wavTickers[Constants::SampleLibrary::MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
+    b3WavTicker wavTickers_[Constants::SampleLibrary::MAX_SAMPLES]; // Array of tickers for playback -- currently only one per sample
     float sampleSpeeds_[Constants::SampleLibrary::MAX_SAMPLES];   // Per-sample playback speed (default 1.0 = normal speed)
 
     int sampleCount_;                 // How many samples are loaded
