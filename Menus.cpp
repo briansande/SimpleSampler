@@ -249,9 +249,7 @@ void SampleSelectMenu::render()
                     int charsToCopy = (availableChars > Constants::Display::MAX_CHARS_PER_LINE) ? Constants::Display::MAX_CHARS_PER_LINE : availableChars;
                     
                     // Copy characters starting from scroll offset
-                    for (int j = 0; j < charsToCopy; j++) {
-                        displayBuffer[j] = sampleName[state_->scrollOffset + j];
-                    }
+                    strncpy(displayBuffer, sampleName + state_->scrollOffset, charsToCopy);
                     displayBuffer[charsToCopy] = '\0';
                     
                     display_->writeString(displayBuffer, Font_7x10);

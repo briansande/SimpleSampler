@@ -667,7 +667,7 @@ renderSelectionIndicator(yPos, sampleIndex == selectedIndex_);
 
 ---
 
-### [ ] Task 15: Use strncpy for Scrolling Text
+### [x] Task 15: Use strncpy for Scrolling Text
 
 **File to Modify**: [`Menus.cpp`](Menus.cpp)
 
@@ -756,7 +756,7 @@ After completing all tasks, verify:
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
 | MEDIUM | 7 | [7] |
-| LOW | 4 | [2] |
-| **TOTAL** | **16** | **[14]** |
+| LOW | 4 | [3] |
+| **TOTAL** | **16** | **[15]** |
 
 Last Updated: 2025-12-30
