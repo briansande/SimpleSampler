@@ -82,6 +82,24 @@ void AudioCallback(AudioHandle::InputBuffer  in,
     metronome->process(out, size);
 }
 
+void updateSequencerLED(DaisyPod& hw, Sequencer* sequencer)
+{
+    if(sequencer->isRunning()) {
+        // Flash LED on each step
+        int currentStep = sequencer->getCurrentStep();
+        if(currentStep % 4 == 0) {
+            // Bright on beat
+            hw.led1.Set(1.0f, 1.0f, 1.0f);
+        } else {
+            // Dim on off-beat
+            hw.led1.Set(0.2f, 0.2f, 0.2f);
+        }
+    } else {
+        // Red when stopped
+        hw.led1.Set(0.5f, 0.0f, 0.0f);
+    }
+}
+
 
 int main(void)
 {
@@ -212,22 +230,8 @@ int main(void)
         uiManager->update();
         
         // === LED Feedback ===
-        // Use LED1 to indicate sequencer state (running/stopped)
-        if(sequencer->isRunning()) {
-            // Flash LED on each step
-            int currentStep = sequencer->getCurrentStep();
-            if(currentStep % 4 == 0) {
-                // Bright on beat
-                hw.led1.Set(1.0f, 1.0f, 1.0f);
-            } else {
-                // Dim on off-beat
-                hw.led1.Set(0.2f, 0.2f, 0.2f);
-            }
-        } else {
-            // Red when stopped
-            hw.led1.Set(0.5f, 0.0f, 0.0f);
-        }
-        
+        updateSequencerLED(hw, sequencer);
+
         // LED2 shows metronome volume level
         hw.led2.Set(knob2_value, 0.0f, 0.0f);
         

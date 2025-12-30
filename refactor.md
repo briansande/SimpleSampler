@@ -330,7 +330,7 @@ const uint8_t MAX_CHARS_PER_LINE = SCREEN_WIDTH / CHAR_WIDTH;
 
 ---
 
-### [ ] Task 10: Extract LED Update Logic
+### [x] Task 10: Extract LED Update Logic
 
 **File to Modify**: [`SimpleSampler.cpp`](SimpleSampler.cpp)
 
@@ -755,8 +755,8 @@ After completing all tasks, verify:
 | Priority | Total Tasks | Completed |
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
-| MEDIUM | 7 | [3] |
+| MEDIUM | 7 | [5] |
 | LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[8]** |
+| **TOTAL** | **16** | **[10]** |
 
-Last Updated: 2025-12-29
+Last Updated: 2025-12-30
