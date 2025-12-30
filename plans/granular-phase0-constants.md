@@ -45,6 +45,6 @@ The `b3WavTicker` struct contains `std::vector<double> lastFrame_` which uses dy
 
 ## Success Criteria
 
-- [ ] `MAX_GRAINS` constant is defined in `Constants.h`
-- [ ] Value is 8 (or your chosen value)
-- [ ] Code compiles without errors
+- [x] `MAX_GRAINS` constant is defined in `Constants.h`
+- [x] Value is 8 (or your chosen value)
+- [x] Code compiles without errors

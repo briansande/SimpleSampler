@@ -37,5 +37,6 @@ namespace Constants {
     // Sample Library Constants
     namespace SampleLibrary {
         constexpr int MAX_SAMPLES = 64;
+        constexpr int MAX_GRAINS = 8;  // Maximum simultaneous grains (reduced for embedded safety)
     }
 }
