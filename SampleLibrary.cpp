@@ -253,3 +253,76 @@ void SampleLibrary::setSampleSpeed(int index, float speed) {
     }
 }
 
+// Spawn a new grain from a sample
+bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float duration, float speed) {
+    // Use granularSampleIndex_ if sampleIndex is -1
+    int actualSampleIndex = sampleIndex;
+    if (sampleIndex < 0) {
+        actualSampleIndex = granularSampleIndex_;
+    }
+    
+    // Validate sample index
+    if (actualSampleIndex < 0 || actualSampleIndex >= sampleCount_) {
+        return false;
+    }
+    
+    // Validate sample is loaded
+    if (!samples_[actualSampleIndex].audioDataLoaded) {
+        return false;
+    }
+    
+    // Find an available grain slot
+    int availableSlot = -1;
+    for (int i = 0; i < Constants::SampleLibrary::MAX_GRAINS; i++) {
+        if (grains_[i].ticker.finished_) {
+            availableSlot = i;
+            break;
+        }
+    }
+    
+    // No available slot
+    if (availableSlot < 0) {
+        return false;
+    }
+    
+    // Get sample info
+    SampleInfo& sample = samples_[actualSampleIndex];
+    double totalFrames = static_cast<double>(sample.numFrames);
+    double sampleRate = static_cast<double>(sample.sampleRate);
+    
+    // Create a new ticker from the sample
+    grains_[availableSlot].ticker = sample.reader.createWavTicker(Config::samplerate);
+    
+    // Calculate start position (convert 0.0-1.0 to frame number)
+    double startFrame = startPosition * totalFrames;
+    
+    // Clamp to valid range
+    if (startFrame < 0.0) startFrame = 0.0;
+    if (startFrame >= totalFrames) startFrame = totalFrames - 1.0;
+    
+    // Set grain position
+    grains_[availableSlot].ticker.time_ = startFrame;
+    grains_[availableSlot].ticker.starttime_ = startFrame;
+    
+    // Calculate end position
+    double durationFrames = sampleRate * duration;
+    double endFrame = startFrame + durationFrames;
+    
+    // Clamp to end of file
+    if (endFrame > totalFrames) {
+        endFrame = totalFrames;
+    }
+    
+    grains_[availableSlot].ticker.endtime_ = endFrame;
+    
+    // Set grain properties
+    grains_[availableSlot].ticker.speed_ = speed;
+    grains_[availableSlot].sampleIndex = actualSampleIndex;
+    grains_[availableSlot].envelopePhase = 0.0f;
+    
+    // Mark grain as active
+    grains_[availableSlot].ticker.finished_ = false;
+    
+    return true;
+}
+
