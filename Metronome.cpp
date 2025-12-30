@@ -1,4 +1,5 @@
 #include "Metronome.h"
+#include "Utils.h"
 
 // Default parameters
 static constexpr float DEFAULT_FREQUENCY = 800.0f;  // Hz
@@ -72,14 +73,7 @@ void Metronome::process(float** out, size_t size)
 
 void Metronome::setVolume(float volume)
 {
-    // Clamp volume to valid range
-    if (volume < 0.0f) {
-        volume_ = 0.0f;
-    } else if (volume > 1.0f) {
-        volume_ = 1.0f;
-    } else {
-        volume_ = volume;
-    }
+    volume_ = Utils::clamp(volume, 0.0f, 1.0f);
 }
 
 void Metronome::setFrequency(float freq)

@@ -573,7 +573,7 @@ samples_[fileCount].name[sizeof(samples_[fileCount].name) - 1] = '\0';
 
 ## LOW PRIORITY TASKS
 
-### [ ] Task 13: Create Utility Helper for Clamping
+### [x] Task 13: Create Utility Helper for Clamping
 
 **File to Create**: `Utils.h`
 
@@ -756,7 +756,7 @@ After completing all tasks, verify:
 |----------|-------------|-----------|
 | HIGH | 5 | [5] |
 | MEDIUM | 7 | [7] |
-| LOW | 4 | [ ] |
-| **TOTAL** | **16** | **[12]** |
+| LOW | 4 | [1] |
+| **TOTAL** | **16** | **[13]** |
 
 Last Updated: 2025-12-30

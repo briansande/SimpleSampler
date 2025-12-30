@@ -1,4 +1,5 @@
 #include "Sequencer.h"
+#include "Utils.h"
 #include <string.h>
 
 Sequencer::Sequencer(SampleLibrary* sampleLibrary, int sampleRate)
@@ -219,12 +220,5 @@ void Sequencer::reset()
 
 void Sequencer::setMetronomeVolume(float volume)
 {
-    // Clamp volume to valid range
-    if (volume < 0.0f) {
-        volume = 0.0f;
-    } else if (volume > 1.0f) {
-        volume = 1.0f;
-    }
-
-    state_.metronomeVolume = volume;
+    state_.metronomeVolume = Utils::clamp(volume, 0.0f, 1.0f);
 }
