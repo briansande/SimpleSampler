@@ -14,6 +14,106 @@ void BaseMenu::renderSelectionIndicator(int yPos, bool isSelected)
 }
 
 // ============================================================================
+// Float Formatting Helper Function
+// ============================================================================
+
+/**
+ * Helper function to format a float value to a string manually.
+ * This is needed because embedded snprintf doesn't support %f format specifier.
+ *
+ * @param value The float value to format
+ * @param decimalPlaces Number of decimal places to show (0-2)
+ * @param buffer Output buffer to store the formatted string
+ * @param bufferSize Size of the output buffer
+ */
+static void formatFloatToString(float value, int decimalPlaces, char* buffer, int bufferSize)
+{
+    // Handle negative values
+    if (value < 0.0f) {
+        buffer[0] = '-';
+        value = -value;
+    } else {
+        buffer[0] = '\0';
+    }
+    
+    // Extract integer part
+    int intPart = (int)value;
+    
+    // Extract decimal part
+    float decimalPart = value - (float)intPart;
+    
+    // Calculate multiplier for decimal places
+    int multiplier = 1;
+    for (int i = 0; i < decimalPlaces; i++) {
+        multiplier *= 10;
+    }
+    
+    int decimalValue = (int)(decimalPart * multiplier + 0.5f);  // Round
+    
+    // Format integer part
+    char intStr[16];
+    int intIdx = 0;
+    if (intPart == 0) {
+        intStr[intIdx++] = '0';
+    } else {
+        // Build integer string in reverse
+        int temp = intPart;
+        while (temp > 0) {
+            intStr[intIdx++] = '0' + (temp % 10);
+            temp /= 10;
+        }
+        // Reverse to get correct order
+        for (int i = 0; i < intIdx / 2; i++) {
+            char tmp = intStr[i];
+            intStr[i] = intStr[intIdx - 1 - i];
+            intStr[intIdx - 1 - i] = tmp;
+        }
+    }
+    intStr[intIdx] = '\0';
+    
+    // Build final string
+    int bufferIdx = 0;
+    if (buffer[0] == '-') {
+        bufferIdx = 1;
+    }
+    
+    // Copy integer part
+    for (int i = 0; intStr[i] != '\0' && bufferIdx < bufferSize - 1; i++) {
+        buffer[bufferIdx++] = intStr[i];
+    }
+    
+    // Add decimal part if needed
+    if (decimalPlaces > 0) {
+        if (bufferIdx < bufferSize - 1) {
+            buffer[bufferIdx++] = '.';
+        }
+        
+        // Add leading zeros for decimal part
+        int tempDecimal = decimalValue;
+        int numDigits = 0;
+        while (tempDecimal > 0) {
+            tempDecimal /= 10;
+            numDigits++;
+        }
+        
+        int leadingZeros = decimalPlaces - numDigits;
+        for (int i = 0; i < leadingZeros && bufferIdx < bufferSize - 1; i++) {
+            buffer[bufferIdx++] = '0';
+        }
+        
+        // Add decimal digits
+        for (int i = 0; i < decimalPlaces && bufferIdx < bufferSize - 1; i++) {
+            int digit = decimalValue / multiplier;
+            buffer[bufferIdx++] = '0' + digit;
+            decimalValue = decimalValue % multiplier;
+            multiplier /= 10;
+        }
+    }
+    
+    buffer[bufferIdx] = '\0';
+}
+
+// ============================================================================
 // MainMenu Implementation
 // ============================================================================
 
@@ -67,16 +167,12 @@ void MainMenu::onEncoderClick()
 {
     // Enter selected mode
     if (selectedOption_ == Option::GRANULAR) {
-        // DEBUG: Log granular mode selection
-        display_->showMessage("Granular mode*selected*", 300);
-        display_->showMessage("Calling*setGranularMode*", 300);
-        
-        uiManager_->setAppMode(MODE_GRANULAR);
-        uiManager_->setCurrentScreen(SCREEN_GRANULAR_PLACEHOLDER);
         // Enable granular mode and select the first sample
-        display_->showMessage("Calling*setGranularSample*", 300);
         sampleLibrary_->setGranularSampleIndex(0);
         sampleLibrary_->setGranularMode(true);
+        
+        uiManager_->setAppMode(MODE_GRANULAR);
+        uiManager_->setCurrentScreen(SCREEN_GRANULAR_SYNTH);
     } else if (selectedOption_ == Option::SEQUENCER) {
         // Start the sequencer when entering sequencer mode
         sequencer_->setRunning(true);
@@ -87,16 +183,18 @@ void MainMenu::onEncoderClick()
 
 
 // ============================================================================
-// GranularPlaceholder Implementation
+// GranularSynthMenu Implementation
 // ============================================================================
 
-GranularPlaceholder::GranularPlaceholder(DisplayManager* display, Sequencer* sequencer,
-                                         SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
+GranularSynthMenu::GranularSynthMenu(DisplayManager* display, Sequencer* sequencer,
+                                      SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager)
     : BaseMenu(display, sequencer, sampleLibrary, state, uiManager)
+    , granularSampleIndex_(0)
+    , selectedParam_(GranularParam::SPAWN_RATE)
 {
 }
 
-void GranularPlaceholder::render()
+void GranularSynthMenu::render()
 {
     display_->clear();
 
@@ -104,37 +202,182 @@ void GranularPlaceholder::render()
     display_->setCursor(0, 0);
     display_->writeString("GRANULAR SYNTH", Font_7x10);
 
-    // Display message
+    // Display gate status and sample name on same line
+    display_->setCursor(0, 12);
+    bool gateOpen = sampleLibrary_->isGateOpen();
+    char gateLine[32];
+    snprintf(gateLine, sizeof(gateLine), "%s", gateOpen ? "GATE:OPEN" : "GATE:CLOSED");
+    display_->writeString(gateLine, Font_7x10);
+
+    // Display active grain count
     display_->setCursor(0, 24);
-    display_->writeString("Coming Soon...", Font_7x10);
+    char grainLine[32];
+    int activeGrains = sampleLibrary_->getActiveGrainCount();
+    snprintf(grainLine, sizeof(grainLine), "Grains: %d/8", activeGrains);
+    display_->writeString(grainLine, Font_7x10);
+
+    // Display selected parameter name and value on same line
+    display_->setCursor(0, 36);
+    char paramLine[32];
+    char valueStr[16];
+    const char* paramName = "";
+    const char* paramUnit = "";
+    float paramValue = 0.0f;
+    int decimalPlaces = 0;
+    
+    switch (selectedParam_) {
+        case GranularParam::SPAWN_RATE:
+            paramName = "Rate";
+            paramUnit = "g/s";
+            paramValue = sampleLibrary_->getGranularSpawnRate();
+            decimalPlaces = 0;
+            break;
+        case GranularParam::DURATION:
+            paramName = "Dur";
+            paramUnit = "s";
+            paramValue = sampleLibrary_->getGranularDuration();
+            decimalPlaces = 2;
+            break;
+        case GranularParam::SPEED:
+            paramName = "Spd";
+            paramUnit = "x";
+            paramValue = sampleLibrary_->getGranularSpeed();
+            decimalPlaces = 1;
+            break;
+        case GranularParam::POSITION:
+            paramName = "Pos";
+            paramUnit = "";
+            paramValue = sampleLibrary_->getGranularPosition();
+            decimalPlaces = 2;
+            break;
+    }
+    
+    // Format float value to string manually
+    formatFloatToString(paramValue, decimalPlaces, valueStr, sizeof(valueStr));
+    
+    // Build the parameter line
+    snprintf(paramLine, sizeof(paramLine), "%s:%s%s", paramName, valueStr, paramUnit);
+    display_->writeString(paramLine, Font_7x10);
+
+    // Display sample index (abbreviated)
+    display_->setCursor(0, 48);
+    char sampleLine[32];
+    snprintf(sampleLine, sizeof(sampleLine), "Smp:%d/%d", granularSampleIndex_ + 1, sampleLibrary_->getSampleCount());
+    display_->writeString(sampleLine, Font_7x10);
 
     // Display footer
-    display_->setCursor(0, 54);
-    display_->writeString("Hold: Main Menu*", Font_7x10);
+    display_->setCursor(0, 58);
+    display_->writeString("B1:Gate B2:Next*", Font_7x10);
 
     display_->update();
 }
 
-void GranularPlaceholder::onEncoderIncrement()
+void GranularSynthMenu::onEncoderIncrement()
 {
-    // No-op - no navigation in placeholder
+    // Increase selected parameter value
+    float currentValue = 0.0f;
+    
+    switch (selectedParam_) {
+        case GranularParam::SPAWN_RATE:
+            currentValue = sampleLibrary_->getGranularSpawnRate();
+            currentValue += 1.0f;  // Step by 1 grain/sec
+            if (currentValue > 100.0f) currentValue = 100.0f;
+            sampleLibrary_->setGranularSpawnRate(currentValue);
+            break;
+        case GranularParam::DURATION:
+            currentValue = sampleLibrary_->getGranularDuration();
+            currentValue += 0.01f;  // Step by 0.01 seconds
+            if (currentValue > 1.0f) currentValue = 1.0f;
+            sampleLibrary_->setGranularDuration(currentValue);
+            break;
+        case GranularParam::SPEED:
+            currentValue = sampleLibrary_->getGranularSpeed();
+            currentValue += 0.1f;  // Step by 0.1x
+            if (currentValue > 4.0f) currentValue = 4.0f;
+            sampleLibrary_->setGranularSpeed(currentValue);
+            break;
+        case GranularParam::POSITION:
+            currentValue = sampleLibrary_->getGranularPosition();
+            currentValue += 0.01f;  // Step by 0.01
+            if (currentValue > 1.0f) currentValue = 1.0f;
+            sampleLibrary_->setGranularPosition(currentValue);
+            break;
+    }
 }
 
-void GranularPlaceholder::onEncoderDecrement()
+void GranularSynthMenu::onEncoderDecrement()
 {
-    // No-op - no navigation in placeholder
+    // Decrease selected parameter value
+    float currentValue = 0.0f;
+    
+    switch (selectedParam_) {
+        case GranularParam::SPAWN_RATE:
+            currentValue = sampleLibrary_->getGranularSpawnRate();
+            currentValue -= 1.0f;  // Step by 1 grain/sec
+            if (currentValue < 1.0f) currentValue = 1.0f;
+            sampleLibrary_->setGranularSpawnRate(currentValue);
+            break;
+        case GranularParam::DURATION:
+            currentValue = sampleLibrary_->getGranularDuration();
+            currentValue -= 0.01f;  // Step by 0.01 seconds
+            if (currentValue < 0.01f) currentValue = 0.01f;
+            sampleLibrary_->setGranularDuration(currentValue);
+            break;
+        case GranularParam::SPEED:
+            currentValue = sampleLibrary_->getGranularSpeed();
+            currentValue -= 0.1f;  // Step by 0.1x
+            if (currentValue < 0.1f) currentValue = 0.1f;
+            sampleLibrary_->setGranularSpeed(currentValue);
+            break;
+        case GranularParam::POSITION:
+            currentValue = sampleLibrary_->getGranularPosition();
+            currentValue -= 0.01f;  // Step by 0.01
+            if (currentValue < 0.0f) currentValue = 0.0f;
+            sampleLibrary_->setGranularPosition(currentValue);
+            break;
+    }
 }
 
-void GranularPlaceholder::onEncoderClick()
+void GranularSynthMenu::onEncoderClick()
 {
-    // No-op - no action on click in placeholder
+    // Cycle to next parameter: SpawnRate -> Duration -> Speed -> Position -> (back to SpawnRate)
+    switch (selectedParam_) {
+        case GranularParam::SPAWN_RATE:
+            selectedParam_ = GranularParam::DURATION;
+            break;
+        case GranularParam::DURATION:
+            selectedParam_ = GranularParam::SPEED;
+            break;
+        case GranularParam::SPEED:
+            selectedParam_ = GranularParam::POSITION;
+            break;
+        case GranularParam::POSITION:
+            selectedParam_ = GranularParam::SPAWN_RATE;
+            break;
+    }
 }
 
-void GranularPlaceholder::onEncoderHold()
+void GranularSynthMenu::onEncoderHold()
 {
     // Return to main menu
     uiManager_->setAppMode(MODE_MAIN_MENU);
     uiManager_->setCurrentScreen(SCREEN_MAIN_MENU);
+}
+
+void GranularSynthMenu::onButton1Press()
+{
+    // Open the gate - grains will spawn while held
+    sampleLibrary_->setGateOpen(true);
+}
+
+void GranularSynthMenu::onButton2Press()
+{
+    // Cycle to next sample
+    int numSamples = sampleLibrary_->getSampleCount();
+    if (numSamples > 0) {
+        granularSampleIndex_ = (granularSampleIndex_ + 1) % numSamples;
+        sampleLibrary_->setGranularSampleIndex(granularSampleIndex_);
+    }
 }
 
 

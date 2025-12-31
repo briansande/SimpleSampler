@@ -45,11 +45,20 @@ private:
     Grain grains_[Constants::SampleLibrary::MAX_GRAINS];  // Pool of grain objects
     int activeGrainCount_;                                 // Number of currently active grains
     bool granularModeEnabled_;                              // Is granular synthesis active?
-    int granularSampleIndex_;                                // Which sample to use for granular
+    int granularSampleIndex_;                               // Which sample to use for granular
     
     // Spawning timer (auto-spawning)
     float timeSinceLastGrain_;  // Time elapsed since last grain spawned
-    float spawnRate_;           // Grains per second
+    float spawnRate_;           // Grains per second (legacy, use granularSpawnRate_)
+    
+    // Configurable granular parameters
+    float granularSpawnRate_;    // Grains per second (1.0 - 100.0)
+    float granularDuration_;     // Grain duration in seconds (0.01 - 1.0)
+    float granularSpeed_;       // Playback speed multiplier (0.1 - 4.0)
+    float granularPosition_;     // Start position within sample (0.0 - 1.0)
+    
+    // Gate control for manual grain spawning
+    bool gateOpen_;             // Gate is open when Button1 is held
     
     // External references (from main.cpp)
     SdmmcHandler& sdHandler_;
@@ -138,4 +147,31 @@ public:
     
     // Get spawn rate (grains per second)
     float getSpawnRate() const { return spawnRate_; }
+    
+    // ========== Gate Control Methods ==========
+    
+    // Set gate state (true = open, false = closed)
+    // When gate is open, grains spawn at the configured spawn rate
+    void setGateOpen(bool open);
+    
+    // Get current gate state
+    bool isGateOpen() const { return gateOpen_; }
+    
+    // ========== Granular Parameter Control Methods ==========
+    
+    // Set spawn rate (grains per second, range: 1.0 - 100.0)
+    void setGranularSpawnRate(float rate);
+    float getGranularSpawnRate() const { return granularSpawnRate_; }
+    
+    // Set grain duration (seconds, range: 0.01 - 1.0)
+    void setGranularDuration(float duration);
+    float getGranularDuration() const { return granularDuration_; }
+    
+    // Set playback speed (multiplier, range: 0.1 - 4.0)
+    void setGranularSpeed(float speed);
+    float getGranularSpeed() const { return granularSpeed_; }
+    
+    // Set start position (normalized 0.0 - 1.0)
+    void setGranularPosition(float position);
+    float getGranularPosition() const { return granularPosition_; }
 };

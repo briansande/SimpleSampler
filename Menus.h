@@ -40,29 +40,52 @@ public:
 };
 
 /**
- * GranularPlaceholder - Placeholder screen for granular synthesizer
+ * GranularSynthMenu - Granular synthesizer mode screen
  *
- * Shows a "Coming Soon" message.
- * Hold encoder to return to main menu.
+ * Displays current sample, gate status, active grain count, and selected parameter.
+ * Button1 (hold): Open gate to spawn grains
+ * Button2: Cycle through loaded samples
+ * Encoder turn: Adjust selected parameter value
+ * Encoder click: Cycle through parameters (Spawn Rate, Duration, Speed, Position)
+ * Hold encoder: Return to main menu
  */
-class GranularPlaceholder : public BaseMenu {
+class GranularSynthMenu : public BaseMenu {
+private:
+    int granularSampleIndex_;  // Currently selected sample for granular
+    
+    // Parameter selection enum
+    enum class GranularParam {
+        SPAWN_RATE,  // Grains per second
+        DURATION,    // Grain duration in seconds
+        SPEED,       // Playback speed multiplier
+        POSITION      // Start position within sample (0.0-1.0)
+    };
+    
+    GranularParam selectedParam_;  // Currently selected parameter
+
 public:
     // Constructor
-    GranularPlaceholder(DisplayManager* display, Sequencer* sequencer,
-                       SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager);
+    GranularSynthMenu(DisplayManager* display, Sequencer* sequencer,
+                      SampleLibrary* sampleLibrary, UIState* state, UIManager* uiManager);
 
-    // Render placeholder screen
+    // Render granular synth screen
     void render() override;
 
-    // No-op for encoder navigation
+    // Encoder turn: Adjust selected parameter value
     void onEncoderIncrement() override;
     void onEncoderDecrement() override;
 
-    // No-op for encoder click
+    // Encoder click: Cycle through parameters
     void onEncoderClick() override;
 
     // Return to main menu on hold
     void onEncoderHold() override;
+
+    // Button1: Open gate (grains spawn while held)
+    void onButton1Press() override;
+
+    // Button2: Cycle to next sample
+    void onButton2Press() override;
 };
 
 /**

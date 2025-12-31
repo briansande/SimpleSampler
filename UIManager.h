@@ -24,7 +24,7 @@ enum AppMode {
  */
 enum ScreenType {
     SCREEN_MAIN_MENU,         // Main menu: select Granular or Sequencer
-    SCREEN_GRANULAR_PLACEHOLDER,  // Placeholder screen for granular synth
+    SCREEN_GRANULAR_SYNTH,    // Granular synthesizer mode screen
     SCREEN_TRACK_SELECT,      // List all 3 tracks for selection
     SCREEN_TRACK_EDIT,        // Edit selected track (sample/sequence options)
     SCREEN_SAMPLE_SELECT,     // Choose sample for track

@@ -513,7 +513,6 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
 ```cpp
 bool SampleLibrary::init()
 {
-    display_.showMessage("Initializing Library...", 200);
 
     if (!openDirectory()) {
         return false;
@@ -523,7 +522,6 @@ bool SampleLibrary::init()
         return false;
     }
 
-    display_.showMessage("Files scanned", 300);
     char msg[64];
     snprintf(msg, sizeof(msg), "WAV Files: %d", sampleCount_);
     display_.showMessage(msg, 200);

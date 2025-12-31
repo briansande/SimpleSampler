@@ -231,8 +231,6 @@ int main(void)
 
     hw.StartAdc();
 
-    display_.showMessage("Sampler Started", 400);
-    // display_.showMessage("Loading Samples...", 1000);
 
     /* SD Card Additions */
     // Init SD Card
@@ -249,18 +247,15 @@ int main(void)
     // Initialize library
     library = new SampleLibrary(sdcard, fsi, display_);
     if (!library->init()) {
-        display_.showMessage("SD Card Error!", 0);
+        display_.showMessage("SD Card Error!", 2000);
         while(1);  // Halt
     }
 
     // === Initialize Sequencer Components ===
-    display_.showMessage("Initializing Sequencer...", 300);
     sequencer = new Sequencer(library, Config::samplerate);
     sequencer->init();
-    // display_.showMessage("Initializing Metronome...", 1000);
     metronome = new Metronome();
     metronome->init(static_cast<float>(Config::samplerate));
-    // display_.showMessage("Initializing UI...", 1000);
     uiManager = new UIManager(&display_, sequencer, library);
     uiManager->init();
     
@@ -351,6 +346,16 @@ int main(void)
         // === Button Handling ===
         if(hw.button1.RisingEdge()) {
             uiManager->handleButton1Press();
+            // Open the gate in granular mode when Button1 is pressed
+            if (uiManager->getCurrentMode() == MODE_GRANULAR) {
+                library->setGateOpen(true);
+            }
+        }
+        if(hw.button1.FallingEdge()) {
+            // Close the gate in granular mode when Button1 is released
+            if (uiManager->getCurrentMode() == MODE_GRANULAR) {
+                library->setGateOpen(false);
+            }
         }
         if(hw.button2.RisingEdge()) {
             uiManager->handleButton2Press();
@@ -375,8 +380,15 @@ int main(void)
                 hw.led1.Set(0.0f, 0.5f, 0.0f);  // Green for main menu
                 hw.led2.Set(0.0f, 0.5f, 0.0f);
             } else if (uiManager->getCurrentMode() == MODE_GRANULAR) {
-                hw.led1.Set(0.5f, 0.0f, 0.5f);  // Purple for granular
-                hw.led2.Set(0.5f, 0.0f, 0.5f);
+                // Show gate state with LED color in granular mode
+                bool gateOpen = library->isGateOpen();
+                if (gateOpen) {
+                    hw.led1.Set(1.0f, 1.0f, 1.0f);  // White when gate is open
+                    hw.led2.Set(1.0f, 1.0f, 1.0f);
+                } else {
+                    hw.led1.Set(0.5f, 0.0f, 0.5f);  // Purple when gate is closed
+                    hw.led2.Set(0.5f, 0.0f, 0.5f);
+                }
             }
         }
         

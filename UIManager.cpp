@@ -43,7 +43,7 @@ void UIManager::createMenus()
 {
     // Create each menu instance, passing 'this' as UIManager reference
     menus_[SCREEN_MAIN_MENU] = new MainMenu(display_, sequencer_, sampleLibrary_, &state_, this);
-    menus_[SCREEN_GRANULAR_PLACEHOLDER] = new GranularPlaceholder(display_, sequencer_, sampleLibrary_, &state_, this);
+    menus_[SCREEN_GRANULAR_SYNTH] = new GranularSynthMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_TRACK_SELECT] = new TrackSelectMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_TRACK_EDIT] = new TrackEditMenu(display_, sequencer_, sampleLibrary_, &state_, this);
     menus_[SCREEN_SAMPLE_SELECT] = new SampleSelectMenu(display_, sequencer_, sampleLibrary_, &state_, this);

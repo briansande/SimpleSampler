@@ -19,7 +19,12 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
       granularModeEnabled_(false),
       granularSampleIndex_(0),
       timeSinceLastGrain_(0.0f),
-      spawnRate_(30.0f),  // 30 grains per second default
+      spawnRate_(30.0f),  // 30 grains per second default (legacy)
+      granularSpawnRate_(30.0f),  // 30 grains per second default
+      granularDuration_(0.1f),     // 0.1 seconds default
+      granularSpeed_(1.0f),        // Normal speed default
+      granularPosition_(0.5f),      // Middle of sample default
+      gateOpen_(false),              // Gate starts closed
       sdHandler_(sdHandler),
       fileSystem_(fileSystem),
       display_(display)
@@ -40,9 +45,7 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
 }
 
 bool SampleLibrary::init() {
-    // Show initialization message
-    // display_.showMessage("Initializing Library...", 200);
-    
+
     // Scan directory and load all WAV files
     return scanAndLoadFiles();
 }
@@ -50,16 +53,14 @@ bool SampleLibrary::init() {
 
 bool SampleLibrary::scanAndLoadFiles()
 {
-    // display_.showMessage("Opening dir...", 200);
-    
+
     // Open the root directory
     DIR dir;
     if (f_opendir(&dir, "/") != FR_OK) {
         display_.showMessage("Dir open failed!", 200);
         return false;
     }
-    
-    // display_.showMessage("Scanning files...", 200);
+
     
     // Scan for WAV files
     FILINFO fno;
@@ -71,7 +72,6 @@ bool SampleLibrary::scanAndLoadFiles()
         
         // Check if filename contains .wav or .WAV
         if (strstr(fno.fname, ".wav") != nullptr || strstr(fno.fname, ".WAV") != nullptr) {
-            // display_.showMessagef("Found WAV: %s", 200, fno.fname);
             if (fileCount < Constants::SampleLibrary::MAX_SAMPLES) {
                 if (loadWavFile(fno.fname, fileCount)) {
                     fileCount++;
@@ -83,7 +83,6 @@ bool SampleLibrary::scanAndLoadFiles()
     // Close directory
     f_closedir(&dir);
     
-    // display_.showMessage("Files scanned", 300);
     char msg[64];
     snprintf(msg, sizeof(msg), "WAV Files: %d", fileCount);
     display_.showMessage(msg, 200);
@@ -104,7 +103,6 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     }
     
     int size = f_size(&SDFile);
-    // display_.showMessagef("Size: %d bytes", 200, size);
     
     // Allocate memory from custom pool
     char* memoryBuffer = (char*) custom_pool_allocate(size);
@@ -115,7 +113,6 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
     
-    // display_.showMessagef("Alloc OK, reading...", 200);
     
     UINT bytesRead;
     if (f_read(&SDFile, memoryBuffer, size, &bytesRead) != FR_OK || bytesRead != size) {
@@ -124,7 +121,6 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
         return false;
     }
     
-    // display_.showMessagef("Read OK, parsing...", 200);
     
     samples_[index].dataSource = MemoryDataSource(memoryBuffer, size);
     samples_[index].reader.getWavInfo(samples_[index].dataSource);
@@ -143,9 +139,7 @@ bool SampleLibrary::loadWavFile(const char* filename, int index)
     samples_[index].loaded = true;
     samples_[index].audioDataLoaded = true;
     
-    // display_.showMessagef("Parsed OK, creating ticker...", 200);
     wavTickers_[index] = samples_[index].reader.createWavTicker(Config::samplerate);
-    // display_.showMessagef("Ticker created!", 200);
     wavTickers_[index].finished_ = true;
     
     display_.showMessagef("Loaded: %s", 200, filename);
@@ -199,8 +193,8 @@ void SampleLibrary::processAudio(float** out, size_t size) {
         out[1][i] = 0.0f;
     }
     
-    // Auto-spawning: Only spawn if granular mode is enabled
-    if (granularModeEnabled_) {
+    // Auto-spawning: Only spawn if granular mode is enabled AND gate is open
+    if (granularModeEnabled_ && gateOpen_) {
         // Calculate the duration of this audio block in seconds
         float blockDuration = (float)size / Config::samplerate;
         
@@ -208,13 +202,13 @@ void SampleLibrary::processAudio(float** out, size_t size) {
         timeSinceLastGrain_ += blockDuration;
         
         // Calculate spawn interval from spawn rate (grains per second)
-        float spawnInterval = 1.0f / spawnRate_;
+        float spawnInterval = 1.0f / granularSpawnRate_;
         
         // Check if it's time to spawn a new grain
         while (timeSinceLastGrain_ >= spawnInterval) {
-            // Spawn grain using granularSampleIndex_ (sampleIndex -1)
-            // Parameters: sampleIndex=-1, startPosition=0.5, duration=0.1s, speed=1.0
-            spawnGrain(-1, 0.5f, 0.1f, 1.0f);
+            // Spawn grain using configurable parameters
+            // sampleIndex=-1 (use granularSampleIndex_), startPosition=granularPosition_, duration=granularDuration_, speed=granularSpeed_
+            spawnGrain(-1, granularPosition_, granularDuration_, granularSpeed_);
             
             // Reset timer (subtract interval to handle multiple spawns per block)
             timeSinceLastGrain_ -= spawnInterval;
@@ -224,6 +218,9 @@ void SampleLibrary::processAudio(float** out, size_t size) {
                 timeSinceLastGrain_ = 0.0f;
             }
         }
+    } else if (!gateOpen_) {
+        // Reset timer when gate is closed to prevent burst of grains on open
+        timeSinceLastGrain_ = 0.0f;
     }
     
     // Process regular sample playback (existing functionality)
@@ -386,9 +383,7 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
 }
 
 void SampleLibrary::setGranularMode(bool enabled) {
-    // DEBUG: Log granular mode state change
-    display_.showMessagef("setGranularMode*%s", 300, enabled ? "true" : "false");
-    display_.showMessagef("granularModeEnabled_*%s", 300, enabled ? "true" : "false");
+
     
     granularModeEnabled_ = enabled;
     
@@ -404,9 +399,7 @@ void SampleLibrary::setGranularMode(bool enabled) {
 }
 
 bool SampleLibrary::setGranularSampleIndex(int index) {
-    // DEBUG: Log sample index change
-    display_.showMessagef("setGranularSample*%d", 300, index);
-    
+
     if (index < 0 || index >= sampleCount_) {
         display_.showMessagef("Invalid index!*%d", 300, index);
         return false;
@@ -430,5 +423,46 @@ int SampleLibrary::getDebugGrainSpawnCount() const {
 
 int SampleLibrary::getDebugGrainSpawnFailures() const {
     return debugGrainSpawnFailures;
+}
+
+// ========== Gate Control Methods ==========
+
+void SampleLibrary::setGateOpen(bool open) {
+    gateOpen_ = open;
+    
+    // Reset timer when closing gate to prevent burst on next open
+    if (!open) {
+        timeSinceLastGrain_ = 0.0f;
+    }
+}
+
+// ========== Granular Parameter Control Methods ==========
+
+void SampleLibrary::setGranularSpawnRate(float rate) {
+    // Clamp to valid range: 1.0 - 100.0 grains per second
+    if (rate < 1.0f) rate = 1.0f;
+    if (rate > 100.0f) rate = 100.0f;
+    granularSpawnRate_ = rate;
+}
+
+void SampleLibrary::setGranularDuration(float duration) {
+    // Clamp to valid range: 0.01 - 1.0 seconds
+    if (duration < 0.01f) duration = 0.01f;
+    if (duration > 1.0f) duration = 1.0f;
+    granularDuration_ = duration;
+}
+
+void SampleLibrary::setGranularSpeed(float speed) {
+    // Clamp to valid range: 0.1 - 4.0x multiplier
+    if (speed < 0.1f) speed = 0.1f;
+    if (speed > 4.0f) speed = 4.0f;
+    granularSpeed_ = speed;
+}
+
+void SampleLibrary::setGranularPosition(float position) {
+    // Clamp to valid range: 0.0 - 1.0 normalized
+    if (position < 0.0f) position = 0.0f;
+    if (position > 1.0f) position = 1.0f;
+    granularPosition_ = position;
 }
 
