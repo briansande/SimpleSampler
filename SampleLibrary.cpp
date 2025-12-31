@@ -1,5 +1,13 @@
 #include "Config.h"
 #include "SampleLibrary.h"
+#include <cstdlib>
+
+
+// Helper function to generate random float in range [min, max]
+static float randomFloat(float min, float max) {
+    float random = (float)rand() / (float)RAND_MAX;
+    return min + random * (max - min);
+}
 
 
 // DEBUG: Variables for granular mode debugging
@@ -24,6 +32,10 @@ SampleLibrary::SampleLibrary(daisy::SdmmcHandler& sdHandler, FatFSInterface& fil
       granularDuration_(0.1f),     // 0.1 seconds default
       granularSpeed_(1.0f),        // Normal speed default
       granularPosition_(0.5f),      // Middle of sample default
+      granularSpawnRateRandom_(0.0f),  // No randomness default
+      granularDurationRandom_(0.0f),   // No randomness default
+      granularSpeedRandom_(0.0f),      // No randomness default
+      granularPositionRandom_(0.0f),   // No randomness default
       gateOpen_(false),              // Gate starts closed
       sdHandler_(sdHandler),
       fileSystem_(fileSystem),
@@ -346,8 +358,16 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     // Create a new ticker from the sample
     grains_[availableSlot].ticker = sample.reader.createWavTicker(Config::samplerate);
     
+    // Apply randomness to start position
+    float positionRandomOffset = randomFloat(-1.0f, 1.0f) * granularPositionRandom_;
+    float randomizedPosition = startPosition + positionRandomOffset;
+    
+    // Clamp position to valid range
+    if (randomizedPosition < 0.0f) randomizedPosition = 0.0f;
+    if (randomizedPosition > 1.0f) randomizedPosition = 1.0f;
+    
     // Calculate start position (convert 0.0-1.0 to frame number)
-    double startFrame = startPosition * totalFrames;
+    double startFrame = randomizedPosition * totalFrames;
     
     // Clamp to valid range
     if (startFrame < 0.0) startFrame = 0.0;
@@ -357,8 +377,16 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     grains_[availableSlot].ticker.time_ = startFrame;
     grains_[availableSlot].ticker.starttime_ = startFrame;
     
+    // Apply randomness to duration
+    float durationRandomOffset = randomFloat(-1.0f, 1.0f) * granularDurationRandom_;
+    float randomizedDuration = duration + durationRandomOffset;
+    
+    // Clamp duration to valid range
+    if (randomizedDuration < 0.01f) randomizedDuration = 0.01f;
+    if (randomizedDuration > 1.0f) randomizedDuration = 1.0f;
+    
     // Calculate end position
-    double durationFrames = sampleRate * duration;
+    double durationFrames = sampleRate * randomizedDuration;
     double endFrame = startFrame + durationFrames;
     
     // Clamp to end of file
@@ -368,8 +396,16 @@ bool SampleLibrary::spawnGrain(int sampleIndex, float startPosition, float durat
     
     grains_[availableSlot].ticker.endtime_ = endFrame;
     
+    // Apply randomness to speed
+    float speedRandomOffset = randomFloat(-1.0f, 1.0f) * granularSpeedRandom_;
+    float randomizedSpeed = speed + speedRandomOffset;
+    
+    // Clamp speed to valid range
+    if (randomizedSpeed < 0.1f) randomizedSpeed = 0.1f;
+    if (randomizedSpeed > 4.0f) randomizedSpeed = 4.0f;
+    
     // Set grain properties
-    grains_[availableSlot].ticker.speed_ = speed;
+    grains_[availableSlot].ticker.speed_ = randomizedSpeed;
     grains_[availableSlot].sampleIndex = actualSampleIndex;
     grains_[availableSlot].envelopePhase = 0.0f;
     
@@ -464,5 +500,35 @@ void SampleLibrary::setGranularPosition(float position) {
     if (position < 0.0f) position = 0.0f;
     if (position > 1.0f) position = 1.0f;
     granularPosition_ = position;
+}
+
+// ========== Granular Randomness Control Methods ==========
+
+void SampleLibrary::setGranularSpawnRateRandom(float random) {
+    // Clamp to valid range: 0.0 - 50.0 grains per second
+    if (random < 0.0f) random = 0.0f;
+    if (random > Constants::Granular::SPAWN_RATE_RANDOM_MAX) random = Constants::Granular::SPAWN_RATE_RANDOM_MAX;
+    granularSpawnRateRandom_ = random;
+}
+
+void SampleLibrary::setGranularDurationRandom(float random) {
+    // Clamp to valid range: 0.0 - 0.5 seconds
+    if (random < 0.0f) random = 0.0f;
+    if (random > Constants::Granular::DURATION_RANDOM_MAX) random = Constants::Granular::DURATION_RANDOM_MAX;
+    granularDurationRandom_ = random;
+}
+
+void SampleLibrary::setGranularSpeedRandom(float random) {
+    // Clamp to valid range: 0.0 - 2.0x multiplier
+    if (random < 0.0f) random = 0.0f;
+    if (random > Constants::Granular::SPEED_RANDOM_MAX) random = Constants::Granular::SPEED_RANDOM_MAX;
+    granularSpeedRandom_ = random;
+}
+
+void SampleLibrary::setGranularPositionRandom(float random) {
+    // Clamp to valid range: 0.0 - 0.5 normalized
+    if (random < 0.0f) random = 0.0f;
+    if (random > Constants::Granular::POSITION_RANDOM_MAX) random = Constants::Granular::POSITION_RANDOM_MAX;
+    granularPositionRandom_ = random;
 }
 

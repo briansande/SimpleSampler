@@ -57,6 +57,12 @@ private:
     float granularSpeed_;       // Playback speed multiplier (0.1 - 4.0)
     float granularPosition_;     // Start position within sample (0.0 - 1.0)
     
+    // Randomness parameters (additive variation per grain)
+    float granularSpawnRateRandom_;    // Spawn rate randomness (0 - 50 grains/sec)
+    float granularDurationRandom_;     // Duration randomness (0 - 0.5 seconds)
+    float granularSpeedRandom_;        // Speed randomness (0 - 2.0x)
+    float granularPositionRandom_;     // Position randomness (0 - 0.5)
+    
     // Gate control for manual grain spawning
     bool gateOpen_;             // Gate is open when Button1 is held
     
@@ -174,4 +180,22 @@ public:
     // Set start position (normalized 0.0 - 1.0)
     void setGranularPosition(float position);
     float getGranularPosition() const { return granularPosition_; }
+    
+    // ========== Granular Randomness Control Methods ==========
+    
+    // Set spawn rate randomness (grains per second, range: 0.0 - 50.0)
+    void setGranularSpawnRateRandom(float random);
+    float getGranularSpawnRateRandom() const { return granularSpawnRateRandom_; }
+    
+    // Set duration randomness (seconds, range: 0.0 - 0.5)
+    void setGranularDurationRandom(float random);
+    float getGranularDurationRandom() const { return granularDurationRandom_; }
+    
+    // Set speed randomness (multiplier, range: 0.0 - 2.0)
+    void setGranularSpeedRandom(float random);
+    float getGranularSpeedRandom() const { return granularSpeedRandom_; }
+    
+    // Set position randomness (normalized, range: 0.0 - 0.5)
+    void setGranularPositionRandom(float random);
+    float getGranularPositionRandom() const { return granularPositionRandom_; }
 };

@@ -220,9 +220,11 @@ void GranularSynthMenu::render()
     display_->setCursor(0, 36);
     char paramLine[32];
     char valueStr[16];
+    char randomStr[16];
     const char* paramName = "";
     const char* paramUnit = "";
     float paramValue = 0.0f;
+    float randomValue = 0.0f;
     int decimalPlaces = 0;
     
     switch (selectedParam_) {
@@ -230,24 +232,28 @@ void GranularSynthMenu::render()
             paramName = "Rate";
             paramUnit = "g/s";
             paramValue = sampleLibrary_->getGranularSpawnRate();
+            randomValue = sampleLibrary_->getGranularSpawnRateRandom();
             decimalPlaces = 0;
             break;
         case GranularParam::DURATION:
             paramName = "Dur";
             paramUnit = "s";
             paramValue = sampleLibrary_->getGranularDuration();
+            randomValue = sampleLibrary_->getGranularDurationRandom();
             decimalPlaces = 2;
             break;
         case GranularParam::SPEED:
             paramName = "Spd";
             paramUnit = "x";
             paramValue = sampleLibrary_->getGranularSpeed();
+            randomValue = sampleLibrary_->getGranularSpeedRandom();
             decimalPlaces = 1;
             break;
         case GranularParam::POSITION:
             paramName = "Pos";
             paramUnit = "";
             paramValue = sampleLibrary_->getGranularPosition();
+            randomValue = sampleLibrary_->getGranularPositionRandom();
             decimalPlaces = 2;
             break;
     }
@@ -255,8 +261,13 @@ void GranularSynthMenu::render()
     // Format float value to string manually
     formatFloatToString(paramValue, decimalPlaces, valueStr, sizeof(valueStr));
     
-    // Build the parameter line
-    snprintf(paramLine, sizeof(paramLine), "%s:%s%s", paramName, valueStr, paramUnit);
+    // Build the parameter line with randomness if > 0
+    if (randomValue > 0.001f) {
+        formatFloatToString(randomValue, decimalPlaces, randomStr, sizeof(randomStr));
+        snprintf(paramLine, sizeof(paramLine), "%s:%s+%s%s", paramName, valueStr, randomStr, paramUnit);
+    } else {
+        snprintf(paramLine, sizeof(paramLine), "%s:%s%s", paramName, valueStr, paramUnit);
+    }
     display_->writeString(paramLine, Font_7x10);
 
     // Display sample index (abbreviated)
@@ -274,67 +285,137 @@ void GranularSynthMenu::render()
 
 void GranularSynthMenu::onEncoderIncrement()
 {
-    // Increase selected parameter value
-    float currentValue = 0.0f;
+    // Check if gate is open (Button1 held) - if so, adjust randomness
+    bool gateOpen = sampleLibrary_->isGateOpen();
     
-    switch (selectedParam_) {
-        case GranularParam::SPAWN_RATE:
-            currentValue = sampleLibrary_->getGranularSpawnRate();
-            currentValue += 1.0f;  // Step by 1 grain/sec
-            if (currentValue > 100.0f) currentValue = 100.0f;
-            sampleLibrary_->setGranularSpawnRate(currentValue);
-            break;
-        case GranularParam::DURATION:
-            currentValue = sampleLibrary_->getGranularDuration();
-            currentValue += 0.01f;  // Step by 0.01 seconds
-            if (currentValue > 1.0f) currentValue = 1.0f;
-            sampleLibrary_->setGranularDuration(currentValue);
-            break;
-        case GranularParam::SPEED:
-            currentValue = sampleLibrary_->getGranularSpeed();
-            currentValue += 0.1f;  // Step by 0.1x
-            if (currentValue > 4.0f) currentValue = 4.0f;
-            sampleLibrary_->setGranularSpeed(currentValue);
-            break;
-        case GranularParam::POSITION:
-            currentValue = sampleLibrary_->getGranularPosition();
-            currentValue += 0.01f;  // Step by 0.01
-            if (currentValue > 1.0f) currentValue = 1.0f;
-            sampleLibrary_->setGranularPosition(currentValue);
-            break;
+    if (gateOpen) {
+        // Adjust randomness of selected parameter
+        float currentRandom = 0.0f;
+        
+        switch (selectedParam_) {
+            case GranularParam::SPAWN_RATE:
+                currentRandom = sampleLibrary_->getGranularSpawnRateRandom();
+                currentRandom += Constants::Granular::SPAWN_RATE_RANDOM_STEP;
+                if (currentRandom > Constants::Granular::SPAWN_RATE_RANDOM_MAX) currentRandom = Constants::Granular::SPAWN_RATE_RANDOM_MAX;
+                sampleLibrary_->setGranularSpawnRateRandom(currentRandom);
+                break;
+            case GranularParam::DURATION:
+                currentRandom = sampleLibrary_->getGranularDurationRandom();
+                currentRandom += Constants::Granular::DURATION_RANDOM_STEP;
+                if (currentRandom > Constants::Granular::DURATION_RANDOM_MAX) currentRandom = Constants::Granular::DURATION_RANDOM_MAX;
+                sampleLibrary_->setGranularDurationRandom(currentRandom);
+                break;
+            case GranularParam::SPEED:
+                currentRandom = sampleLibrary_->getGranularSpeedRandom();
+                currentRandom += Constants::Granular::SPEED_RANDOM_STEP;
+                if (currentRandom > Constants::Granular::SPEED_RANDOM_MAX) currentRandom = Constants::Granular::SPEED_RANDOM_MAX;
+                sampleLibrary_->setGranularSpeedRandom(currentRandom);
+                break;
+            case GranularParam::POSITION:
+                currentRandom = sampleLibrary_->getGranularPositionRandom();
+                currentRandom += Constants::Granular::POSITION_RANDOM_STEP;
+                if (currentRandom > Constants::Granular::POSITION_RANDOM_MAX) currentRandom = Constants::Granular::POSITION_RANDOM_MAX;
+                sampleLibrary_->setGranularPositionRandom(currentRandom);
+                break;
+        }
+    } else {
+        // Adjust base parameter value
+        float currentValue = 0.0f;
+        
+        switch (selectedParam_) {
+            case GranularParam::SPAWN_RATE:
+                currentValue = sampleLibrary_->getGranularSpawnRate();
+                currentValue += 1.0f;  // Step by 1 grain/sec
+                if (currentValue > 100.0f) currentValue = 100.0f;
+                sampleLibrary_->setGranularSpawnRate(currentValue);
+                break;
+            case GranularParam::DURATION:
+                currentValue = sampleLibrary_->getGranularDuration();
+                currentValue += 0.01f;  // Step by 0.01 seconds
+                if (currentValue > 1.0f) currentValue = 1.0f;
+                sampleLibrary_->setGranularDuration(currentValue);
+                break;
+            case GranularParam::SPEED:
+                currentValue = sampleLibrary_->getGranularSpeed();
+                currentValue += 0.1f;  // Step by 0.1x
+                if (currentValue > 4.0f) currentValue = 4.0f;
+                sampleLibrary_->setGranularSpeed(currentValue);
+                break;
+            case GranularParam::POSITION:
+                currentValue = sampleLibrary_->getGranularPosition();
+                currentValue += 0.01f;  // Step by 0.01
+                if (currentValue > 1.0f) currentValue = 1.0f;
+                sampleLibrary_->setGranularPosition(currentValue);
+                break;
+        }
     }
 }
 
 void GranularSynthMenu::onEncoderDecrement()
 {
-    // Decrease selected parameter value
-    float currentValue = 0.0f;
+    // Check if gate is open (Button1 held) - if so, adjust randomness
+    bool gateOpen = sampleLibrary_->isGateOpen();
     
-    switch (selectedParam_) {
-        case GranularParam::SPAWN_RATE:
-            currentValue = sampleLibrary_->getGranularSpawnRate();
-            currentValue -= 1.0f;  // Step by 1 grain/sec
-            if (currentValue < 1.0f) currentValue = 1.0f;
-            sampleLibrary_->setGranularSpawnRate(currentValue);
-            break;
-        case GranularParam::DURATION:
-            currentValue = sampleLibrary_->getGranularDuration();
-            currentValue -= 0.01f;  // Step by 0.01 seconds
-            if (currentValue < 0.01f) currentValue = 0.01f;
-            sampleLibrary_->setGranularDuration(currentValue);
-            break;
-        case GranularParam::SPEED:
-            currentValue = sampleLibrary_->getGranularSpeed();
-            currentValue -= 0.1f;  // Step by 0.1x
-            if (currentValue < 0.1f) currentValue = 0.1f;
-            sampleLibrary_->setGranularSpeed(currentValue);
-            break;
-        case GranularParam::POSITION:
-            currentValue = sampleLibrary_->getGranularPosition();
-            currentValue -= 0.01f;  // Step by 0.01
-            if (currentValue < 0.0f) currentValue = 0.0f;
-            sampleLibrary_->setGranularPosition(currentValue);
-            break;
+    if (gateOpen) {
+        // Adjust randomness of selected parameter
+        float currentRandom = 0.0f;
+        
+        switch (selectedParam_) {
+            case GranularParam::SPAWN_RATE:
+                currentRandom = sampleLibrary_->getGranularSpawnRateRandom();
+                currentRandom -= Constants::Granular::SPAWN_RATE_RANDOM_STEP;
+                if (currentRandom < 0.0f) currentRandom = 0.0f;
+                sampleLibrary_->setGranularSpawnRateRandom(currentRandom);
+                break;
+            case GranularParam::DURATION:
+                currentRandom = sampleLibrary_->getGranularDurationRandom();
+                currentRandom -= Constants::Granular::DURATION_RANDOM_STEP;
+                if (currentRandom < 0.0f) currentRandom = 0.0f;
+                sampleLibrary_->setGranularDurationRandom(currentRandom);
+                break;
+            case GranularParam::SPEED:
+                currentRandom = sampleLibrary_->getGranularSpeedRandom();
+                currentRandom -= Constants::Granular::SPEED_RANDOM_STEP;
+                if (currentRandom < 0.0f) currentRandom = 0.0f;
+                sampleLibrary_->setGranularSpeedRandom(currentRandom);
+                break;
+            case GranularParam::POSITION:
+                currentRandom = sampleLibrary_->getGranularPositionRandom();
+                currentRandom -= Constants::Granular::POSITION_RANDOM_STEP;
+                if (currentRandom < 0.0f) currentRandom = 0.0f;
+                sampleLibrary_->setGranularPositionRandom(currentRandom);
+                break;
+        }
+    } else {
+        // Adjust base parameter value
+        float currentValue = 0.0f;
+        
+        switch (selectedParam_) {
+            case GranularParam::SPAWN_RATE:
+                currentValue = sampleLibrary_->getGranularSpawnRate();
+                currentValue -= 1.0f;  // Step by 1 grain/sec
+                if (currentValue < 1.0f) currentValue = 1.0f;
+                sampleLibrary_->setGranularSpawnRate(currentValue);
+                break;
+            case GranularParam::DURATION:
+                currentValue = sampleLibrary_->getGranularDuration();
+                currentValue -= 0.01f;  // Step by 0.01 seconds
+                if (currentValue < 0.01f) currentValue = 0.01f;
+                sampleLibrary_->setGranularDuration(currentValue);
+                break;
+            case GranularParam::SPEED:
+                currentValue = sampleLibrary_->getGranularSpeed();
+                currentValue -= 0.1f;  // Step by 0.1x
+                if (currentValue < 0.1f) currentValue = 0.1f;
+                sampleLibrary_->setGranularSpeed(currentValue);
+                break;
+            case GranularParam::POSITION:
+                currentValue = sampleLibrary_->getGranularPosition();
+                currentValue -= 0.01f;  // Step by 0.01
+                if (currentValue < 0.0f) currentValue = 0.0f;
+                sampleLibrary_->setGranularPosition(currentValue);
+                break;
+        }
     }
 }
 

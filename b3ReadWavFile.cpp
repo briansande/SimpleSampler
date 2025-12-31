@@ -200,7 +200,7 @@ void b3ReadWavFile::interpolate(b3WavTicker* ticker, b3DataSource& dataSource, d
 
 void b3ReadWavFile::tick(b3WavTicker *ticker, b3DataSource& dataSource, double speed, double volume, int size, float* out0, float* out1)
 {
-	if (ticker->finished_) 
+	if (ticker->finished_)
 	  return;
 	if (ticker->time_ < ticker->starttime_ || ticker->time_ > ticker->endtime_)
 	{
@@ -210,7 +210,12 @@ void b3ReadWavFile::tick(b3WavTicker *ticker, b3DataSource& dataSource, double s
 
 	for (int xx=0;xx<size;xx++)
 	{
-	  interpolate(ticker, dataSource, speed, volume, size, out0, out1, xx);
+		// Apply triangular envelope to smooth grain boundaries and eliminate clicking
+		// The envelope ramps up from 0 to 1 in the first half, then down from 1 to 0 in the second half
+		double envelope = ticker->env_volume2();
+		double envelopeVolume = volume * envelope;
+		
+		interpolate(ticker, dataSource, speed, envelopeVolume, size, out0, out1, xx);
 		ticker->time_ += ticker->rate_*speed;
 		if (ticker->time_ < ticker->starttime_ || ticker->time_ > ticker->endtime_)
 		{

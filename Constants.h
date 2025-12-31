@@ -39,4 +39,17 @@ namespace Constants {
         constexpr int MAX_SAMPLES = 64;
         constexpr int MAX_GRAINS = 8;  // Maximum simultaneous grains (reduced for embedded safety)
     }
+
+    // Granular Randomness Constants
+    namespace Granular {
+        constexpr float SPAWN_RATE_RANDOM_STEP = 1.0f;   // 1 grain/sec step
+        constexpr float DURATION_RANDOM_STEP = 0.01f;      // 0.01 seconds step
+        constexpr float SPEED_RANDOM_STEP = 0.1f;          // 0.1x step
+        constexpr float POSITION_RANDOM_STEP = 0.01f;       // 0.01 step
+        
+        constexpr float SPAWN_RATE_RANDOM_MAX = 50.0f;    // Max randomness for spawn rate
+        constexpr float DURATION_RANDOM_MAX = 0.5f;        // Max randomness for duration
+        constexpr float SPEED_RANDOM_MAX = 2.0f;           // Max randomness for speed
+        constexpr float POSITION_RANDOM_MAX = 0.5f;        // Max randomness for position
+    }
 }
