@@ -1,3 +1,6 @@
+APP_TYPE=BOOT_SRAM
+LDFLAGS = --specs=rdimon.specs -lrdimon
+
 # Project Name
 TARGET = SimpleSampler
 
